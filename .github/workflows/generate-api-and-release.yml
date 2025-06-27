@@ -34,6 +34,7 @@ jobs:
       - name: Create GitHub Release
         uses: actions/create-release@v1
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: v$(date +'%Y%m%d%H%M%S') # Use a timestamp-based tag
           release_name: "API Regeneration $(date +'%Y-%m-%d %H:%M:%S')"
           body: "This release contains the latest API client generated from the updated OpenAPI spec."
