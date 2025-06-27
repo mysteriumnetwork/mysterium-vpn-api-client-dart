@@ -39,4 +39,6 @@ pubspec.lock
 
 # Mac
 .DS_Store
-.fvm
+
+# FVM Version Cache
+.fvm/
