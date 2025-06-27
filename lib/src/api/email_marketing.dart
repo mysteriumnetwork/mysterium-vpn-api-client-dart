@@ -6,10 +6,10 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
-import 'package:mysterium_vpn_api_client_dart/src/deserialize.dart';
+import 'package:vpn_api/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mysterium_vpn_api_client_dart/src/model/marketing_permissions_request.dart';
+import 'package:vpn_api/src/model/marketing_permissions_request.dart';
 
 class EmailMarketing {
   final Dio _dio;

@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/code_authorization_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/activation_authorization_request.dart';
+import 'package:vpn_api/src/model/activation_authorization_request.dart';
+import 'package:vpn_api/src/model/code_authorization_request.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_authorization_request.g.dart';

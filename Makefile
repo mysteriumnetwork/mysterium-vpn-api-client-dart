@@ -7,6 +7,6 @@ generate-api:
 	  --minimal-update \
 	  --remove-operation-id-prefix \
 	  --global-property apiTests=false,modelTests=false,skipFormModel=false \
-	  --additional-properties=serializationLibrary=json_serializable,finalProperties=true,apiNameSuffix=,apiNamePrefix=,pubName=mysterium_vpn_api_client_dart ;\
+	  --additional-properties=serializationLibrary=json_serializable,finalProperties=true,apiNameSuffix=,apiNamePrefix=,pubName=vpn_api ;\
   	fvm dart run build_runner build --verbose --delete-conflicting-outputs ;\
 	fvm dart format --line-length 100 . ;

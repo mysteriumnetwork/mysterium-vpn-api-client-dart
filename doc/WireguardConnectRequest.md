@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.model.WireguardConnectRequest
+# vpn_api.model.WireguardConnectRequest
 
 ## Load the model package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 ## Properties

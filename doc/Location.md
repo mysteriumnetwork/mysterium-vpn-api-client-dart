@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.api.Location
+# vpn_api.api.Location
 
 ## Load the API package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3030/api/v1*
@@ -19,9 +19,9 @@ Get location
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getLocation();
+final api = VpnApi().getLocation();
 
 try {
     final response = api.location();

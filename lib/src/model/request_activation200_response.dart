@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/request_activation200_response_token.dart';
+import 'package:vpn_api/src/model/request_activation200_response_token.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'request_activation200_response.g.dart';

@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.model.OAuth2AuthorizationRequest
+# vpn_api.model.OAuth2AuthorizationRequest
 
 ## Load the model package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 ## Properties

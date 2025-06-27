@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/subscription_config_response_plans_inner.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/subscription_config_response_gateways_inner.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/country.dart';
+import 'package:vpn_api/src/model/subscription_config_response_plans_inner.dart';
+import 'package:vpn_api/src/model/subscription_config_response_gateways_inner.dart';
+import 'package:vpn_api/src/model/country.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_config_response.g.dart';

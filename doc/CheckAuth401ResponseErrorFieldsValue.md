@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.model.CheckAuth401ResponseErrorFieldsValue
+# vpn_api.model.CheckAuth401ResponseErrorFieldsValue
 
 ## Load the model package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 ## Properties

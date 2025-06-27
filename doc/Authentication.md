@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.api.Authentication
+# vpn_api.api.Authentication
 
 ## Load the API package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3030/api/v1*
@@ -27,9 +27,9 @@ Get authentication configuration
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 
 try {
     final response = api.authConfig();
@@ -64,9 +64,9 @@ Get authentication status
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 
 try {
     final response = api.checkAuth();
@@ -101,9 +101,9 @@ Get activation request status
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 final String id = id_example; // String | 
 
 try {
@@ -142,9 +142,9 @@ OAuth Token introspection endpoint [RFC 7662]
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 final String token = token_example; // String | Token to be introspected. Optional when token is presented via Authorization header.
 
 try {
@@ -183,9 +183,9 @@ Deletes authentication cookie (effective on web only)
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 
 try {
     api.logout();
@@ -219,9 +219,9 @@ Redirect from magic link click
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 final String code = code_example; // String | 
 final String continueTo = continueTo_example; // String | 
 final String redirectUrl = redirectUrl_example; // String | 
@@ -263,9 +263,9 @@ Create session activation request
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 final RequestActivationRequest requestActivationRequest = ; // RequestActivationRequest | 
 
 try {
@@ -304,9 +304,9 @@ Request magic link
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 final MagicLinkRequest magicLinkRequest = ; // MagicLinkRequest | 
 
 try {
@@ -345,9 +345,9 @@ OAuth Token endpoint [RFC 6749]. Requires Proof Key for Code Exchange (PKCE) [RF
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getAuthentication();
+final api = VpnApi().getAuthentication();
 final String grantType = grantType_example; // String | 
 final String clientId = clientId_example; // String | 
 final String refreshToken = refreshToken_example; // String | 

@@ -6,19 +6,19 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
-import 'package:mysterium_vpn_api_client_dart/src/deserialize.dart';
+import 'package:vpn_api/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mysterium_vpn_api_client_dart/src/model/auth_check_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/auth_config_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/check_auth401_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/magic_link_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/magic_link_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_introspection_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_request_one_of3_authorization.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/request_activation200_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/request_activation_request.dart';
+import 'package:vpn_api/src/model/auth_check_response.dart';
+import 'package:vpn_api/src/model/auth_config_response.dart';
+import 'package:vpn_api/src/model/check_auth401_response.dart';
+import 'package:vpn_api/src/model/magic_link_request.dart';
+import 'package:vpn_api/src/model/magic_link_response.dart';
+import 'package:vpn_api/src/model/o_auth2_token_introspection_response.dart';
+import 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.dart';
+import 'package:vpn_api/src/model/o_auth2_token_response.dart';
+import 'package:vpn_api/src/model/request_activation200_response.dart';
+import 'package:vpn_api/src/model/request_activation_request.dart';
 
 class Authentication {
   final Dio _dio;

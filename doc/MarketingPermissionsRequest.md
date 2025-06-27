@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.model.MarketingPermissionsRequest
+# vpn_api.model.MarketingPermissionsRequest
 
 ## Load the model package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 ## Properties

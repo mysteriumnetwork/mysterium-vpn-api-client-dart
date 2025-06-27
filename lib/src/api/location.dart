@@ -6,10 +6,10 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
-import 'package:mysterium_vpn_api_client_dart/src/deserialize.dart';
+import 'package:vpn_api/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mysterium_vpn_api_client_dart/src/model/get_location_response.dart';
+import 'package:vpn_api/src/model/get_location_response.dart';
 
 class Location {
   final Dio _dio;

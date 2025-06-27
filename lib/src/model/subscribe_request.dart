@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/create_adyen_subscription_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/create_generic_subscription_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/create_google_subscription_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/create_apple_subscription_request.dart';
+import 'package:vpn_api/src/model/create_generic_subscription_request.dart';
+import 'package:vpn_api/src/model/create_adyen_subscription_request.dart';
+import 'package:vpn_api/src/model/create_apple_subscription_request.dart';
+import 'package:vpn_api/src/model/create_google_subscription_request.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscribe_request.g.dart';

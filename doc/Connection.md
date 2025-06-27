@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.api.Connection
+# vpn_api.api.Connection
 
 ## Load the API package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3030/api/v1*
@@ -26,9 +26,9 @@ Get Wireguard configuration template given connect options
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 final WireguardConnectRequest wireguardConnectRequest = ; // WireguardConnectRequest | 
 
 try {
@@ -67,9 +67,9 @@ Get proxy configuration given connect options
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 final HttpsConnectRequest httpsConnectRequest = ; // HttpsConnectRequest | 
 
 try {
@@ -108,9 +108,9 @@ Get connection options
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 final String ipType = ipType_example; // String | 
 
 try {
@@ -149,9 +149,9 @@ Get connection region options
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 final String ipType = ipType_example; // String | 
 
 try {
@@ -190,9 +190,9 @@ Get connection locations
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 final String ipType = ipType_example; // String | 
 
 try {
@@ -231,9 +231,9 @@ Disconnect from the current Wireguard connection
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 final String publicKey = aJxmamM5IUbxkevqSGcOIASETCxeRl71iXPVbqT1gz0=; // String | 
 
 try {
@@ -271,9 +271,9 @@ Disconnect all Wireguard connections
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 
 try {
     api.disconnectAll();
@@ -307,9 +307,9 @@ Rate connection
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getConnection();
+final api = VpnApi().getConnection();
 final RateConnectionRequest rateConnectionRequest = ; // RateConnectionRequest | 
 
 try {

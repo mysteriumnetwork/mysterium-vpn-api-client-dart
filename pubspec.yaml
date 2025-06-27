@@ -1,4 +1,4 @@
-name: mysterium_vpn_api_client_dart
+name: vpn_api
 description: OpenAPI API client
 
 environment:

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_request_one_of3_authorization.dart';
+import 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_request_one_of3.g.dart';

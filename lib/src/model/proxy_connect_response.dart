@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/proxy_connect_response_proxy_config.dart';
+import 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'proxy_connect_response.g.dart';

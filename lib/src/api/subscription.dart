@@ -6,18 +6,18 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
-import 'package:mysterium_vpn_api_client_dart/src/deserialize.dart';
+import 'package:vpn_api/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mysterium_vpn_api_client_dart/src/model/get_subscription_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/invoices_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/invoices_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/order_summary_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/order_summary_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/subscribe200_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/subscribe_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/subscription_config_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/user_callback_request.dart';
+import 'package:vpn_api/src/model/get_subscription_response.dart';
+import 'package:vpn_api/src/model/invoices_request.dart';
+import 'package:vpn_api/src/model/invoices_response.dart';
+import 'package:vpn_api/src/model/order_summary_request.dart';
+import 'package:vpn_api/src/model/order_summary_response.dart';
+import 'package:vpn_api/src/model/subscribe200_response.dart';
+import 'package:vpn_api/src/model/subscribe_request.dart';
+import 'package:vpn_api/src/model/subscription_config_response.dart';
+import 'package:vpn_api/src/model/user_callback_request.dart';
 
 class Subscription {
   final Dio _dio;

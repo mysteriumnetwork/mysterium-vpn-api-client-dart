@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.api.Infrastructure
+# vpn_api.api.Infrastructure
 
 ## Load the API package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3030/api/v1*
@@ -19,9 +19,9 @@ Check whether the API is up
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getInfrastructure();
+final api = VpnApi().getInfrastructure();
 
 try {
     final response = api.healthcheck();

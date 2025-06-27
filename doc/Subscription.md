@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.api.Subscription
+# vpn_api.api.Subscription
 
 ## Load the API package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3030/api/v1*
@@ -24,9 +24,9 @@ Get invoices list with pagination
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getSubscription();
+final api = VpnApi().getSubscription();
 final InvoicesRequest invoicesRequest = ; // InvoicesRequest | 
 
 try {
@@ -65,9 +65,9 @@ Preview order summary breakdown
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getSubscription();
+final api = VpnApi().getSubscription();
 final OrderSummaryRequest orderSummaryRequest = ; // OrderSummaryRequest | 
 
 try {
@@ -106,9 +106,9 @@ Create subscription
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getSubscription();
+final api = VpnApi().getSubscription();
 final SubscribeRequest subscribeRequest = ; // SubscribeRequest | 
 
 try {
@@ -147,9 +147,9 @@ Get subscription options
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getSubscription();
+final api = VpnApi().getSubscription();
 
 try {
     final response = api.subscriptionConfig();
@@ -184,9 +184,9 @@ Get subscription status
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getSubscription();
+final api = VpnApi().getSubscription();
 
 try {
     final response = api.subscriptionStatus();
@@ -221,9 +221,9 @@ Post user callback of payment
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getSubscription();
+final api = VpnApi().getSubscription();
 final UserCallbackRequest userCallbackRequest = ; // UserCallbackRequest | 
 
 try {

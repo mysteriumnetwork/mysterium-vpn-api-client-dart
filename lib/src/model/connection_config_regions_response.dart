@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/connection_region.dart';
+import 'package:vpn_api/src/model/connection_region.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_config_regions_response.g.dart';

@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.model.CreateGenericSubscriptionRequest
+# vpn_api.model.CreateGenericSubscriptionRequest
 
 ## Load the model package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 ## Properties

@@ -3,22 +3,22 @@
 //
 
 import 'package:dio/dio.dart';
-import 'package:mysterium_vpn_api_client_dart/src/auth/api_key_auth.dart';
-import 'package:mysterium_vpn_api_client_dart/src/auth/basic_auth.dart';
-import 'package:mysterium_vpn_api_client_dart/src/auth/bearer_auth.dart';
-import 'package:mysterium_vpn_api_client_dart/src/auth/oauth.dart';
-import 'package:mysterium_vpn_api_client_dart/src/api/authentication.dart';
-import 'package:mysterium_vpn_api_client_dart/src/api/connection.dart';
-import 'package:mysterium_vpn_api_client_dart/src/api/email_marketing.dart';
-import 'package:mysterium_vpn_api_client_dart/src/api/infrastructure.dart';
-import 'package:mysterium_vpn_api_client_dart/src/api/location.dart';
-import 'package:mysterium_vpn_api_client_dart/src/api/subscription.dart';
+import 'package:vpn_api/src/auth/api_key_auth.dart';
+import 'package:vpn_api/src/auth/basic_auth.dart';
+import 'package:vpn_api/src/auth/bearer_auth.dart';
+import 'package:vpn_api/src/auth/oauth.dart';
+import 'package:vpn_api/src/api/authentication.dart';
+import 'package:vpn_api/src/api/connection.dart';
+import 'package:vpn_api/src/api/email_marketing.dart';
+import 'package:vpn_api/src/api/infrastructure.dart';
+import 'package:vpn_api/src/api/location.dart';
+import 'package:vpn_api/src/api/subscription.dart';
 
-class MysteriumVpnApiClientDart {
+class VpnApi {
   static const String basePath = r'http://localhost:3030/api/v1';
 
   final Dio dio;
-  MysteriumVpnApiClientDart({
+  VpnApi({
     Dio? dio,
     String? basePathOverride,
     List<Interceptor>? interceptors,

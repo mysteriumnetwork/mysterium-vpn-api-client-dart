@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/invoices_response_paging.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/invoice.dart';
+import 'package:vpn_api/src/model/invoice.dart';
+import 'package:vpn_api/src/model/invoices_response_paging.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'invoices_response.g.dart';

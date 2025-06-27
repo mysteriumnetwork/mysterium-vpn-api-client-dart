@@ -6,17 +6,17 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
-import 'package:mysterium_vpn_api_client_dart/src/deserialize.dart';
+import 'package:vpn_api/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:mysterium_vpn_api_client_dart/src/model/connection_config_regions_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/connection_config_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/connection_location.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/https_connect_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/proxy_connect_response.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/rate_connection_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/wireguard_connect_request.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/wireguard_connect_response.dart';
+import 'package:vpn_api/src/model/connection_config_regions_response.dart';
+import 'package:vpn_api/src/model/connection_config_response.dart';
+import 'package:vpn_api/src/model/connection_location.dart';
+import 'package:vpn_api/src/model/https_connect_request.dart';
+import 'package:vpn_api/src/model/proxy_connect_response.dart';
+import 'package:vpn_api/src/model/rate_connection_request.dart';
+import 'package:vpn_api/src/model/wireguard_connect_request.dart';
+import 'package:vpn_api/src/model/wireguard_connect_response.dart';
 
 class Connection {
   final Dio _dio;

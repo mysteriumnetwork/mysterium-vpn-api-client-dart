@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.model.RequestActivation200ResponseToken
+# vpn_api.model.RequestActivation200ResponseToken
 
 ## Load the model package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 ## Properties

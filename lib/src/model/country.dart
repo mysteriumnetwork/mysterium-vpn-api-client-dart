@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/location_rate.dart';
+import 'package:vpn_api/src/model/location_rate.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'country.g.dart';

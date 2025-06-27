@@ -82,7 +82,6 @@ doc/SubscriptionConfigResponsePlansInnerPricesInner.md
 doc/UserCallbackRequest.md
 doc/WireguardConnectRequest.md
 doc/WireguardConnectResponse.md
-lib/mysterium_vpn_api_client_dart.dart
 lib/src/api.dart
 lib/src/api/authentication.dart
 lib/src/api/connection.dart
@@ -171,3 +170,4 @@ lib/src/model/subscription_config_response_plans_inner_prices_inner.dart
 lib/src/model/user_callback_request.dart
 lib/src/model/wireguard_connect_request.dart
 lib/src/model/wireguard_connect_response.dart
+lib/vpn_api.dart

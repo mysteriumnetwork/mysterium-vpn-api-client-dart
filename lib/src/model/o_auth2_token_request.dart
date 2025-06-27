@@ -3,11 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_request_one_of2.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_request_one_of.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_request_one_of1.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_request_one_of3_authorization.dart';
-import 'package:mysterium_vpn_api_client_dart/src/model/o_auth2_token_request_one_of3.dart';
+import 'package:vpn_api/src/model/o_auth2_token_request_one_of2.dart';
+import 'package:vpn_api/src/model/o_auth2_token_request_one_of3.dart';
+import 'package:vpn_api/src/model/o_auth2_token_request_one_of1.dart';
+import 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.dart';
+import 'package:vpn_api/src/model/o_auth2_token_request_one_of.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_request.g.dart';

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:mysterium_vpn_api_client_dart/src/model/check_auth401_response_error.dart';
+import 'package:vpn_api/src/model/check_auth401_response_error.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'check_auth401_response.g.dart';

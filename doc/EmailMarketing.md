@@ -1,8 +1,8 @@
-# mysterium_vpn_api_client_dart.api.EmailMarketing
+# vpn_api.api.EmailMarketing
 
 ## Load the API package
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3030/api/v1*
@@ -19,9 +19,9 @@ Set marketing consent
 
 ### Example
 ```dart
-import 'package:mysterium_vpn_api_client_dart/api.dart';
+import 'package:vpn_api/api.dart';
 
-final api = MysteriumVpnApiClientDart().getEmailMarketing();
+final api = VpnApi().getEmailMarketing();
 final MarketingPermissionsRequest marketingPermissionsRequest = ; // MarketingPermissionsRequest | 
 
 try {
