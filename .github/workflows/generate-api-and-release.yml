@@ -1,0 +1,41 @@
+name: Manually Trigger API Generation and Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter Version Management CLI
+        uses: flutter-actions/setup-fvm@v1.0 #v1.0 is tag, v1 is branch
+
+      - name: Install Flutter SDK
+        run: echo yes | fvm use
+
+      - name: Download OpenAPI Spec
+        run: curl -o openapi.yaml https://api-test.mysteriumvpn.com/openapi.yaml
+
+      - name: Generate API
+        run: make generate-api
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Manually triggered API regeneration"
+          git push
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        with:
+          tag_name: v$(date +'%Y%m%d%H%M%S') # Use a timestamp-based tag
+          release_name: "API Regeneration $(date +'%Y-%m-%d %H:%M:%S')"
+          body: "This release contains the latest API client generated from the updated OpenAPI spec."
+          draft: false
+          prerelease: false
