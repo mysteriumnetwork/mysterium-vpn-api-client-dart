@@ -6,6 +6,8 @@ on:
 jobs:
   generate-api:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -41,11 +43,8 @@ jobs:
           git push
 
       - name: Create GitHub Release
-        uses: actions/create-release@v1
+        uses: rymndhng/release-on-push-action@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: v$(date +'%Y%m%d%H%M%S') # Use a timestamp-based tag
-          release_name: "API Regeneration $(date +'%Y-%m-%d %H:%M:%S')"
-          body: "This release contains the latest API client generated from the updated OpenAPI spec."
-          draft: false
-          prerelease: false
+          bump_version_scheme: patch
+          version_prefix: ''
+          tag_prefix: ''
