@@ -35,6 +35,7 @@ jobs:
           else
             echo "No changes detected in openapi.yaml"
             echo "changed=false" >> $GITHUB_ENV
+          fi
 
       - name: Trigger API Generation Workflow
         if: env.changed == 'true'
