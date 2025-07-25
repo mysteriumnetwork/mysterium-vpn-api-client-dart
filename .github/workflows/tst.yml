@@ -1,0 +1,49 @@
+name: TST
+
+on:
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  check-openapi-changes:
+    runs-on: ubuntu-latest,
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download OpenAPI Spec
+        run: curl -o new_openapi.yaml ${{ vars.OPENAPI_SPEC }}
+
+      - name: Check for changes in OpenAPI Spec
+        id: check_changes
+        run: |
+          if [ -f openapi.yaml ]; then
+            OLD_HASH=$(sha256sum openapi.yaml | awk '{ print $1 }')
+          else
+            OLD_HASH=""
+          fi
+          NEW_HASH=$(sha256sum new_openapi.yaml | awk '{ print $1 }')
+          echo "old_hash=$OLD_HASH" >> $GITHUB_ENV
+          echo "new_hash=$NEW_HASH" >> $GITHUB_ENV
+          if [ "$NEW_HASH" != "$OLD_HASH" ]; then
+            echo "Changes detected in openapi.yaml"
+            echo "changed=true" >> $GITHUB_ENV
+            cp new_openapi.yaml openapi.yaml
+          else
+            echo "No changes detected in openapi.yaml"
+            echo "changed=false" >> $GITHUB_ENV
+          fi
+
+      - name: Trigger API Generation Workflow
+        if: env.changed == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "generate-api-and-release.yml",
+              ref: "main"
+            })
