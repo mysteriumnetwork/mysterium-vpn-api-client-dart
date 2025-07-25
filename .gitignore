@@ -42,3 +42,6 @@ pubspec.lock
 
 # FVM Version Cache
 .fvm/
+
+# OpenAPI Specification
+openapi.yaml
