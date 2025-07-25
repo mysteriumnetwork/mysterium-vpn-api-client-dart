@@ -40,6 +40,7 @@ jobs:
           else
             echo "Hash has not changed"
             echo "changed=false" >> $GITHUB_ENV
+          fi
 
       - name: Commit and push new hash
         if: env.changed == 'true'
