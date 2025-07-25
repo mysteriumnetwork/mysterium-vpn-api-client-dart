@@ -36,8 +36,8 @@ jobs:
           NEW_HASH=$(sha256sum new_openapi.yaml | awk '{ print $1 }')
           if [ "$NEW_HASH" != "$OLD_HASH" ]; then
             echo "Hash has changed"
-            echo "$NEW_HASH" > .openapi_hash
             echo "changed=true" >> $GITHUB_ENV
+            echo "$NEW_HASH" > .openapi_hash
           else
             echo "Hash has not changed"
             echo "changed=false" >> $GITHUB_ENV
