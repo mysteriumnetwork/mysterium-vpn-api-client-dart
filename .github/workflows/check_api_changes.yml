@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Download OpenAPI Spec
-        run: curl -o new_openapi.yaml https://api-test.mysteriumvpn.com/openapi.yaml
+        run: curl -o new_openapi.yaml https://app.test.mysteriumvpn.com/openapi.yaml
 
       - name: Check for changes in OpenAPI Spec
         id: check_changes
