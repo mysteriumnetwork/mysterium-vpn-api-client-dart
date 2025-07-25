@@ -28,7 +28,7 @@ jobs:
         run: echo yes | fvm use
 
       - name: Download OpenAPI Spec
-        run: curl -o openapi.yaml https://api-test.mysteriumvpn.com/openapi.yaml
+        run: curl -o openapi.yaml ${{ vars.OPENAPI_SPEC }}
 
       - name: Generate API
         run: make generate-api
