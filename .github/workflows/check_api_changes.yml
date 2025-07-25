@@ -13,7 +13,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          ref: main           # or your default branch
+          fetch-depth: 0
 
       - name: Download OpenAPI Spec
         run: curl -o new_openapi.yaml ${{ vars.OPENAPI_SPEC }}
@@ -55,8 +58,9 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add .openapi_hash
-          git diff --quiet && echo "No changes to commit" || git commit -m "Update .openapi_hash"
-          git push
+          git status
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Update .openapi_hash"
+          git push origin main
 
       - name: Trigger API Generation Workflow
         if: steps.compare_hashes.outputs.changed == 'true'
