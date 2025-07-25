@@ -18,42 +18,48 @@ jobs:
       - name: Download OpenAPI Spec
         run: curl -o new_openapi.yaml ${{ vars.OPENAPI_SPEC }}
 
-      - name: Calculate hash of OpenAPI Spec
-        id: calculate_hash
+      - name: Calculate new hash
+        id: calculate_new_hash
         run: |
           NEW_HASH=$(sha256sum new_openapi.yaml | awk '{ print $1 }')
-          echo "New hash: $NEW_HASH"
-          echo "$NEW_HASH" > .openapi_hash
+          echo "NEW_HASH=$NEW_HASH" >> $GITHUB_ENV
+          echo "new_hash=$NEW_HASH" >> $GITHUB_OUTPUT
 
-      - name: Check if hash has changed
-        id: check_changes
+      - name: Load old hash
+        id: load_old_hash
         run: |
           if [ -f .openapi_hash ]; then
             OLD_HASH=$(cat .openapi_hash)
           else
             OLD_HASH=""
           fi
-          NEW_HASH=$(sha256sum new_openapi.yaml | awk '{ print $1 }')
-          if [ "$NEW_HASH" != "$OLD_HASH" ]; then
-            echo "Hash has changed"
-            echo "changed=true" >> $GITHUB_ENV
-            echo "$NEW_HASH" > .openapi_hash
+          echo "OLD_HASH=$OLD_HASH" >> $GITHUB_ENV
+          echo "old_hash=$OLD_HASH" >> $GITHUB_OUTPUT
+
+      - name: Compare hashes
+        id: compare_hashes
+        run: |
+          if [ "${{ steps.calculate_new_hash.outputs.new_hash }}" != "${{ steps.load_old_hash.outputs.old_hash }}" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
           else
-            echo "Hash has not changed"
-            echo "changed=false" >> $GITHUB_ENV
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Save new hash
+        if: steps.compare_hashes.outputs.changed == 'true'
+        run: echo "${{ steps.calculate_new_hash.outputs.new_hash }}" > .openapi_hash
+
       - name: Commit and push new hash
-        if: env.changed == 'true'
+        if: steps.compare_hashes.outputs.changed == 'true'
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add .openapi_hash
-          git commit -m "Update OpenAPI hash"
+          git diff --quiet && echo "No changes to commit" || git commit -m "Update .openapi_hash"
           git push
 
       - name: Trigger API Generation Workflow
-        if: env.changed == 'true'
+        if: steps.compare_hashes.outputs.changed == 'true'
         uses: actions/github-script@v6
         with:
           script: |

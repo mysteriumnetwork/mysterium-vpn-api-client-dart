@@ -44,4 +44,4 @@ pubspec.lock
 .fvm/
 
 # OpenAPI Specification
-openapi.yaml
+*openapi.yaml
