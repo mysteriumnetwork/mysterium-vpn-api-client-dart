@@ -24,19 +24,17 @@ jobs:
             OLD_HASH=""
           fi
           NEW_HASH=$(sha256sum new_openapi.yaml | awk '{ print $1 }')
-          echo "old_hash=$OLD_HASH" >> $GITHUB_ENV
-          echo "new_hash=$NEW_HASH" >> $GITHUB_ENV
           if [ "$NEW_HASH" != "$OLD_HASH" ]; then
             echo "Changes detected in openapi.yaml"
-            echo "changed=true" >> $GITHUB_ENV
+            echo "::set-output name=changed::true"
             cp new_openapi.yaml openapi.yaml
           else
             echo "No changes detected in openapi.yaml"
-            echo "changed=false" >> $GITHUB_ENV
+            echo "::set-output name=changed::false"
           fi
 
       - name: Trigger API Generation Workflow
-        if: env.changed == 'true'
+        if: steps.check_changes.outputs.changed == 'true'
         uses: actions/github-script@v6
         with:
           script: |
