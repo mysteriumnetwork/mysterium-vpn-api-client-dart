@@ -553,6 +553,7 @@ components:
       properties:
         code:
           type: string
+          minLength: 1
         continue_to:
           type: string
           nullable: true
@@ -889,6 +890,9 @@ components:
             - true
         card_holder:
           type: string
+          nullable: true
+        express:
+          type: boolean
           nullable: true
         amount:
           type: number
@@ -1497,6 +1501,7 @@ paths:
       parameters:
         - schema:
             type: string
+            minLength: 1
           required: true
           name: code
           in: query
