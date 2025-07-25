@@ -12,29 +12,46 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Download OpenAPI Spec
         run: curl -o new_openapi.yaml ${{ vars.OPENAPI_SPEC }}
 
-      - name: Check for changes in OpenAPI Spec
+      - name: Calculate hash of OpenAPI Spec
+        id: calculate_hash
+        run: |
+          NEW_HASH=$(sha256sum new_openapi.yaml | awk '{ print $1 }')
+          echo "New hash: $NEW_HASH"
+          echo "$NEW_HASH" > .openapi_hash
+
+      - name: Check if hash has changed
         id: check_changes
         run: |
-          if [ -f openapi.yaml ]; then
-            OLD_HASH=$(sha256sum openapi.yaml | awk '{ print $1 }')
+          if [ -f .openapi_hash ]; then
+            OLD_HASH=$(cat .openapi_hash)
           else
             OLD_HASH=""
           fi
-          NEW_HASH=$(sha256sum new_openapi.yaml | awk '{ print $1 }')
+          NEW_HASH=$(cat .openapi_hash)
           if [ "$NEW_HASH" != "$OLD_HASH" ]; then
-            echo "Changes detected in openapi.yaml"
-            echo "::set-output name=changed::true"
-            cp new_openapi.yaml openapi.yaml
+            echo "Hash has changed"
+            echo "changed=true" >> $GITHUB_ENV
           else
-            echo "No changes detected in openapi.yaml"
-            echo "::set-output name=changed::false"
-          fi
+            echo "Hash has not changed"
+            echo "changed=false" >> $GITHUB_ENV
+
+      - name: Commit and push new hash
+        if: env.changed == 'true'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .openapi_hash
+          git commit -m "Update OpenAPI hash"
+          git push
 
       - name: Trigger API Generation Workflow
-        if: steps.check_changes.outputs.changed == 'true'
+        if: env.changed == 'true'
         uses: actions/github-script@v6
         with:
           script: |
