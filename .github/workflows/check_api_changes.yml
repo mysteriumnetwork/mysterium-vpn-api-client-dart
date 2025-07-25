@@ -8,7 +8,6 @@ on:
 jobs:
   check-openapi-changes:
     runs-on: ubuntu-latest
-    environment: Test
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

@@ -6,7 +6,6 @@ on:
 jobs:
   generate-api:
     runs-on: ubuntu-latest
-    environment: Test
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
