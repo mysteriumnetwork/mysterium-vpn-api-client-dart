@@ -1,0 +1,49 @@
+name: Manually Trigger API Generation and Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-api:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Cache Flutter SDK
+        uses: actions/cache@v3
+        with:
+          path: ~/.fvm/versions
+          key: fvm-flutter-sdk-${{ runner.os }}-${{ hashFiles('.fvmrc') }}
+          restore-keys: |
+            fvm-flutter-sdk-${{ runner.os }}-
+
+      - name: Setup Flutter Version Management CLI
+        uses: flutter-actions/setup-fvm@v1.0 #v1.0 is tag, v1 is branch
+
+      - name: Install Flutter SDK
+        run: echo yes | fvm use
+
+      - name: Download OpenAPI Spec
+        run: curl -o openapi.yaml ${{ vars.OPENAPI_SPEC }}
+
+      - name: Generate API
+        run: make generate-api
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Manually triggered API regeneration" || echo "No changes to commit"
+          git push
+
+      - name: Create GitHub Release
+        uses: rymndhng/release-on-push-action@master
+        with:
+          bump_version_scheme: patch
+          version_prefix: ''
+          tag_prefix: ''
