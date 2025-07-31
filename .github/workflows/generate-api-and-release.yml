@@ -32,7 +32,6 @@ jobs:
 
       - name: Generate API
         run: |
-          generate-api:
           openapi-generator generate \
           --input-spec ${{ vars.OPENAPI_SPEC }} \
           --generator-name dart-dio \
