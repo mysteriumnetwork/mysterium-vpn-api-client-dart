@@ -51,6 +51,13 @@ jobs:
           fvm dart run build_runner build --verbose --delete-conflicting-outputs ;\
           fvm dart format --line-length 100 . ;
 
+      - name: Update pubspec.yaml
+        uses: stikkyapp/update-pubspec-version@v2
+        with:
+          strategy: 'patch'
+          bump-build: true
+          path: './pubspec.yaml'
+
       - name: Commit and push changes
         run: |
           git config user.name "GitHub Actions"
@@ -60,9 +67,15 @@ jobs:
           git pull --rebase
           git push
 
+      - name: Extract version from pubspec.yaml
+        id: extract_version
+        run: |
+          VERSION=$(grep '^version:' pubspec.yaml | awk '{print $2}')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - name: Create GitHub Release
         uses: rymndhng/release-on-push-action@master
         with:
-          bump_version_scheme: patch
-          version_prefix: ''
-          tag_prefix: ''
+          tag_name: ${{ env.VERSION }}
+          release_name: ${{ env.VERSION }}
+          bump_version_scheme: none
