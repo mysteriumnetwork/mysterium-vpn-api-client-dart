@@ -29,6 +29,7 @@ class SubscribeRequest {
     this.couponCode,
     this.embedded,
     this.cardHolder,
+    this.express,
     required this.amount,
     required this.origin,
     this.paymentData,
@@ -98,6 +99,13 @@ class SubscribeRequest {
   final String? cardHolder;
 
   @JsonKey(
+    name: r'express',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? express;
+
+  @JsonKey(
     name: r'amount',
     required: true,
     includeIfNull: false,
@@ -131,6 +139,7 @@ class SubscribeRequest {
           other.couponCode == couponCode &&
           other.embedded == embedded &&
           other.cardHolder == cardHolder &&
+          other.express == express &&
           other.amount == amount &&
           other.origin == origin &&
           other.paymentData == paymentData;
@@ -146,6 +155,7 @@ class SubscribeRequest {
       (couponCode == null ? 0 : couponCode.hashCode) +
       (embedded == null ? 0 : embedded.hashCode) +
       (cardHolder == null ? 0 : cardHolder.hashCode) +
+      (express == null ? 0 : express.hashCode) +
       amount.hashCode +
       origin.hashCode +
       (paymentData == null ? 0 : paymentData.hashCode);

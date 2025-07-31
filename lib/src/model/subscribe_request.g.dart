@@ -25,6 +25,7 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
           couponCode: $checkedConvert('coupon_code', (v) => v as String?),
           embedded: $checkedConvert('embedded', (v) => v as bool?),
           cardHolder: $checkedConvert('card_holder', (v) => v as String?),
+          express: $checkedConvert('express', (v) => v as bool?),
           amount: $checkedConvert('amount', (v) => v as num),
           origin: $checkedConvert('origin', (v) => v as String),
           paymentData: $checkedConvert('payment_data', (v) => v),
@@ -60,6 +61,7 @@ Map<String, dynamic> _$SubscribeRequestToJson(SubscribeRequest instance) {
   writeNotNull('coupon_code', instance.couponCode);
   writeNotNull('embedded', instance.embedded);
   writeNotNull('card_holder', instance.cardHolder);
+  writeNotNull('express', instance.express);
   val['amount'] = instance.amount;
   val['origin'] = instance.origin;
   writeNotNull('payment_data', instance.paymentData);

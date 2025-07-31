@@ -68,7 +68,6 @@ doc/ProxyConnectResponse.md
 doc/ProxyConnectResponseProxyConfig.md
 doc/RateConnectionRequest.md
 doc/RequestActivation200Response.md
-doc/RequestActivation200ResponseToken.md
 doc/RequestActivationRequest.md
 doc/Subscribe200Response.md
 doc/SubscribeRequest.md
@@ -157,7 +156,6 @@ lib/src/model/proxy_connect_response.dart
 lib/src/model/proxy_connect_response_proxy_config.dart
 lib/src/model/rate_connection_request.dart
 lib/src/model/request_activation200_response.dart
-lib/src/model/request_activation200_response_token.dart
 lib/src/model/request_activation_request.dart
 lib/src/model/subscribe200_response.dart
 lib/src/model/subscribe_request.dart

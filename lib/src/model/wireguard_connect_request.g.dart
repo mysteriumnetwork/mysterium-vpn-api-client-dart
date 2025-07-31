@@ -19,6 +19,8 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
           publicKey: $checkedConvert('public_key', (v) => v as String),
           countryOriginate: $checkedConvert('country_originate', (v) => v as String?),
           country: $checkedConvert('country', (v) => v as String?),
+          city: $checkedConvert('city', (v) => v as String?),
+          userIntent: $checkedConvert('user_intent', (v) => v as String?),
           ipType: $checkedConvert('ip_type', (v) => v as String?),
           resetConnection: $checkedConvert('reset_connection', (v) => v as bool?),
           osType: $checkedConvert('os_type', (v) => v as String?),
@@ -28,6 +30,7 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
       fieldKeyMap: const {
         'publicKey': 'public_key',
         'countryOriginate': 'country_originate',
+        'userIntent': 'user_intent',
         'ipType': 'ip_type',
         'resetConnection': 'reset_connection',
         'osType': 'os_type'
@@ -47,6 +50,8 @@ Map<String, dynamic> _$WireguardConnectRequestToJson(WireguardConnectRequest ins
 
   writeNotNull('country_originate', instance.countryOriginate);
   writeNotNull('country', instance.country);
+  writeNotNull('city', instance.city);
+  writeNotNull('user_intent', instance.userIntent);
   writeNotNull('ip_type', instance.ipType);
   writeNotNull('reset_connection', instance.resetConnection);
   writeNotNull('os_type', instance.osType);

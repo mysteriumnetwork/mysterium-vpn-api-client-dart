@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**connectProxy**](Connection.md#connectproxy) | **POST** /connection/connect-proxy | Get proxy configuration given connect options
 [**connectionConfig**](Connection.md#connectionconfig) | **GET** /connection/config | Get connection options
 [**connectionConfigRegions**](Connection.md#connectionconfigregions) | **GET** /connection/config/regions | Get connection region options
-[**connectionLocations**](Connection.md#connectionlocations) | **GET** /connection/locations | Get connection locations
+[**connectionLocations**](Connection.md#connectionlocations) | **GET** /connection/config/locations | Get connection locations
 [**disconnect**](Connection.md#disconnect) | **GET** /connection/disconnect | Disconnect from the current Wireguard connection
 [**disconnectAll**](Connection.md#disconnectall) | **GET** /connection/disconnect-all | Disconnect all Wireguard connections
 [**rateConnection**](Connection.md#rateconnection) | **POST** /connection/rate-connection | Rate connection

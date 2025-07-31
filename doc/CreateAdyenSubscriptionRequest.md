@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **couponCode** | **String** |  | [optional] 
 **embedded** | **bool** |  | [optional] 
 **cardHolder** | **String** |  | [optional] 
+**express** | **bool** |  | [optional] 
 **amount** | **num** |  | 
 **origin** | **String** |  | 
 **gatewayId** | **String** |  | 

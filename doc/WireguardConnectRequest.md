@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **publicKey** | **String** |  | 
 **countryOriginate** | **String** |  | [optional] 
 **country** | **String** |  | [optional] 
+**city** | **String** |  | [optional] 
+**userIntent** | **String** |  | [optional] 
 **ipType** | **String** |  | [optional] 
 **resetConnection** | **bool** | Request a new IP | [optional] 
 **osType** | **String** |  | [optional] 

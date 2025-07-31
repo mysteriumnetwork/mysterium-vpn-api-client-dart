@@ -19,6 +19,8 @@ class WireguardConnectRequest {
     required this.publicKey,
     this.countryOriginate,
     this.country,
+    this.city,
+    this.userIntent,
     this.ipType,
     this.resetConnection,
     this.osType,
@@ -44,6 +46,20 @@ class WireguardConnectRequest {
     includeIfNull: false,
   )
   final String? country;
+
+  @JsonKey(
+    name: r'city',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? city;
+
+  @JsonKey(
+    name: r'user_intent',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? userIntent;
 
   @JsonKey(
     name: r'ip_type',
@@ -74,6 +90,8 @@ class WireguardConnectRequest {
           other.publicKey == publicKey &&
           other.countryOriginate == countryOriginate &&
           other.country == country &&
+          other.city == city &&
+          other.userIntent == userIntent &&
           other.ipType == ipType &&
           other.resetConnection == resetConnection &&
           other.osType == osType;
@@ -83,6 +101,8 @@ class WireguardConnectRequest {
       publicKey.hashCode +
       (countryOriginate == null ? 0 : countryOriginate.hashCode) +
       (country == null ? 0 : country.hashCode) +
+      (city == null ? 0 : city.hashCode) +
+      (userIntent == null ? 0 : userIntent.hashCode) +
       (ipType == null ? 0 : ipType.hashCode) +
       (resetConnection == null ? 0 : resetConnection.hashCode) +
       (osType == null ? 0 : osType.hashCode);

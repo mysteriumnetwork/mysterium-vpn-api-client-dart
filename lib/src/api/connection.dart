@@ -391,7 +391,7 @@ class Connection {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/connection/locations';
+    final _path = r'/connection/config/locations';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
