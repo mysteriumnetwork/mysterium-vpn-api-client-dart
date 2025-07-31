@@ -70,7 +70,7 @@ jobs:
       - name: Extract version from pubspec.yaml
         id: extract_version
         run: |
-          VERSION=$(grep '^version:' pubspec.yaml | awk '{print $2}')
+          VERSION=$(grep '^version:' pubspec.yaml | awk '{print $2}' | sed 's/+.*//')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Create GitHub Release
