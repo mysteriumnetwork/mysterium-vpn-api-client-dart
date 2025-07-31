@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install OpenAPI Generator
-        run: wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.14.0/openapi-generator-cli-7.14.0.jar -O openapi-generator-cli.jar
+        uses: remarkablemark/setup-openapi@v1
 
       - name: Verify OpenAPI generator version
-        run: java -jar openapi-generator-cli.jar version
+        run: openapi-generator-cli version
 
 
       - name: Cache Flutter SDK
@@ -39,7 +39,7 @@ jobs:
 
       - name: Generate API
         run: |
-          java -jar openapi-generator-cli.jar generate \
+          openapi-generator-cli generate \
             --input-spec openapi.yaml \
             --generator-name dart-dio \
             --output . \
