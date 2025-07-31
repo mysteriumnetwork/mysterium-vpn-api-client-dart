@@ -17,7 +17,7 @@ jobs:
         run: wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.14.0/openapi-generator-cli-7.14.0.jar -O openapi-generator-cli.jar
 
       - name: Verify OpenAPI generator version
-        run: openapi-generator version
+        run: java -jar openapi-generator-cli.jar version
 
 
       - name: Cache Flutter SDK
@@ -39,7 +39,7 @@ jobs:
 
       - name: Generate API
         run: |
-          openapi-generator generate \
+          java -jar openapi-generator-cli.jar generate \
             --input-spec openapi.yaml \
             --generator-name dart-dio \
             --output . \
