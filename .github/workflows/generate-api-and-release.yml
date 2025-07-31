@@ -54,10 +54,10 @@ jobs:
       - name: Commit and push changes
         run: |
           git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git pull --rebase || echo "Pull failed, proceeding with push"
+          git config user.email "actions@github.com" 
           git add .
           git commit -m "Manually triggered API regeneration" || echo "No changes to commit"
+          git pull --rebase || echo "Pull failed, proceeding with push"
           git push
 
       - name: Create GitHub Release
