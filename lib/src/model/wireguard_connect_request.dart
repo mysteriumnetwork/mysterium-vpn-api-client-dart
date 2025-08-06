@@ -18,6 +18,7 @@ class WireguardConnectRequest {
   WireguardConnectRequest({
     required this.publicKey,
     this.countryOriginate,
+    this.cluster,
     this.country,
     this.city,
     this.userIntent,
@@ -39,6 +40,13 @@ class WireguardConnectRequest {
     includeIfNull: false,
   )
   final String? countryOriginate;
+
+  @JsonKey(
+    name: r'cluster',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? cluster;
 
   @JsonKey(
     name: r'country',
@@ -89,6 +97,7 @@ class WireguardConnectRequest {
       other is WireguardConnectRequest &&
           other.publicKey == publicKey &&
           other.countryOriginate == countryOriginate &&
+          other.cluster == cluster &&
           other.country == country &&
           other.city == city &&
           other.userIntent == userIntent &&
@@ -100,6 +109,7 @@ class WireguardConnectRequest {
   int get hashCode =>
       publicKey.hashCode +
       (countryOriginate == null ? 0 : countryOriginate.hashCode) +
+      (cluster == null ? 0 : cluster.hashCode) +
       (country == null ? 0 : country.hashCode) +
       (city == null ? 0 : city.hashCode) +
       (userIntent == null ? 0 : userIntent.hashCode) +

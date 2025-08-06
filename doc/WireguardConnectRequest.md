@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **publicKey** | **String** |  | 
 **countryOriginate** | **String** |  | [optional] 
+**cluster** | **String** |  | [optional] 
 **country** | **String** |  | [optional] 
 **city** | **String** |  | [optional] 
 **userIntent** | **String** |  | [optional] 

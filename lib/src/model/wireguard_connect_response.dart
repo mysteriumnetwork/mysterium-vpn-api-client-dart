@@ -21,6 +21,9 @@ class WireguardConnectResponse {
     required this.hash,
     this.exitIp,
     this.limitExceeded,
+    this.ipType,
+    this.country,
+    this.city,
   });
 
   /// Unique identifier of prepared connection
@@ -62,6 +65,27 @@ class WireguardConnectResponse {
   )
   final bool? limitExceeded;
 
+  @JsonKey(
+    name: r'ip_type',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? ipType;
+
+  @JsonKey(
+    name: r'country',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? country;
+
+  @JsonKey(
+    name: r'city',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? city;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -70,7 +94,10 @@ class WireguardConnectResponse {
           other.wgConfig == wgConfig &&
           other.hash == hash &&
           other.exitIp == exitIp &&
-          other.limitExceeded == limitExceeded;
+          other.limitExceeded == limitExceeded &&
+          other.ipType == ipType &&
+          other.country == country &&
+          other.city == city;
 
   @override
   int get hashCode =>
@@ -78,7 +105,10 @@ class WireguardConnectResponse {
       wgConfig.hashCode +
       hash.hashCode +
       (exitIp == null ? 0 : exitIp.hashCode) +
-      (limitExceeded == null ? 0 : limitExceeded.hashCode);
+      (limitExceeded == null ? 0 : limitExceeded.hashCode) +
+      (ipType == null ? 0 : ipType.hashCode) +
+      (country == null ? 0 : country.hashCode) +
+      (city == null ? 0 : city.hashCode);
 
   factory WireguardConnectResponse.fromJson(Map<String, dynamic> json) =>
       _$WireguardConnectResponseFromJson(json);

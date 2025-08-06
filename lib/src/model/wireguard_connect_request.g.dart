@@ -18,6 +18,7 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
         final val = WireguardConnectRequest(
           publicKey: $checkedConvert('public_key', (v) => v as String),
           countryOriginate: $checkedConvert('country_originate', (v) => v as String?),
+          cluster: $checkedConvert('cluster', (v) => v as String?),
           country: $checkedConvert('country', (v) => v as String?),
           city: $checkedConvert('city', (v) => v as String?),
           userIntent: $checkedConvert('user_intent', (v) => v as String?),
@@ -49,6 +50,7 @@ Map<String, dynamic> _$WireguardConnectRequestToJson(WireguardConnectRequest ins
   }
 
   writeNotNull('country_originate', instance.countryOriginate);
+  writeNotNull('cluster', instance.cluster);
   writeNotNull('country', instance.country);
   writeNotNull('city', instance.city);
   writeNotNull('user_intent', instance.userIntent);
