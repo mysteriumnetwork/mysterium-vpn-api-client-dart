@@ -82,7 +82,10 @@ Class | Method | HTTP request | Description
 [*Connection*](doc/Connection.md) | [**disconnect**](doc/Connection.md#disconnect) | **GET** /connection/disconnect | Disconnect from the current Wireguard connection
 [*Connection*](doc/Connection.md) | [**disconnectAll**](doc/Connection.md#disconnectall) | **GET** /connection/disconnect-all | Disconnect all Wireguard connections
 [*Connection*](doc/Connection.md) | [**rateConnection**](doc/Connection.md#rateconnection) | **POST** /connection/rate-connection | Rate connection
+[*EmailMarketing*](doc/EmailMarketing.md) | [**contactStatusRequest**](doc/EmailMarketing.md#contactstatusrequest) | **GET** /email-marketing/contact-status | Get marketing contact status
+[*EmailMarketing*](doc/EmailMarketing.md) | [**createContactRequest**](doc/EmailMarketing.md#createcontactrequest) | **POST** /email-marketing/create-contact | Create marketing contact
 [*EmailMarketing*](doc/EmailMarketing.md) | [**setMarketingConsent**](doc/EmailMarketing.md#setmarketingconsent) | **POST** /email-marketing/marketing-consent | Set marketing consent
+[*EmailMarketing*](doc/EmailMarketing.md) | [**updateContactRequest**](doc/EmailMarketing.md#updatecontactrequest) | **POST** /email-marketing/update-contact | Update marketing contact
 [*Infrastructure*](doc/Infrastructure.md) | [**healthcheck**](doc/Infrastructure.md#healthcheck) | **GET** /healthcheck | Check whether the API is up
 [*Location*](doc/Location.md) | [**location**](doc/Location.md#location) | **GET** /subscription/location | Get location
 [*Subscription*](doc/Subscription.md) | [**invoices**](doc/Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
@@ -119,6 +122,8 @@ Class | Method | HTTP request | Description
  - [CreateAdyenSubscriptionResponse](doc/CreateAdyenSubscriptionResponse.md)
  - [CreateAppleSubscriptionRequest](doc/CreateAppleSubscriptionRequest.md)
  - [CreateAppleSubscriptionResponse](doc/CreateAppleSubscriptionResponse.md)
+ - [CreateContactRequest](doc/CreateContactRequest.md)
+ - [CreateContactRequestRequest](doc/CreateContactRequestRequest.md)
  - [CreateGenericSubscriptionRequest](doc/CreateGenericSubscriptionRequest.md)
  - [CreateGenericSubscriptionResponse](doc/CreateGenericSubscriptionResponse.md)
  - [CreateGoogleSubscriptionRequest](doc/CreateGoogleSubscriptionRequest.md)
@@ -166,6 +171,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionConfigResponsePlansInnerInterval](doc/SubscriptionConfigResponsePlansInnerInterval.md)
  - [SubscriptionConfigResponsePlansInnerPrice](doc/SubscriptionConfigResponsePlansInnerPrice.md)
  - [SubscriptionConfigResponsePlansInnerPricesInner](doc/SubscriptionConfigResponsePlansInnerPricesInner.md)
+ - [UpdateContactRequest](doc/UpdateContactRequest.md)
  - [UserCallbackRequest](doc/UserCallbackRequest.md)
  - [WireguardConnectRequest](doc/WireguardConnectRequest.md)
  - [WireguardConnectResponse](doc/WireguardConnectResponse.md)

@@ -22,6 +22,8 @@ import 'package:vpn_api/src/model/create_adyen_subscription_request.dart';
 import 'package:vpn_api/src/model/create_adyen_subscription_response.dart';
 import 'package:vpn_api/src/model/create_apple_subscription_request.dart';
 import 'package:vpn_api/src/model/create_apple_subscription_response.dart';
+import 'package:vpn_api/src/model/create_contact_request.dart';
+import 'package:vpn_api/src/model/create_contact_request_request.dart';
 import 'package:vpn_api/src/model/create_generic_subscription_request.dart';
 import 'package:vpn_api/src/model/create_generic_subscription_response.dart';
 import 'package:vpn_api/src/model/create_google_subscription_request.dart';
@@ -69,6 +71,7 @@ import 'package:vpn_api/src/model/subscription_config_response_plans_inner.dart'
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_interval.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
+import 'package:vpn_api/src/model/update_contact_request.dart';
 import 'package:vpn_api/src/model/user_callback_request.dart';
 import 'package:vpn_api/src/model/wireguard_connect_request.dart';
 import 'package:vpn_api/src/model/wireguard_connect_response.dart';
@@ -141,6 +144,10 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return CreateAppleSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateAppleSubscriptionResponse':
       return CreateAppleSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CreateContactRequest':
+      return CreateContactRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CreateContactRequestRequest':
+      return CreateContactRequestRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateGenericSubscriptionRequest':
       return CreateGenericSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateGenericSubscriptionResponse':
@@ -242,6 +249,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'SubscriptionConfigResponsePlansInnerPricesInner':
       return SubscriptionConfigResponsePlansInnerPricesInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UpdateContactRequest':
+      return UpdateContactRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserCallbackRequest':
       return UserCallbackRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'WireguardConnectRequest':
