@@ -9,8 +9,8 @@ import 'dart:convert';
 import 'package:vpn_api/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
+import 'package:vpn_api/src/model/contact_status_response.dart';
 import 'package:vpn_api/src/model/create_contact_request.dart';
-import 'package:vpn_api/src/model/create_contact_request_request.dart';
 import 'package:vpn_api/src/model/marketing_permissions_request.dart';
 import 'package:vpn_api/src/model/update_contact_request.dart';
 
@@ -30,9 +30,9 @@ class EmailMarketing {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CreateContactRequest] as data
+  /// Returns a [Future] containing a [Response] with a [ContactStatusResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CreateContactRequest>> contactStatusRequest({
+  Future<Response<ContactStatusResponse>> contactStatusRequest({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -61,13 +61,14 @@ class EmailMarketing {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CreateContactRequest? _responseData;
+    ContactStatusResponse? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CreateContactRequest, CreateContactRequest>(rawData, 'CreateContactRequest',
+          : deserialize<ContactStatusResponse, ContactStatusResponse>(
+              rawData, 'ContactStatusResponse',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -79,7 +80,7 @@ class EmailMarketing {
       );
     }
 
-    return Response<CreateContactRequest>(
+    return Response<ContactStatusResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -95,7 +96,7 @@ class EmailMarketing {
   ///
   ///
   /// Parameters:
-  /// * [createContactRequestRequest]
+  /// * [createContactRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -106,7 +107,7 @@ class EmailMarketing {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> createContactRequest({
-    CreateContactRequestRequest? createContactRequestRequest,
+    CreateContactRequest? createContactRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -131,7 +132,7 @@ class EmailMarketing {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(createContactRequestRequest);
+      _bodyData = jsonEncode(createContactRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

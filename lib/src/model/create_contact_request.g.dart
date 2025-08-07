@@ -10,26 +10,15 @@ CreateContactRequest _$CreateContactRequestFromJson(Map<String, dynamic> json) =
       'CreateContactRequest',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['status'],
-        );
         final val = CreateContactRequest(
-          status: $checkedConvert('status', (v) => v as String),
-          customProperties: $checkedConvert(
-              'customProperties',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as String),
-                  )),
+          country: $checkedConvert('country', (v) => v as String?),
         );
         return val;
       },
     );
 
 Map<String, dynamic> _$CreateContactRequestToJson(CreateContactRequest instance) {
-  final val = <String, dynamic>{
-    'status': instance.status,
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -37,6 +26,6 @@ Map<String, dynamic> _$CreateContactRequestToJson(CreateContactRequest instance)
     }
   }
 
-  writeNotNull('customProperties', instance.customProperties);
+  writeNotNull('country', instance.country);
   return val;
 }

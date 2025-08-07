@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **contactStatusRequest**
-> CreateContactRequest contactStatusRequest()
+> ContactStatusResponse contactStatusRequest()
 
 Get marketing contact status
 
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CreateContactRequest**](CreateContactRequest.md)
+[**ContactStatusResponse**](ContactStatusResponse.md)
 
 ### Authorization
 
@@ -53,7 +53,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createContactRequest**
-> createContactRequest(createContactRequestRequest)
+> createContactRequest(createContactRequest)
 
 Create marketing contact
 
@@ -62,10 +62,10 @@ Create marketing contact
 import 'package:vpn_api/api.dart';
 
 final api = VpnApi().getEmailMarketing();
-final CreateContactRequestRequest createContactRequestRequest = ; // CreateContactRequestRequest | 
+final CreateContactRequest createContactRequest = ; // CreateContactRequest | 
 
 try {
-    api.createContactRequest(createContactRequestRequest);
+    api.createContactRequest(createContactRequest);
 } catch on DioException (e) {
     print('Exception when calling EmailMarketing->createContactRequest: $e\n');
 }
@@ -75,7 +75,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createContactRequestRequest** | [**CreateContactRequestRequest**](CreateContactRequestRequest.md)|  | [optional] 
+ **createContactRequest** | [**CreateContactRequest**](CreateContactRequest.md)|  | [optional] 
 
 ### Return type
 

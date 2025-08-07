@@ -16,33 +16,22 @@ part 'create_contact_request.g.dart';
 class CreateContactRequest {
   /// Returns a new [CreateContactRequest] instance.
   CreateContactRequest({
-    required this.status,
-    this.customProperties,
+    this.country,
   });
 
   @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
-  final String status;
-
-  @JsonKey(
-    name: r'customProperties',
+    name: r'country',
     required: false,
     includeIfNull: false,
   )
-  final Map<String, String>? customProperties;
+  final String? country;
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is CreateContactRequest &&
-          other.status == status &&
-          other.customProperties == customProperties;
+      identical(this, other) || other is CreateContactRequest && other.country == country;
 
   @override
-  int get hashCode => status.hashCode + (customProperties == null ? 0 : customProperties.hashCode);
+  int get hashCode => (country == null ? 0 : country.hashCode);
 
   factory CreateContactRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateContactRequestFromJson(json);
