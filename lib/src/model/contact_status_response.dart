@@ -17,7 +17,7 @@ class ContactStatusResponse {
   /// Returns a new [ContactStatusResponse] instance.
   ContactStatusResponse({
     required this.status,
-    required this.consent,
+    this.consent,
   });
 
   @JsonKey(
@@ -29,10 +29,10 @@ class ContactStatusResponse {
 
   @JsonKey(
     name: r'consent',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final bool consent;
+  final bool? consent;
 
   @override
   bool operator ==(Object other) =>
@@ -40,7 +40,7 @@ class ContactStatusResponse {
       other is ContactStatusResponse && other.status == status && other.consent == consent;
 
   @override
-  int get hashCode => status.hashCode + consent.hashCode;
+  int get hashCode => status.hashCode + (consent == null ? 0 : consent.hashCode);
 
   factory ContactStatusResponse.fromJson(Map<String, dynamic> json) =>
       _$ContactStatusResponseFromJson(json);
