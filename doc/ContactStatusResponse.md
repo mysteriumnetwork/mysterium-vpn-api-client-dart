@@ -9,7 +9,7 @@ import 'package:vpn_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **String** |  | 
-**customProperties** | **Map&lt;String, String&gt;** |  | [optional] 
+**consent** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

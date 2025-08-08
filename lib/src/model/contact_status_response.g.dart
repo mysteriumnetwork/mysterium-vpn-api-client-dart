@@ -12,31 +12,18 @@ ContactStatusResponse _$ContactStatusResponseFromJson(Map<String, dynamic> json)
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['status'],
+          requiredKeys: const ['status', 'consent'],
         );
         final val = ContactStatusResponse(
           status: $checkedConvert('status', (v) => v as String),
-          customProperties: $checkedConvert(
-              'customProperties',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as String),
-                  )),
+          consent: $checkedConvert('consent', (v) => v as bool),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$ContactStatusResponseToJson(ContactStatusResponse instance) {
-  final val = <String, dynamic>{
-    'status': instance.status,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customProperties', instance.customProperties);
-  return val;
-}
+Map<String, dynamic> _$ContactStatusResponseToJson(ContactStatusResponse instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'consent': instance.consent,
+    };
