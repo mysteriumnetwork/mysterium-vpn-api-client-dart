@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **city** | **String** |  | 
 **total** | **num** |  | 
 **translations** | **Map&lt;String, String&gt;** |  | 
+**latitude** | **num** |  | [optional] 
+**longitude** | **num** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -19,6 +19,8 @@ class ConnectionLocationCity {
     required this.city,
     required this.total,
     required this.translations,
+    this.latitude,
+    this.longitude,
   });
 
   @JsonKey(
@@ -42,16 +44,37 @@ class ConnectionLocationCity {
   )
   final Map<String, String> translations;
 
+  @JsonKey(
+    name: r'latitude',
+    required: false,
+    includeIfNull: false,
+  )
+  final num? latitude;
+
+  @JsonKey(
+    name: r'longitude',
+    required: false,
+    includeIfNull: false,
+  )
+  final num? longitude;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is ConnectionLocationCity &&
           other.city == city &&
           other.total == total &&
-          other.translations == translations;
+          other.translations == translations &&
+          other.latitude == latitude &&
+          other.longitude == longitude;
 
   @override
-  int get hashCode => city.hashCode + total.hashCode + translations.hashCode;
+  int get hashCode =>
+      city.hashCode +
+      total.hashCode +
+      translations.hashCode +
+      (latitude == null ? 0 : latitude.hashCode) +
+      (longitude == null ? 0 : longitude.hashCode);
 
   factory ConnectionLocationCity.fromJson(Map<String, dynamic> json) =>
       _$ConnectionLocationCityFromJson(json);

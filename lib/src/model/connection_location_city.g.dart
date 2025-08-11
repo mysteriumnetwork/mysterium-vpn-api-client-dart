@@ -19,14 +19,27 @@ ConnectionLocationCity _$ConnectionLocationCityFromJson(Map<String, dynamic> jso
           city: $checkedConvert('city', (v) => v as String),
           total: $checkedConvert('total', (v) => v as num),
           translations: $checkedConvert('translations', (v) => Map<String, String>.from(v as Map)),
+          latitude: $checkedConvert('latitude', (v) => v as num?),
+          longitude: $checkedConvert('longitude', (v) => v as num?),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$ConnectionLocationCityToJson(ConnectionLocationCity instance) =>
-    <String, dynamic>{
-      'city': instance.city,
-      'total': instance.total,
-      'translations': instance.translations,
-    };
+Map<String, dynamic> _$ConnectionLocationCityToJson(ConnectionLocationCity instance) {
+  final val = <String, dynamic>{
+    'city': instance.city,
+    'total': instance.total,
+    'translations': instance.translations,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('latitude', instance.latitude);
+  writeNotNull('longitude', instance.longitude);
+  return val;
+}
