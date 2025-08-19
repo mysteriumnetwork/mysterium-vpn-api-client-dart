@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 [*Connection*](doc/Connection.md) | [**disconnect**](doc/Connection.md#disconnect) | **GET** /connection/disconnect | Disconnect from the current Wireguard connection
 [*Connection*](doc/Connection.md) | [**disconnectAll**](doc/Connection.md#disconnectall) | **GET** /connection/disconnect-all | Disconnect all Wireguard connections
 [*Connection*](doc/Connection.md) | [**rateConnection**](doc/Connection.md#rateconnection) | **POST** /connection/rate-connection | Rate connection
+[*Connection*](doc/Connection.md) | [**userIntents**](doc/Connection.md#userintents) | **GET** /connection/user-intents | List supported user intents
 [*EmailMarketing*](doc/EmailMarketing.md) | [**contactStatusRequest**](doc/EmailMarketing.md#contactstatusrequest) | **GET** /email-marketing/contact-status | Get marketing contact status
 [*EmailMarketing*](doc/EmailMarketing.md) | [**createContactRequest**](doc/EmailMarketing.md#createcontactrequest) | **POST** /email-marketing/create-contact | Create marketing contact
 [*EmailMarketing*](doc/EmailMarketing.md) | [**setMarketingConsent**](doc/EmailMarketing.md#setmarketingconsent) | **POST** /email-marketing/marketing-consent | Set marketing consent

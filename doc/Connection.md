@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**disconnect**](Connection.md#disconnect) | **GET** /connection/disconnect | Disconnect from the current Wireguard connection
 [**disconnectAll**](Connection.md#disconnectall) | **GET** /connection/disconnect-all | Disconnect all Wireguard connections
 [**rateConnection**](Connection.md#rateconnection) | **POST** /connection/rate-connection | Rate connection
+[**userIntents**](Connection.md#userintents) | **GET** /connection/user-intents | List supported user intents
 
 
 # **connect**
@@ -337,6 +338,43 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userIntents**
+> List<String> userIntents()
+
+List supported user intents
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+
+try {
+    final response = api.userIntents();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling Connection->userIntents: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
