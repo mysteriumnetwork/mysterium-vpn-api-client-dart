@@ -12,9 +12,11 @@ MagicLinkResponse _$MagicLinkResponseFromJson(Map<String, dynamic> json) => $che
       ($checkedConvert) {
         final val = MagicLinkResponse(
           code: $checkedConvert('code', (v) => v as String?),
+          firstTime: $checkedConvert('first_time', (v) => v as bool?),
         );
         return val;
       },
+      fieldKeyMap: const {'firstTime': 'first_time'},
     );
 
 Map<String, dynamic> _$MagicLinkResponseToJson(MagicLinkResponse instance) {
@@ -27,5 +29,6 @@ Map<String, dynamic> _$MagicLinkResponseToJson(MagicLinkResponse instance) {
   }
 
   writeNotNull('code', instance.code);
+  writeNotNull('first_time', instance.firstTime);
   return val;
 }

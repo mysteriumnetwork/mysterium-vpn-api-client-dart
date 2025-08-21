@@ -8,6 +8,7 @@ import 'package:vpn_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**firstTime** | **bool** |  | [optional] 
 **accessToken** | **String** |  | 
 **tokenType** | **String** |  | 
 **expiresIn** | **num** |  | [optional] 

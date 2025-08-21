@@ -17,6 +17,7 @@ class MagicLinkResponse {
   /// Returns a new [MagicLinkResponse] instance.
   MagicLinkResponse({
     this.code,
+    this.firstTime,
   });
 
   @JsonKey(
@@ -26,12 +27,21 @@ class MagicLinkResponse {
   )
   final String? code;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is MagicLinkResponse && other.code == code;
+  @JsonKey(
+    name: r'first_time',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? firstTime;
 
   @override
-  int get hashCode => (code == null ? 0 : code.hashCode);
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MagicLinkResponse && other.code == code && other.firstTime == firstTime;
+
+  @override
+  int get hashCode =>
+      (code == null ? 0 : code.hashCode) + (firstTime == null ? 0 : firstTime.hashCode);
 
   factory MagicLinkResponse.fromJson(Map<String, dynamic> json) =>
       _$MagicLinkResponseFromJson(json);

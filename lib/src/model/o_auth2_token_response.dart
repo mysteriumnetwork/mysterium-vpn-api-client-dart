@@ -16,12 +16,20 @@ part 'o_auth2_token_response.g.dart';
 class OAuth2TokenResponse {
   /// Returns a new [OAuth2TokenResponse] instance.
   OAuth2TokenResponse({
+    this.firstTime,
     required this.accessToken,
     required this.tokenType,
     this.expiresIn,
     this.refreshToken,
     required this.userId,
   });
+
+  @JsonKey(
+    name: r'first_time',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? firstTime;
 
   @JsonKey(
     name: r'access_token',
@@ -62,6 +70,7 @@ class OAuth2TokenResponse {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is OAuth2TokenResponse &&
+          other.firstTime == firstTime &&
           other.accessToken == accessToken &&
           other.tokenType == tokenType &&
           other.expiresIn == expiresIn &&
@@ -70,6 +79,7 @@ class OAuth2TokenResponse {
 
   @override
   int get hashCode =>
+      (firstTime == null ? 0 : firstTime.hashCode) +
       accessToken.hashCode +
       tokenType.hashCode +
       (expiresIn == null ? 0 : expiresIn.hashCode) +
