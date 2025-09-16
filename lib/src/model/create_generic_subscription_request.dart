@@ -25,6 +25,7 @@ class CreateGenericSubscriptionRequest {
     this.couponCode,
     this.embedded,
     this.cardHolder,
+    this.requestId,
   });
 
   @JsonKey(
@@ -90,6 +91,13 @@ class CreateGenericSubscriptionRequest {
   )
   final String? cardHolder;
 
+  @JsonKey(
+    name: r'request_id',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? requestId;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -102,7 +110,8 @@ class CreateGenericSubscriptionRequest {
           other.zipCode == zipCode &&
           other.couponCode == couponCode &&
           other.embedded == embedded &&
-          other.cardHolder == cardHolder;
+          other.cardHolder == cardHolder &&
+          other.requestId == requestId;
 
   @override
   int get hashCode =>
@@ -114,7 +123,8 @@ class CreateGenericSubscriptionRequest {
       (zipCode == null ? 0 : zipCode.hashCode) +
       (couponCode == null ? 0 : couponCode.hashCode) +
       (embedded == null ? 0 : embedded.hashCode) +
-      (cardHolder == null ? 0 : cardHolder.hashCode);
+      (cardHolder == null ? 0 : cardHolder.hashCode) +
+      (requestId == null ? 0 : requestId.hashCode);
 
   factory CreateGenericSubscriptionRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateGenericSubscriptionRequestFromJson(json);

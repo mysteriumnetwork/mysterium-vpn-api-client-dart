@@ -26,6 +26,7 @@ CreateGenericSubscriptionRequest _$CreateGenericSubscriptionRequestFromJson(
           couponCode: $checkedConvert('coupon_code', (v) => v as String?),
           embedded: $checkedConvert('embedded', (v) => v as bool?),
           cardHolder: $checkedConvert('card_holder', (v) => v as String?),
+          requestId: $checkedConvert('request_id', (v) => v as String?),
         );
         return val;
       },
@@ -34,7 +35,8 @@ CreateGenericSubscriptionRequest _$CreateGenericSubscriptionRequestFromJson(
         'planId': 'plan_id',
         'zipCode': 'zip_code',
         'couponCode': 'coupon_code',
-        'cardHolder': 'card_holder'
+        'cardHolder': 'card_holder',
+        'requestId': 'request_id'
       },
     );
 
@@ -58,5 +60,6 @@ Map<String, dynamic> _$CreateGenericSubscriptionRequestToJson(
   writeNotNull('coupon_code', instance.couponCode);
   writeNotNull('embedded', instance.embedded);
   writeNotNull('card_holder', instance.cardHolder);
+  writeNotNull('request_id', instance.requestId);
   return val;
 }
