@@ -75,6 +75,7 @@ Class | Method | HTTP request | Description
 [*Authentication*](doc/Authentication.md) | [**requestMagicLink**](doc/Authentication.md#requestmagiclink) | **POST** /magic-link | Request magic link
 [*Authentication*](doc/Authentication.md) | [**token**](doc/Authentication.md#token) | **POST** /oauth/token | OAuth Token endpoint [RFC 6749]. Requires Proof Key for Code Exchange (PKCE) [RFC 7636].
 [*Connection*](doc/Connection.md) | [**connect**](doc/Connection.md#connect) | **POST** /connection/connect | Get Wireguard configuration template given connect options
+[*Connection*](doc/Connection.md) | [**connectOpenvpn**](doc/Connection.md#connectopenvpn) | **POST** /connection/connect-openvpn | Get OpenVPN configuration
 [*Connection*](doc/Connection.md) | [**connectProxy**](doc/Connection.md#connectproxy) | **POST** /connection/connect-proxy | Get proxy configuration given connect options
 [*Connection*](doc/Connection.md) | [**connectionConfig**](doc/Connection.md#connectionconfig) | **GET** /connection/config | Get connection options
 [*Connection*](doc/Connection.md) | [**connectionConfigRegions**](doc/Connection.md#connectionconfigregions) | **GET** /connection/config/regions | Get connection region options
@@ -157,6 +158,8 @@ Class | Method | HTTP request | Description
  - [OAuth2TokenRequestOneOf3](doc/OAuth2TokenRequestOneOf3.md)
  - [OAuth2TokenRequestOneOf3Authorization](doc/OAuth2TokenRequestOneOf3Authorization.md)
  - [OAuth2TokenResponse](doc/OAuth2TokenResponse.md)
+ - [OpenVpnConnectRequest](doc/OpenVpnConnectRequest.md)
+ - [OpenVpnConnectResponse](doc/OpenVpnConnectResponse.md)
  - [OrderSummaryRequest](doc/OrderSummaryRequest.md)
  - [OrderSummaryResponse](doc/OrderSummaryResponse.md)
  - [ProxyConnectResponse](doc/ProxyConnectResponse.md)

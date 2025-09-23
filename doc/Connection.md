@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost:3030/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**connect**](Connection.md#connect) | **POST** /connection/connect | Get Wireguard configuration template given connect options
+[**connectOpenvpn**](Connection.md#connectopenvpn) | **POST** /connection/connect-openvpn | Get OpenVPN configuration
 [**connectProxy**](Connection.md#connectproxy) | **POST** /connection/connect-proxy | Get proxy configuration given connect options
 [**connectionConfig**](Connection.md#connectionconfig) | **GET** /connection/config | Get connection options
 [**connectionConfigRegions**](Connection.md#connectionconfigregions) | **GET** /connection/config/regions | Get connection region options
@@ -49,6 +50,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WireguardConnectResponse**](WireguardConnectResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **connectOpenvpn**
+> OpenVpnConnectResponse connectOpenvpn(openVpnConnectRequest)
+
+Get OpenVPN configuration
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+final OpenVpnConnectRequest openVpnConnectRequest = ; // OpenVpnConnectRequest | 
+
+try {
+    final response = api.connectOpenvpn(openVpnConnectRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling Connection->connectOpenvpn: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **openVpnConnectRequest** | [**OpenVpnConnectRequest**](OpenVpnConnectRequest.md)|  | [optional] 
+
+### Return type
+
+[**OpenVpnConnectResponse**](OpenVpnConnectResponse.md)
 
 ### Authorization
 

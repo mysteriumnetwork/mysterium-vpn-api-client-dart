@@ -56,6 +56,8 @@ import 'package:vpn_api/src/model/o_auth2_token_request_one_of2.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of3.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.dart';
 import 'package:vpn_api/src/model/o_auth2_token_response.dart';
+import 'package:vpn_api/src/model/open_vpn_connect_request.dart';
+import 'package:vpn_api/src/model/open_vpn_connect_response.dart';
 import 'package:vpn_api/src/model/order_summary_request.dart';
 import 'package:vpn_api/src/model/order_summary_response.dart';
 import 'package:vpn_api/src/model/proxy_connect_response.dart';
@@ -214,6 +216,10 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'OAuth2TokenResponse':
       return OAuth2TokenResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'OpenVpnConnectRequest':
+      return OpenVpnConnectRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'OpenVpnConnectResponse':
+      return OpenVpnConnectResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OrderSummaryRequest':
       return OrderSummaryRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OrderSummaryResponse':

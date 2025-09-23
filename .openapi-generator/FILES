@@ -64,6 +64,8 @@ doc/OAuth2TokenRequestOneOf2.md
 doc/OAuth2TokenRequestOneOf3.md
 doc/OAuth2TokenRequestOneOf3Authorization.md
 doc/OAuth2TokenResponse.md
+doc/OpenVpnConnectRequest.md
+doc/OpenVpnConnectResponse.md
 doc/OrderSummaryRequest.md
 doc/OrderSummaryResponse.md
 doc/ProxyConnectResponse.md
@@ -155,6 +157,8 @@ lib/src/model/o_auth2_token_request_one_of2.dart
 lib/src/model/o_auth2_token_request_one_of3.dart
 lib/src/model/o_auth2_token_request_one_of3_authorization.dart
 lib/src/model/o_auth2_token_response.dart
+lib/src/model/open_vpn_connect_request.dart
+lib/src/model/open_vpn_connect_response.dart
 lib/src/model/order_summary_request.dart
 lib/src/model/order_summary_response.dart
 lib/src/model/proxy_connect_response.dart

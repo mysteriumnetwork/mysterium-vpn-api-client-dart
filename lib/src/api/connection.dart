@@ -13,6 +13,8 @@ import 'package:vpn_api/src/model/connection_config_regions_response.dart';
 import 'package:vpn_api/src/model/connection_config_response.dart';
 import 'package:vpn_api/src/model/connection_location.dart';
 import 'package:vpn_api/src/model/https_connect_request.dart';
+import 'package:vpn_api/src/model/open_vpn_connect_request.dart';
+import 'package:vpn_api/src/model/open_vpn_connect_response.dart';
 import 'package:vpn_api/src/model/proxy_connect_response.dart';
 import 'package:vpn_api/src/model/rate_connection_request.dart';
 import 'package:vpn_api/src/model/wireguard_connect_request.dart';
@@ -105,6 +107,99 @@ class Connection {
     }
 
     return Response<WireguardConnectResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get OpenVPN configuration
+  ///
+  ///
+  /// Parameters:
+  /// * [openVpnConnectRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [OpenVpnConnectResponse] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<OpenVpnConnectResponse>> connectOpenvpn({
+    OpenVpnConnectRequest? openVpnConnectRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/connection/connect-openvpn';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      _bodyData = jsonEncode(openVpnConnectRequest);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    OpenVpnConnectResponse? _responseData;
+
+    try {
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<OpenVpnConnectResponse, OpenVpnConnectResponse>(
+              rawData, 'OpenVpnConnectResponse',
+              growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<OpenVpnConnectResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

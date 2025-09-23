@@ -73,6 +73,8 @@ export 'package:vpn_api/src/model/o_auth2_token_request_one_of2.dart';
 export 'package:vpn_api/src/model/o_auth2_token_request_one_of3.dart';
 export 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.dart';
 export 'package:vpn_api/src/model/o_auth2_token_response.dart';
+export 'package:vpn_api/src/model/open_vpn_connect_request.dart';
+export 'package:vpn_api/src/model/open_vpn_connect_response.dart';
 export 'package:vpn_api/src/model/order_summary_request.dart';
 export 'package:vpn_api/src/model/order_summary_response.dart';
 export 'package:vpn_api/src/model/proxy_connect_response.dart';
