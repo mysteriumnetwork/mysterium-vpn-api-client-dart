@@ -277,7 +277,7 @@ Disconnect from the current Wireguard connection
 import 'package:vpn_api/api.dart';
 
 final api = VpnApi().getConnection();
-final String publicKey = aJxmamM5IUbxkevqSGcOIASETCxeRl71iXPVbqT1gz0=; // String | 
+final String publicKey = aJxmamM5IUbxkevqSGcOIASETCxeRl71iXPVbqT1gz0=; // String | Public key of the Wireguard connection
 
 try {
     api.disconnect(publicKey);
@@ -290,7 +290,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **publicKey** | **String**|  | 
+ **publicKey** | **String**| Public key of the Wireguard connection | 
 
 ### Return type
 
