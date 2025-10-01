@@ -15,7 +15,6 @@ export 'package:vpn_api/src/api/infrastructure.dart';
 export 'package:vpn_api/src/api/location.dart';
 export 'package:vpn_api/src/api/subscription.dart';
 
-export 'package:vpn_api/src/model/api_error.dart';
 export 'package:vpn_api/src/model/activation_authorization_request.dart';
 export 'package:vpn_api/src/model/auth_check_response.dart';
 export 'package:vpn_api/src/model/auth_config_response.dart';
@@ -46,7 +45,6 @@ export 'package:vpn_api/src/model/create_generic_subscription_response.dart';
 export 'package:vpn_api/src/model/create_google_subscription_request.dart';
 export 'package:vpn_api/src/model/create_google_subscription_response.dart';
 export 'package:vpn_api/src/model/disconnect_query.dart';
-export 'package:vpn_api/src/model/field_error.dart';
 export 'package:vpn_api/src/model/get_location_response.dart';
 export 'package:vpn_api/src/model/get_subscription_response.dart';
 export 'package:vpn_api/src/model/healthcheck200_response.dart';

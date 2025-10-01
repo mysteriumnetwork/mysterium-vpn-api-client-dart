@@ -100,7 +100,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [APIError](doc/APIError.md)
  - [ActivationAuthorizationRequest](doc/ActivationAuthorizationRequest.md)
  - [AuthCheckResponse](doc/AuthCheckResponse.md)
  - [AuthConfigResponse](doc/AuthConfigResponse.md)
@@ -131,7 +130,6 @@ Class | Method | HTTP request | Description
  - [CreateGoogleSubscriptionRequest](doc/CreateGoogleSubscriptionRequest.md)
  - [CreateGoogleSubscriptionResponse](doc/CreateGoogleSubscriptionResponse.md)
  - [DisconnectQuery](doc/DisconnectQuery.md)
- - [FieldError](doc/FieldError.md)
  - [GetLocationResponse](doc/GetLocationResponse.md)
  - [GetSubscriptionResponse](doc/GetSubscriptionResponse.md)
  - [Healthcheck200Response](doc/Healthcheck200Response.md)

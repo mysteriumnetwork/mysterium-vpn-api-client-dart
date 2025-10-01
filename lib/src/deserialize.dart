@@ -1,4 +1,3 @@
-import 'package:vpn_api/src/model/api_error.dart';
 import 'package:vpn_api/src/model/activation_authorization_request.dart';
 import 'package:vpn_api/src/model/auth_check_response.dart';
 import 'package:vpn_api/src/model/auth_config_response.dart';
@@ -29,7 +28,6 @@ import 'package:vpn_api/src/model/create_generic_subscription_response.dart';
 import 'package:vpn_api/src/model/create_google_subscription_request.dart';
 import 'package:vpn_api/src/model/create_google_subscription_response.dart';
 import 'package:vpn_api/src/model/disconnect_query.dart';
-import 'package:vpn_api/src/model/field_error.dart';
 import 'package:vpn_api/src/model/get_location_response.dart';
 import 'package:vpn_api/src/model/get_subscription_response.dart';
 import 'package:vpn_api/src/model/healthcheck200_response.dart';
@@ -97,8 +95,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return (valueString == 'true' || valueString == '1') as ReturnType;
     case 'double':
       return (value is double ? value : double.parse('$value')) as ReturnType;
-    case 'APIError':
-      return APIError.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ActivationAuthorizationRequest':
       return ActivationAuthorizationRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AuthCheckResponse':
@@ -161,8 +157,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return CreateGoogleSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'DisconnectQuery':
       return DisconnectQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'FieldError':
-      return FieldError.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetLocationResponse':
       return GetLocationResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetSubscriptionResponse':
