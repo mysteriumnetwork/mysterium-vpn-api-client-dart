@@ -7,6 +7,7 @@ import 'package:vpn_api/src/model/o_auth2_token_request_one_of2.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of3.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of1.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.dart';
+import 'package:vpn_api/src/model/authorization_device.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -23,6 +24,7 @@ class OAuth2TokenRequest {
   OAuth2TokenRequest({
     required this.grantType,
     required this.clientId,
+    this.device,
     required this.refreshToken,
     required this.codeVerifier,
     required this.code,
@@ -40,9 +42,16 @@ class OAuth2TokenRequest {
   @JsonKey(
     name: r'client_id',
     required: true,
+    includeIfNull: true,
+  )
+  final OAuth2TokenRequestClientIdEnum? clientId;
+
+  @JsonKey(
+    name: r'device',
+    required: false,
     includeIfNull: false,
   )
-  final OAuth2TokenRequestClientIdEnum clientId;
+  final AuthorizationDevice? device;
 
   @JsonKey(
     name: r'refresh_token',
@@ -87,6 +96,7 @@ class OAuth2TokenRequest {
       other is OAuth2TokenRequest &&
           other.grantType == grantType &&
           other.clientId == clientId &&
+          other.device == device &&
           other.refreshToken == refreshToken &&
           other.codeVerifier == codeVerifier &&
           other.code == code &&
@@ -96,7 +106,8 @@ class OAuth2TokenRequest {
   @override
   int get hashCode =>
       grantType.hashCode +
-      clientId.hashCode +
+      (clientId == null ? 0 : clientId.hashCode) +
+      (device == null ? 0 : device.hashCode) +
       refreshToken.hashCode +
       codeVerifier.hashCode +
       (code == null ? 0 : code.hashCode) +

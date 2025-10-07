@@ -339,7 +339,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **token**
-> OAuth2TokenResponse token(grantType, clientId, refreshToken, codeVerifier, code, googleIdToken, authorization)
+> OAuth2TokenResponse token(grantType, clientId, device, refreshToken, codeVerifier, code, googleIdToken, authorization)
 
 OAuth Token endpoint [RFC 6749]. Requires Proof Key for Code Exchange (PKCE) [RFC 7636].
 
@@ -350,6 +350,7 @@ import 'package:vpn_api/api.dart';
 final api = VpnApi().getAuthentication();
 final String grantType = grantType_example; // String | 
 final String clientId = clientId_example; // String | 
+final AuthorizationDevice device = ; // AuthorizationDevice | 
 final String refreshToken = refreshToken_example; // String | 
 final String codeVerifier = codeVerifier_example; // String | 
 final String code = code_example; // String | Google authorization code for retrieving access token
@@ -357,7 +358,7 @@ final String googleIdToken = googleIdToken_example; // String | Google access to
 final OAuth2TokenRequestOneOf3Authorization authorization = ; // OAuth2TokenRequestOneOf3Authorization | 
 
 try {
-    final response = api.token(grantType, clientId, refreshToken, codeVerifier, code, googleIdToken, authorization);
+    final response = api.token(grantType, clientId, device, refreshToken, codeVerifier, code, googleIdToken, authorization);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling Authentication->token: $e\n');
@@ -370,6 +371,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **grantType** | **String**|  | [optional] 
  **clientId** | **String**|  | [optional] 
+ **device** | [**AuthorizationDevice**](AuthorizationDevice.md)|  | [optional] 
  **refreshToken** | **String**|  | [optional] 
  **codeVerifier** | **String**|  | [optional] 
  **code** | **String**| Google authorization code for retrieving access token | [optional] 

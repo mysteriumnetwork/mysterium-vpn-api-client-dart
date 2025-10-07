@@ -103,6 +103,7 @@ Class | Method | HTTP request | Description
  - [ActivationAuthorizationRequest](doc/ActivationAuthorizationRequest.md)
  - [AuthCheckResponse](doc/AuthCheckResponse.md)
  - [AuthConfigResponse](doc/AuthConfigResponse.md)
+ - [AuthorizationDevice](doc/AuthorizationDevice.md)
  - [CheckAuth401Response](doc/CheckAuth401Response.md)
  - [CheckAuth401ResponseError](doc/CheckAuth401ResponseError.md)
  - [CheckAuth401ResponseErrorFieldsValue](doc/CheckAuth401ResponseErrorFieldsValue.md)

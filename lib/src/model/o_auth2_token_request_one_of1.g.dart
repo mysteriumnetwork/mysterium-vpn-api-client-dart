@@ -22,6 +22,8 @@ OAuth2TokenRequestOneOf1 _$OAuth2TokenRequestOneOf1FromJson(Map<String, dynamic>
               'client_id', (v) => $enumDecode(_$OAuth2TokenRequestOneOf1ClientIdEnumEnumMap, v)),
           codeVerifier: $checkedConvert('code_verifier', (v) => v as String),
           code: $checkedConvert('code', (v) => v as String),
+          device: $checkedConvert('device',
+              (v) => v == null ? null : AuthorizationDevice.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -32,13 +34,23 @@ OAuth2TokenRequestOneOf1 _$OAuth2TokenRequestOneOf1FromJson(Map<String, dynamic>
       },
     );
 
-Map<String, dynamic> _$OAuth2TokenRequestOneOf1ToJson(OAuth2TokenRequestOneOf1 instance) =>
-    <String, dynamic>{
-      'grant_type': _$OAuth2TokenRequestOneOf1GrantTypeEnumEnumMap[instance.grantType]!,
-      'client_id': _$OAuth2TokenRequestOneOf1ClientIdEnumEnumMap[instance.clientId]!,
-      'code_verifier': instance.codeVerifier,
-      'code': instance.code,
-    };
+Map<String, dynamic> _$OAuth2TokenRequestOneOf1ToJson(OAuth2TokenRequestOneOf1 instance) {
+  final val = <String, dynamic>{
+    'grant_type': _$OAuth2TokenRequestOneOf1GrantTypeEnumEnumMap[instance.grantType]!,
+    'client_id': _$OAuth2TokenRequestOneOf1ClientIdEnumEnumMap[instance.clientId]!,
+    'code_verifier': instance.codeVerifier,
+    'code': instance.code,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('device', instance.device?.toJson());
+  return val;
+}
 
 const _$OAuth2TokenRequestOneOf1GrantTypeEnumEnumMap = {
   OAuth2TokenRequestOneOf1GrantTypeEnum.authorizationCode: 'authorization_code',

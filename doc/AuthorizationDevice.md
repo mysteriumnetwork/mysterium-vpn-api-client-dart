@@ -1,4 +1,4 @@
-# vpn_api.model.OAuth2TokenRequestOneOf3
+# vpn_api.model.AuthorizationDevice
 
 ## Load the model package
 ```dart
@@ -8,10 +8,9 @@ import 'package:vpn_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**grantType** | **String** |  | 
-**clientId** | **String** |  | [optional] 
-**device** | [**AuthorizationDevice**](AuthorizationDevice.md) |  | [optional] 
-**authorization** | [**OAuth2TokenRequestOneOf3Authorization**](OAuth2TokenRequestOneOf3Authorization.md) |  | 
+**osType** | **String** |  | 
+**id** | **String** |  | 
+**title** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

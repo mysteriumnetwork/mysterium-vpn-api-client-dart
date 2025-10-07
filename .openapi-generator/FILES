@@ -5,6 +5,7 @@ doc/ActivationAuthorizationRequest.md
 doc/AuthCheckResponse.md
 doc/AuthConfigResponse.md
 doc/Authentication.md
+doc/AuthorizationDevice.md
 doc/CheckAuth401Response.md
 doc/CheckAuth401ResponseError.md
 doc/CheckAuth401ResponseErrorFieldsValue.md
@@ -100,6 +101,7 @@ lib/src/deserialize.dart
 lib/src/model/activation_authorization_request.dart
 lib/src/model/auth_check_response.dart
 lib/src/model/auth_config_response.dart
+lib/src/model/authorization_device.dart
 lib/src/model/check_auth401_response.dart
 lib/src/model/check_auth401_response_error.dart
 lib/src/model/check_auth401_response_error_fields_value.dart

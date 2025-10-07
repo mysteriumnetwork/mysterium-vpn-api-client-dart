@@ -18,6 +18,7 @@ export 'package:vpn_api/src/api/subscription.dart';
 export 'package:vpn_api/src/model/activation_authorization_request.dart';
 export 'package:vpn_api/src/model/auth_check_response.dart';
 export 'package:vpn_api/src/model/auth_config_response.dart';
+export 'package:vpn_api/src/model/authorization_device.dart';
 export 'package:vpn_api/src/model/check_auth401_response.dart';
 export 'package:vpn_api/src/model/check_auth401_response_error.dart';
 export 'package:vpn_api/src/model/check_auth401_response_error_fields_value.dart';

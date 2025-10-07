@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vpn_api/src/model/authorization_device.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_request_one_of.g.dart';
@@ -18,6 +19,7 @@ class OAuth2TokenRequestOneOf {
   OAuth2TokenRequestOneOf({
     required this.grantType,
     required this.clientId,
+    this.device,
     required this.refreshToken,
   });
 
@@ -36,6 +38,13 @@ class OAuth2TokenRequestOneOf {
   final OAuth2TokenRequestOneOfClientIdEnum clientId;
 
   @JsonKey(
+    name: r'device',
+    required: false,
+    includeIfNull: false,
+  )
+  final AuthorizationDevice? device;
+
+  @JsonKey(
     name: r'refresh_token',
     required: true,
     includeIfNull: false,
@@ -48,10 +57,15 @@ class OAuth2TokenRequestOneOf {
       other is OAuth2TokenRequestOneOf &&
           other.grantType == grantType &&
           other.clientId == clientId &&
+          other.device == device &&
           other.refreshToken == refreshToken;
 
   @override
-  int get hashCode => grantType.hashCode + clientId.hashCode + refreshToken.hashCode;
+  int get hashCode =>
+      grantType.hashCode +
+      clientId.hashCode +
+      (device == null ? 0 : device.hashCode) +
+      refreshToken.hashCode;
 
   factory OAuth2TokenRequestOneOf.fromJson(Map<String, dynamic> json) =>
       _$OAuth2TokenRequestOneOfFromJson(json);

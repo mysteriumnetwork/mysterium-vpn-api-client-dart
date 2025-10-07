@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vpn_api/src/model/authorization_device.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_request_one_of2.g.dart';
@@ -17,6 +18,8 @@ class OAuth2TokenRequestOneOf2 {
   /// Returns a new [OAuth2TokenRequestOneOf2] instance.
   OAuth2TokenRequestOneOf2({
     required this.grantType,
+    this.clientId,
+    this.device,
     this.code,
     this.googleIdToken,
   });
@@ -27,6 +30,20 @@ class OAuth2TokenRequestOneOf2 {
     includeIfNull: false,
   )
   final OAuth2TokenRequestOneOf2GrantTypeEnum grantType;
+
+  @JsonKey(
+    name: r'client_id',
+    required: false,
+    includeIfNull: false,
+  )
+  final OAuth2TokenRequestOneOf2ClientIdEnum? clientId;
+
+  @JsonKey(
+    name: r'device',
+    required: false,
+    includeIfNull: false,
+  )
+  final AuthorizationDevice? device;
 
   /// Google authorization code for retrieving access token
   @JsonKey(
@@ -49,12 +66,16 @@ class OAuth2TokenRequestOneOf2 {
       identical(this, other) ||
       other is OAuth2TokenRequestOneOf2 &&
           other.grantType == grantType &&
+          other.clientId == clientId &&
+          other.device == device &&
           other.code == code &&
           other.googleIdToken == googleIdToken;
 
   @override
   int get hashCode =>
       grantType.hashCode +
+      (clientId == null ? 0 : clientId.hashCode) +
+      (device == null ? 0 : device.hashCode) +
       (code == null ? 0 : code.hashCode) +
       (googleIdToken == null ? 0 : googleIdToken.hashCode);
 
@@ -74,6 +95,22 @@ enum OAuth2TokenRequestOneOf2GrantTypeEnum {
   google(r'google');
 
   const OAuth2TokenRequestOneOf2GrantTypeEnum(this.value);
+
+  final String value;
+
+  @override
+  String toString() => value;
+}
+
+enum OAuth2TokenRequestOneOf2ClientIdEnum {
+  @JsonValue(r'web')
+  web(r'web'),
+  @JsonValue(r'app')
+  app(r'app'),
+  @JsonValue(r'extension')
+  extension_(r'extension');
+
+  const OAuth2TokenRequestOneOf2ClientIdEnum(this.value);
 
   final String value;
 

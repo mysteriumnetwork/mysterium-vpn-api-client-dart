@@ -20,6 +20,8 @@ OAuth2TokenRequestOneOf _$OAuth2TokenRequestOneOfFromJson(Map<String, dynamic> j
               'grant_type', (v) => $enumDecode(_$OAuth2TokenRequestOneOfGrantTypeEnumEnumMap, v)),
           clientId: $checkedConvert(
               'client_id', (v) => $enumDecode(_$OAuth2TokenRequestOneOfClientIdEnumEnumMap, v)),
+          device: $checkedConvert('device',
+              (v) => v == null ? null : AuthorizationDevice.fromJson(v as Map<String, dynamic>)),
           refreshToken: $checkedConvert('refresh_token', (v) => v as String),
         );
         return val;
@@ -31,12 +33,22 @@ OAuth2TokenRequestOneOf _$OAuth2TokenRequestOneOfFromJson(Map<String, dynamic> j
       },
     );
 
-Map<String, dynamic> _$OAuth2TokenRequestOneOfToJson(OAuth2TokenRequestOneOf instance) =>
-    <String, dynamic>{
-      'grant_type': _$OAuth2TokenRequestOneOfGrantTypeEnumEnumMap[instance.grantType]!,
-      'client_id': _$OAuth2TokenRequestOneOfClientIdEnumEnumMap[instance.clientId]!,
-      'refresh_token': instance.refreshToken,
-    };
+Map<String, dynamic> _$OAuth2TokenRequestOneOfToJson(OAuth2TokenRequestOneOf instance) {
+  final val = <String, dynamic>{
+    'grant_type': _$OAuth2TokenRequestOneOfGrantTypeEnumEnumMap[instance.grantType]!,
+    'client_id': _$OAuth2TokenRequestOneOfClientIdEnumEnumMap[instance.clientId]!,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('device', instance.device?.toJson());
+  val['refresh_token'] = instance.refreshToken;
+  return val;
+}
 
 const _$OAuth2TokenRequestOneOfGrantTypeEnumEnumMap = {
   OAuth2TokenRequestOneOfGrantTypeEnum.refreshToken: 'refresh_token',

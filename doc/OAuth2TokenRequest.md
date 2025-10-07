@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **grantType** | **String** |  | 
 **clientId** | **String** |  | 
+**device** | [**AuthorizationDevice**](AuthorizationDevice.md) |  | [optional] 
 **refreshToken** | **String** |  | 
 **codeVerifier** | **String** |  | 
 **code** | **String** | Google authorization code for retrieving access token | 

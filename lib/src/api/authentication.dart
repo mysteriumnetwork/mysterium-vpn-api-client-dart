@@ -11,6 +11,7 @@ import 'package:dio/dio.dart';
 
 import 'package:vpn_api/src/model/auth_check_response.dart';
 import 'package:vpn_api/src/model/auth_config_response.dart';
+import 'package:vpn_api/src/model/authorization_device.dart';
 import 'package:vpn_api/src/model/check_auth401_response.dart';
 import 'package:vpn_api/src/model/magic_link_request.dart';
 import 'package:vpn_api/src/model/magic_link_response.dart';
@@ -629,6 +630,7 @@ class Authentication {
   /// Parameters:
   /// * [grantType]
   /// * [clientId]
+  /// * [device]
   /// * [refreshToken]
   /// * [codeVerifier]
   /// * [code] - Google authorization code for retrieving access token
@@ -646,6 +648,7 @@ class Authentication {
   Future<Response<OAuth2TokenResponse>> token({
     String? grantType,
     String? clientId,
+    AuthorizationDevice? device,
     String? refreshToken,
     String? codeVerifier,
     String? code,

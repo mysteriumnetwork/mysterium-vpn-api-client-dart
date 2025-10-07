@@ -1,6 +1,7 @@
 import 'package:vpn_api/src/model/activation_authorization_request.dart';
 import 'package:vpn_api/src/model/auth_check_response.dart';
 import 'package:vpn_api/src/model/auth_config_response.dart';
+import 'package:vpn_api/src/model/authorization_device.dart';
 import 'package:vpn_api/src/model/check_auth401_response.dart';
 import 'package:vpn_api/src/model/check_auth401_response_error.dart';
 import 'package:vpn_api/src/model/check_auth401_response_error_fields_value.dart';
@@ -101,6 +102,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return AuthCheckResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AuthConfigResponse':
       return AuthConfigResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AuthorizationDevice':
+      return AuthorizationDevice.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CheckAuth401Response':
       return CheckAuth401Response.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CheckAuth401ResponseError':
