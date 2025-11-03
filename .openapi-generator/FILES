@@ -82,6 +82,7 @@ doc/SubscriptionConfigResponsePlansInnerInterval.md
 doc/SubscriptionConfigResponsePlansInnerPrice.md
 doc/SubscriptionConfigResponsePlansInnerPricesInner.md
 doc/UpdateContactRequest.md
+doc/UpdateStripeSubscriptionRequest.md
 doc/UserCallbackRequest.md
 doc/WireguardConnectRequest.md
 doc/WireguardConnectResponse.md
@@ -173,6 +174,7 @@ lib/src/model/subscription_config_response_plans_inner_interval.dart
 lib/src/model/subscription_config_response_plans_inner_price.dart
 lib/src/model/subscription_config_response_plans_inner_prices_inner.dart
 lib/src/model/update_contact_request.dart
+lib/src/model/update_stripe_subscription_request.dart
 lib/src/model/user_callback_request.dart
 lib/src/model/wireguard_connect_request.dart
 lib/src/model/wireguard_connect_response.dart

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **currency** | **String** |  | 
 **itemName** | **String** |  | 
 **itemSubtotal** | **String** |  | 
+**taxRate** | **String** |  | 
 **taxName** | **String** |  | 
 **taxSubtotal** | **String** |  | 
 **orderTotal** | **String** |  | 

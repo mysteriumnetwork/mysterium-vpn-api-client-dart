@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 [*Location*](doc/Location.md) | [**location**](doc/Location.md#location) | **GET** /subscription/location | Get location
 [*Subscription*](doc/Subscription.md) | [**invoices**](doc/Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
 [*Subscription*](doc/Subscription.md) | [**orderSummary**](doc/Subscription.md#ordersummary) | **POST** /subscription/order-summary | Preview order summary breakdown
+[*Subscription*](doc/Subscription.md) | [**orderUpdateSummary**](doc/Subscription.md#orderupdatesummary) | **GET** /subscription/{id}/order-summary | Preview order summary breakdown
 [*Subscription*](doc/Subscription.md) | [**subscribe**](doc/Subscription.md#subscribe) | **POST** /subscription | Create subscription
 [*Subscription*](doc/Subscription.md) | [**subscriptionConfig**](doc/Subscription.md#subscriptionconfig) | **GET** /subscription/config | Get subscription options
 [*Subscription*](doc/Subscription.md) | [**subscriptionStatus**](doc/Subscription.md#subscriptionstatus) | **GET** /subscription | Get subscription status
@@ -175,6 +176,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionConfigResponsePlansInnerPrice](doc/SubscriptionConfigResponsePlansInnerPrice.md)
  - [SubscriptionConfigResponsePlansInnerPricesInner](doc/SubscriptionConfigResponsePlansInnerPricesInner.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
+ - [UpdateStripeSubscriptionRequest](doc/UpdateStripeSubscriptionRequest.md)
  - [UserCallbackRequest](doc/UserCallbackRequest.md)
  - [WireguardConnectRequest](doc/WireguardConnectRequest.md)
  - [WireguardConnectResponse](doc/WireguardConnectResponse.md)

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**invoices**](Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
 [**orderSummary**](Subscription.md#ordersummary) | **POST** /subscription/order-summary | Preview order summary breakdown
+[**orderUpdateSummary**](Subscription.md#orderupdatesummary) | **GET** /subscription/{id}/order-summary | Preview order summary breakdown
 [**subscribe**](Subscription.md#subscribe) | **POST** /subscription | Create subscription
 [**subscriptionConfig**](Subscription.md#subscriptionconfig) | **GET** /subscription/config | Get subscription options
 [**subscriptionStatus**](Subscription.md#subscriptionstatus) | **GET** /subscription | Get subscription status
@@ -95,6 +96,47 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **orderUpdateSummary**
+> OrderSummaryResponse orderUpdateSummary(id)
+
+Preview order summary breakdown
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getSubscription();
+final String id = id_example; // String | 
+
+try {
+    final response = api.orderUpdateSummary(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling Subscription->orderUpdateSummary: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**OrderSummaryResponse**](OrderSummaryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -19,6 +19,7 @@ class OrderSummaryResponse {
     required this.currency,
     required this.itemName,
     required this.itemSubtotal,
+    required this.taxRate,
     required this.taxName,
     required this.taxSubtotal,
     required this.orderTotal,
@@ -49,6 +50,13 @@ class OrderSummaryResponse {
     includeIfNull: false,
   )
   final String itemSubtotal;
+
+  @JsonKey(
+    name: r'tax_rate',
+    required: true,
+    includeIfNull: false,
+  )
+  final String taxRate;
 
   @JsonKey(
     name: r'tax_name',
@@ -113,6 +121,7 @@ class OrderSummaryResponse {
           other.currency == currency &&
           other.itemName == itemName &&
           other.itemSubtotal == itemSubtotal &&
+          other.taxRate == taxRate &&
           other.taxName == taxName &&
           other.taxSubtotal == taxSubtotal &&
           other.orderTotal == orderTotal &&
@@ -127,6 +136,7 @@ class OrderSummaryResponse {
       currency.hashCode +
       itemName.hashCode +
       itemSubtotal.hashCode +
+      taxRate.hashCode +
       taxName.hashCode +
       taxSubtotal.hashCode +
       orderTotal.hashCode +

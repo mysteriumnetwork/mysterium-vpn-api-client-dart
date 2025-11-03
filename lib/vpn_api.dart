@@ -90,6 +90,7 @@ export 'package:vpn_api/src/model/subscription_config_response_plans_inner_inter
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
 export 'package:vpn_api/src/model/update_contact_request.dart';
+export 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 export 'package:vpn_api/src/model/user_callback_request.dart';
 export 'package:vpn_api/src/model/wireguard_connect_request.dart';
 export 'package:vpn_api/src/model/wireguard_connect_response.dart';

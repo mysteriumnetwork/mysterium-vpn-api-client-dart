@@ -73,6 +73,7 @@ import 'package:vpn_api/src/model/subscription_config_response_plans_inner_inter
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
 import 'package:vpn_api/src/model/update_contact_request.dart';
+import 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 import 'package:vpn_api/src/model/user_callback_request.dart';
 import 'package:vpn_api/src/model/wireguard_connect_request.dart';
 import 'package:vpn_api/src/model/wireguard_connect_response.dart';
@@ -254,6 +255,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'UpdateContactRequest':
       return UpdateContactRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UpdateStripeSubscriptionRequest':
+      return UpdateStripeSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserCallbackRequest':
       return UserCallbackRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'WireguardConnectRequest':
