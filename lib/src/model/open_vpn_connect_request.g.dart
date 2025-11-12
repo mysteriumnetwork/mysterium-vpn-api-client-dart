@@ -10,12 +10,7 @@ OpenVpnConnectRequest _$OpenVpnConnectRequestFromJson(Map<String, dynamic> json)
       'OpenVpnConnectRequest',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['public_key'],
-        );
         final val = OpenVpnConnectRequest(
-          publicKey: $checkedConvert('public_key', (v) => v as String),
           countryOriginate: $checkedConvert('country_originate', (v) => v as String?),
           cluster: $checkedConvert('cluster', (v) => v as String?),
           country: $checkedConvert('country', (v) => v as String?),
@@ -28,7 +23,6 @@ OpenVpnConnectRequest _$OpenVpnConnectRequestFromJson(Map<String, dynamic> json)
         return val;
       },
       fieldKeyMap: const {
-        'publicKey': 'public_key',
         'countryOriginate': 'country_originate',
         'userIntent': 'user_intent',
         'ipType': 'ip_type',
@@ -38,9 +32,7 @@ OpenVpnConnectRequest _$OpenVpnConnectRequestFromJson(Map<String, dynamic> json)
     );
 
 Map<String, dynamic> _$OpenVpnConnectRequestToJson(OpenVpnConnectRequest instance) {
-  final val = <String, dynamic>{
-    'public_key': instance.publicKey,
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {

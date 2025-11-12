@@ -42,9 +42,9 @@ class RateConnectionRequest {
   @JsonKey(
     name: r'public_key',
     required: true,
-    includeIfNull: false,
+    includeIfNull: true,
   )
-  final String publicKey;
+  final String? publicKey;
 
   /// Feedback about the connection
   @JsonKey(
@@ -86,7 +86,7 @@ class RateConnectionRequest {
   int get hashCode =>
       country.hashCode +
       ipType.hashCode +
-      publicKey.hashCode +
+      (publicKey == null ? 0 : publicKey.hashCode) +
       (feedback == null ? 0 : feedback.hashCode) +
       reasons.hashCode +
       mode.hashCode;

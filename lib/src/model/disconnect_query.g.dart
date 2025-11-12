@@ -15,7 +15,7 @@ DisconnectQuery _$DisconnectQueryFromJson(Map<String, dynamic> json) => $checked
           requiredKeys: const ['public_key'],
         );
         final val = DisconnectQuery(
-          publicKey: $checkedConvert('public_key', (v) => v as String),
+          publicKey: $checkedConvert('public_key', (v) => v as String?),
         );
         return val;
       },

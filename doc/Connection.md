@@ -290,7 +290,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **publicKey** | **String**| Public key of the Wireguard connection | 
+ **publicKey** | **String**| Public key of the Wireguard connection | [optional] 
 
 ### Return type
 

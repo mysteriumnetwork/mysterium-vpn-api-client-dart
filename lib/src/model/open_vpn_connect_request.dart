@@ -16,7 +16,6 @@ part 'open_vpn_connect_request.g.dart';
 class OpenVpnConnectRequest {
   /// Returns a new [OpenVpnConnectRequest] instance.
   OpenVpnConnectRequest({
-    required this.publicKey,
     this.countryOriginate,
     this.cluster,
     this.country,
@@ -26,13 +25,6 @@ class OpenVpnConnectRequest {
     this.resetConnection,
     this.osType,
   });
-
-  @JsonKey(
-    name: r'public_key',
-    required: true,
-    includeIfNull: false,
-  )
-  final String publicKey;
 
   @JsonKey(
     name: r'country_originate',
@@ -95,7 +87,6 @@ class OpenVpnConnectRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is OpenVpnConnectRequest &&
-          other.publicKey == publicKey &&
           other.countryOriginate == countryOriginate &&
           other.cluster == cluster &&
           other.country == country &&
@@ -107,7 +98,6 @@ class OpenVpnConnectRequest {
 
   @override
   int get hashCode =>
-      publicKey.hashCode +
       (countryOriginate == null ? 0 : countryOriginate.hashCode) +
       (cluster == null ? 0 : cluster.hashCode) +
       (country == null ? 0 : country.hashCode) +

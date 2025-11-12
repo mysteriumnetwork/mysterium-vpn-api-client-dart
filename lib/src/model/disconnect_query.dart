@@ -23,16 +23,16 @@ class DisconnectQuery {
   @JsonKey(
     name: r'public_key',
     required: true,
-    includeIfNull: false,
+    includeIfNull: true,
   )
-  final String publicKey;
+  final String? publicKey;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) || other is DisconnectQuery && other.publicKey == publicKey;
 
   @override
-  int get hashCode => publicKey.hashCode;
+  int get hashCode => (publicKey == null ? 0 : publicKey.hashCode);
 
   factory DisconnectQuery.fromJson(Map<String, dynamic> json) => _$DisconnectQueryFromJson(json);
 

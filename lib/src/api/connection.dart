@@ -558,7 +558,7 @@ class Connection {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> disconnect({
-    required String publicKey,
+    String? publicKey,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

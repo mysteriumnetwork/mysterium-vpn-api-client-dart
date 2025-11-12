@@ -17,7 +17,7 @@ RateConnectionRequest _$RateConnectionRequestFromJson(Map<String, dynamic> json)
         final val = RateConnectionRequest(
           country: $checkedConvert('country', (v) => v as String),
           ipType: $checkedConvert('ip_type', (v) => v as String),
-          publicKey: $checkedConvert('public_key', (v) => v as String),
+          publicKey: $checkedConvert('public_key', (v) => v as String?),
           feedback: $checkedConvert('feedback', (v) => v as String?),
           reasons: $checkedConvert('reasons', (v) => v as String? ?? ''),
           mode: $checkedConvert(
