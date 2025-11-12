@@ -18,7 +18,7 @@ class RateConnectionRequest {
   RateConnectionRequest({
     required this.country,
     required this.ipType,
-    required this.publicKey,
+    this.publicKey,
     this.feedback,
     this.reasons = '',
     required this.mode,
@@ -41,8 +41,8 @@ class RateConnectionRequest {
 
   @JsonKey(
     name: r'public_key',
-    required: true,
-    includeIfNull: true,
+    required: false,
+    includeIfNull: false,
   )
   final String? publicKey;
 

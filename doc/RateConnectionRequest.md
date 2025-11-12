@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **country** | **String** | Country code where the connection is made from | 
 **ipType** | **String** |  | 
-**publicKey** | **String** |  | 
+**publicKey** | **String** |  | [optional] 
 **feedback** | **String** | Feedback about the connection | [optional] 
 **reasons** | **String** | Reasons for the feedback | [optional] [default to '']
 **mode** | **String** | Mode of the feedback | 

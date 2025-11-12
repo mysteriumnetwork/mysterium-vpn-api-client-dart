@@ -10,10 +10,6 @@ DisconnectQuery _$DisconnectQueryFromJson(Map<String, dynamic> json) => $checked
       'DisconnectQuery',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['public_key'],
-        );
         final val = DisconnectQuery(
           publicKey: $checkedConvert('public_key', (v) => v as String?),
         );
@@ -22,6 +18,15 @@ DisconnectQuery _$DisconnectQueryFromJson(Map<String, dynamic> json) => $checked
       fieldKeyMap: const {'publicKey': 'public_key'},
     );
 
-Map<String, dynamic> _$DisconnectQueryToJson(DisconnectQuery instance) => <String, dynamic>{
-      'public_key': instance.publicKey,
-    };
+Map<String, dynamic> _$DisconnectQueryToJson(DisconnectQuery instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('public_key', instance.publicKey);
+  return val;
+}

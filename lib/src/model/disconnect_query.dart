@@ -16,14 +16,14 @@ part 'disconnect_query.g.dart';
 class DisconnectQuery {
   /// Returns a new [DisconnectQuery] instance.
   DisconnectQuery({
-    required this.publicKey,
+    this.publicKey,
   });
 
   /// Public key of the Wireguard connection
   @JsonKey(
     name: r'public_key',
-    required: true,
-    includeIfNull: true,
+    required: false,
+    includeIfNull: false,
   )
   final String? publicKey;
 
