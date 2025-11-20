@@ -2,6 +2,9 @@ import 'package:vpn_api/src/model/activation_authorization_request.dart';
 import 'package:vpn_api/src/model/auth_check_response.dart';
 import 'package:vpn_api/src/model/auth_config_response.dart';
 import 'package:vpn_api/src/model/authorization_device.dart';
+import 'package:vpn_api/src/model/check_auth401_response.dart';
+import 'package:vpn_api/src/model/check_auth401_response_error.dart';
+import 'package:vpn_api/src/model/check_auth401_response_error_fields_value.dart';
 import 'package:vpn_api/src/model/code_authorization_request.dart';
 import 'package:vpn_api/src/model/connection_config_regions_query.dart';
 import 'package:vpn_api/src/model/connection_config_regions_response.dart';
@@ -69,9 +72,6 @@ import 'package:vpn_api/src/model/subscription_config_response_plans_inner.dart'
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_interval.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
-import 'package:vpn_api/src/model/token403_response.dart';
-import 'package:vpn_api/src/model/token403_response_error.dart';
-import 'package:vpn_api/src/model/token403_response_error_fields_value.dart';
 import 'package:vpn_api/src/model/update_contact_request.dart';
 import 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 import 'package:vpn_api/src/model/user_callback_request.dart';
@@ -105,6 +105,13 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return AuthConfigResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AuthorizationDevice':
       return AuthorizationDevice.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CheckAuth401Response':
+      return CheckAuth401Response.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CheckAuth401ResponseError':
+      return CheckAuth401ResponseError.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CheckAuth401ResponseErrorFieldsValue':
+      return CheckAuth401ResponseErrorFieldsValue.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'CodeAuthorizationRequest':
       return CodeAuthorizationRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ConnectionConfigRegionsQuery':
@@ -246,12 +253,6 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'SubscriptionConfigResponsePlansInnerPricesInner':
       return SubscriptionConfigResponsePlansInnerPricesInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'Token403Response':
-      return Token403Response.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'Token403ResponseError':
-      return Token403ResponseError.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'Token403ResponseErrorFieldsValue':
-      return Token403ResponseErrorFieldsValue.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateContactRequest':
       return UpdateContactRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateStripeSubscriptionRequest':

@@ -12,6 +12,7 @@ import 'package:dio/dio.dart';
 import 'package:vpn_api/src/model/auth_check_response.dart';
 import 'package:vpn_api/src/model/auth_config_response.dart';
 import 'package:vpn_api/src/model/authorization_device.dart';
+import 'package:vpn_api/src/model/check_auth401_response.dart';
 import 'package:vpn_api/src/model/magic_link_request.dart';
 import 'package:vpn_api/src/model/magic_link_response.dart';
 import 'package:vpn_api/src/model/o_auth2_token_introspection_response.dart';
@@ -19,7 +20,6 @@ import 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.da
 import 'package:vpn_api/src/model/o_auth2_token_response.dart';
 import 'package:vpn_api/src/model/request_activation200_response.dart';
 import 'package:vpn_api/src/model/request_activation_request.dart';
-import 'package:vpn_api/src/model/token403_response.dart';
 
 class Authentication {
   final Dio _dio;

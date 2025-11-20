@@ -6,6 +6,9 @@ doc/AuthCheckResponse.md
 doc/AuthConfigResponse.md
 doc/Authentication.md
 doc/AuthorizationDevice.md
+doc/CheckAuth401Response.md
+doc/CheckAuth401ResponseError.md
+doc/CheckAuth401ResponseErrorFieldsValue.md
 doc/CodeAuthorizationRequest.md
 doc/Connection.md
 doc/ConnectionConfigRegionsQuery.md
@@ -78,9 +81,6 @@ doc/SubscriptionConfigResponsePlansInner.md
 doc/SubscriptionConfigResponsePlansInnerInterval.md
 doc/SubscriptionConfigResponsePlansInnerPrice.md
 doc/SubscriptionConfigResponsePlansInnerPricesInner.md
-doc/Token403Response.md
-doc/Token403ResponseError.md
-doc/Token403ResponseErrorFieldsValue.md
 doc/UpdateContactRequest.md
 doc/UpdateStripeSubscriptionRequest.md
 doc/UserCallbackRequest.md
@@ -103,6 +103,9 @@ lib/src/model/activation_authorization_request.dart
 lib/src/model/auth_check_response.dart
 lib/src/model/auth_config_response.dart
 lib/src/model/authorization_device.dart
+lib/src/model/check_auth401_response.dart
+lib/src/model/check_auth401_response_error.dart
+lib/src/model/check_auth401_response_error_fields_value.dart
 lib/src/model/code_authorization_request.dart
 lib/src/model/connection_config_regions_query.dart
 lib/src/model/connection_config_regions_response.dart
@@ -170,9 +173,6 @@ lib/src/model/subscription_config_response_plans_inner.dart
 lib/src/model/subscription_config_response_plans_inner_interval.dart
 lib/src/model/subscription_config_response_plans_inner_price.dart
 lib/src/model/subscription_config_response_plans_inner_prices_inner.dart
-lib/src/model/token403_response.dart
-lib/src/model/token403_response_error.dart
-lib/src/model/token403_response_error_fields_value.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/update_stripe_subscription_request.dart
 lib/src/model/user_callback_request.dart
