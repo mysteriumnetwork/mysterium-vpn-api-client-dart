@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 [*Subscription*](doc/Subscription.md) | [**invoices**](doc/Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
 [*Subscription*](doc/Subscription.md) | [**orderSummary**](doc/Subscription.md#ordersummary) | **POST** /subscription/order-summary | Preview order summary breakdown
 [*Subscription*](doc/Subscription.md) | [**orderUpdateSummary**](doc/Subscription.md#orderupdatesummary) | **GET** /subscription/{id}/order-summary | Preview order summary breakdown
+[*Subscription*](doc/Subscription.md) | [**plan**](doc/Subscription.md#plan) | **GET** /subscription/plan | Get plan of subscription
 [*Subscription*](doc/Subscription.md) | [**subscribe**](doc/Subscription.md#subscribe) | **POST** /subscription | Create subscription
 [*Subscription*](doc/Subscription.md) | [**subscriptionConfig**](doc/Subscription.md#subscriptionconfig) | **GET** /subscription/config | Get subscription options
 [*Subscription*](doc/Subscription.md) | [**subscriptionStatus**](doc/Subscription.md#subscriptionstatus) | **GET** /subscription | Get subscription status
@@ -133,6 +134,7 @@ Class | Method | HTTP request | Description
  - [CreateGoogleSubscriptionResponse](doc/CreateGoogleSubscriptionResponse.md)
  - [DisconnectQuery](doc/DisconnectQuery.md)
  - [GetLocationResponse](doc/GetLocationResponse.md)
+ - [GetPlanResponse](doc/GetPlanResponse.md)
  - [GetSubscriptionResponse](doc/GetSubscriptionResponse.md)
  - [Healthcheck200Response](doc/Healthcheck200Response.md)
  - [HealthcheckMessage](doc/HealthcheckMessage.md)

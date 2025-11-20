@@ -36,6 +36,7 @@ doc/CreateGoogleSubscriptionResponse.md
 doc/DisconnectQuery.md
 doc/EmailMarketing.md
 doc/GetLocationResponse.md
+doc/GetPlanResponse.md
 doc/GetSubscriptionResponse.md
 doc/Healthcheck200Response.md
 doc/HealthcheckMessage.md
@@ -131,6 +132,7 @@ lib/src/model/create_google_subscription_request.dart
 lib/src/model/create_google_subscription_response.dart
 lib/src/model/disconnect_query.dart
 lib/src/model/get_location_response.dart
+lib/src/model/get_plan_response.dart
 lib/src/model/get_subscription_response.dart
 lib/src/model/healthcheck200_response.dart
 lib/src/model/healthcheck_message.dart

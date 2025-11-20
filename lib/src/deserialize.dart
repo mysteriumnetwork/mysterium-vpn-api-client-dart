@@ -30,6 +30,7 @@ import 'package:vpn_api/src/model/create_google_subscription_request.dart';
 import 'package:vpn_api/src/model/create_google_subscription_response.dart';
 import 'package:vpn_api/src/model/disconnect_query.dart';
 import 'package:vpn_api/src/model/get_location_response.dart';
+import 'package:vpn_api/src/model/get_plan_response.dart';
 import 'package:vpn_api/src/model/get_subscription_response.dart';
 import 'package:vpn_api/src/model/healthcheck200_response.dart';
 import 'package:vpn_api/src/model/healthcheck_message.dart';
@@ -163,6 +164,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return DisconnectQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetLocationResponse':
       return GetLocationResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'GetPlanResponse':
+      return GetPlanResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetSubscriptionResponse':
       return GetSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Healthcheck200Response':
