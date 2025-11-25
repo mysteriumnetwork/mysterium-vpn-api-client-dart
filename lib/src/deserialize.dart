@@ -60,6 +60,7 @@ import 'package:vpn_api/src/model/open_vpn_connect_request.dart';
 import 'package:vpn_api/src/model/open_vpn_connect_response.dart';
 import 'package:vpn_api/src/model/order_summary_request.dart';
 import 'package:vpn_api/src/model/order_summary_response.dart';
+import 'package:vpn_api/src/model/plan_metadata.dart';
 import 'package:vpn_api/src/model/proxy_connect_response.dart';
 import 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';
 import 'package:vpn_api/src/model/rate_connection_request.dart';
@@ -225,6 +226,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return OrderSummaryRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OrderSummaryResponse':
       return OrderSummaryResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'PlanMetadata':
+      return PlanMetadata.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ProxyConnectResponse':
       return ProxyConnectResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ProxyConnectResponseProxyConfig':

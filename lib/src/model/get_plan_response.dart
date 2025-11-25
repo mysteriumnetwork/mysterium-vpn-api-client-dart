@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vpn_api/src/model/plan_metadata.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_plan_response.g.dart';
@@ -40,7 +41,7 @@ class GetPlanResponse {
     required: true,
     includeIfNull: false,
   )
-  final Object metadata;
+  final PlanMetadata metadata;
 
   @override
   bool operator ==(Object other) =>

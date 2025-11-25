@@ -17,7 +17,8 @@ GetPlanResponse _$GetPlanResponseFromJson(Map<String, dynamic> json) => $checked
         final val = GetPlanResponse(
           id: $checkedConvert('id', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String),
-          metadata: $checkedConvert('metadata', (v) => v as Object),
+          metadata:
+              $checkedConvert('metadata', (v) => PlanMetadata.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -26,5 +27,5 @@ GetPlanResponse _$GetPlanResponseFromJson(Map<String, dynamic> json) => $checked
 Map<String, dynamic> _$GetPlanResponseToJson(GetPlanResponse instance) => <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
-      'metadata': instance.metadata,
+      'metadata': instance.metadata.toJson(),
     };

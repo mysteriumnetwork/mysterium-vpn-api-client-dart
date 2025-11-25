@@ -164,6 +164,7 @@ Class | Method | HTTP request | Description
  - [OpenVpnConnectResponse](doc/OpenVpnConnectResponse.md)
  - [OrderSummaryRequest](doc/OrderSummaryRequest.md)
  - [OrderSummaryResponse](doc/OrderSummaryResponse.md)
+ - [PlanMetadata](doc/PlanMetadata.md)
  - [ProxyConnectResponse](doc/ProxyConnectResponse.md)
  - [ProxyConnectResponseProxyConfig](doc/ProxyConnectResponseProxyConfig.md)
  - [RateConnectionRequest](doc/RateConnectionRequest.md)
