@@ -25,6 +25,7 @@ class WireguardConnectRequest {
     this.ipType,
     this.resetConnection,
     this.osType,
+    this.dns,
   });
 
   @JsonKey(
@@ -91,6 +92,14 @@ class WireguardConnectRequest {
   )
   final String? osType;
 
+  /// Custom DNS server to use
+  @JsonKey(
+    name: r'dns',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? dns;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -103,7 +112,8 @@ class WireguardConnectRequest {
           other.userIntent == userIntent &&
           other.ipType == ipType &&
           other.resetConnection == resetConnection &&
-          other.osType == osType;
+          other.osType == osType &&
+          other.dns == dns;
 
   @override
   int get hashCode =>
@@ -115,7 +125,8 @@ class WireguardConnectRequest {
       (userIntent == null ? 0 : userIntent.hashCode) +
       (ipType == null ? 0 : ipType.hashCode) +
       (resetConnection == null ? 0 : resetConnection.hashCode) +
-      (osType == null ? 0 : osType.hashCode);
+      (osType == null ? 0 : osType.hashCode) +
+      (dns == null ? 0 : dns.hashCode);
 
   factory WireguardConnectRequest.fromJson(Map<String, dynamic> json) =>
       _$WireguardConnectRequestFromJson(json);

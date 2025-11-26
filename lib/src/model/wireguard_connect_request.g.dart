@@ -25,6 +25,7 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
           ipType: $checkedConvert('ip_type', (v) => v as String?),
           resetConnection: $checkedConvert('reset_connection', (v) => v as bool?),
           osType: $checkedConvert('os_type', (v) => v as String?),
+          dns: $checkedConvert('dns', (v) => v as String?),
         );
         return val;
       },
@@ -57,5 +58,6 @@ Map<String, dynamic> _$WireguardConnectRequestToJson(WireguardConnectRequest ins
   writeNotNull('ip_type', instance.ipType);
   writeNotNull('reset_connection', instance.resetConnection);
   writeNotNull('os_type', instance.osType);
+  writeNotNull('dns', instance.dns);
   return val;
 }
