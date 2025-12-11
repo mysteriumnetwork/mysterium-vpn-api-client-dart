@@ -9,8 +9,8 @@ import 'package:vpn_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**appleProductId** | **String** |  | 
-**googleProductId** | **String** |  | 
+**appleProductId** | **String** |  | [optional] 
+**googleProductId** | **String** |  | [optional] 
 **interval** | [**SubscriptionConfigResponsePlansInnerInterval**](SubscriptionConfigResponsePlansInnerInterval.md) |  | 
 **price** | [**SubscriptionConfigResponsePlansInnerPrice**](SubscriptionConfigResponsePlansInnerPrice.md) |  | 
 **prices** | [**List&lt;SubscriptionConfigResponsePlansInnerPricesInner&gt;**](SubscriptionConfigResponsePlansInnerPricesInner.md) |  | 

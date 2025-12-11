@@ -20,8 +20,8 @@ class SubscriptionConfigResponsePlansInner {
   /// Returns a new [SubscriptionConfigResponsePlansInner] instance.
   SubscriptionConfigResponsePlansInner({
     required this.id,
-    required this.appleProductId,
-    required this.googleProductId,
+    this.appleProductId,
+    this.googleProductId,
     required this.interval,
     required this.price,
     required this.prices,
@@ -37,17 +37,17 @@ class SubscriptionConfigResponsePlansInner {
 
   @JsonKey(
     name: r'apple_product_id',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String appleProductId;
+  final String? appleProductId;
 
   @JsonKey(
     name: r'google_product_id',
-    required: true,
+    required: false,
     includeIfNull: false,
   )
-  final String googleProductId;
+  final String? googleProductId;
 
   @JsonKey(
     name: r'interval',
@@ -92,8 +92,8 @@ class SubscriptionConfigResponsePlansInner {
   @override
   int get hashCode =>
       id.hashCode +
-      appleProductId.hashCode +
-      googleProductId.hashCode +
+      (appleProductId == null ? 0 : appleProductId.hashCode) +
+      (googleProductId == null ? 0 : googleProductId.hashCode) +
       interval.hashCode +
       price.hashCode +
       prices.hashCode +
