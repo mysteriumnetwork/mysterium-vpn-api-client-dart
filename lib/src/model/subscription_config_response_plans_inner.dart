@@ -6,6 +6,7 @@
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_interval.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
+import 'package:vpn_api/src/model/subscription_config_response_plans_inner_metadata.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_config_response_plans_inner.g.dart';
@@ -26,6 +27,7 @@ class SubscriptionConfigResponsePlansInner {
     required this.price,
     required this.prices,
     required this.supportedGateways,
+    required this.metadata,
   });
 
   @JsonKey(
@@ -77,6 +79,13 @@ class SubscriptionConfigResponsePlansInner {
   )
   final List<String> supportedGateways;
 
+  @JsonKey(
+    name: r'metadata',
+    required: true,
+    includeIfNull: false,
+  )
+  final SubscriptionConfigResponsePlansInnerMetadata metadata;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -87,7 +96,8 @@ class SubscriptionConfigResponsePlansInner {
           other.interval == interval &&
           other.price == price &&
           other.prices == prices &&
-          other.supportedGateways == supportedGateways;
+          other.supportedGateways == supportedGateways &&
+          other.metadata == metadata;
 
   @override
   int get hashCode =>
@@ -97,7 +107,8 @@ class SubscriptionConfigResponsePlansInner {
       interval.hashCode +
       price.hashCode +
       prices.hashCode +
-      supportedGateways.hashCode;
+      supportedGateways.hashCode +
+      metadata.hashCode;
 
   factory SubscriptionConfigResponsePlansInner.fromJson(Map<String, dynamic> json) =>
       _$SubscriptionConfigResponsePlansInnerFromJson(json);

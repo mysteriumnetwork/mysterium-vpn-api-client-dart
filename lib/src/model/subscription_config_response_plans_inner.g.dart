@@ -14,7 +14,14 @@ SubscriptionConfigResponsePlansInner _$SubscriptionConfigResponsePlansInnerFromJ
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['id', 'interval', 'price', 'prices', 'supported_gateways'],
+          requiredKeys: const [
+            'id',
+            'interval',
+            'price',
+            'prices',
+            'supported_gateways',
+            'metadata'
+          ],
         );
         final val = SubscriptionConfigResponsePlansInner(
           id: $checkedConvert('id', (v) => v as String),
@@ -34,6 +41,10 @@ SubscriptionConfigResponsePlansInner _$SubscriptionConfigResponsePlansInnerFromJ
                   .toList()),
           supportedGateways: $checkedConvert(
               'supported_gateways', (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          metadata: $checkedConvert(
+              'metadata',
+              (v) =>
+                  SubscriptionConfigResponsePlansInnerMetadata.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -62,5 +73,6 @@ Map<String, dynamic> _$SubscriptionConfigResponsePlansInnerToJson(
   val['price'] = instance.price.toJson();
   val['prices'] = instance.prices.map((e) => e.toJson()).toList();
   val['supported_gateways'] = instance.supportedGateways;
+  val['metadata'] = instance.metadata.toJson();
   return val;
 }

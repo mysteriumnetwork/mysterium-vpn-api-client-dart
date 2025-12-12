@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionConfigResponseGatewaysInner](doc/SubscriptionConfigResponseGatewaysInner.md)
  - [SubscriptionConfigResponsePlansInner](doc/SubscriptionConfigResponsePlansInner.md)
  - [SubscriptionConfigResponsePlansInnerInterval](doc/SubscriptionConfigResponsePlansInnerInterval.md)
+ - [SubscriptionConfigResponsePlansInnerMetadata](doc/SubscriptionConfigResponsePlansInnerMetadata.md)
  - [SubscriptionConfigResponsePlansInnerPrice](doc/SubscriptionConfigResponsePlansInnerPrice.md)
  - [SubscriptionConfigResponsePlansInnerPricesInner](doc/SubscriptionConfigResponsePlansInnerPricesInner.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
