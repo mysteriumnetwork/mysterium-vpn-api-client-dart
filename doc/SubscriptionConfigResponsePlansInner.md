@@ -9,13 +9,12 @@ import 'package:vpn_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**appleProductId** | **String** |  | [optional] 
-**googleProductId** | **String** |  | [optional] 
+**appleProductId** | **String** |  | 
+**googleProductId** | **String** |  | 
 **interval** | [**SubscriptionConfigResponsePlansInnerInterval**](SubscriptionConfigResponsePlansInnerInterval.md) |  | 
 **price** | [**SubscriptionConfigResponsePlansInnerPrice**](SubscriptionConfigResponsePlansInnerPrice.md) |  | 
 **prices** | [**List&lt;SubscriptionConfigResponsePlansInnerPricesInner&gt;**](SubscriptionConfigResponsePlansInnerPricesInner.md) |  | 
 **supportedGateways** | **List&lt;String&gt;** |  | 
-**metadata** | [**SubscriptionConfigResponsePlansInnerMetadata**](SubscriptionConfigResponsePlansInnerMetadata.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

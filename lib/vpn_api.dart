@@ -89,7 +89,6 @@ export 'package:vpn_api/src/model/subscription_config_response.dart';
 export 'package:vpn_api/src/model/subscription_config_response_gateways_inner.dart';
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner.dart';
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_interval.dart';
-export 'package:vpn_api/src/model/subscription_config_response_plans_inner_metadata.dart';
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
 export 'package:vpn_api/src/model/update_contact_request.dart';

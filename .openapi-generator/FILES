@@ -81,7 +81,6 @@ doc/SubscriptionConfigResponse.md
 doc/SubscriptionConfigResponseGatewaysInner.md
 doc/SubscriptionConfigResponsePlansInner.md
 doc/SubscriptionConfigResponsePlansInnerInterval.md
-doc/SubscriptionConfigResponsePlansInnerMetadata.md
 doc/SubscriptionConfigResponsePlansInnerPrice.md
 doc/SubscriptionConfigResponsePlansInnerPricesInner.md
 doc/UpdateContactRequest.md
@@ -176,7 +175,6 @@ lib/src/model/subscription_config_response.dart
 lib/src/model/subscription_config_response_gateways_inner.dart
 lib/src/model/subscription_config_response_plans_inner.dart
 lib/src/model/subscription_config_response_plans_inner_interval.dart
-lib/src/model/subscription_config_response_plans_inner_metadata.dart
 lib/src/model/subscription_config_response_plans_inner_price.dart
 lib/src/model/subscription_config_response_plans_inner_prices_inner.dart
 lib/src/model/update_contact_request.dart

@@ -16,17 +16,18 @@ SubscriptionConfigResponsePlansInner _$SubscriptionConfigResponsePlansInnerFromJ
           json,
           requiredKeys: const [
             'id',
+            'apple_product_id',
+            'google_product_id',
             'interval',
             'price',
             'prices',
-            'supported_gateways',
-            'metadata'
+            'supported_gateways'
           ],
         );
         final val = SubscriptionConfigResponsePlansInner(
           id: $checkedConvert('id', (v) => v as String),
-          appleProductId: $checkedConvert('apple_product_id', (v) => v as String?),
-          googleProductId: $checkedConvert('google_product_id', (v) => v as String?),
+          appleProductId: $checkedConvert('apple_product_id', (v) => v as String),
+          googleProductId: $checkedConvert('google_product_id', (v) => v as String),
           interval: $checkedConvert(
               'interval',
               (v) =>
@@ -41,10 +42,6 @@ SubscriptionConfigResponsePlansInner _$SubscriptionConfigResponsePlansInnerFromJ
                   .toList()),
           supportedGateways: $checkedConvert(
               'supported_gateways', (v) => (v as List<dynamic>).map((e) => e as String).toList()),
-          metadata: $checkedConvert(
-              'metadata',
-              (v) =>
-                  SubscriptionConfigResponsePlansInnerMetadata.fromJson(v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -56,23 +53,13 @@ SubscriptionConfigResponsePlansInner _$SubscriptionConfigResponsePlansInnerFromJ
     );
 
 Map<String, dynamic> _$SubscriptionConfigResponsePlansInnerToJson(
-    SubscriptionConfigResponsePlansInner instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('apple_product_id', instance.appleProductId);
-  writeNotNull('google_product_id', instance.googleProductId);
-  val['interval'] = instance.interval.toJson();
-  val['price'] = instance.price.toJson();
-  val['prices'] = instance.prices.map((e) => e.toJson()).toList();
-  val['supported_gateways'] = instance.supportedGateways;
-  val['metadata'] = instance.metadata.toJson();
-  return val;
-}
+        SubscriptionConfigResponsePlansInner instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'apple_product_id': instance.appleProductId,
+      'google_product_id': instance.googleProductId,
+      'interval': instance.interval.toJson(),
+      'price': instance.price.toJson(),
+      'prices': instance.prices.map((e) => e.toJson()).toList(),
+      'supported_gateways': instance.supportedGateways,
+    };
