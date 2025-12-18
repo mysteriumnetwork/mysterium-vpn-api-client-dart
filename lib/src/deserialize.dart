@@ -72,6 +72,7 @@ import 'package:vpn_api/src/model/subscription_config_response.dart';
 import 'package:vpn_api/src/model/subscription_config_response_gateways_inner.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_interval.dart';
+import 'package:vpn_api/src/model/subscription_config_response_plans_inner_metadata.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
 import 'package:vpn_api/src/model/update_contact_request.dart';
@@ -252,6 +253,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'SubscriptionConfigResponsePlansInnerInterval':
       return SubscriptionConfigResponsePlansInnerInterval.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'SubscriptionConfigResponsePlansInnerMetadata':
+      return SubscriptionConfigResponsePlansInnerMetadata.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'SubscriptionConfigResponsePlansInnerPrice':
       return SubscriptionConfigResponsePlansInnerPrice.fromJson(value as Map<String, dynamic>)
