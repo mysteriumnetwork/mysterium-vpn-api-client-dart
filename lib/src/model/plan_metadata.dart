@@ -22,6 +22,8 @@ class PlanMetadata {
     this.residentialIpsAllowed,
     this.residentialIpCount,
     this.countryCount,
+    this.discountAmount,
+    this.fullPrice,
   });
 
   @JsonKey(
@@ -66,6 +68,20 @@ class PlanMetadata {
   )
   final String? countryCount;
 
+  @JsonKey(
+    name: r'discount_amount',
+    required: false,
+    includeIfNull: false,
+  )
+  final num? discountAmount;
+
+  @JsonKey(
+    name: r'full_price',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? fullPrice;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -75,7 +91,9 @@ class PlanMetadata {
           other.malwareBlockingAllowed == malwareBlockingAllowed &&
           other.residentialIpsAllowed == residentialIpsAllowed &&
           other.residentialIpCount == residentialIpCount &&
-          other.countryCount == countryCount;
+          other.countryCount == countryCount &&
+          other.discountAmount == discountAmount &&
+          other.fullPrice == fullPrice;
 
   @override
   int get hashCode =>
@@ -84,7 +102,9 @@ class PlanMetadata {
       (malwareBlockingAllowed == null ? 0 : malwareBlockingAllowed.hashCode) +
       (residentialIpsAllowed == null ? 0 : residentialIpsAllowed.hashCode) +
       (residentialIpCount == null ? 0 : residentialIpCount.hashCode) +
-      (countryCount == null ? 0 : countryCount.hashCode);
+      (countryCount == null ? 0 : countryCount.hashCode) +
+      (discountAmount == null ? 0 : discountAmount.hashCode) +
+      (fullPrice == null ? 0 : fullPrice.hashCode);
 
   factory PlanMetadata.fromJson(Map<String, dynamic> json) => _$PlanMetadataFromJson(json);
 

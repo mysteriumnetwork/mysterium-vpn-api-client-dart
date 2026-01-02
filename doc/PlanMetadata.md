@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **residentialIpsAllowed** | **bool** |  | [optional] 
 **residentialIpCount** | **String** |  | [optional] 
 **countryCount** | **String** |  | [optional] 
+**discountAmount** | **num** |  | [optional] 
+**fullPrice** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
