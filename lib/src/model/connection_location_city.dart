@@ -18,6 +18,7 @@ class ConnectionLocationCity {
   ConnectionLocationCity({
     required this.city,
     required this.total,
+    this.isAvailable,
     required this.translations,
     this.latitude,
     this.longitude,
@@ -36,6 +37,13 @@ class ConnectionLocationCity {
     includeIfNull: false,
   )
   final num total;
+
+  @JsonKey(
+    name: r'is_available',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? isAvailable;
 
   @JsonKey(
     name: r'translations',
@@ -64,6 +72,7 @@ class ConnectionLocationCity {
       other is ConnectionLocationCity &&
           other.city == city &&
           other.total == total &&
+          other.isAvailable == isAvailable &&
           other.translations == translations &&
           other.latitude == latitude &&
           other.longitude == longitude;
@@ -72,6 +81,7 @@ class ConnectionLocationCity {
   int get hashCode =>
       city.hashCode +
       total.hashCode +
+      isAvailable.hashCode +
       translations.hashCode +
       (latitude == null ? 0 : latitude.hashCode) +
       (longitude == null ? 0 : longitude.hashCode);

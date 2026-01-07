@@ -20,6 +20,7 @@ class ConnectionLocation {
     required this.country,
     required this.total,
     required this.cities,
+    this.isAvailable,
     required this.translations,
   });
 
@@ -45,6 +46,13 @@ class ConnectionLocation {
   final List<ConnectionLocationCity> cities;
 
   @JsonKey(
+    name: r'is_available',
+    required: false,
+    includeIfNull: false,
+  )
+  final bool? isAvailable;
+
+  @JsonKey(
     name: r'translations',
     required: true,
     includeIfNull: false,
@@ -58,10 +66,16 @@ class ConnectionLocation {
           other.country == country &&
           other.total == total &&
           other.cities == cities &&
+          other.isAvailable == isAvailable &&
           other.translations == translations;
 
   @override
-  int get hashCode => country.hashCode + total.hashCode + cities.hashCode + translations.hashCode;
+  int get hashCode =>
+      country.hashCode +
+      total.hashCode +
+      cities.hashCode +
+      isAvailable.hashCode +
+      translations.hashCode;
 
   factory ConnectionLocation.fromJson(Map<String, dynamic> json) =>
       _$ConnectionLocationFromJson(json);

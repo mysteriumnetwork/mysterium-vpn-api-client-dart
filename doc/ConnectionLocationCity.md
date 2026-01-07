@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **city** | **String** |  | 
 **total** | **num** |  | 
+**isAvailable** | **bool** |  | [optional] 
 **translations** | **Map&lt;String, String&gt;** |  | 
 **latitude** | **num** |  | [optional] 
 **longitude** | **num** |  | [optional] 
