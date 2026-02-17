@@ -23,6 +23,7 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
               'active_until', (v) => v == null ? null : DateTime.parse(v as String)),
           gateway: $checkedConvert('gateway', (v) => v as String?),
           planId: $checkedConvert('plan_id', (v) => v as String?),
+          storePlanId: $checkedConvert('store_plan_id', (v) => v as String?),
           portalUrl: $checkedConvert('portal_url', (v) => v as String?),
           expired: $checkedConvert('expired', (v) => v as bool),
           recurring: $checkedConvert('recurring', (v) => v as bool),
@@ -37,6 +38,7 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
         'periodStart': 'period_start',
         'activeUntil': 'active_until',
         'planId': 'plan_id',
+        'storePlanId': 'store_plan_id',
         'portalUrl': 'portal_url',
         'subscriptionId': 'subscription_id',
         'orderCurrency': 'order_currency',
@@ -60,6 +62,7 @@ Map<String, dynamic> _$GetSubscriptionResponseToJson(GetSubscriptionResponse ins
   writeNotNull('active_until', instance.activeUntil?.toIso8601String());
   writeNotNull('gateway', instance.gateway);
   writeNotNull('plan_id', instance.planId);
+  writeNotNull('store_plan_id', instance.storePlanId);
   writeNotNull('portal_url', instance.portalUrl);
   val['expired'] = instance.expired;
   val['recurring'] = instance.recurring;

@@ -21,6 +21,7 @@ class GetSubscriptionResponse {
     this.activeUntil,
     this.gateway,
     this.planId,
+    this.storePlanId,
     this.portalUrl,
     required this.expired,
     required this.recurring,
@@ -64,6 +65,13 @@ class GetSubscriptionResponse {
     includeIfNull: false,
   )
   final String? planId;
+
+  @JsonKey(
+    name: r'store_plan_id',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? storePlanId;
 
   @JsonKey(
     name: r'portal_url',
@@ -123,6 +131,7 @@ class GetSubscriptionResponse {
           other.activeUntil == activeUntil &&
           other.gateway == gateway &&
           other.planId == planId &&
+          other.storePlanId == storePlanId &&
           other.portalUrl == portalUrl &&
           other.expired == expired &&
           other.recurring == recurring &&
@@ -138,6 +147,7 @@ class GetSubscriptionResponse {
       (activeUntil == null ? 0 : activeUntil.hashCode) +
       (gateway == null ? 0 : gateway.hashCode) +
       (planId == null ? 0 : planId.hashCode) +
+      (storePlanId == null ? 0 : storePlanId.hashCode) +
       (portalUrl == null ? 0 : portalUrl.hashCode) +
       expired.hashCode +
       recurring.hashCode +

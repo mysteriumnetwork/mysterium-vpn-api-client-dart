@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **activeUntil** | [**DateTime**](DateTime.md) |  | [optional] 
 **gateway** | **String** |  | [optional] 
 **planId** | **String** |  | [optional] 
+**storePlanId** | **String** |  | [optional] 
 **portalUrl** | **String** |  | [optional] 
 **expired** | **bool** |  | 
 **recurring** | **bool** |  | 
