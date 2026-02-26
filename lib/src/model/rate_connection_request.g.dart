@@ -18,6 +18,7 @@ RateConnectionRequest _$RateConnectionRequestFromJson(Map<String, dynamic> json)
           country: $checkedConvert('country', (v) => v as String),
           ipType: $checkedConvert('ip_type', (v) => v as String),
           publicKey: $checkedConvert('public_key', (v) => v as String?),
+          deviceId: $checkedConvert('device_id', (v) => v as String?),
           feedback: $checkedConvert('feedback', (v) => v as String?),
           reasons: $checkedConvert('reasons', (v) => v as String? ?? ''),
           mode: $checkedConvert(
@@ -25,7 +26,7 @@ RateConnectionRequest _$RateConnectionRequestFromJson(Map<String, dynamic> json)
         );
         return val;
       },
-      fieldKeyMap: const {'ipType': 'ip_type', 'publicKey': 'public_key'},
+      fieldKeyMap: const {'ipType': 'ip_type', 'publicKey': 'public_key', 'deviceId': 'device_id'},
     );
 
 Map<String, dynamic> _$RateConnectionRequestToJson(RateConnectionRequest instance) {
@@ -41,6 +42,7 @@ Map<String, dynamic> _$RateConnectionRequestToJson(RateConnectionRequest instanc
   }
 
   writeNotNull('public_key', instance.publicKey);
+  writeNotNull('device_id', instance.deviceId);
   writeNotNull('feedback', instance.feedback);
   writeNotNull('reasons', instance.reasons);
   val['mode'] = _$RateConnectionRequestModeEnumEnumMap[instance.mode]!;

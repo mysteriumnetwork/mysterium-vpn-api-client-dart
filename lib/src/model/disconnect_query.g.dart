@@ -12,10 +12,11 @@ DisconnectQuery _$DisconnectQueryFromJson(Map<String, dynamic> json) => $checked
       ($checkedConvert) {
         final val = DisconnectQuery(
           publicKey: $checkedConvert('public_key', (v) => v as String?),
+          deviceId: $checkedConvert('device_id', (v) => v as String?),
         );
         return val;
       },
-      fieldKeyMap: const {'publicKey': 'public_key'},
+      fieldKeyMap: const {'publicKey': 'public_key', 'deviceId': 'device_id'},
     );
 
 Map<String, dynamic> _$DisconnectQueryToJson(DisconnectQuery instance) {
@@ -28,5 +29,6 @@ Map<String, dynamic> _$DisconnectQueryToJson(DisconnectQuery instance) {
   }
 
   writeNotNull('public_key', instance.publicKey);
+  writeNotNull('device_id', instance.deviceId);
   return val;
 }

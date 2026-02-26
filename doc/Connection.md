@@ -268,7 +268,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disconnect**
-> disconnect(publicKey)
+> disconnect(publicKey, deviceId)
 
 Disconnect from the current Wireguard connection
 
@@ -278,9 +278,10 @@ import 'package:vpn_api/api.dart';
 
 final api = VpnApi().getConnection();
 final String publicKey = aJxmamM5IUbxkevqSGcOIASETCxeRl71iXPVbqT1gz0=; // String | Public key of the Wireguard connection
+final String deviceId = 61d07cbfd55ce8e4228b3aec3c511ff06ed9; // String | Device ID
 
 try {
-    api.disconnect(publicKey);
+    api.disconnect(publicKey, deviceId);
 } catch on DioException (e) {
     print('Exception when calling Connection->disconnect: $e\n');
 }
@@ -291,6 +292,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **publicKey** | **String**| Public key of the Wireguard connection | [optional] 
+ **deviceId** | **String**| Device ID | [optional] 
 
 ### Return type
 

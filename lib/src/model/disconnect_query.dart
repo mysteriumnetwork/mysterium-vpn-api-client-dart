@@ -17,6 +17,7 @@ class DisconnectQuery {
   /// Returns a new [DisconnectQuery] instance.
   DisconnectQuery({
     this.publicKey,
+    this.deviceId,
   });
 
   /// Public key of the Wireguard connection
@@ -27,12 +28,22 @@ class DisconnectQuery {
   )
   final String? publicKey;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is DisconnectQuery && other.publicKey == publicKey;
+  /// Device ID
+  @JsonKey(
+    name: r'device_id',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? deviceId;
 
   @override
-  int get hashCode => (publicKey == null ? 0 : publicKey.hashCode);
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DisconnectQuery && other.publicKey == publicKey && other.deviceId == deviceId;
+
+  @override
+  int get hashCode =>
+      (publicKey == null ? 0 : publicKey.hashCode) + (deviceId == null ? 0 : deviceId.hashCode);
 
   factory DisconnectQuery.fromJson(Map<String, dynamic> json) => _$DisconnectQueryFromJson(json);
 

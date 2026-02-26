@@ -548,6 +548,7 @@ class Connection {
   ///
   /// Parameters:
   /// * [publicKey] - Public key of the Wireguard connection
+  /// * [deviceId] - Device ID
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -559,6 +560,7 @@ class Connection {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> disconnect({
     String? publicKey,
+    String? deviceId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -581,6 +583,7 @@ class Connection {
 
     final _queryParameters = <String, dynamic>{
       r'public_key': publicKey,
+      r'device_id': deviceId,
     };
 
     final _response = await _dio.request<Object>(

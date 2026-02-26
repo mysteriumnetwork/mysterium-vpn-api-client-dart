@@ -19,6 +19,7 @@ class RateConnectionRequest {
     required this.country,
     required this.ipType,
     this.publicKey,
+    this.deviceId,
     this.feedback,
     this.reasons = '',
     required this.mode,
@@ -45,6 +46,14 @@ class RateConnectionRequest {
     includeIfNull: false,
   )
   final String? publicKey;
+
+  /// Device ID
+  @JsonKey(
+    name: r'device_id',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? deviceId;
 
   /// Feedback about the connection
   @JsonKey(
@@ -78,6 +87,7 @@ class RateConnectionRequest {
           other.country == country &&
           other.ipType == ipType &&
           other.publicKey == publicKey &&
+          other.deviceId == deviceId &&
           other.feedback == feedback &&
           other.reasons == reasons &&
           other.mode == mode;
@@ -87,6 +97,7 @@ class RateConnectionRequest {
       country.hashCode +
       ipType.hashCode +
       (publicKey == null ? 0 : publicKey.hashCode) +
+      (deviceId == null ? 0 : deviceId.hashCode) +
       (feedback == null ? 0 : feedback.hashCode) +
       reasons.hashCode +
       mode.hashCode;
