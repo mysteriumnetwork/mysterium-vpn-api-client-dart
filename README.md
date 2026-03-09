@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 [*EmailMarketing*](doc/EmailMarketing.md) | [**setMarketingConsent**](doc/EmailMarketing.md#setmarketingconsent) | **POST** /email-marketing/marketing-consent | Set marketing consent
 [*EmailMarketing*](doc/EmailMarketing.md) | [**updateContactRequest**](doc/EmailMarketing.md#updatecontactrequest) | **POST** /email-marketing/update-contact | Update marketing contact
 [*Infrastructure*](doc/Infrastructure.md) | [**healthcheck**](doc/Infrastructure.md#healthcheck) | **GET** /healthcheck | Check whether the API is up
+[*Intercom*](doc/Intercom.md) | [**intercom**](doc/Intercom.md#intercom) | **GET** /intercom | Get jwt token for intercom
 [*Location*](doc/Location.md) | [**location**](doc/Location.md#location) | **GET** /subscription/location | Get location
 [*Subscription*](doc/Subscription.md) | [**invoices**](doc/Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
 [*Subscription*](doc/Subscription.md) | [**orderSummary**](doc/Subscription.md#ordersummary) | **POST** /subscription/order-summary | Preview order summary breakdown
@@ -140,6 +141,8 @@ Class | Method | HTTP request | Description
  - [HealthcheckMessage](doc/HealthcheckMessage.md)
  - [HealthcheckResponse](doc/HealthcheckResponse.md)
  - [HttpsConnectRequest](doc/HttpsConnectRequest.md)
+ - [Intercom200Response](doc/Intercom200Response.md)
+ - [IntercomResponse](doc/IntercomResponse.md)
  - [Invoice](doc/Invoice.md)
  - [InvoicesRequest](doc/InvoicesRequest.md)
  - [InvoicesResponse](doc/InvoicesResponse.md)

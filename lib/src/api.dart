@@ -11,6 +11,7 @@ import 'package:vpn_api/src/api/authentication.dart';
 import 'package:vpn_api/src/api/connection.dart';
 import 'package:vpn_api/src/api/email_marketing.dart';
 import 'package:vpn_api/src/api/infrastructure.dart';
+import 'package:vpn_api/src/api/intercom.dart';
 import 'package:vpn_api/src/api/location.dart';
 import 'package:vpn_api/src/api/subscription.dart';
 
@@ -91,6 +92,12 @@ class VpnApi {
   /// by doing that all interceptors will not be executed
   Infrastructure getInfrastructure() {
     return Infrastructure(dio);
+  }
+
+  /// Get Intercom instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  Intercom getIntercom() {
+    return Intercom(dio);
   }
 
   /// Get Location instance, base route and serializer can be overridden by a given but be careful,

@@ -36,6 +36,8 @@ import 'package:vpn_api/src/model/healthcheck200_response.dart';
 import 'package:vpn_api/src/model/healthcheck_message.dart';
 import 'package:vpn_api/src/model/healthcheck_response.dart';
 import 'package:vpn_api/src/model/https_connect_request.dart';
+import 'package:vpn_api/src/model/intercom200_response.dart';
+import 'package:vpn_api/src/model/intercom_response.dart';
 import 'package:vpn_api/src/model/invoice.dart';
 import 'package:vpn_api/src/model/invoices_request.dart';
 import 'package:vpn_api/src/model/invoices_response.dart';
@@ -178,6 +180,10 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return HealthcheckResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'HttpsConnectRequest':
       return HttpsConnectRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'Intercom200Response':
+      return Intercom200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'IntercomResponse':
+      return IntercomResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Invoice':
       return Invoice.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'InvoicesRequest':

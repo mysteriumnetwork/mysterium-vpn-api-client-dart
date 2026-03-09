@@ -12,6 +12,7 @@ export 'package:vpn_api/src/api/authentication.dart';
 export 'package:vpn_api/src/api/connection.dart';
 export 'package:vpn_api/src/api/email_marketing.dart';
 export 'package:vpn_api/src/api/infrastructure.dart';
+export 'package:vpn_api/src/api/intercom.dart';
 export 'package:vpn_api/src/api/location.dart';
 export 'package:vpn_api/src/api/subscription.dart';
 
@@ -53,6 +54,8 @@ export 'package:vpn_api/src/model/healthcheck200_response.dart';
 export 'package:vpn_api/src/model/healthcheck_message.dart';
 export 'package:vpn_api/src/model/healthcheck_response.dart';
 export 'package:vpn_api/src/model/https_connect_request.dart';
+export 'package:vpn_api/src/model/intercom200_response.dart';
+export 'package:vpn_api/src/model/intercom_response.dart';
 export 'package:vpn_api/src/model/invoice.dart';
 export 'package:vpn_api/src/model/invoices_request.dart';
 export 'package:vpn_api/src/model/invoices_response.dart';

@@ -43,6 +43,9 @@ doc/HealthcheckMessage.md
 doc/HealthcheckResponse.md
 doc/HttpsConnectRequest.md
 doc/Infrastructure.md
+doc/Intercom.md
+doc/Intercom200Response.md
+doc/IntercomResponse.md
 doc/Invoice.md
 doc/InvoicesRequest.md
 doc/InvoicesResponse.md
@@ -94,6 +97,7 @@ lib/src/api/authentication.dart
 lib/src/api/connection.dart
 lib/src/api/email_marketing.dart
 lib/src/api/infrastructure.dart
+lib/src/api/intercom.dart
 lib/src/api/location.dart
 lib/src/api/subscription.dart
 lib/src/auth/api_key_auth.dart
@@ -140,6 +144,8 @@ lib/src/model/healthcheck200_response.dart
 lib/src/model/healthcheck_message.dart
 lib/src/model/healthcheck_response.dart
 lib/src/model/https_connect_request.dart
+lib/src/model/intercom200_response.dart
+lib/src/model/intercom_response.dart
 lib/src/model/invoice.dart
 lib/src/model/invoices_request.dart
 lib/src/model/invoices_response.dart
