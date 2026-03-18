@@ -22,16 +22,16 @@ class IntercomResponse {
   @JsonKey(
     name: r'jwt',
     required: true,
-    includeIfNull: true,
+    includeIfNull: false,
   )
-  final String? jwt;
+  final String jwt;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) || other is IntercomResponse && other.jwt == jwt;
 
   @override
-  int get hashCode => (jwt == null ? 0 : jwt.hashCode);
+  int get hashCode => jwt.hashCode;
 
   factory IntercomResponse.fromJson(Map<String, dynamic> json) => _$IntercomResponseFromJson(json);
 

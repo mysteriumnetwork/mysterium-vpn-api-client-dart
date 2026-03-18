@@ -15,7 +15,7 @@ Intercom200Response _$Intercom200ResponseFromJson(Map<String, dynamic> json) => 
           requiredKeys: const ['jwt'],
         );
         final val = Intercom200Response(
-          jwt: $checkedConvert('jwt', (v) => v as String?),
+          jwt: $checkedConvert('jwt', (v) => v as String),
         );
         return val;
       },
