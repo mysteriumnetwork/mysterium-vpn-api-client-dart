@@ -33,6 +33,7 @@ OrderSummaryResponse _$OrderSummaryResponseFromJson(Map<String, dynamic> json) =
           taxName: $checkedConvert('tax_name', (v) => v as String),
           taxSubtotal: $checkedConvert('tax_subtotal', (v) => v as String),
           orderTotal: $checkedConvert('order_total', (v) => v as String),
+          couponError: $checkedConvert('coupon_error', (v) => v as String?),
           discountAmount: $checkedConvert('discount_amount', (v) => v as String?),
           discountUnits: $checkedConvert('discount_units', (v) => v as String?),
           itemSubtotalBeforeDiscount:
@@ -51,6 +52,7 @@ OrderSummaryResponse _$OrderSummaryResponseFromJson(Map<String, dynamic> json) =
         'taxName': 'tax_name',
         'taxSubtotal': 'tax_subtotal',
         'orderTotal': 'order_total',
+        'couponError': 'coupon_error',
         'discountAmount': 'discount_amount',
         'discountUnits': 'discount_units',
         'itemSubtotalBeforeDiscount': 'item_subtotal_before_discount',
@@ -76,6 +78,7 @@ Map<String, dynamic> _$OrderSummaryResponseToJson(OrderSummaryResponse instance)
     }
   }
 
+  writeNotNull('coupon_error', instance.couponError);
   writeNotNull('discount_amount', instance.discountAmount);
   writeNotNull('discount_units', instance.discountUnits);
   val['item_subtotal_before_discount'] = instance.itemSubtotalBeforeDiscount;

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **taxName** | **String** |  | 
 **taxSubtotal** | **String** |  | 
 **orderTotal** | **String** |  | 
+**couponError** | **String** |  | [optional] 
 **discountAmount** | **String** |  | [optional] 
 **discountUnits** | **String** |  | [optional] 
 **itemSubtotalBeforeDiscount** | **String** |  | 

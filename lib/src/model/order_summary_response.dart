@@ -23,6 +23,7 @@ class OrderSummaryResponse {
     required this.taxName,
     required this.taxSubtotal,
     required this.orderTotal,
+    this.couponError,
     this.discountAmount,
     this.discountUnits,
     required this.itemSubtotalBeforeDiscount,
@@ -80,6 +81,13 @@ class OrderSummaryResponse {
   final String orderTotal;
 
   @JsonKey(
+    name: r'coupon_error',
+    required: false,
+    includeIfNull: false,
+  )
+  final String? couponError;
+
+  @JsonKey(
     name: r'discount_amount',
     required: false,
     includeIfNull: false,
@@ -125,6 +133,7 @@ class OrderSummaryResponse {
           other.taxName == taxName &&
           other.taxSubtotal == taxSubtotal &&
           other.orderTotal == orderTotal &&
+          other.couponError == couponError &&
           other.discountAmount == discountAmount &&
           other.discountUnits == discountUnits &&
           other.itemSubtotalBeforeDiscount == itemSubtotalBeforeDiscount &&
@@ -140,6 +149,7 @@ class OrderSummaryResponse {
       taxName.hashCode +
       taxSubtotal.hashCode +
       orderTotal.hashCode +
+      (couponError == null ? 0 : couponError.hashCode) +
       (discountAmount == null ? 0 : discountAmount.hashCode) +
       (discountUnits == null ? 0 : discountUnits.hashCode) +
       itemSubtotalBeforeDiscount.hashCode +
