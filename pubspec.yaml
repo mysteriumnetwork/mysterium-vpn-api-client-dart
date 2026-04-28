@@ -3,14 +3,14 @@ description: OpenAPI API client
 version: 1.0.62+42
 
 environment:
-  sdk: '>=2.17.0 <4.0.0'
+  sdk: ">=3.9.0 <4.0.0"
 
 dependencies:
-  dio: '^5.2.0'
-  json_annotation: '^4.4.0'
+  dio: 5.9.2
+  json_annotation: 4.11.0
 
 dev_dependencies:
-  build_runner: 2.4.12
-  json_serializable: 6.8.0
-  test: ^1.16.0
+  build_runner: 2.14.1
+  json_serializable: 6.13.1
+  test: 1.31.1
 
