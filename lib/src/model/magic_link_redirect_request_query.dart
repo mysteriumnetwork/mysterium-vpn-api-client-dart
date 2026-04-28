@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'magic_link_redirect_request_query.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,31 +17,15 @@ part 'magic_link_redirect_request_query.g.dart';
 )
 class MagicLinkRedirectRequestQuery {
   /// Returns a new [MagicLinkRedirectRequestQuery] instance.
-  MagicLinkRedirectRequestQuery({
-    required this.code,
-    this.continueTo,
-    this.redirectUrl,
-  });
+  MagicLinkRedirectRequestQuery({required this.code, this.continueTo, this.redirectUrl});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'continue_to',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'continue_to', required: false, includeIfNull: false)
   final String? continueTo;
 
-  @JsonKey(
-    name: r'redirect_url',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'redirect_url', required: false, includeIfNull: false)
   final String? redirectUrl;
 
   @override

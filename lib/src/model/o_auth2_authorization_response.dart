@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_authorization_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'o_auth2_authorization_response.g.dart';
 )
 class OAuth2AuthorizationResponse {
   /// Returns a new [OAuth2AuthorizationResponse] instance.
-  OAuth2AuthorizationResponse({
-    required this.code,
-  });
+  OAuth2AuthorizationResponse({required this.code});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
   @override

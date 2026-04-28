@@ -34,7 +34,7 @@ final InvoicesRequest invoicesRequest = ; // InvoicesRequest |
 try {
     final response = api.invoices(invoicesRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->invoices: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final OrderSummaryRequest orderSummaryRequest = ; // OrderSummaryRequest |
 try {
     final response = api.orderSummary(orderSummaryRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->orderSummary: $e\n');
 }
 ```
@@ -102,7 +102,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **orderUpdateSummary**
-> OrderSummaryResponse orderUpdateSummary(id)
+> OrderSummaryResponse orderUpdateSummary(id, planId, currency, couponCode)
 
 Preview order summary breakdown
 
@@ -112,11 +112,14 @@ import 'package:vpn_api/api.dart';
 
 final api = VpnApi().getSubscription();
 final String id = id_example; // String | 
+final String planId = planId_example; // String | 
+final String currency = currency_example; // String | 
+final String couponCode = couponCode_example; // String | 
 
 try {
-    final response = api.orderUpdateSummary(id);
+    final response = api.orderUpdateSummary(id, planId, currency, couponCode);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->orderUpdateSummary: $e\n');
 }
 ```
@@ -126,6 +129,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
+ **planId** | **String**|  | 
+ **currency** | **String**|  | [optional] 
+ **couponCode** | **String**|  | [optional] 
 
 ### Return type
 
@@ -156,7 +162,7 @@ final api = VpnApi().getSubscription();
 try {
     final response = api.plan();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->plan: $e\n');
 }
 ```
@@ -194,7 +200,7 @@ final SubscribeRequest subscribeRequest = ; // SubscribeRequest |
 try {
     final response = api.subscribe(subscribeRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->subscribe: $e\n');
 }
 ```
@@ -234,7 +240,7 @@ final api = VpnApi().getSubscription();
 try {
     final response = api.subscriptionConfig();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->subscriptionConfig: $e\n');
 }
 ```
@@ -271,7 +277,7 @@ final api = VpnApi().getSubscription();
 try {
     final response = api.subscriptionStatus();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->subscriptionStatus: $e\n');
 }
 ```
@@ -308,7 +314,7 @@ final UserCallbackRequest userCallbackRequest = ; // UserCallbackRequest |
 
 try {
     api.subscriptionUserCallback(userCallbackRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Subscription->subscriptionUserCallback: $e\n');
 }
 ```

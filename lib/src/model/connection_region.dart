@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_region.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,45 +19,29 @@ class ConnectionRegion {
   /// Returns a new [ConnectionRegion] instance.
   ConnectionRegion({
     required this.id,
+
     required this.host,
+
     required this.port,
+
     required this.portHealthcheck,
+
     required this.topCountries,
   });
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'host',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'host', required: true, includeIfNull: false)
   final String host;
 
-  @JsonKey(
-    name: r'port',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'port', required: true, includeIfNull: false)
   final num port;
 
-  @JsonKey(
-    name: r'port_healthcheck',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'port_healthcheck', required: true, includeIfNull: false)
   final num portHealthcheck;
 
-  @JsonKey(
-    name: r'top_countries',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'top_countries', required: true, includeIfNull: false)
   final List<String> topCountries;
 
   @override

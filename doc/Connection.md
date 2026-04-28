@@ -36,7 +36,7 @@ final WireguardConnectRequest wireguardConnectRequest = ; // WireguardConnectReq
 try {
     final response = api.connect(wireguardConnectRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->connect: $e\n');
 }
 ```
@@ -77,7 +77,7 @@ final OpenVpnConnectRequest openVpnConnectRequest = ; // OpenVpnConnectRequest |
 try {
     final response = api.connectOpenvpn(openVpnConnectRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->connectOpenvpn: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final HttpsConnectRequest httpsConnectRequest = ; // HttpsConnectRequest |
 try {
     final response = api.connectProxy(httpsConnectRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->connectProxy: $e\n');
 }
 ```
@@ -159,7 +159,7 @@ final String ipType = ipType_example; // String |
 try {
     final response = api.connectionConfig(ipType);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->connectionConfig: $e\n');
 }
 ```
@@ -200,7 +200,7 @@ final String ipType = ipType_example; // String |
 try {
     final response = api.connectionConfigRegions(ipType);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->connectionConfigRegions: $e\n');
 }
 ```
@@ -241,7 +241,7 @@ final String ipType = ipType_example; // String |
 try {
     final response = api.connectionLocations(ipType);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->connectionLocations: $e\n');
 }
 ```
@@ -282,7 +282,7 @@ final String deviceId = 61d07cbfd55ce8e4228b3aec3c511ff06ed9; // String | Device
 
 try {
     api.disconnect(publicKey, deviceId);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->disconnect: $e\n');
 }
 ```
@@ -322,7 +322,7 @@ final api = VpnApi().getConnection();
 
 try {
     api.disconnectAll();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->disconnectAll: $e\n');
 }
 ```
@@ -359,7 +359,7 @@ final RateConnectionRequest rateConnectionRequest = ; // RateConnectionRequest |
 
 try {
     api.rateConnection(rateConnectionRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->rateConnection: $e\n');
 }
 ```
@@ -399,7 +399,7 @@ final api = VpnApi().getConnection();
 try {
     final response = api.userIntents();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Connection->userIntents: $e\n');
 }
 ```

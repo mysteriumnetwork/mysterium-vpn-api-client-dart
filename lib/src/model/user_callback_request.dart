@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_callback_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,33 +17,17 @@ part 'user_callback_request.g.dart';
 )
 class UserCallbackRequest {
   /// Returns a new [UserCallbackRequest] instance.
-  UserCallbackRequest({
-    required this.gatewayId,
-    this.payload,
-    this.transactionId,
-  });
+  UserCallbackRequest({required this.gatewayId, this.payload, this.transactionId});
 
-  @JsonKey(
-    name: r'gateway_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gateway_id', required: true, includeIfNull: false)
   final UserCallbackRequestGatewayIdEnum gatewayId;
 
   /// Purchase token from Google or Apple (deprecated) receipt data
-  @JsonKey(
-    name: r'payload',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'payload', required: false, includeIfNull: false)
   final String? payload;
 
   /// Transaction ID from Apple
-  @JsonKey(
-    name: r'transaction_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'transaction_id', required: false, includeIfNull: false)
   final String? transactionId;
 
   @override

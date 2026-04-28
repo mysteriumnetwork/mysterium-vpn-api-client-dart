@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_stripe_subscription_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,31 +17,15 @@ part 'update_stripe_subscription_request.g.dart';
 )
 class UpdateStripeSubscriptionRequest {
   /// Returns a new [UpdateStripeSubscriptionRequest] instance.
-  UpdateStripeSubscriptionRequest({
-    required this.planId,
-    this.currency,
-    this.couponCode,
-  });
+  UpdateStripeSubscriptionRequest({required this.planId, this.currency, this.couponCode});
 
-  @JsonKey(
-    name: r'plan_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'plan_id', required: true, includeIfNull: false)
   final String planId;
 
-  @JsonKey(
-    name: r'currency',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currency', required: false, includeIfNull: false)
   final String? currency;
 
-  @JsonKey(
-    name: r'coupon_code',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'coupon_code', required: false, includeIfNull: false)
   final String? couponCode;
 
   @override

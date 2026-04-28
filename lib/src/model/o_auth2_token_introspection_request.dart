@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_introspection_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,16 +17,10 @@ part 'o_auth2_token_introspection_request.g.dart';
 )
 class OAuth2TokenIntrospectionRequest {
   /// Returns a new [OAuth2TokenIntrospectionRequest] instance.
-  OAuth2TokenIntrospectionRequest({
-    this.token,
-  });
+  OAuth2TokenIntrospectionRequest({this.token});
 
   /// Token to be introspected. Optional when token is presented via Authorization header.
-  @JsonKey(
-    name: r'token',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'token', required: false, includeIfNull: false)
   final String? token;
 
   @override

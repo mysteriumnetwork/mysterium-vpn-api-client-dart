@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'invoices_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'invoices_request.g.dart';
 )
 class InvoicesRequest {
   /// Returns a new [InvoicesRequest] instance.
-  InvoicesRequest({
-    required this.page,
-    required this.pageSize,
-  });
+  InvoicesRequest({required this.page, required this.pageSize});
 
-  @JsonKey(
-    name: r'page',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'page', required: true, includeIfNull: false)
   final String page;
 
-  @JsonKey(
-    name: r'page_size',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'page_size', required: true, includeIfNull: false)
   final String pageSize;
 
   @override

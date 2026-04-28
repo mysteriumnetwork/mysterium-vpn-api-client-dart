@@ -62,6 +62,7 @@ import 'package:vpn_api/src/model/open_vpn_connect_request.dart';
 import 'package:vpn_api/src/model/open_vpn_connect_response.dart';
 import 'package:vpn_api/src/model/order_summary_request.dart';
 import 'package:vpn_api/src/model/order_summary_response.dart';
+import 'package:vpn_api/src/model/order_update_summary_query.dart';
 import 'package:vpn_api/src/model/plan_metadata.dart';
 import 'package:vpn_api/src/model/proxy_connect_response.dart';
 import 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';
@@ -87,8 +88,11 @@ final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
 final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
-    {bool growable = true}) {
+ReturnType deserialize<ReturnType, BaseType>(
+  dynamic value,
+  String targetType, {
+  bool growable = true,
+}) {
   switch (targetType) {
     case 'String':
       return '$value' as ReturnType;
@@ -233,6 +237,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return OrderSummaryRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OrderSummaryResponse':
       return OrderSummaryResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'OrderUpdateSummaryQuery':
+      return OrderUpdateSummaryQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PlanMetadata':
       return PlanMetadata.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ProxyConnectResponse':
@@ -285,24 +291,30 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       if (value is List && (match = _regList.firstMatch(targetType)) != null) {
         targetType = match![1]!; // ignore: parameter_assignments
         return value
-            .map<BaseType>(
-                (dynamic v) => deserialize<BaseType, BaseType>(v, targetType, growable: growable))
-            .toList(growable: growable) as ReturnType;
+                .map<BaseType>(
+                  (dynamic v) => deserialize<BaseType, BaseType>(v, targetType, growable: growable),
+                )
+                .toList(growable: growable)
+            as ReturnType;
       }
       if (value is Set && (match = _regSet.firstMatch(targetType)) != null) {
         targetType = match![1]!; // ignore: parameter_assignments
         return value
-            .map<BaseType>(
-                (dynamic v) => deserialize<BaseType, BaseType>(v, targetType, growable: growable))
-            .toSet() as ReturnType;
+                .map<BaseType>(
+                  (dynamic v) => deserialize<BaseType, BaseType>(v, targetType, growable: growable),
+                )
+                .toSet()
+            as ReturnType;
       }
       if (value is Map && (match = _regMap.firstMatch(targetType)) != null) {
         targetType = match![1]!.trim(); // ignore: parameter_assignments
         return Map<String, BaseType>.fromIterables(
-          value.keys as Iterable<String>,
-          value.values.map(
-              (dynamic v) => deserialize<BaseType, BaseType>(v, targetType, growable: growable)),
-        ) as ReturnType;
+              value.keys as Iterable<String>,
+              value.values.map(
+                (dynamic v) => deserialize<BaseType, BaseType>(v, targetType, growable: growable),
+              ),
+            )
+            as ReturnType;
       }
       break;
   }

@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_google_subscription_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,29 +19,19 @@ class CreateGoogleSubscriptionResponse {
   /// Returns a new [CreateGoogleSubscriptionResponse] instance.
   CreateGoogleSubscriptionResponse({
     required this.gatewayId,
+
     required this.subscriptionBasePlanId,
+
     required this.subscriptionProductId,
   });
 
-  @JsonKey(
-    name: r'gateway_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gateway_id', required: true, includeIfNull: false)
   final String gatewayId;
 
-  @JsonKey(
-    name: r'subscription_base_plan_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subscription_base_plan_id', required: true, includeIfNull: false)
   final String subscriptionBasePlanId;
 
-  @JsonKey(
-    name: r'subscription_product_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subscription_product_id', required: true, includeIfNull: false)
   final String subscriptionProductId;
 
   @override

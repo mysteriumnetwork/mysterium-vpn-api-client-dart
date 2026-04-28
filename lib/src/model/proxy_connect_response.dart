@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'proxy_connect_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,23 +18,12 @@ part 'proxy_connect_response.g.dart';
 )
 class ProxyConnectResponse {
   /// Returns a new [ProxyConnectResponse] instance.
-  ProxyConnectResponse({
-    required this.proxyConfig,
-    this.limitExceeded,
-  });
+  ProxyConnectResponse({required this.proxyConfig, this.limitExceeded});
 
-  @JsonKey(
-    name: r'proxy_config',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'proxy_config', required: true, includeIfNull: false)
   final ProxyConnectResponseProxyConfig proxyConfig;
 
-  @JsonKey(
-    name: r'limit_exceeded',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'limit_exceeded', required: false, includeIfNull: false)
   final bool? limitExceeded;
 
   @override

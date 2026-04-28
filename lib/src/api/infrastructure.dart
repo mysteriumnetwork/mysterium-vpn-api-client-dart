@@ -40,13 +40,8 @@ class Infrastructure {
     final _path = r'/healthcheck';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -65,8 +60,10 @@ class Infrastructure {
       _responseData = rawData == null
           ? null
           : deserialize<Healthcheck200Response, Healthcheck200Response>(
-              rawData, 'Healthcheck200Response',
-              growable: true);
+              rawData,
+              'Healthcheck200Response',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

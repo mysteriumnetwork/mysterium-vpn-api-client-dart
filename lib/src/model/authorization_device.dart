@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'authorization_device.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,31 +17,15 @@ part 'authorization_device.g.dart';
 )
 class AuthorizationDevice {
   /// Returns a new [AuthorizationDevice] instance.
-  AuthorizationDevice({
-    required this.osType,
-    required this.id,
-    required this.title,
-  });
+  AuthorizationDevice({required this.osType, required this.id, required this.title});
 
-  @JsonKey(
-    name: r'os_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'os_type', required: true, includeIfNull: false)
   final String osType;
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'title',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'title', required: true, includeIfNull: false)
   final String title;
 
   @override

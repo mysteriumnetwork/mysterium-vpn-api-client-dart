@@ -5,10 +5,12 @@
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/activation_authorization_request.dart';
 import 'package:vpn_api/src/model/code_authorization_request.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_authorization_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -19,45 +21,29 @@ class OAuth2AuthorizationRequest {
   /// Returns a new [OAuth2AuthorizationRequest] instance.
   OAuth2AuthorizationRequest({
     required this.responseType,
+
     required this.clientId,
+
     required this.codeChallenge,
+
     required this.codeChallengeMethod,
+
     required this.requestId,
   });
 
-  @JsonKey(
-    name: r'response_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'response_type', required: true, includeIfNull: false)
   final OAuth2AuthorizationRequestResponseTypeEnum responseType;
 
-  @JsonKey(
-    name: r'client_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'client_id', required: true, includeIfNull: false)
   final OAuth2AuthorizationRequestClientIdEnum clientId;
 
-  @JsonKey(
-    name: r'code_challenge',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code_challenge', required: true, includeIfNull: false)
   final String codeChallenge;
 
-  @JsonKey(
-    name: r'code_challenge_method',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code_challenge_method', required: true, includeIfNull: false)
   final OAuth2AuthorizationRequestCodeChallengeMethodEnum codeChallengeMethod;
 
-  @JsonKey(
-    name: r'request_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'request_id', required: true, includeIfNull: false)
   final String requestId;
 
   @override

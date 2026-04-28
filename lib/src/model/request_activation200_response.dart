@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/o_auth2_token_response.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'request_activation200_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,31 +18,15 @@ part 'request_activation200_response.g.dart';
 )
 class RequestActivation200Response {
   /// Returns a new [RequestActivation200Response] instance.
-  RequestActivation200Response({
-    required this.id,
-    required this.valid,
-    this.token,
-  });
+  RequestActivation200Response({required this.id, required this.valid, this.token});
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'valid',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'valid', required: true, includeIfNull: false)
   final bool valid;
 
-  @JsonKey(
-    name: r'token',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'token', required: false, includeIfNull: false)
   final OAuth2TokenResponse? token;
 
   @override

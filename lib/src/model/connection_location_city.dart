@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_location_city.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,53 +19,34 @@ class ConnectionLocationCity {
   /// Returns a new [ConnectionLocationCity] instance.
   ConnectionLocationCity({
     required this.city,
+
     required this.total,
+
     this.isAvailable,
+
     required this.translations,
+
     this.latitude,
+
     this.longitude,
   });
 
-  @JsonKey(
-    name: r'city',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'city', required: true, includeIfNull: false)
   final String city;
 
-  @JsonKey(
-    name: r'total',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'total', required: true, includeIfNull: false)
   final num total;
 
-  @JsonKey(
-    name: r'is_available',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'is_available', required: false, includeIfNull: false)
   final bool? isAvailable;
 
-  @JsonKey(
-    name: r'translations',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'translations', required: true, includeIfNull: false)
   final Map<String, String> translations;
 
-  @JsonKey(
-    name: r'latitude',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'latitude', required: false, includeIfNull: false)
   final num? latitude;
 
-  @JsonKey(
-    name: r'longitude',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'longitude', required: false, includeIfNull: false)
   final num? longitude;
 
   @override

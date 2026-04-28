@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'invoice.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,61 +19,39 @@ class Invoice {
   /// Returns a new [Invoice] instance.
   Invoice({
     required this.id,
+
     required this.planId,
+
     required this.amountGross,
+
     required this.name,
+
     required this.gateway,
+
     required this.status,
+
     required this.createdAt,
   });
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'plan_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'plan_id', required: true, includeIfNull: false)
   final String planId;
 
-  @JsonKey(
-    name: r'amount_gross',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'amount_gross', required: true, includeIfNull: false)
   final String amountGross;
 
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  @JsonKey(
-    name: r'gateway',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gateway', required: true, includeIfNull: false)
   final String gateway;
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final String status;
 
-  @JsonKey(
-    name: r'created_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'created_at', required: true, includeIfNull: false)
   final DateTime createdAt;
 
   @override

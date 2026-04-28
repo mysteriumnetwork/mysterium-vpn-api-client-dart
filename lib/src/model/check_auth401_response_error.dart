@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/check_auth401_response_error_fields_value.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'check_auth401_response_error.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,39 +18,18 @@ part 'check_auth401_response_error.g.dart';
 )
 class CheckAuth401ResponseError {
   /// Returns a new [CheckAuth401ResponseError] instance.
-  CheckAuth401ResponseError({
-    required this.code,
-    required this.message,
-    this.detail,
-    this.fields,
-  });
+  CheckAuth401ResponseError({required this.code, required this.message, this.detail, this.fields});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'message',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
-  @JsonKey(
-    name: r'detail',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'detail', required: false, includeIfNull: false)
   final String? detail;
 
-  @JsonKey(
-    name: r'fields',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fields', required: false, includeIfNull: false)
   final Map<String, CheckAuth401ResponseErrorFieldsValue>? fields;
 
   @override

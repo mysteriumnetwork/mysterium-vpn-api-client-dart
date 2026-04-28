@@ -34,7 +34,7 @@ final api = VpnApi().getAuthentication();
 try {
     final response = api.authConfig();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->authConfig: $e\n');
 }
 ```
@@ -71,7 +71,7 @@ final api = VpnApi().getAuthentication();
 try {
     final response = api.checkAuth();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->checkAuth: $e\n');
 }
 ```
@@ -109,7 +109,7 @@ final String id = id_example; // String |
 try {
     final response = api.getActivationStatus(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->getActivationStatus: $e\n');
 }
 ```
@@ -150,7 +150,7 @@ final String token = token_example; // String | Token to be introspected. Option
 try {
     final response = api.introspectToken(token);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->introspectToken: $e\n');
 }
 ```
@@ -189,7 +189,7 @@ final api = VpnApi().getAuthentication();
 
 try {
     api.logout();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->logout: $e\n');
 }
 ```
@@ -228,7 +228,7 @@ final String redirectUrl = redirectUrl_example; // String |
 
 try {
     api.redirectMagicLink(code, continueTo, redirectUrl);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->redirectMagicLink: $e\n');
 }
 ```
@@ -271,7 +271,7 @@ final RequestActivationRequest requestActivationRequest = ; // RequestActivation
 try {
     final response = api.requestActivation(requestActivationRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->requestActivation: $e\n');
 }
 ```
@@ -312,7 +312,7 @@ final MagicLinkRequest magicLinkRequest = ; // MagicLinkRequest |
 try {
     final response = api.requestMagicLink(magicLinkRequest);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->requestMagicLink: $e\n');
 }
 ```
@@ -360,7 +360,7 @@ final OAuth2TokenRequestOneOf3Authorization authorization = ; // OAuth2TokenRequ
 try {
     final response = api.token(grantType, clientId, device, refreshToken, codeVerifier, code, googleIdToken, authorization);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Authentication->token: $e\n');
 }
 ```

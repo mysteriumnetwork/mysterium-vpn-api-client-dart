@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **residentialIpsAllowed** | **bool** |  | [optional] 
 **residentialIpCount** | **String** |  | [optional] 
 **countryCount** | **String** |  | [optional] 
+**serverCount** | **String** |  | [optional] 
 **discountAmount** | **num** |  | [optional] 
 **fullPrice** | **String** |  | [optional] 
 

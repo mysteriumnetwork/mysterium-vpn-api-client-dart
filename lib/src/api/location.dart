@@ -40,13 +40,8 @@ class Location {
     final _path = r'/subscription/location';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -64,8 +59,11 @@ class Location {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GetLocationResponse, GetLocationResponse>(rawData, 'GetLocationResponse',
-              growable: true);
+          : deserialize<GetLocationResponse, GetLocationResponse>(
+              rawData,
+              'GetLocationResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

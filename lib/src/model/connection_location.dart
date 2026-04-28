@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/connection_location_city.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_location.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -18,45 +20,29 @@ class ConnectionLocation {
   /// Returns a new [ConnectionLocation] instance.
   ConnectionLocation({
     required this.country,
+
     required this.total,
+
     required this.cities,
+
     this.isAvailable,
+
     required this.translations,
   });
 
-  @JsonKey(
-    name: r'country',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
 
-  @JsonKey(
-    name: r'total',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'total', required: true, includeIfNull: false)
   final num total;
 
-  @JsonKey(
-    name: r'cities',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'cities', required: true, includeIfNull: false)
   final List<ConnectionLocationCity> cities;
 
-  @JsonKey(
-    name: r'is_available',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'is_available', required: false, includeIfNull: false)
   final bool? isAvailable;
 
-  @JsonKey(
-    name: r'translations',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'translations', required: true, includeIfNull: false)
   final Map<String, String> translations;
 
   @override

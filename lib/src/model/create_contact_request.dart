@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_contact_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'create_contact_request.g.dart';
 )
 class CreateContactRequest {
   /// Returns a new [CreateContactRequest] instance.
-  CreateContactRequest({
-    this.country,
-  });
+  CreateContactRequest({this.country});
 
-  @JsonKey(
-    name: r'country',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: false, includeIfNull: false)
   final String? country;
 
   @override

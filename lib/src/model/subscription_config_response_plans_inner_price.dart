@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_config_response_plans_inner_price.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'subscription_config_response_plans_inner_price.g.dart';
 )
 class SubscriptionConfigResponsePlansInnerPrice {
   /// Returns a new [SubscriptionConfigResponsePlansInnerPrice] instance.
-  SubscriptionConfigResponsePlansInnerPrice({
-    required this.USD,
-  });
+  SubscriptionConfigResponsePlansInnerPrice({required this.USD});
 
-  @JsonKey(
-    name: r'USD',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'USD', required: true, includeIfNull: false)
   final num USD;
 
   @override

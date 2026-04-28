@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'https_connect_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,46 +19,30 @@ class HttpsConnectRequest {
   /// Returns a new [HttpsConnectRequest] instance.
   HttpsConnectRequest({
     this.countryOriginate,
+
     this.country,
+
     this.ipType,
+
     this.resetConnection,
+
     this.osType,
   });
 
-  @JsonKey(
-    name: r'country_originate',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country_originate', required: false, includeIfNull: false)
   final String? countryOriginate;
 
-  @JsonKey(
-    name: r'country',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: false, includeIfNull: false)
   final String? country;
 
-  @JsonKey(
-    name: r'ip_type',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ip_type', required: false, includeIfNull: false)
   final String? ipType;
 
   /// Request a new IP
-  @JsonKey(
-    name: r'reset_connection',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reset_connection', required: false, includeIfNull: false)
   final bool? resetConnection;
 
-  @JsonKey(
-    name: r'os_type',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'os_type', required: false, includeIfNull: false)
   final String? osType;
 
   @override

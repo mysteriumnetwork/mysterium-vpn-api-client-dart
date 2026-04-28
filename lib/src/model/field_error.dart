@@ -15,23 +15,12 @@ part 'field_error.g.dart';
 )
 class FieldError {
   /// Returns a new [FieldError] instance.
-  FieldError({
-    required this.code,
-    required this.message,
-  });
+  FieldError({required this.code, required this.message});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'message',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
   @override

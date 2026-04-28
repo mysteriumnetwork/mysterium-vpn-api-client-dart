@@ -29,7 +29,7 @@ final api = VpnApi().getEmailMarketing();
 try {
     final response = api.contactStatusRequest();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EmailMarketing->contactStatusRequest: $e\n');
 }
 ```
@@ -66,7 +66,7 @@ final CreateContactRequest createContactRequest = ; // CreateContactRequest |
 
 try {
     api.createContactRequest(createContactRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EmailMarketing->createContactRequest: $e\n');
 }
 ```
@@ -106,7 +106,7 @@ final MarketingPermissionsRequest marketingPermissionsRequest = ; // MarketingPe
 
 try {
     api.setMarketingConsent(marketingPermissionsRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EmailMarketing->setMarketingConsent: $e\n');
 }
 ```
@@ -146,7 +146,7 @@ final UpdateContactRequest updateContactRequest = ; // UpdateContactRequest |
 
 try {
     api.updateContactRequest(updateContactRequest);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling EmailMarketing->updateContactRequest: $e\n');
 }
 ```

@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_adyen_subscription_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,29 +19,19 @@ class CreateAdyenSubscriptionResponse {
   /// Returns a new [CreateAdyenSubscriptionResponse] instance.
   CreateAdyenSubscriptionResponse({
     required this.gatewayId,
+
     required this.subscriptionId,
+
     this.paymentData,
   });
 
-  @JsonKey(
-    name: r'gateway_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gateway_id', required: true, includeIfNull: false)
   final String gatewayId;
 
-  @JsonKey(
-    name: r'subscription_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subscription_id', required: true, includeIfNull: false)
   final String subscriptionId;
 
-  @JsonKey(
-    name: r'payment_data',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'payment_data', required: false, includeIfNull: false)
   final Object? paymentData;
 
   @override

@@ -26,7 +26,7 @@ final api = VpnApi().getIntercom();
 try {
     final response = api.intercom();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Intercom->intercom: $e\n');
 }
 ```

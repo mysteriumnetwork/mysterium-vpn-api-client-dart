@@ -5,10 +5,12 @@
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/invoice.dart';
 import 'package:vpn_api/src/model/invoices_response_paging.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'invoices_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,23 +19,12 @@ part 'invoices_response.g.dart';
 )
 class InvoicesResponse {
   /// Returns a new [InvoicesResponse] instance.
-  InvoicesResponse({
-    required this.data,
-    required this.paging,
-  });
+  InvoicesResponse({required this.data, required this.paging});
 
-  @JsonKey(
-    name: r'data',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'data', required: true, includeIfNull: false)
   final List<Invoice> data;
 
-  @JsonKey(
-    name: r'paging',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'paging', required: true, includeIfNull: false)
   final InvoicesResponsePaging paging;
 
   @override

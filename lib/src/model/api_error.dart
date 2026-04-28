@@ -16,31 +16,15 @@ part 'api_error.g.dart';
 )
 class APIError {
   /// Returns a new [APIError] instance.
-  APIError({
-    this.status,
-    this.path,
-    required this.error,
-  });
+  APIError({this.status, this.path, required this.error});
 
-  @JsonKey(
-    name: r'status',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
   final int? status;
 
-  @JsonKey(
-    name: r'path',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'path', required: false, includeIfNull: false)
   final String? path;
 
-  @JsonKey(
-    name: r'error',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error', required: true, includeIfNull: false)
   final CheckAuth401ResponseError error;
 
   @override

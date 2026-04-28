@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_subscription_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,109 +19,69 @@ class GetSubscriptionResponse {
   /// Returns a new [GetSubscriptionResponse] instance.
   GetSubscriptionResponse({
     required this.active,
+
     this.periodStart,
+
     this.activeUntil,
+
     this.gateway,
+
     this.planId,
+
     this.storePlanId,
+
     this.portalUrl,
+
     required this.expired,
+
     required this.recurring,
+
     required this.subscriptionId,
+
     this.orderCurrency,
+
     this.orderNetAmount,
+
     this.orderCouponUsed,
   });
 
-  @JsonKey(
-    name: r'active',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
-  @JsonKey(
-    name: r'period_start',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'period_start', required: false, includeIfNull: false)
   final DateTime? periodStart;
 
-  @JsonKey(
-    name: r'active_until',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'active_until', required: false, includeIfNull: false)
   final DateTime? activeUntil;
 
-  @JsonKey(
-    name: r'gateway',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gateway', required: false, includeIfNull: false)
   final String? gateway;
 
-  @JsonKey(
-    name: r'plan_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'plan_id', required: false, includeIfNull: false)
   final String? planId;
 
-  @JsonKey(
-    name: r'store_plan_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'store_plan_id', required: false, includeIfNull: false)
   final String? storePlanId;
 
-  @JsonKey(
-    name: r'portal_url',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'portal_url', required: false, includeIfNull: false)
   final String? portalUrl;
 
-  @JsonKey(
-    name: r'expired',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expired', required: true, includeIfNull: false)
   final bool expired;
 
-  @JsonKey(
-    name: r'recurring',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'recurring', required: true, includeIfNull: false)
   final bool recurring;
 
-  @JsonKey(
-    name: r'subscription_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subscription_id', required: true, includeIfNull: false)
   final String subscriptionId;
 
-  @JsonKey(
-    name: r'order_currency',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'order_currency', required: false, includeIfNull: false)
   final String? orderCurrency;
 
-  @JsonKey(
-    name: r'order_net_amount',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'order_net_amount', required: false, includeIfNull: false)
   final String? orderNetAmount;
 
-  @JsonKey(
-    name: r'order_coupon_used',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'order_coupon_used', required: false, includeIfNull: false)
   final String? orderCouponUsed;
 
   @override

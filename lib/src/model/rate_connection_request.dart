@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'rate_connection_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,67 +19,44 @@ class RateConnectionRequest {
   /// Returns a new [RateConnectionRequest] instance.
   RateConnectionRequest({
     required this.country,
+
     required this.ipType,
+
     this.publicKey,
+
     this.deviceId,
+
     this.feedback,
+
     this.reasons = '',
+
     required this.mode,
   });
 
   /// Country code where the connection is made from
-  @JsonKey(
-    name: r'country',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
 
-  @JsonKey(
-    name: r'ip_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ip_type', required: true, includeIfNull: false)
   final String ipType;
 
-  @JsonKey(
-    name: r'public_key',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'public_key', required: false, includeIfNull: false)
   final String? publicKey;
 
   /// Device ID
-  @JsonKey(
-    name: r'device_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'device_id', required: false, includeIfNull: false)
   final String? deviceId;
 
   /// Feedback about the connection
-  @JsonKey(
-    name: r'feedback',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'feedback', required: false, includeIfNull: false)
   final String? feedback;
 
   /// Reasons for the feedback
-  @JsonKey(
-    defaultValue: '',
-    name: r'reasons',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(defaultValue: '', name: r'reasons', required: false, includeIfNull: false)
   final String? reasons;
 
   /// Mode of the feedback
-  @JsonKey(
-    name: r'mode',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'mode', required: true, includeIfNull: false)
   final RateConnectionRequestModeEnum mode;
 
   @override

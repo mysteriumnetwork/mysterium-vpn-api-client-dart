@@ -23,39 +23,19 @@ class RequestActivation200ResponseToken {
     required this.userId,
   });
 
-  @JsonKey(
-    name: r'access_token',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'access_token', required: true, includeIfNull: false)
   final String accessToken;
 
-  @JsonKey(
-    name: r'token_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'token_type', required: true, includeIfNull: false)
   final RequestActivation200ResponseTokenTokenTypeEnum tokenType;
 
-  @JsonKey(
-    name: r'expires_in',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expires_in', required: false, includeIfNull: false)
   final num? expiresIn;
 
-  @JsonKey(
-    name: r'refresh_token',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'refresh_token', required: false, includeIfNull: false)
   final String? refreshToken;
 
-  @JsonKey(
-    name: r'user_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'user_id', required: true, includeIfNull: false)
   final String userId;
 
   @override

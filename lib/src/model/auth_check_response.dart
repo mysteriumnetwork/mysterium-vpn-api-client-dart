@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'auth_check_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'auth_check_response.g.dart';
 )
 class AuthCheckResponse {
   /// Returns a new [AuthCheckResponse] instance.
-  AuthCheckResponse({
-    required this.username,
-    required this.userId,
-  });
+  AuthCheckResponse({required this.username, required this.userId});
 
-  @JsonKey(
-    name: r'username',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
 
-  @JsonKey(
-    name: r'user_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'user_id', required: true, includeIfNull: false)
   final String userId;
 
   @override

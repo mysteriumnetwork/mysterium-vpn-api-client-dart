@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'magic_link_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'magic_link_response.g.dart';
 )
 class MagicLinkResponse {
   /// Returns a new [MagicLinkResponse] instance.
-  MagicLinkResponse({
-    this.code,
-    this.firstTime,
-  });
+  MagicLinkResponse({this.code, this.firstTime});
 
-  @JsonKey(
-    name: r'code',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: false, includeIfNull: false)
   final String? code;
 
-  @JsonKey(
-    name: r'first_time',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'first_time', required: false, includeIfNull: false)
   final bool? firstTime;
 
   @override

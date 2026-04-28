@@ -9,10 +9,12 @@ import 'package:vpn_api/src/model/o_auth2_token_request_one_of1.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of3_authorization.dart';
 import 'package:vpn_api/src/model/authorization_device.dart';
 import 'package:vpn_api/src/model/o_auth2_token_request_one_of.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -23,71 +25,46 @@ class OAuth2TokenRequest {
   /// Returns a new [OAuth2TokenRequest] instance.
   OAuth2TokenRequest({
     required this.grantType,
+
     required this.clientId,
+
     this.device,
+
     required this.refreshToken,
+
     required this.codeVerifier,
+
     required this.code,
+
     this.googleIdToken,
+
     required this.authorization,
   });
 
-  @JsonKey(
-    name: r'grant_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'grant_type', required: true, includeIfNull: false)
   final OAuth2TokenRequestGrantTypeEnum grantType;
 
-  @JsonKey(
-    name: r'client_id',
-    required: true,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'client_id', required: true, includeIfNull: true)
   final OAuth2TokenRequestClientIdEnum? clientId;
 
-  @JsonKey(
-    name: r'device',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'device', required: false, includeIfNull: false)
   final AuthorizationDevice? device;
 
-  @JsonKey(
-    name: r'refresh_token',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'refresh_token', required: true, includeIfNull: false)
   final String refreshToken;
 
-  @JsonKey(
-    name: r'code_verifier',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code_verifier', required: true, includeIfNull: false)
   final String codeVerifier;
 
   /// Google authorization code for retrieving access token
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: true,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: true)
   final String? code;
 
   /// Google access token. Required if authorization code is not provided.
-  @JsonKey(
-    name: r'google_id_token',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'google_id_token', required: false, includeIfNull: false)
   final String? googleIdToken;
 
-  @JsonKey(
-    name: r'authorization',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'authorization', required: true, includeIfNull: false)
   final OAuth2TokenRequestOneOf3Authorization authorization;
 
   @override

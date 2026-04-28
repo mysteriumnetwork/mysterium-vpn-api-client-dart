@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'request_activation_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'request_activation_request.g.dart';
 )
 class RequestActivationRequest {
   /// Returns a new [RequestActivationRequest] instance.
-  RequestActivationRequest({
-    required this.id,
-  });
+  RequestActivationRequest({required this.id});
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
   @override

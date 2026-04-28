@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/plan_metadata.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_plan_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,31 +18,15 @@ part 'get_plan_response.g.dart';
 )
 class GetPlanResponse {
   /// Returns a new [GetPlanResponse] instance.
-  GetPlanResponse({
-    required this.id,
-    required this.description,
-    required this.metadata,
-  });
+  GetPlanResponse({required this.id, required this.description, required this.metadata});
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'description',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'description', required: true, includeIfNull: false)
   final String description;
 
-  @JsonKey(
-    name: r'metadata',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'metadata', required: true, includeIfNull: false)
   final PlanMetadata metadata;
 
   @override

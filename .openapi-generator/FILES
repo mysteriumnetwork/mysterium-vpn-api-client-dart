@@ -71,6 +71,7 @@ doc/OpenVpnConnectRequest.md
 doc/OpenVpnConnectResponse.md
 doc/OrderSummaryRequest.md
 doc/OrderSummaryResponse.md
+doc/OrderUpdateSummaryQuery.md
 doc/PlanMetadata.md
 doc/ProxyConnectResponse.md
 doc/ProxyConnectResponseProxyConfig.md
@@ -170,6 +171,7 @@ lib/src/model/open_vpn_connect_request.dart
 lib/src/model/open_vpn_connect_response.dart
 lib/src/model/order_summary_request.dart
 lib/src/model/order_summary_response.dart
+lib/src/model/order_update_summary_query.dart
 lib/src/model/plan_metadata.dart
 lib/src/model/proxy_connect_response.dart
 lib/src/model/proxy_connect_response_proxy_config.dart

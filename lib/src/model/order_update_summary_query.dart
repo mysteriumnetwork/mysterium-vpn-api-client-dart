@@ -6,7 +6,7 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'order_summary_request.g.dart';
+part 'order_update_summary_query.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -15,18 +15,15 @@ part 'order_summary_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class OrderSummaryRequest {
-  /// Returns a new [OrderSummaryRequest] instance.
-  OrderSummaryRequest({required this.country, this.state, required this.planId, this.couponCode});
-
-  @JsonKey(name: r'country', required: true, includeIfNull: false)
-  final String country;
-
-  @JsonKey(name: r'state', required: false, includeIfNull: false)
-  final String? state;
+class OrderUpdateSummaryQuery {
+  /// Returns a new [OrderUpdateSummaryQuery] instance.
+  OrderUpdateSummaryQuery({required this.planId, this.currency, this.couponCode});
 
   @JsonKey(name: r'plan_id', required: true, includeIfNull: false)
   final String planId;
+
+  @JsonKey(name: r'currency', required: false, includeIfNull: false)
+  final String? currency;
 
   @JsonKey(name: r'coupon_code', required: false, includeIfNull: false)
   final String? couponCode;
@@ -34,23 +31,21 @@ class OrderSummaryRequest {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OrderSummaryRequest &&
-          other.country == country &&
-          other.state == state &&
+      other is OrderUpdateSummaryQuery &&
           other.planId == planId &&
+          other.currency == currency &&
           other.couponCode == couponCode;
 
   @override
   int get hashCode =>
-      country.hashCode +
-      (state == null ? 0 : state.hashCode) +
       planId.hashCode +
+      (currency == null ? 0 : currency.hashCode) +
       (couponCode == null ? 0 : couponCode.hashCode);
 
-  factory OrderSummaryRequest.fromJson(Map<String, dynamic> json) =>
-      _$OrderSummaryRequestFromJson(json);
+  factory OrderUpdateSummaryQuery.fromJson(Map<String, dynamic> json) =>
+      _$OrderUpdateSummaryQueryFromJson(json);
 
-  Map<String, dynamic> toJson() => _$OrderSummaryRequestToJson(this);
+  Map<String, dynamic> toJson() => _$OrderUpdateSummaryQueryToJson(this);
 
   @override
   String toString() {

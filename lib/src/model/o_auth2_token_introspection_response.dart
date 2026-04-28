@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_introspection_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,43 +17,22 @@ part 'o_auth2_token_introspection_response.g.dart';
 )
 class OAuth2TokenIntrospectionResponse {
   /// Returns a new [OAuth2TokenIntrospectionResponse] instance.
-  OAuth2TokenIntrospectionResponse({
-    required this.active,
-    this.username,
-    this.sub,
-    this.exp,
-  });
+  OAuth2TokenIntrospectionResponse({required this.active, this.username, this.sub, this.exp});
 
   /// Boolean indicator of whether or not the presented token is currently active
-  @JsonKey(
-    name: r'active',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'active', required: true, includeIfNull: false)
   final bool active;
 
   /// Username (e-mail) associated with the presented token
-  @JsonKey(
-    name: r'username',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'username', required: false, includeIfNull: false)
   final String? username;
 
   /// User ID
-  @JsonKey(
-    name: r'sub',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sub', required: false, includeIfNull: false)
   final String? sub;
 
   /// Integer timestamp, measured in the number of seconds since January 1 1970 UTC, indicating when this token will expire, as defined in JWT
-  @JsonKey(
-    name: r'exp',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'exp', required: false, includeIfNull: false)
   final num? exp;
 
   @override

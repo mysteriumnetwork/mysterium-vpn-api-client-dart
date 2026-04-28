@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_message_location.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,31 +17,15 @@ part 'connection_message_location.g.dart';
 )
 class ConnectionMessageLocation {
   /// Returns a new [ConnectionMessageLocation] instance.
-  ConnectionMessageLocation({
-    required this.ip,
-    required this.country,
-    required this.nodeType,
-  });
+  ConnectionMessageLocation({required this.ip, required this.country, required this.nodeType});
 
-  @JsonKey(
-    name: r'ip',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ip', required: true, includeIfNull: false)
   final String ip;
 
-  @JsonKey(
-    name: r'country',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
 
-  @JsonKey(
-    name: r'node_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'node_type', required: true, includeIfNull: false)
   final String nodeType;
 
   @override

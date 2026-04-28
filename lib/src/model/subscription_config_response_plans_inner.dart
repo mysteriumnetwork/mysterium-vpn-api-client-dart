@@ -7,10 +7,12 @@ import 'package:vpn_api/src/model/subscription_config_response_plans_inner_inter
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_metadata.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_config_response_plans_inner.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -21,69 +23,44 @@ class SubscriptionConfigResponsePlansInner {
   /// Returns a new [SubscriptionConfigResponsePlansInner] instance.
   SubscriptionConfigResponsePlansInner({
     required this.id,
+
     this.appleProductId,
+
     this.googleProductId,
+
     required this.interval,
+
     required this.price,
+
     required this.prices,
+
     required this.supportedGateways,
+
     required this.metadata,
   });
 
-  @JsonKey(
-    name: r'id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
   final String id;
 
-  @JsonKey(
-    name: r'apple_product_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'apple_product_id', required: false, includeIfNull: false)
   final String? appleProductId;
 
-  @JsonKey(
-    name: r'google_product_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'google_product_id', required: false, includeIfNull: false)
   final String? googleProductId;
 
-  @JsonKey(
-    name: r'interval',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'interval', required: true, includeIfNull: false)
   final SubscriptionConfigResponsePlansInnerInterval interval;
 
-  @JsonKey(
-    name: r'price',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'price', required: true, includeIfNull: false)
   final SubscriptionConfigResponsePlansInnerPrice price;
 
-  @JsonKey(
-    name: r'prices',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'prices', required: true, includeIfNull: false)
   final List<SubscriptionConfigResponsePlansInnerPricesInner> prices;
 
-  @JsonKey(
-    name: r'supported_gateways',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'supported_gateways', required: true, includeIfNull: false)
   final List<String> supportedGateways;
 
-  @JsonKey(
-    name: r'metadata',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'metadata', required: true, includeIfNull: false)
   final SubscriptionConfigResponsePlansInnerMetadata metadata;
 
   @override

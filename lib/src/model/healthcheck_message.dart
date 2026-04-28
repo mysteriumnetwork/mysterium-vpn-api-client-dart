@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'healthcheck_message.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,31 +17,15 @@ part 'healthcheck_message.g.dart';
 )
 class HealthcheckMessage {
   /// Returns a new [HealthcheckMessage] instance.
-  HealthcheckMessage({
-    required this.status,
-    required this.version,
-    required this.sha,
-  });
+  HealthcheckMessage({required this.status, required this.version, required this.sha});
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final String status;
 
-  @JsonKey(
-    name: r'version',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'version', required: true, includeIfNull: false)
   final String version;
 
-  @JsonKey(
-    name: r'sha',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'sha', required: true, includeIfNull: false)
   final String sha;
 
   @override

@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_locations_request_query.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'connection_locations_request_query.g.dart';
 )
 class ConnectionLocationsRequestQuery {
   /// Returns a new [ConnectionLocationsRequestQuery] instance.
-  ConnectionLocationsRequestQuery({
-    this.ipType,
-  });
+  ConnectionLocationsRequestQuery({this.ipType});
 
-  @JsonKey(
-    name: r'ip_type',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ip_type', required: false, includeIfNull: false)
   final ConnectionLocationsRequestQueryIpTypeEnum? ipType;
 
   @override

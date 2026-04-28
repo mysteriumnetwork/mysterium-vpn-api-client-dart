@@ -15,23 +15,12 @@ part 'token403_response_error_fields_value.g.dart';
 )
 class Token403ResponseErrorFieldsValue {
   /// Returns a new [Token403ResponseErrorFieldsValue] instance.
-  Token403ResponseErrorFieldsValue({
-    required this.code,
-    required this.message,
-  });
+  Token403ResponseErrorFieldsValue({required this.code, required this.message});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'message',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
   @override

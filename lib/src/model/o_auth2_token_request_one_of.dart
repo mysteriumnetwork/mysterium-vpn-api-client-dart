@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/authorization_device.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_request_one_of.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -18,37 +20,24 @@ class OAuth2TokenRequestOneOf {
   /// Returns a new [OAuth2TokenRequestOneOf] instance.
   OAuth2TokenRequestOneOf({
     required this.grantType,
+
     required this.clientId,
+
     this.device,
+
     required this.refreshToken,
   });
 
-  @JsonKey(
-    name: r'grant_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'grant_type', required: true, includeIfNull: false)
   final OAuth2TokenRequestOneOfGrantTypeEnum grantType;
 
-  @JsonKey(
-    name: r'client_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'client_id', required: true, includeIfNull: false)
   final OAuth2TokenRequestOneOfClientIdEnum clientId;
 
-  @JsonKey(
-    name: r'device',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'device', required: false, includeIfNull: false)
   final AuthorizationDevice? device;
 
-  @JsonKey(
-    name: r'refresh_token',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'refresh_token', required: true, includeIfNull: false)
   final String refreshToken;
 
   @override

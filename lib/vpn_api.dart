@@ -80,6 +80,7 @@ export 'package:vpn_api/src/model/open_vpn_connect_request.dart';
 export 'package:vpn_api/src/model/open_vpn_connect_response.dart';
 export 'package:vpn_api/src/model/order_summary_request.dart';
 export 'package:vpn_api/src/model/order_summary_response.dart';
+export 'package:vpn_api/src/model/order_update_summary_query.dart';
 export 'package:vpn_api/src/model/plan_metadata.dart';
 export 'package:vpn_api/src/model/proxy_connect_response.dart';
 export 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';

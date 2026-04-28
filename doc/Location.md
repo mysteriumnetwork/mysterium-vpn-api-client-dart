@@ -26,7 +26,7 @@ final api = VpnApi().getLocation();
 try {
     final response = api.location();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling Location->location: $e\n');
 }
 ```

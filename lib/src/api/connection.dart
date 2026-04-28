@@ -51,13 +51,8 @@ class Connection {
     final _path = r'/connection/connect';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -68,10 +63,7 @@ class Connection {
       _bodyData = jsonEncode(wireguardConnectRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -94,8 +86,10 @@ class Connection {
       _responseData = rawData == null
           ? null
           : deserialize<WireguardConnectResponse, WireguardConnectResponse>(
-              rawData, 'WireguardConnectResponse',
-              growable: true);
+              rawData,
+              'WireguardConnectResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -144,13 +138,8 @@ class Connection {
     final _path = r'/connection/connect-openvpn';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -161,10 +150,7 @@ class Connection {
       _bodyData = jsonEncode(openVpnConnectRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -187,8 +173,10 @@ class Connection {
       _responseData = rawData == null
           ? null
           : deserialize<OpenVpnConnectResponse, OpenVpnConnectResponse>(
-              rawData, 'OpenVpnConnectResponse',
-              growable: true);
+              rawData,
+              'OpenVpnConnectResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -237,13 +225,8 @@ class Connection {
     final _path = r'/connection/connect-proxy';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -254,10 +237,7 @@ class Connection {
       _bodyData = jsonEncode(httpsConnectRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -279,8 +259,11 @@ class Connection {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<ProxyConnectResponse, ProxyConnectResponse>(rawData, 'ProxyConnectResponse',
-              growable: true);
+          : deserialize<ProxyConnectResponse, ProxyConnectResponse>(
+              rawData,
+              'ProxyConnectResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -329,19 +312,12 @@ class Connection {
     final _path = r'/connection/config';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'ip_type': ipType,
-    };
+    final _queryParameters = <String, dynamic>{r'ip_type': ipType};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -359,8 +335,10 @@ class Connection {
       _responseData = rawData == null
           ? null
           : deserialize<ConnectionConfigResponse, ConnectionConfigResponse>(
-              rawData, 'ConnectionConfigResponse',
-              growable: true);
+              rawData,
+              'ConnectionConfigResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -409,19 +387,12 @@ class Connection {
     final _path = r'/connection/config/regions';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'ip_type': ipType,
-    };
+    final _queryParameters = <String, dynamic>{r'ip_type': ipType};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -439,8 +410,10 @@ class Connection {
       _responseData = rawData == null
           ? null
           : deserialize<ConnectionConfigRegionsResponse, ConnectionConfigRegionsResponse>(
-              rawData, 'ConnectionConfigRegionsResponse',
-              growable: true);
+              rawData,
+              'ConnectionConfigRegionsResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -489,19 +462,12 @@ class Connection {
     final _path = r'/connection/config/locations';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'ip_type': ipType,
-    };
+    final _queryParameters = <String, dynamic>{r'ip_type': ipType};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -519,8 +485,10 @@ class Connection {
       _responseData = rawData == null
           ? null
           : deserialize<List<ConnectionLocation>, ConnectionLocation>(
-              rawData, 'List<ConnectionLocation>',
-              growable: true);
+              rawData,
+              'List<ConnectionLocation>',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -571,20 +539,12 @@ class Connection {
     final _path = r'/connection/disconnect';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'public_key': publicKey,
-      r'device_id': deviceId,
-    };
+    final _queryParameters = <String, dynamic>{r'public_key': publicKey, r'device_id': deviceId};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -622,13 +582,8 @@ class Connection {
     final _path = r'/connection/disconnect-all';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -669,13 +624,8 @@ class Connection {
     final _path = r'/connection/rate-connection';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -686,10 +636,7 @@ class Connection {
       _bodyData = jsonEncode(rateConnectionRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -732,13 +679,8 @@ class Connection {
     final _path = r'/connection/user-intents';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 

@@ -16,39 +16,18 @@ part 'token403_response_error.g.dart';
 )
 class Token403ResponseError {
   /// Returns a new [Token403ResponseError] instance.
-  Token403ResponseError({
-    required this.code,
-    required this.message,
-    this.detail,
-    this.fields,
-  });
+  Token403ResponseError({required this.code, required this.message, this.detail, this.fields});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'message',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
-  @JsonKey(
-    name: r'detail',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'detail', required: false, includeIfNull: false)
   final String? detail;
 
-  @JsonKey(
-    name: r'fields',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'fields', required: false, includeIfNull: false)
   final Map<String, Token403ResponseErrorFieldsValue>? fields;
 
   @override

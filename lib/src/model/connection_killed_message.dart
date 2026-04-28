@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_killed_message.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'connection_killed_message.g.dart';
 )
 class ConnectionKilledMessage {
   /// Returns a new [ConnectionKilledMessage] instance.
-  ConnectionKilledMessage({
-    required this.reason,
-  });
+  ConnectionKilledMessage({required this.reason});
 
-  @JsonKey(
-    name: r'reason',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reason', required: true, includeIfNull: false)
   final ConnectionKilledMessageReasonEnum reason;
 
   @override

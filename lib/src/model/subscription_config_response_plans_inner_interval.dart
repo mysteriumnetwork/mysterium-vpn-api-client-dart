@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_config_response_plans_inner_interval.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'subscription_config_response_plans_inner_interval.g.dart';
 )
 class SubscriptionConfigResponsePlansInnerInterval {
   /// Returns a new [SubscriptionConfigResponsePlansInnerInterval] instance.
-  SubscriptionConfigResponsePlansInnerInterval({
-    required this.unit,
-    required this.amount,
-  });
+  SubscriptionConfigResponsePlansInnerInterval({required this.unit, required this.amount});
 
-  @JsonKey(
-    name: r'unit',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'unit', required: true, includeIfNull: false)
   final SubscriptionConfigResponsePlansInnerIntervalUnitEnum unit;
 
-  @JsonKey(
-    name: r'amount',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'amount', required: true, includeIfNull: false)
   final num amount;
 
   @override

@@ -16,31 +16,15 @@ part 'token403_response.g.dart';
 )
 class Token403Response {
   /// Returns a new [Token403Response] instance.
-  Token403Response({
-    this.status,
-    this.path,
-    required this.error,
-  });
+  Token403Response({this.status, this.path, required this.error});
 
-  @JsonKey(
-    name: r'status',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
   final int? status;
 
-  @JsonKey(
-    name: r'path',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'path', required: false, includeIfNull: false)
   final String? path;
 
-  @JsonKey(
-    name: r'error',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error', required: true, includeIfNull: false)
   final Token403ResponseError error;
 
   @override

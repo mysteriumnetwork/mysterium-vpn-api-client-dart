@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_apple_subscription_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'create_apple_subscription_response.g.dart';
 )
 class CreateAppleSubscriptionResponse {
   /// Returns a new [CreateAppleSubscriptionResponse] instance.
-  CreateAppleSubscriptionResponse({
-    required this.gatewayId,
-    required this.subscriptionProductId,
-  });
+  CreateAppleSubscriptionResponse({required this.gatewayId, required this.subscriptionProductId});
 
-  @JsonKey(
-    name: r'gateway_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gateway_id', required: true, includeIfNull: false)
   final String gatewayId;
 
-  @JsonKey(
-    name: r'subscription_product_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'subscription_product_id', required: true, includeIfNull: false)
   final String subscriptionProductId;
 
   @override

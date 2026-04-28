@@ -50,13 +50,8 @@ class Authentication {
     final _path = r'/auth/config';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -74,8 +69,11 @@ class Authentication {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<AuthConfigResponse, AuthConfigResponse>(rawData, 'AuthConfigResponse',
-              growable: true);
+          : deserialize<AuthConfigResponse, AuthConfigResponse>(
+              rawData,
+              'AuthConfigResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -122,13 +120,8 @@ class Authentication {
     final _path = r'/auth/check';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -146,8 +139,11 @@ class Authentication {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<AuthCheckResponse, AuthCheckResponse>(rawData, 'AuthCheckResponse',
-              growable: true);
+          : deserialize<AuthCheckResponse, AuthCheckResponse>(
+              rawData,
+              'AuthCheckResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -193,16 +189,16 @@ class Authentication {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/activation/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/auth/activation/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -221,8 +217,10 @@ class Authentication {
       _responseData = rawData == null
           ? null
           : deserialize<RequestActivation200Response, RequestActivation200Response>(
-              rawData, 'RequestActivation200Response',
-              growable: true);
+              rawData,
+              'RequestActivation200Response',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -271,13 +269,8 @@ class Authentication {
     final _path = r'/oauth/introspect';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/x-www-form-urlencoded',
       validateStatus: validateStatus,
     );
@@ -286,10 +279,7 @@ class Authentication {
 
     try {} catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -312,8 +302,10 @@ class Authentication {
       _responseData = rawData == null
           ? null
           : deserialize<OAuth2TokenIntrospectionResponse, OAuth2TokenIntrospectionResponse>(
-              rawData, 'OAuth2TokenIntrospectionResponse',
-              growable: true);
+              rawData,
+              'OAuth2TokenIntrospectionResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -360,13 +352,8 @@ class Authentication {
     final _path = r'/auth/logout';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -411,13 +398,8 @@ class Authentication {
     final _path = r'/magic-link/redirect';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -465,13 +447,8 @@ class Authentication {
     final _path = r'/auth/activation';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -482,10 +459,7 @@ class Authentication {
       _bodyData = jsonEncode(requestActivationRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -508,8 +482,10 @@ class Authentication {
       _responseData = rawData == null
           ? null
           : deserialize<RequestActivation200Response, RequestActivation200Response>(
-              rawData, 'RequestActivation200Response',
-              growable: true);
+              rawData,
+              'RequestActivation200Response',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -558,13 +534,8 @@ class Authentication {
     final _path = r'/magic-link';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -575,10 +546,7 @@ class Authentication {
       _bodyData = jsonEncode(magicLinkRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -600,8 +568,11 @@ class Authentication {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<MagicLinkResponse, MagicLinkResponse>(rawData, 'MagicLinkResponse',
-              growable: true);
+          : deserialize<MagicLinkResponse, MagicLinkResponse>(
+              rawData,
+              'MagicLinkResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -664,13 +635,8 @@ class Authentication {
     final _path = r'/oauth/token';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/x-www-form-urlencoded',
       validateStatus: validateStatus,
     );
@@ -679,10 +645,7 @@ class Authentication {
 
     try {} catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -704,8 +667,11 @@ class Authentication {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<OAuth2TokenResponse, OAuth2TokenResponse>(rawData, 'OAuth2TokenResponse',
-              growable: true);
+          : deserialize<OAuth2TokenResponse, OAuth2TokenResponse>(
+              rawData,
+              'OAuth2TokenResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

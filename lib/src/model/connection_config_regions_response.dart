@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/connection_region.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_config_regions_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,15 +18,9 @@ part 'connection_config_regions_response.g.dart';
 )
 class ConnectionConfigRegionsResponse {
   /// Returns a new [ConnectionConfigRegionsResponse] instance.
-  ConnectionConfigRegionsResponse({
-    required this.regions,
-  });
+  ConnectionConfigRegionsResponse({required this.regions});
 
-  @JsonKey(
-    name: r'regions',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'regions', required: true, includeIfNull: false)
   final List<ConnectionRegion> regions;
 
   @override

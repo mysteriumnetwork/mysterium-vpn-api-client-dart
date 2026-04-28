@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'contact_status_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'contact_status_response.g.dart';
 )
 class ContactStatusResponse {
   /// Returns a new [ContactStatusResponse] instance.
-  ContactStatusResponse({
-    required this.status,
-    this.consent,
-  });
+  ContactStatusResponse({required this.status, this.consent});
 
-  @JsonKey(
-    name: r'status',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: true, includeIfNull: false)
   final String status;
 
-  @JsonKey(
-    name: r'consent',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'consent', required: false, includeIfNull: false)
   final bool? consent;
 
   @override

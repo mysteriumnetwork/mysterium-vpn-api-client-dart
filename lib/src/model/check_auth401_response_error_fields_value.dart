@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'check_auth401_response_error_fields_value.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'check_auth401_response_error_fields_value.g.dart';
 )
 class CheckAuth401ResponseErrorFieldsValue {
   /// Returns a new [CheckAuth401ResponseErrorFieldsValue] instance.
-  CheckAuth401ResponseErrorFieldsValue({
-    required this.code,
-    required this.message,
-  });
+  CheckAuth401ResponseErrorFieldsValue({required this.code, required this.message});
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'message',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'message', required: true, includeIfNull: false)
   final String message;
 
   @override

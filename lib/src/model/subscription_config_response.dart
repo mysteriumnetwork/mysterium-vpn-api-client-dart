@@ -6,10 +6,12 @@
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner.dart';
 import 'package:vpn_api/src/model/subscription_config_response_gateways_inner.dart';
 import 'package:vpn_api/src/model/country.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_config_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -20,45 +22,29 @@ class SubscriptionConfigResponse {
   /// Returns a new [SubscriptionConfigResponse] instance.
   SubscriptionConfigResponse({
     required this.gateways,
+
     required this.plans,
+
     required this.countries,
+
     required this.stripeReturnUrl,
+
     required this.stripePublishableKey,
   });
 
-  @JsonKey(
-    name: r'gateways',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'gateways', required: true, includeIfNull: false)
   final List<SubscriptionConfigResponseGatewaysInner> gateways;
 
-  @JsonKey(
-    name: r'plans',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'plans', required: true, includeIfNull: false)
   final List<SubscriptionConfigResponsePlansInner> plans;
 
-  @JsonKey(
-    name: r'countries',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'countries', required: true, includeIfNull: false)
   final List<Country> countries;
 
-  @JsonKey(
-    name: r'stripe_return_url',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'stripe_return_url', required: true, includeIfNull: false)
   final String stripeReturnUrl;
 
-  @JsonKey(
-    name: r'stripe_publishable_key',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'stripe_publishable_key', required: true, includeIfNull: false)
   final String stripePublishableKey;
 
   @override

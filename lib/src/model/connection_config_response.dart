@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_config_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'connection_config_response.g.dart';
 )
 class ConnectionConfigResponse {
   /// Returns a new [ConnectionConfigResponse] instance.
-  ConnectionConfigResponse({
-    required this.countries,
-    required this.topCountries,
-  });
+  ConnectionConfigResponse({required this.countries, required this.topCountries});
 
-  @JsonKey(
-    name: r'countries',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'countries', required: true, includeIfNull: false)
   final List<String> countries;
 
-  @JsonKey(
-    name: r'top_countries',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'top_countries', required: true, includeIfNull: false)
   final List<String> topCountries;
 
   @override

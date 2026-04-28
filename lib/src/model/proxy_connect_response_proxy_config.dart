@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'proxy_connect_response_proxy_config.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,45 +19,29 @@ class ProxyConnectResponseProxyConfig {
   /// Returns a new [ProxyConnectResponseProxyConfig] instance.
   ProxyConnectResponseProxyConfig({
     required this.host,
+
     required this.port,
+
     required this.username,
+
     required this.password,
+
     required this.expiresAt,
   });
 
-  @JsonKey(
-    name: r'host',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'host', required: true, includeIfNull: false)
   final String host;
 
-  @JsonKey(
-    name: r'port',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'port', required: true, includeIfNull: false)
   final String port;
 
-  @JsonKey(
-    name: r'username',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
 
-  @JsonKey(
-    name: r'password',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'password', required: true, includeIfNull: false)
   final String password;
 
-  @JsonKey(
-    name: r'expires_at',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'expires_at', required: true, includeIfNull: false)
   final DateTime expiresAt;
 
   @override

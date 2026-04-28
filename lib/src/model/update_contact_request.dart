@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'update_contact_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,24 +17,13 @@ part 'update_contact_request.g.dart';
 )
 class UpdateContactRequest {
   /// Returns a new [UpdateContactRequest] instance.
-  UpdateContactRequest({
-    required this.consent,
-    this.country,
-  });
+  UpdateContactRequest({required this.consent, this.country});
 
   /// User's consent for marketing communications
-  @JsonKey(
-    name: r'consent',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'consent', required: true, includeIfNull: false)
   final bool consent;
 
-  @JsonKey(
-    name: r'country',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: false, includeIfNull: false)
   final String? country;
 
   @override

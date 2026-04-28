@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_location_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'get_location_response.g.dart';
 )
 class GetLocationResponse {
   /// Returns a new [GetLocationResponse] instance.
-  GetLocationResponse({
-    required this.country,
-  });
+  GetLocationResponse({required this.country});
 
-  @JsonKey(
-    name: r'country',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
 
   @override

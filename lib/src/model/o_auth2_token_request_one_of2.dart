@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/authorization_device.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'o_auth2_token_request_one_of2.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -18,47 +20,31 @@ class OAuth2TokenRequestOneOf2 {
   /// Returns a new [OAuth2TokenRequestOneOf2] instance.
   OAuth2TokenRequestOneOf2({
     required this.grantType,
+
     this.clientId,
+
     this.device,
+
     this.code,
+
     this.googleIdToken,
   });
 
-  @JsonKey(
-    name: r'grant_type',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'grant_type', required: true, includeIfNull: false)
   final OAuth2TokenRequestOneOf2GrantTypeEnum grantType;
 
-  @JsonKey(
-    name: r'client_id',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'client_id', required: false, includeIfNull: false)
   final OAuth2TokenRequestOneOf2ClientIdEnum? clientId;
 
-  @JsonKey(
-    name: r'device',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'device', required: false, includeIfNull: false)
   final AuthorizationDevice? device;
 
   /// Google authorization code for retrieving access token
-  @JsonKey(
-    name: r'code',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: false, includeIfNull: false)
   final String? code;
 
   /// Google access token. Required if authorization code is not provided.
-  @JsonKey(
-    name: r'google_id_token',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'google_id_token', required: false, includeIfNull: false)
   final String? googleIdToken;
 
   @override

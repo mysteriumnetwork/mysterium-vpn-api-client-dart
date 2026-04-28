@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'wireguard_connect_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,87 +19,56 @@ class WireguardConnectRequest {
   /// Returns a new [WireguardConnectRequest] instance.
   WireguardConnectRequest({
     required this.publicKey,
+
     this.countryOriginate,
+
     this.cluster,
+
     this.country,
+
     this.city,
+
     this.userIntent,
+
     this.ipType,
+
     this.resetConnection,
+
     this.osType,
+
     this.dns,
   });
 
-  @JsonKey(
-    name: r'public_key',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'public_key', required: true, includeIfNull: false)
   final String publicKey;
 
-  @JsonKey(
-    name: r'country_originate',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country_originate', required: false, includeIfNull: false)
   final String? countryOriginate;
 
-  @JsonKey(
-    name: r'cluster',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'cluster', required: false, includeIfNull: false)
   final String? cluster;
 
-  @JsonKey(
-    name: r'country',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'country', required: false, includeIfNull: false)
   final String? country;
 
-  @JsonKey(
-    name: r'city',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'city', required: false, includeIfNull: false)
   final String? city;
 
-  @JsonKey(
-    name: r'user_intent',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'user_intent', required: false, includeIfNull: false)
   final String? userIntent;
 
-  @JsonKey(
-    name: r'ip_type',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'ip_type', required: false, includeIfNull: false)
   final String? ipType;
 
   /// Request a new IP
-  @JsonKey(
-    name: r'reset_connection',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'reset_connection', required: false, includeIfNull: false)
   final bool? resetConnection;
 
-  @JsonKey(
-    name: r'os_type',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'os_type', required: false, includeIfNull: false)
   final String? osType;
 
   /// Custom DNS server to use
-  @JsonKey(
-    name: r'dns',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'dns', required: false, includeIfNull: false)
   final String? dns;
 
   @override

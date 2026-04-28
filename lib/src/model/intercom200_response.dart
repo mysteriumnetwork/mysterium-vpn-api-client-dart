@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'intercom200_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,15 +17,9 @@ part 'intercom200_response.g.dart';
 )
 class Intercom200Response {
   /// Returns a new [Intercom200Response] instance.
-  Intercom200Response({
-    required this.jwt,
-  });
+  Intercom200Response({required this.jwt});
 
-  @JsonKey(
-    name: r'jwt',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'jwt', required: true, includeIfNull: false)
   final String jwt;
 
   @override

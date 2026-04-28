@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/location_rate.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'country.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,39 +18,18 @@ part 'country.g.dart';
 )
 class Country {
   /// Returns a new [Country] instance.
-  Country({
-    required this.name,
-    required this.code,
-    required this.rate,
-    this.states,
-  });
+  Country({required this.name, required this.code, required this.rate, this.states});
 
-  @JsonKey(
-    name: r'name',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'name', required: true, includeIfNull: false)
   final String name;
 
-  @JsonKey(
-    name: r'code',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code', required: true, includeIfNull: false)
   final String code;
 
-  @JsonKey(
-    name: r'rate',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'rate', required: true, includeIfNull: false)
   final String rate;
 
-  @JsonKey(
-    name: r'states',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'states', required: false, includeIfNull: false)
   final List<LocationRate>? states;
 
   @override

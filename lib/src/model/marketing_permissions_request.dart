@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'marketing_permissions_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,16 +17,10 @@ part 'marketing_permissions_request.g.dart';
 )
 class MarketingPermissionsRequest {
   /// Returns a new [MarketingPermissionsRequest] instance.
-  MarketingPermissionsRequest({
-    required this.consent,
-  });
+  MarketingPermissionsRequest({required this.consent});
 
   /// User's consent for marketing communications
-  @JsonKey(
-    name: r'consent',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'consent', required: true, includeIfNull: false)
   final bool consent;
 
   @override

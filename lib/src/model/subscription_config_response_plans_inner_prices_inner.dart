@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_config_response_plans_inner_prices_inner.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,61 +19,39 @@ class SubscriptionConfigResponsePlansInnerPricesInner {
   /// Returns a new [SubscriptionConfigResponsePlansInnerPricesInner] instance.
   SubscriptionConfigResponsePlansInnerPricesInner({
     required this.currency,
+
     required this.discountAmount,
+
     required this.discountUnits,
+
     required this.discountedFullPrice,
+
     required this.discountedMonthlyPrice,
+
     required this.fullPrice,
+
     required this.monthlyPrice,
   });
 
-  @JsonKey(
-    name: r'currency',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'currency', required: true, includeIfNull: false)
   final String currency;
 
-  @JsonKey(
-    name: r'discount_amount',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'discount_amount', required: true, includeIfNull: false)
   final String discountAmount;
 
-  @JsonKey(
-    name: r'discount_units',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'discount_units', required: true, includeIfNull: false)
   final String discountUnits;
 
-  @JsonKey(
-    name: r'discounted_full_price',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'discounted_full_price', required: true, includeIfNull: false)
   final String discountedFullPrice;
 
-  @JsonKey(
-    name: r'discounted_monthly_price',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'discounted_monthly_price', required: true, includeIfNull: false)
   final String discountedMonthlyPrice;
 
-  @JsonKey(
-    name: r'full_price',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'full_price', required: true, includeIfNull: false)
   final String fullPrice;
 
-  @JsonKey(
-    name: r'monthly_price',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'monthly_price', required: true, includeIfNull: false)
   final String monthlyPrice;
 
   @override

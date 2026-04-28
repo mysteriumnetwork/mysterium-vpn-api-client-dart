@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'magic_link_request.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -17,46 +19,30 @@ class MagicLinkRequest {
   /// Returns a new [MagicLinkRequest] instance.
   MagicLinkRequest({
     required this.email,
+
     required this.clientId,
+
     required this.codeChallenge,
+
     required this.codeChallengeMethod,
+
     this.continueTo,
   });
 
-  @JsonKey(
-    name: r'email',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'email', required: true, includeIfNull: false)
   final String email;
 
-  @JsonKey(
-    name: r'client_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'client_id', required: true, includeIfNull: false)
   final MagicLinkRequestClientIdEnum clientId;
 
-  @JsonKey(
-    name: r'code_challenge',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code_challenge', required: true, includeIfNull: false)
   final String codeChallenge;
 
-  @JsonKey(
-    name: r'code_challenge_method',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'code_challenge_method', required: true, includeIfNull: false)
   final MagicLinkRequestCodeChallengeMethodEnum codeChallengeMethod;
 
   /// User will be continue to this path upon authentication
-  @JsonKey(
-    name: r'continue_to',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'continue_to', required: false, includeIfNull: false)
   final String? continueTo;
 
   @override

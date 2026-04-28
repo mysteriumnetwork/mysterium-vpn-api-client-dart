@@ -51,13 +51,8 @@ class Subscription {
     final _path = r'/subscription/invoices';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -68,10 +63,7 @@ class Subscription {
       _bodyData = jsonEncode(invoicesRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -93,8 +85,11 @@ class Subscription {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<InvoicesResponse, InvoicesResponse>(rawData, 'InvoicesResponse',
-              growable: true);
+          : deserialize<InvoicesResponse, InvoicesResponse>(
+              rawData,
+              'InvoicesResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -143,13 +138,8 @@ class Subscription {
     final _path = r'/subscription/order-summary';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -160,10 +150,7 @@ class Subscription {
       _bodyData = jsonEncode(orderSummaryRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -185,8 +172,11 @@ class Subscription {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<OrderSummaryResponse, OrderSummaryResponse>(rawData, 'OrderSummaryResponse',
-              growable: true);
+          : deserialize<OrderSummaryResponse, OrderSummaryResponse>(
+              rawData,
+              'OrderSummaryResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -214,6 +204,9 @@ class Subscription {
   ///
   /// Parameters:
   /// * [id]
+  /// * [planId]
+  /// * [currency]
+  /// * [couponCode]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -225,6 +218,9 @@ class Subscription {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<OrderSummaryResponse>> orderUpdateSummary({
     required String id,
+    required String planId,
+    String? currency,
+    String? couponCode,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -232,22 +228,29 @@ class Subscription {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/subscription/{id}/order-summary'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/subscription/{id}/order-summary'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
+
+    final _queryParameters = <String, dynamic>{
+      r'plan_id': planId,
+      r'currency': currency,
+      r'coupon_code': couponCode,
+    };
 
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -259,8 +262,11 @@ class Subscription {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<OrderSummaryResponse, OrderSummaryResponse>(rawData, 'OrderSummaryResponse',
-              growable: true);
+          : deserialize<OrderSummaryResponse, OrderSummaryResponse>(
+              rawData,
+              'OrderSummaryResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -307,13 +313,8 @@ class Subscription {
     final _path = r'/subscription/plan';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -331,8 +332,11 @@ class Subscription {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<GetPlanResponse, GetPlanResponse>(rawData, 'GetPlanResponse',
-              growable: true);
+          : deserialize<GetPlanResponse, GetPlanResponse>(
+              rawData,
+              'GetPlanResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -381,13 +385,8 @@ class Subscription {
     final _path = r'/subscription';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -398,10 +397,7 @@ class Subscription {
       _bodyData = jsonEncode(subscribeRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -423,8 +419,11 @@ class Subscription {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Subscribe200Response, Subscribe200Response>(rawData, 'Subscribe200Response',
-              growable: true);
+          : deserialize<Subscribe200Response, Subscribe200Response>(
+              rawData,
+              'Subscribe200Response',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -471,13 +470,8 @@ class Subscription {
     final _path = r'/subscription/config';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -496,8 +490,10 @@ class Subscription {
       _responseData = rawData == null
           ? null
           : deserialize<SubscriptionConfigResponse, SubscriptionConfigResponse>(
-              rawData, 'SubscriptionConfigResponse',
-              growable: true);
+              rawData,
+              'SubscriptionConfigResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -544,13 +540,8 @@ class Subscription {
     final _path = r'/subscription';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -569,8 +560,10 @@ class Subscription {
       _responseData = rawData == null
           ? null
           : deserialize<GetSubscriptionResponse, GetSubscriptionResponse>(
-              rawData, 'GetSubscriptionResponse',
-              growable: true);
+              rawData,
+              'GetSubscriptionResponse',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -619,13 +612,8 @@ class Subscription {
     final _path = r'/subscription/user-callback';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -636,10 +624,7 @@ class Subscription {
       _bodyData = jsonEncode(userCallbackRequest);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

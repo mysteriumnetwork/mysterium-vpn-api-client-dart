@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/connection_message_location.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'connection_message.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,15 +18,9 @@ part 'connection_message.g.dart';
 )
 class ConnectionMessage {
   /// Returns a new [ConnectionMessage] instance.
-  ConnectionMessage({
-    required this.location,
-  });
+  ConnectionMessage({required this.location});
 
-  @JsonKey(
-    name: r'location',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'location', required: true, includeIfNull: false)
   final ConnectionMessageLocation location;
 
   @override

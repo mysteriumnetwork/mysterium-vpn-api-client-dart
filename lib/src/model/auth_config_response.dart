@@ -3,10 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'auth_config_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -15,23 +17,12 @@ part 'auth_config_response.g.dart';
 )
 class AuthConfigResponse {
   /// Returns a new [AuthConfigResponse] instance.
-  AuthConfigResponse({
-    required this.googleClientId,
-    required this.appleServiceId,
-  });
+  AuthConfigResponse({required this.googleClientId, required this.appleServiceId});
 
-  @JsonKey(
-    name: r'google_client_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'google_client_id', required: true, includeIfNull: false)
   final String googleClientId;
 
-  @JsonKey(
-    name: r'apple_service_id',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'apple_service_id', required: true, includeIfNull: false)
   final String appleServiceId;
 
   @override

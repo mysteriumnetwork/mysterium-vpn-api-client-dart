@@ -4,10 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/check_auth401_response_error.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'check_auth401_response.g.dart';
 
+@CopyWith()
 @JsonSerializable(
   checked: true,
   createToJson: true,
@@ -16,31 +18,15 @@ part 'check_auth401_response.g.dart';
 )
 class CheckAuth401Response {
   /// Returns a new [CheckAuth401Response] instance.
-  CheckAuth401Response({
-    this.status,
-    this.path,
-    required this.error,
-  });
+  CheckAuth401Response({this.status, this.path, required this.error});
 
-  @JsonKey(
-    name: r'status',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
   final int? status;
 
-  @JsonKey(
-    name: r'path',
-    required: false,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'path', required: false, includeIfNull: false)
   final String? path;
 
-  @JsonKey(
-    name: r'error',
-    required: true,
-    includeIfNull: false,
-  )
+  @JsonKey(name: r'error', required: true, includeIfNull: false)
   final CheckAuth401ResponseError error;
 
   @override
