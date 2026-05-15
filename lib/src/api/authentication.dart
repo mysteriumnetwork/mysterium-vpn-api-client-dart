@@ -277,7 +277,9 @@ class Authentication {
 
     dynamic _bodyData;
 
-    try {} catch (error, stackTrace) {
+    try {
+      _bodyData = <String, dynamic>{r'token': token};
+    } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
@@ -643,7 +645,18 @@ class Authentication {
 
     dynamic _bodyData;
 
-    try {} catch (error, stackTrace) {
+    try {
+      _bodyData = <String, dynamic>{
+        if (grantType != null) r'grant_type': grantType,
+        r'client_id': clientId,
+        r'device': device,
+        if (refreshToken != null) r'refresh_token': refreshToken,
+        if (codeVerifier != null) r'code_verifier': codeVerifier,
+        r'code': code,
+        r'google_id_token': googleIdToken,
+        if (authorization != null) r'authorization': authorization,
+      };
+    } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
