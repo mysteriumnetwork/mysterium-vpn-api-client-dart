@@ -13,10 +13,6 @@ abstract class _$SubscriptionConfigResponseCWProxy {
 
   SubscriptionConfigResponse countries(List<Country> countries);
 
-  SubscriptionConfigResponse stripeReturnUrl(String stripeReturnUrl);
-
-  SubscriptionConfigResponse stripePublishableKey(String stripePublishableKey);
-
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponse(...).copyWith.fieldName(value)`.
   ///
@@ -28,8 +24,6 @@ abstract class _$SubscriptionConfigResponseCWProxy {
     List<SubscriptionConfigResponseGatewaysInner> gateways,
     List<SubscriptionConfigResponsePlansInner> plans,
     List<Country> countries,
-    String stripeReturnUrl,
-    String stripePublishableKey,
   });
 }
 
@@ -52,14 +46,6 @@ class _$SubscriptionConfigResponseCWProxyImpl implements _$SubscriptionConfigRes
   SubscriptionConfigResponse countries(List<Country> countries) => call(countries: countries);
 
   @override
-  SubscriptionConfigResponse stripeReturnUrl(String stripeReturnUrl) =>
-      call(stripeReturnUrl: stripeReturnUrl);
-
-  @override
-  SubscriptionConfigResponse stripePublishableKey(String stripePublishableKey) =>
-      call(stripePublishableKey: stripePublishableKey);
-
-  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponse(...).copyWith.fieldName(value)`.
   ///
@@ -71,8 +57,6 @@ class _$SubscriptionConfigResponseCWProxyImpl implements _$SubscriptionConfigRes
     Object? gateways = const $CopyWithPlaceholder(),
     Object? plans = const $CopyWithPlaceholder(),
     Object? countries = const $CopyWithPlaceholder(),
-    Object? stripeReturnUrl = const $CopyWithPlaceholder(),
-    Object? stripePublishableKey = const $CopyWithPlaceholder(),
   }) {
     return SubscriptionConfigResponse(
       gateways: gateways == const $CopyWithPlaceholder() || gateways == null
@@ -87,15 +71,6 @@ class _$SubscriptionConfigResponseCWProxyImpl implements _$SubscriptionConfigRes
           ? _value.countries
           // ignore: cast_nullable_to_non_nullable
           : countries as List<Country>,
-      stripeReturnUrl: stripeReturnUrl == const $CopyWithPlaceholder() || stripeReturnUrl == null
-          ? _value.stripeReturnUrl
-          // ignore: cast_nullable_to_non_nullable
-          : stripeReturnUrl as String,
-      stripePublishableKey:
-          stripePublishableKey == const $CopyWithPlaceholder() || stripePublishableKey == null
-          ? _value.stripePublishableKey
-          // ignore: cast_nullable_to_non_nullable
-          : stripePublishableKey as String,
     );
   }
 }
@@ -111,56 +86,36 @@ extension $SubscriptionConfigResponseCopyWith on SubscriptionConfigResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-SubscriptionConfigResponse _$SubscriptionConfigResponseFromJson(
-  Map<String, dynamic> json,
-) => $checkedCreate(
-  'SubscriptionConfigResponse',
-  json,
-  ($checkedConvert) {
-    $checkKeys(
-      json,
-      requiredKeys: const [
-        'gateways',
-        'plans',
-        'countries',
-        'stripe_return_url',
-        'stripe_publishable_key',
-      ],
-    );
-    final val = SubscriptionConfigResponse(
-      gateways: $checkedConvert(
-        'gateways',
-        (v) => (v as List<dynamic>)
-            .map((e) => SubscriptionConfigResponseGatewaysInner.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
-      plans: $checkedConvert(
-        'plans',
-        (v) => (v as List<dynamic>)
-            .map((e) => SubscriptionConfigResponsePlansInner.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      ),
-      countries: $checkedConvert(
-        'countries',
-        (v) =>
-            (v as List<dynamic>).map((e) => Country.fromJson(e as Map<String, dynamic>)).toList(),
-      ),
-      stripeReturnUrl: $checkedConvert('stripe_return_url', (v) => v as String),
-      stripePublishableKey: $checkedConvert('stripe_publishable_key', (v) => v as String),
-    );
-    return val;
-  },
-  fieldKeyMap: const {
-    'stripeReturnUrl': 'stripe_return_url',
-    'stripePublishableKey': 'stripe_publishable_key',
-  },
-);
+SubscriptionConfigResponse _$SubscriptionConfigResponseFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('SubscriptionConfigResponse', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['gateways', 'plans', 'countries']);
+      final val = SubscriptionConfigResponse(
+        gateways: $checkedConvert(
+          'gateways',
+          (v) => (v as List<dynamic>)
+              .map(
+                (e) => SubscriptionConfigResponseGatewaysInner.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
+        ),
+        plans: $checkedConvert(
+          'plans',
+          (v) => (v as List<dynamic>)
+              .map((e) => SubscriptionConfigResponsePlansInner.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        ),
+        countries: $checkedConvert(
+          'countries',
+          (v) =>
+              (v as List<dynamic>).map((e) => Country.fromJson(e as Map<String, dynamic>)).toList(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$SubscriptionConfigResponseToJson(SubscriptionConfigResponse instance) =>
     <String, dynamic>{
       'gateways': instance.gateways.map((e) => e.toJson()).toList(),
       'plans': instance.plans.map((e) => e.toJson()).toList(),
       'countries': instance.countries.map((e) => e.toJson()).toList(),
-      'stripe_return_url': instance.stripeReturnUrl,
-      'stripe_publishable_key': instance.stripePublishableKey,
     };

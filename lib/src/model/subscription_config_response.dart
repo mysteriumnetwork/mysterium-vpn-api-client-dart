@@ -26,10 +26,6 @@ class SubscriptionConfigResponse {
     required this.plans,
 
     required this.countries,
-
-    required this.stripeReturnUrl,
-
-    required this.stripePublishableKey,
   });
 
   @JsonKey(name: r'gateways', required: true, includeIfNull: false)
@@ -41,29 +37,16 @@ class SubscriptionConfigResponse {
   @JsonKey(name: r'countries', required: true, includeIfNull: false)
   final List<Country> countries;
 
-  @JsonKey(name: r'stripe_return_url', required: true, includeIfNull: false)
-  final String stripeReturnUrl;
-
-  @JsonKey(name: r'stripe_publishable_key', required: true, includeIfNull: false)
-  final String stripePublishableKey;
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is SubscriptionConfigResponse &&
           other.gateways == gateways &&
           other.plans == plans &&
-          other.countries == countries &&
-          other.stripeReturnUrl == stripeReturnUrl &&
-          other.stripePublishableKey == stripePublishableKey;
+          other.countries == countries;
 
   @override
-  int get hashCode =>
-      gateways.hashCode +
-      plans.hashCode +
-      countries.hashCode +
-      stripeReturnUrl.hashCode +
-      stripePublishableKey.hashCode;
+  int get hashCode => gateways.hashCode + plans.hashCode + countries.hashCode;
 
   factory SubscriptionConfigResponse.fromJson(Map<String, dynamic> json) =>
       _$SubscriptionConfigResponseFromJson(json);

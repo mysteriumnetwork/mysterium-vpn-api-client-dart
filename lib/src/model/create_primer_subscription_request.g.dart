@@ -1,50 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'subscribe_request.dart';
+part of 'create_primer_subscription_request.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-abstract class _$SubscribeRequestCWProxy {
-  SubscribeRequest gatewayId(SubscribeRequestGatewayIdEnum gatewayId);
+abstract class _$CreatePrimerSubscriptionRequestCWProxy {
+  CreatePrimerSubscriptionRequest planId(String planId);
 
-  SubscribeRequest planId(String planId);
+  CreatePrimerSubscriptionRequest country(String country);
 
-  SubscribeRequest country(String country);
+  CreatePrimerSubscriptionRequest state(String? state);
 
-  SubscribeRequest state(String? state);
+  CreatePrimerSubscriptionRequest currency(String currency);
 
-  SubscribeRequest currency(String currency);
+  CreatePrimerSubscriptionRequest zipCode(String? zipCode);
 
-  SubscribeRequest zipCode(String? zipCode);
+  CreatePrimerSubscriptionRequest couponCode(String? couponCode);
 
-  SubscribeRequest couponCode(String? couponCode);
+  CreatePrimerSubscriptionRequest cardHolder(String? cardHolder);
 
-  SubscribeRequest embedded(bool? embedded);
+  CreatePrimerSubscriptionRequest requestId(String? requestId);
 
-  SubscribeRequest cardHolder(String? cardHolder);
-
-  SubscribeRequest requestId(String? requestId);
-
-  SubscribeRequest primerClientToken(String primerClientToken);
+  CreatePrimerSubscriptionRequest primerClientToken(String primerClientToken);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePrimerSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// SubscribeRequest(...).copyWith(id: 12, name: "My name")
+  /// CreatePrimerSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
-  SubscribeRequest call({
-    SubscribeRequestGatewayIdEnum gatewayId,
+  CreatePrimerSubscriptionRequest call({
     String planId,
     String country,
     String? state,
     String currency,
     String? zipCode,
     String? couponCode,
-    bool? embedded,
     String? cardHolder,
     String? requestId,
     String primerClientToken,
@@ -52,72 +46,61 @@ abstract class _$SubscribeRequestCWProxy {
 }
 
 /// Callable proxy for `copyWith` functionality.
-/// Use as `instanceOfSubscribeRequest.copyWith(...)` or call `instanceOfSubscribeRequest.copyWith.fieldName(value)` for a single field.
-class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
-  const _$SubscribeRequestCWProxyImpl(this._value);
+/// Use as `instanceOfCreatePrimerSubscriptionRequest.copyWith(...)` or call `instanceOfCreatePrimerSubscriptionRequest.copyWith.fieldName(value)` for a single field.
+class _$CreatePrimerSubscriptionRequestCWProxyImpl
+    implements _$CreatePrimerSubscriptionRequestCWProxy {
+  const _$CreatePrimerSubscriptionRequestCWProxyImpl(this._value);
 
-  final SubscribeRequest _value;
-
-  @override
-  SubscribeRequest gatewayId(SubscribeRequestGatewayIdEnum gatewayId) => call(gatewayId: gatewayId);
+  final CreatePrimerSubscriptionRequest _value;
 
   @override
-  SubscribeRequest planId(String planId) => call(planId: planId);
+  CreatePrimerSubscriptionRequest planId(String planId) => call(planId: planId);
 
   @override
-  SubscribeRequest country(String country) => call(country: country);
+  CreatePrimerSubscriptionRequest country(String country) => call(country: country);
 
   @override
-  SubscribeRequest state(String? state) => call(state: state);
+  CreatePrimerSubscriptionRequest state(String? state) => call(state: state);
 
   @override
-  SubscribeRequest currency(String currency) => call(currency: currency);
+  CreatePrimerSubscriptionRequest currency(String currency) => call(currency: currency);
 
   @override
-  SubscribeRequest zipCode(String? zipCode) => call(zipCode: zipCode);
+  CreatePrimerSubscriptionRequest zipCode(String? zipCode) => call(zipCode: zipCode);
 
   @override
-  SubscribeRequest couponCode(String? couponCode) => call(couponCode: couponCode);
+  CreatePrimerSubscriptionRequest couponCode(String? couponCode) => call(couponCode: couponCode);
 
   @override
-  SubscribeRequest embedded(bool? embedded) => call(embedded: embedded);
+  CreatePrimerSubscriptionRequest cardHolder(String? cardHolder) => call(cardHolder: cardHolder);
 
   @override
-  SubscribeRequest cardHolder(String? cardHolder) => call(cardHolder: cardHolder);
+  CreatePrimerSubscriptionRequest requestId(String? requestId) => call(requestId: requestId);
 
   @override
-  SubscribeRequest requestId(String? requestId) => call(requestId: requestId);
-
-  @override
-  SubscribeRequest primerClientToken(String primerClientToken) =>
+  CreatePrimerSubscriptionRequest primerClientToken(String primerClientToken) =>
       call(primerClientToken: primerClientToken);
 
   @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
+  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePrimerSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
-  /// SubscribeRequest(...).copyWith(id: 12, name: "My name")
+  /// CreatePrimerSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
-  SubscribeRequest call({
-    Object? gatewayId = const $CopyWithPlaceholder(),
+  CreatePrimerSubscriptionRequest call({
     Object? planId = const $CopyWithPlaceholder(),
     Object? country = const $CopyWithPlaceholder(),
     Object? state = const $CopyWithPlaceholder(),
     Object? currency = const $CopyWithPlaceholder(),
     Object? zipCode = const $CopyWithPlaceholder(),
     Object? couponCode = const $CopyWithPlaceholder(),
-    Object? embedded = const $CopyWithPlaceholder(),
     Object? cardHolder = const $CopyWithPlaceholder(),
     Object? requestId = const $CopyWithPlaceholder(),
     Object? primerClientToken = const $CopyWithPlaceholder(),
   }) {
-    return SubscribeRequest(
-      gatewayId: gatewayId == const $CopyWithPlaceholder() || gatewayId == null
-          ? _value.gatewayId
-          // ignore: cast_nullable_to_non_nullable
-          : gatewayId as SubscribeRequestGatewayIdEnum,
+    return CreatePrimerSubscriptionRequest(
       planId: planId == const $CopyWithPlaceholder() || planId == null
           ? _value.planId
           // ignore: cast_nullable_to_non_nullable
@@ -142,10 +125,6 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
           ? _value.couponCode
           // ignore: cast_nullable_to_non_nullable
           : couponCode as String?,
-      embedded: embedded == const $CopyWithPlaceholder()
-          ? _value.embedded
-          // ignore: cast_nullable_to_non_nullable
-          : embedded as bool?,
       cardHolder: cardHolder == const $CopyWithPlaceholder()
           ? _value.cardHolder
           // ignore: cast_nullable_to_non_nullable
@@ -163,37 +142,32 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
   }
 }
 
-extension $SubscribeRequestCopyWith on SubscribeRequest {
+extension $CreatePrimerSubscriptionRequestCopyWith on CreatePrimerSubscriptionRequest {
   /// Returns a callable class used to build a new instance with modified fields.
-  /// Example: `instanceOfSubscribeRequest.copyWith(...)` or `instanceOfSubscribeRequest.copyWith.fieldName(...)`.
+  /// Example: `instanceOfCreatePrimerSubscriptionRequest.copyWith(...)` or `instanceOfCreatePrimerSubscriptionRequest.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
-  _$SubscribeRequestCWProxy get copyWith => _$SubscribeRequestCWProxyImpl(this);
+  _$CreatePrimerSubscriptionRequestCWProxy get copyWith =>
+      _$CreatePrimerSubscriptionRequestCWProxyImpl(this);
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $checkedCreate(
-  'SubscribeRequest',
+CreatePrimerSubscriptionRequest _$CreatePrimerSubscriptionRequestFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'CreatePrimerSubscriptionRequest',
   json,
   ($checkedConvert) {
-    $checkKeys(
-      json,
-      requiredKeys: const ['gateway_id', 'plan_id', 'country', 'currency', 'primer_client_token'],
-    );
-    final val = SubscribeRequest(
-      gatewayId: $checkedConvert(
-        'gateway_id',
-        (v) => $enumDecode(_$SubscribeRequestGatewayIdEnumEnumMap, v),
-      ),
+    $checkKeys(json, requiredKeys: const ['plan_id', 'country', 'currency', 'primer_client_token']);
+    final val = CreatePrimerSubscriptionRequest(
       planId: $checkedConvert('plan_id', (v) => v as String),
       country: $checkedConvert('country', (v) => v as String),
       state: $checkedConvert('state', (v) => v as String?),
       currency: $checkedConvert('currency', (v) => v as String),
       zipCode: $checkedConvert('zip_code', (v) => v as String?),
       couponCode: $checkedConvert('coupon_code', (v) => v as String?),
-      embedded: $checkedConvert('embedded', (v) => v as bool?),
       cardHolder: $checkedConvert('card_holder', (v) => v as String?),
       requestId: $checkedConvert('request_id', (v) => v as String?),
       primerClientToken: $checkedConvert('primer_client_token', (v) => v as String),
@@ -201,7 +175,6 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
     return val;
   },
   fieldKeyMap: const {
-    'gatewayId': 'gateway_id',
     'planId': 'plan_id',
     'zipCode': 'zip_code',
     'couponCode': 'coupon_code',
@@ -211,18 +184,16 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
   },
 );
 
-Map<String, dynamic> _$SubscribeRequestToJson(SubscribeRequest instance) => <String, dynamic>{
-  'gateway_id': _$SubscribeRequestGatewayIdEnumEnumMap[instance.gatewayId]!,
+Map<String, dynamic> _$CreatePrimerSubscriptionRequestToJson(
+  CreatePrimerSubscriptionRequest instance,
+) => <String, dynamic>{
   'plan_id': instance.planId,
   'country': instance.country,
   'state': ?instance.state,
   'currency': instance.currency,
   'zip_code': ?instance.zipCode,
   'coupon_code': ?instance.couponCode,
-  'embedded': ?instance.embedded,
   'card_holder': ?instance.cardHolder,
   'request_id': ?instance.requestId,
   'primer_client_token': instance.primerClientToken,
 };
-
-const _$SubscribeRequestGatewayIdEnumEnumMap = {SubscribeRequestGatewayIdEnum.apple: 'apple'};

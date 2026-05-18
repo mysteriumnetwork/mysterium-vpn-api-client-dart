@@ -3,14 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vpn_api/src/model/create_generic_subscription_request.dart';
-import 'package:vpn_api/src/model/create_apple_subscription_request.dart';
-import 'package:vpn_api/src/model/create_primer_subscription_request.dart';
-import 'package:vpn_api/src/model/create_google_subscription_request.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'subscribe_request.g.dart';
+part 'create_primer_subscription_request.g.dart';
 
 @CopyWith()
 @JsonSerializable(
@@ -19,11 +15,9 @@ part 'subscribe_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class SubscribeRequest {
-  /// Returns a new [SubscribeRequest] instance.
-  SubscribeRequest({
-    required this.gatewayId,
-
+class CreatePrimerSubscriptionRequest {
+  /// Returns a new [CreatePrimerSubscriptionRequest] instance.
+  CreatePrimerSubscriptionRequest({
     required this.planId,
 
     required this.country,
@@ -36,17 +30,12 @@ class SubscribeRequest {
 
     this.couponCode,
 
-    this.embedded,
-
     this.cardHolder,
 
     this.requestId,
 
     required this.primerClientToken,
   });
-
-  @JsonKey(name: r'gateway_id', required: true, includeIfNull: false)
-  final SubscribeRequestGatewayIdEnum gatewayId;
 
   @JsonKey(name: r'plan_id', required: true, includeIfNull: false)
   final String planId;
@@ -66,9 +55,6 @@ class SubscribeRequest {
   @JsonKey(name: r'coupon_code', required: false, includeIfNull: false)
   final String? couponCode;
 
-  @JsonKey(name: r'embedded', required: false, includeIfNull: false)
-  final bool? embedded;
-
   @JsonKey(name: r'card_holder', required: false, includeIfNull: false)
   final String? cardHolder;
 
@@ -81,51 +67,36 @@ class SubscribeRequest {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SubscribeRequest &&
-          other.gatewayId == gatewayId &&
+      other is CreatePrimerSubscriptionRequest &&
           other.planId == planId &&
           other.country == country &&
           other.state == state &&
           other.currency == currency &&
           other.zipCode == zipCode &&
           other.couponCode == couponCode &&
-          other.embedded == embedded &&
           other.cardHolder == cardHolder &&
           other.requestId == requestId &&
           other.primerClientToken == primerClientToken;
 
   @override
   int get hashCode =>
-      gatewayId.hashCode +
       planId.hashCode +
       country.hashCode +
       (state == null ? 0 : state.hashCode) +
       currency.hashCode +
       (zipCode == null ? 0 : zipCode.hashCode) +
       (couponCode == null ? 0 : couponCode.hashCode) +
-      (embedded == null ? 0 : embedded.hashCode) +
       (cardHolder == null ? 0 : cardHolder.hashCode) +
       (requestId == null ? 0 : requestId.hashCode) +
       primerClientToken.hashCode;
 
-  factory SubscribeRequest.fromJson(Map<String, dynamic> json) => _$SubscribeRequestFromJson(json);
+  factory CreatePrimerSubscriptionRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreatePrimerSubscriptionRequestFromJson(json);
 
-  Map<String, dynamic> toJson() => _$SubscribeRequestToJson(this);
+  Map<String, dynamic> toJson() => _$CreatePrimerSubscriptionRequestToJson(this);
 
   @override
   String toString() {
     return toJson().toString();
   }
-}
-
-enum SubscribeRequestGatewayIdEnum {
-  @JsonValue(r'apple')
-  apple(r'apple');
-
-  const SubscribeRequestGatewayIdEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }
