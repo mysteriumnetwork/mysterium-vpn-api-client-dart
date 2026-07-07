@@ -107,9 +107,9 @@ enum OAuth2AuthorizationRequestCodeChallengeMethodEnum {
   @JsonValue(r'plain')
   plain(r'plain'),
   @JsonValue(r'S256')
-  s256(r'S256'),
+  S256(r'S256'),
   @JsonValue(r's256')
-  s2562(r's256');
+  s256(r's256');
 
   const OAuth2AuthorizationRequestCodeChallengeMethodEnum(this.value);
 

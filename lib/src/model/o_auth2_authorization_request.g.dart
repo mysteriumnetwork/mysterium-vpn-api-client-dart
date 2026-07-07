@@ -179,6 +179,6 @@ const _$OAuth2AuthorizationRequestClientIdEnumEnumMap = {
 
 const _$OAuth2AuthorizationRequestCodeChallengeMethodEnumEnumMap = {
   OAuth2AuthorizationRequestCodeChallengeMethodEnum.plain: 'plain',
-  OAuth2AuthorizationRequestCodeChallengeMethodEnum.s256: 'S256',
-  OAuth2AuthorizationRequestCodeChallengeMethodEnum.s2562: 's256',
+  OAuth2AuthorizationRequestCodeChallengeMethodEnum.S256: 'S256',
+  OAuth2AuthorizationRequestCodeChallengeMethodEnum.s256: 's256',
 };

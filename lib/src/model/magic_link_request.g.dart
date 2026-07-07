@@ -157,6 +157,6 @@ const _$MagicLinkRequestClientIdEnumEnumMap = {
 
 const _$MagicLinkRequestCodeChallengeMethodEnumEnumMap = {
   MagicLinkRequestCodeChallengeMethodEnum.plain: 'plain',
-  MagicLinkRequestCodeChallengeMethodEnum.s256: 'S256',
-  MagicLinkRequestCodeChallengeMethodEnum.s2562: 's256',
+  MagicLinkRequestCodeChallengeMethodEnum.S256: 'S256',
+  MagicLinkRequestCodeChallengeMethodEnum.s256: 's256',
 };

@@ -163,6 +163,6 @@ const _$CodeAuthorizationRequestClientIdEnumEnumMap = {
 
 const _$CodeAuthorizationRequestCodeChallengeMethodEnumEnumMap = {
   CodeAuthorizationRequestCodeChallengeMethodEnum.plain: 'plain',
-  CodeAuthorizationRequestCodeChallengeMethodEnum.s256: 'S256',
-  CodeAuthorizationRequestCodeChallengeMethodEnum.s2562: 's256',
+  CodeAuthorizationRequestCodeChallengeMethodEnum.S256: 'S256',
+  CodeAuthorizationRequestCodeChallengeMethodEnum.s256: 's256',
 };
