@@ -17,10 +17,10 @@ part 'contact_status_response.g.dart';
 )
 class ContactStatusResponse {
   /// Returns a new [ContactStatusResponse] instance.
-  ContactStatusResponse({required this.status, this.consent});
+  ContactStatusResponse({this.status, this.consent});
 
-  @JsonKey(name: r'status', required: true, includeIfNull: false)
-  final String status;
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
+  final String? status;
 
   @JsonKey(name: r'consent', required: false, includeIfNull: false)
   final bool? consent;
@@ -31,7 +31,8 @@ class ContactStatusResponse {
       other is ContactStatusResponse && other.status == status && other.consent == consent;
 
   @override
-  int get hashCode => status.hashCode + (consent == null ? 0 : consent.hashCode);
+  int get hashCode =>
+      (status == null ? 0 : status.hashCode) + (consent == null ? 0 : consent.hashCode);
 
   factory ContactStatusResponse.fromJson(Map<String, dynamic> json) =>
       _$ContactStatusResponseFromJson(json);

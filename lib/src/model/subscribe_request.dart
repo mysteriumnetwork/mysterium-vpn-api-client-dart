@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/create_generic_subscription_request.dart';
+import 'package:vpn_api/src/model/create_adyen_subscription_request.dart';
 import 'package:vpn_api/src/model/create_apple_subscription_request.dart';
-import 'package:vpn_api/src/model/create_primer_subscription_request.dart';
 import 'package:vpn_api/src/model/create_google_subscription_request.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -42,7 +42,13 @@ class SubscribeRequest {
 
     this.requestId,
 
-    required this.primerClientToken,
+    this.express,
+
+    required this.amount,
+
+    required this.origin,
+
+    this.paymentData,
   });
 
   @JsonKey(name: r'gateway_id', required: true, includeIfNull: false)
@@ -75,8 +81,17 @@ class SubscribeRequest {
   @JsonKey(name: r'request_id', required: false, includeIfNull: false)
   final String? requestId;
 
-  @JsonKey(name: r'primer_client_token', required: true, includeIfNull: false)
-  final String primerClientToken;
+  @JsonKey(name: r'express', required: false, includeIfNull: false)
+  final bool? express;
+
+  @JsonKey(name: r'amount', required: true, includeIfNull: false)
+  final num amount;
+
+  @JsonKey(name: r'origin', required: true, includeIfNull: false)
+  final String origin;
+
+  @JsonKey(name: r'payment_data', required: false, includeIfNull: false)
+  final Object? paymentData;
 
   @override
   bool operator ==(Object other) =>
@@ -92,7 +107,10 @@ class SubscribeRequest {
           other.embedded == embedded &&
           other.cardHolder == cardHolder &&
           other.requestId == requestId &&
-          other.primerClientToken == primerClientToken;
+          other.express == express &&
+          other.amount == amount &&
+          other.origin == origin &&
+          other.paymentData == paymentData;
 
   @override
   int get hashCode =>
@@ -106,7 +124,10 @@ class SubscribeRequest {
       (embedded == null ? 0 : embedded.hashCode) +
       (cardHolder == null ? 0 : cardHolder.hashCode) +
       (requestId == null ? 0 : requestId.hashCode) +
-      primerClientToken.hashCode;
+      (express == null ? 0 : express.hashCode) +
+      amount.hashCode +
+      origin.hashCode +
+      (paymentData == null ? 0 : paymentData.hashCode);
 
   factory SubscribeRequest.fromJson(Map<String, dynamic> json) => _$SubscribeRequestFromJson(json);
 
@@ -119,8 +140,8 @@ class SubscribeRequest {
 }
 
 enum SubscribeRequestGatewayIdEnum {
-  @JsonValue(r'apple')
-  apple(r'apple');
+  @JsonValue(r'adyen')
+  adyen(r'adyen');
 
   const SubscribeRequestGatewayIdEnum(this.value);
 

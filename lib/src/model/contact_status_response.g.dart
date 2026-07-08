@@ -7,7 +7,7 @@ part of 'contact_status_response.dart';
 // **************************************************************************
 
 abstract class _$ContactStatusResponseCWProxy {
-  ContactStatusResponse status(String status);
+  ContactStatusResponse status(String? status);
 
   ContactStatusResponse consent(bool? consent);
 
@@ -18,7 +18,7 @@ abstract class _$ContactStatusResponseCWProxy {
   /// ```dart
   /// ContactStatusResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  ContactStatusResponse call({String status, bool? consent});
+  ContactStatusResponse call({String? status, bool? consent});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -29,7 +29,7 @@ class _$ContactStatusResponseCWProxyImpl implements _$ContactStatusResponseCWPro
   final ContactStatusResponse _value;
 
   @override
-  ContactStatusResponse status(String status) => call(status: status);
+  ContactStatusResponse status(String? status) => call(status: status);
 
   @override
   ContactStatusResponse consent(bool? consent) => call(consent: consent);
@@ -47,10 +47,10 @@ class _$ContactStatusResponseCWProxyImpl implements _$ContactStatusResponseCWPro
     Object? consent = const $CopyWithPlaceholder(),
   }) {
     return ContactStatusResponse(
-      status: status == const $CopyWithPlaceholder() || status == null
+      status: status == const $CopyWithPlaceholder()
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
-          : status as String,
+          : status as String?,
       consent: consent == const $CopyWithPlaceholder()
           ? _value.consent
           // ignore: cast_nullable_to_non_nullable
@@ -72,13 +72,12 @@ extension $ContactStatusResponseCopyWith on ContactStatusResponse {
 
 ContactStatusResponse _$ContactStatusResponseFromJson(Map<String, dynamic> json) =>
     $checkedCreate('ContactStatusResponse', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['status']);
       final val = ContactStatusResponse(
-        status: $checkedConvert('status', (v) => v as String),
+        status: $checkedConvert('status', (v) => v as String?),
         consent: $checkedConvert('consent', (v) => v as bool?),
       );
       return val;
     });
 
 Map<String, dynamic> _$ContactStatusResponseToJson(ContactStatusResponse instance) =>
-    <String, dynamic>{'status': instance.status, 'consent': ?instance.consent};
+    <String, dynamic>{'status': ?instance.status, 'consent': ?instance.consent};
