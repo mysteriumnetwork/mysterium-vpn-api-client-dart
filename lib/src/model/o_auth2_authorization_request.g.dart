@@ -175,6 +175,7 @@ const _$OAuth2AuthorizationRequestClientIdEnumEnumMap = {
   OAuth2AuthorizationRequestClientIdEnum.web: 'web',
   OAuth2AuthorizationRequestClientIdEnum.app: 'app',
   OAuth2AuthorizationRequestClientIdEnum.extension_: 'extension',
+  OAuth2AuthorizationRequestClientIdEnum.router: 'router',
 };
 
 const _$OAuth2AuthorizationRequestCodeChallengeMethodEnumEnumMap = {

@@ -84,7 +84,9 @@ enum CodeAuthorizationRequestClientIdEnum {
   @JsonValue(r'app')
   app(r'app'),
   @JsonValue(r'extension')
-  extension_(r'extension');
+  extension_(r'extension'),
+  @JsonValue(r'router')
+  router(r'router');
 
   const CodeAuthorizationRequestClientIdEnum(this.value);
 

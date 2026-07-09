@@ -206,4 +206,5 @@ const _$OAuth2TokenRequestClientIdEnumEnumMap = {
   OAuth2TokenRequestClientIdEnum.web: 'web',
   OAuth2TokenRequestClientIdEnum.app: 'app',
   OAuth2TokenRequestClientIdEnum.extension_: 'extension',
+  OAuth2TokenRequestClientIdEnum.router: 'router',
 };

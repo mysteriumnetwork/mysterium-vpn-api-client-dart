@@ -153,6 +153,7 @@ const _$MagicLinkRequestClientIdEnumEnumMap = {
   MagicLinkRequestClientIdEnum.web: 'web',
   MagicLinkRequestClientIdEnum.app: 'app',
   MagicLinkRequestClientIdEnum.extension_: 'extension',
+  MagicLinkRequestClientIdEnum.router: 'router',
 };
 
 const _$MagicLinkRequestCodeChallengeMethodEnumEnumMap = {

@@ -93,7 +93,9 @@ enum OAuth2AuthorizationRequestClientIdEnum {
   @JsonValue(r'app')
   app(r'app'),
   @JsonValue(r'extension')
-  extension_(r'extension');
+  extension_(r'extension'),
+  @JsonValue(r'router')
+  router(r'router');
 
   const OAuth2AuthorizationRequestClientIdEnum(this.value);
 
