@@ -24,6 +24,8 @@ doc/ConnectionMessageLocation.md
 doc/ConnectionRegion.md
 doc/ContactStatusResponse.md
 doc/Country.md
+doc/CreateAdyenSubscriptionRequest.md
+doc/CreateAdyenSubscriptionResponse.md
 doc/CreateAppleSubscriptionRequest.md
 doc/CreateAppleSubscriptionResponse.md
 doc/CreateContactRequest.md
@@ -31,8 +33,6 @@ doc/CreateGenericSubscriptionRequest.md
 doc/CreateGenericSubscriptionResponse.md
 doc/CreateGoogleSubscriptionRequest.md
 doc/CreateGoogleSubscriptionResponse.md
-doc/CreatePrimerSubscriptionRequest.md
-doc/CreatePrimerSubscriptionResponse.md
 doc/DisconnectQuery.md
 doc/EmailMarketing.md
 doc/GetLocationResponse.md
@@ -128,6 +128,8 @@ lib/src/model/connection_message_location.dart
 lib/src/model/connection_region.dart
 lib/src/model/contact_status_response.dart
 lib/src/model/country.dart
+lib/src/model/create_adyen_subscription_request.dart
+lib/src/model/create_adyen_subscription_response.dart
 lib/src/model/create_apple_subscription_request.dart
 lib/src/model/create_apple_subscription_response.dart
 lib/src/model/create_contact_request.dart
@@ -135,8 +137,6 @@ lib/src/model/create_generic_subscription_request.dart
 lib/src/model/create_generic_subscription_response.dart
 lib/src/model/create_google_subscription_request.dart
 lib/src/model/create_google_subscription_response.dart
-lib/src/model/create_primer_subscription_request.dart
-lib/src/model/create_primer_subscription_response.dart
 lib/src/model/disconnect_query.dart
 lib/src/model/get_location_response.dart
 lib/src/model/get_plan_response.dart
