@@ -19,8 +19,6 @@ import 'package:vpn_api/src/model/connection_message_location.dart';
 import 'package:vpn_api/src/model/connection_region.dart';
 import 'package:vpn_api/src/model/contact_status_response.dart';
 import 'package:vpn_api/src/model/country.dart';
-import 'package:vpn_api/src/model/create_adyen_subscription_request.dart';
-import 'package:vpn_api/src/model/create_adyen_subscription_response.dart';
 import 'package:vpn_api/src/model/create_apple_subscription_request.dart';
 import 'package:vpn_api/src/model/create_apple_subscription_response.dart';
 import 'package:vpn_api/src/model/create_contact_request.dart';
@@ -28,6 +26,8 @@ import 'package:vpn_api/src/model/create_generic_subscription_request.dart';
 import 'package:vpn_api/src/model/create_generic_subscription_response.dart';
 import 'package:vpn_api/src/model/create_google_subscription_request.dart';
 import 'package:vpn_api/src/model/create_google_subscription_response.dart';
+import 'package:vpn_api/src/model/create_primer_subscription_request.dart';
+import 'package:vpn_api/src/model/create_primer_subscription_response.dart';
 import 'package:vpn_api/src/model/disconnect_query.dart';
 import 'package:vpn_api/src/model/get_location_response.dart';
 import 'package:vpn_api/src/model/get_plan_response.dart';
@@ -149,10 +149,6 @@ ReturnType deserialize<ReturnType, BaseType>(
       return ContactStatusResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Country':
       return Country.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'CreateAdyenSubscriptionRequest':
-      return CreateAdyenSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'CreateAdyenSubscriptionResponse':
-      return CreateAdyenSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateAppleSubscriptionRequest':
       return CreateAppleSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateAppleSubscriptionResponse':
@@ -168,6 +164,10 @@ ReturnType deserialize<ReturnType, BaseType>(
       return CreateGoogleSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateGoogleSubscriptionResponse':
       return CreateGoogleSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CreatePrimerSubscriptionRequest':
+      return CreatePrimerSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CreatePrimerSubscriptionResponse':
+      return CreatePrimerSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'DisconnectQuery':
       return DisconnectQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetLocationResponse':
