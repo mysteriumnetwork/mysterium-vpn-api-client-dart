@@ -13,6 +13,7 @@ import 'package:vpn_api/src/api/email_marketing.dart';
 import 'package:vpn_api/src/api/infrastructure.dart';
 import 'package:vpn_api/src/api/intercom.dart';
 import 'package:vpn_api/src/api/location.dart';
+import 'package:vpn_api/src/api/newscenter.dart';
 import 'package:vpn_api/src/api/subscription.dart';
 
 class VpnApi {
@@ -158,6 +159,12 @@ class VpnApi {
   /// by doing that all interceptors will not be executed
   Location getLocation() {
     return Location(dio);
+  }
+
+  /// Get Newscenter instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  Newscenter getNewscenter() {
+    return Newscenter(dio);
   }
 
   /// Get Subscription instance, base route and serializer can be overridden by a given but be careful,

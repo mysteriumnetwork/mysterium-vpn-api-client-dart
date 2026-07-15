@@ -24,6 +24,8 @@ doc/ConnectionMessageLocation.md
 doc/ConnectionRegion.md
 doc/ContactStatusResponse.md
 doc/Country.md
+doc/CreateAdyenSubscriptionRequest.md
+doc/CreateAdyenSubscriptionResponse.md
 doc/CreateAppleSubscriptionRequest.md
 doc/CreateAppleSubscriptionResponse.md
 doc/CreateContactRequest.md
@@ -31,8 +33,6 @@ doc/CreateGenericSubscriptionRequest.md
 doc/CreateGenericSubscriptionResponse.md
 doc/CreateGoogleSubscriptionRequest.md
 doc/CreateGoogleSubscriptionResponse.md
-doc/CreatePrimerSubscriptionRequest.md
-doc/CreatePrimerSubscriptionResponse.md
 doc/DisconnectQuery.md
 doc/EmailMarketing.md
 doc/GetLocationResponse.md
@@ -56,6 +56,11 @@ doc/MagicLinkRedirectRequestQuery.md
 doc/MagicLinkRequest.md
 doc/MagicLinkResponse.md
 doc/MarketingPermissionsRequest.md
+doc/Newscenter.md
+doc/NewscenterCategory.md
+doc/NewscenterInboxListQuery.md
+doc/NewscenterInboxListResponse.md
+doc/NewscenterInboxListResponseMessagesInner.md
 doc/OAuth2AuthorizationRequest.md
 doc/OAuth2AuthorizationResponse.md
 doc/OAuth2TokenIntrospectionRequest.md
@@ -100,6 +105,7 @@ lib/src/api/email_marketing.dart
 lib/src/api/infrastructure.dart
 lib/src/api/intercom.dart
 lib/src/api/location.dart
+lib/src/api/newscenter.dart
 lib/src/api/subscription.dart
 lib/src/auth/api_key_auth.dart
 lib/src/auth/auth.dart
@@ -128,6 +134,8 @@ lib/src/model/connection_message_location.dart
 lib/src/model/connection_region.dart
 lib/src/model/contact_status_response.dart
 lib/src/model/country.dart
+lib/src/model/create_adyen_subscription_request.dart
+lib/src/model/create_adyen_subscription_response.dart
 lib/src/model/create_apple_subscription_request.dart
 lib/src/model/create_apple_subscription_response.dart
 lib/src/model/create_contact_request.dart
@@ -135,8 +143,6 @@ lib/src/model/create_generic_subscription_request.dart
 lib/src/model/create_generic_subscription_response.dart
 lib/src/model/create_google_subscription_request.dart
 lib/src/model/create_google_subscription_response.dart
-lib/src/model/create_primer_subscription_request.dart
-lib/src/model/create_primer_subscription_response.dart
 lib/src/model/disconnect_query.dart
 lib/src/model/get_location_response.dart
 lib/src/model/get_plan_response.dart
@@ -156,6 +162,10 @@ lib/src/model/magic_link_redirect_request_query.dart
 lib/src/model/magic_link_request.dart
 lib/src/model/magic_link_response.dart
 lib/src/model/marketing_permissions_request.dart
+lib/src/model/newscenter_category.dart
+lib/src/model/newscenter_inbox_list_query.dart
+lib/src/model/newscenter_inbox_list_response.dart
+lib/src/model/newscenter_inbox_list_response_messages_inner.dart
 lib/src/model/o_auth2_authorization_request.dart
 lib/src/model/o_auth2_authorization_response.dart
 lib/src/model/o_auth2_token_introspection_request.dart

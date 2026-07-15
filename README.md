@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 [*Infrastructure*](doc/Infrastructure.md) | [**healthcheck**](doc/Infrastructure.md#healthcheck) | **GET** /healthcheck | Check whether the API is up
 [*Intercom*](doc/Intercom.md) | [**intercom**](doc/Intercom.md#intercom) | **GET** /intercom | Get jwt token for intercom
 [*Location*](doc/Location.md) | [**location**](doc/Location.md#location) | **GET** /subscription/location | Get location
+[*Newscenter*](doc/Newscenter.md) | [**inboxList**](doc/Newscenter.md#inboxlist) | **GET** /newscenter/inbox | List inbox messages
 [*Subscription*](doc/Subscription.md) | [**invoices**](doc/Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
 [*Subscription*](doc/Subscription.md) | [**orderSummary**](doc/Subscription.md#ordersummary) | **POST** /subscription/order-summary | Preview order summary breakdown
 [*Subscription*](doc/Subscription.md) | [**orderUpdateSummary**](doc/Subscription.md#orderupdatesummary) | **GET** /subscription/{id}/order-summary | Preview order summary breakdown
@@ -124,6 +125,8 @@ Class | Method | HTTP request | Description
  - [ConnectionRegion](doc/ConnectionRegion.md)
  - [ContactStatusResponse](doc/ContactStatusResponse.md)
  - [Country](doc/Country.md)
+ - [CreateAdyenSubscriptionRequest](doc/CreateAdyenSubscriptionRequest.md)
+ - [CreateAdyenSubscriptionResponse](doc/CreateAdyenSubscriptionResponse.md)
  - [CreateAppleSubscriptionRequest](doc/CreateAppleSubscriptionRequest.md)
  - [CreateAppleSubscriptionResponse](doc/CreateAppleSubscriptionResponse.md)
  - [CreateContactRequest](doc/CreateContactRequest.md)
@@ -131,8 +134,6 @@ Class | Method | HTTP request | Description
  - [CreateGenericSubscriptionResponse](doc/CreateGenericSubscriptionResponse.md)
  - [CreateGoogleSubscriptionRequest](doc/CreateGoogleSubscriptionRequest.md)
  - [CreateGoogleSubscriptionResponse](doc/CreateGoogleSubscriptionResponse.md)
- - [CreatePrimerSubscriptionRequest](doc/CreatePrimerSubscriptionRequest.md)
- - [CreatePrimerSubscriptionResponse](doc/CreatePrimerSubscriptionResponse.md)
  - [DisconnectQuery](doc/DisconnectQuery.md)
  - [GetLocationResponse](doc/GetLocationResponse.md)
  - [GetPlanResponse](doc/GetPlanResponse.md)
@@ -152,6 +153,10 @@ Class | Method | HTTP request | Description
  - [MagicLinkRequest](doc/MagicLinkRequest.md)
  - [MagicLinkResponse](doc/MagicLinkResponse.md)
  - [MarketingPermissionsRequest](doc/MarketingPermissionsRequest.md)
+ - [NewscenterCategory](doc/NewscenterCategory.md)
+ - [NewscenterInboxListQuery](doc/NewscenterInboxListQuery.md)
+ - [NewscenterInboxListResponse](doc/NewscenterInboxListResponse.md)
+ - [NewscenterInboxListResponseMessagesInner](doc/NewscenterInboxListResponseMessagesInner.md)
  - [OAuth2AuthorizationRequest](doc/OAuth2AuthorizationRequest.md)
  - [OAuth2AuthorizationResponse](doc/OAuth2AuthorizationResponse.md)
  - [OAuth2TokenIntrospectionRequest](doc/OAuth2TokenIntrospectionRequest.md)
