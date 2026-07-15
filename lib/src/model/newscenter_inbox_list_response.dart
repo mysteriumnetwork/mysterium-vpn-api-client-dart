@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:vpn_api/src/model/newscenter_inbox_list_response_messages_inner.dart';
+import 'package:vpn_api/src/model/newscenter_inbox_list_response_item.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -21,7 +21,7 @@ class NewscenterInboxListResponse {
   NewscenterInboxListResponse({required this.messages});
 
   @JsonKey(name: r'messages', required: true, includeIfNull: false)
-  final List<NewscenterInboxListResponseMessagesInner> messages;
+  final List<NewscenterInboxListResponseItem> messages;
 
   @override
   bool operator ==(Object other) =>

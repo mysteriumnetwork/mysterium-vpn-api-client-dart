@@ -69,7 +69,7 @@ export 'package:vpn_api/src/model/marketing_permissions_request.dart';
 export 'package:vpn_api/src/model/newscenter_category.dart';
 export 'package:vpn_api/src/model/newscenter_inbox_list_query.dart';
 export 'package:vpn_api/src/model/newscenter_inbox_list_response.dart';
-export 'package:vpn_api/src/model/newscenter_inbox_list_response_messages_inner.dart';
+export 'package:vpn_api/src/model/newscenter_inbox_list_response_item.dart';
 export 'package:vpn_api/src/model/o_auth2_authorization_request.dart';
 export 'package:vpn_api/src/model/o_auth2_authorization_response.dart';
 export 'package:vpn_api/src/model/o_auth2_token_introspection_request.dart';

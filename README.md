@@ -156,7 +156,7 @@ Class | Method | HTTP request | Description
  - [NewscenterCategory](doc/NewscenterCategory.md)
  - [NewscenterInboxListQuery](doc/NewscenterInboxListQuery.md)
  - [NewscenterInboxListResponse](doc/NewscenterInboxListResponse.md)
- - [NewscenterInboxListResponseMessagesInner](doc/NewscenterInboxListResponseMessagesInner.md)
+ - [NewscenterInboxListResponseItem](doc/NewscenterInboxListResponseItem.md)
  - [OAuth2AuthorizationRequest](doc/OAuth2AuthorizationRequest.md)
  - [OAuth2AuthorizationResponse](doc/OAuth2AuthorizationResponse.md)
  - [OAuth2TokenIntrospectionRequest](doc/OAuth2TokenIntrospectionRequest.md)

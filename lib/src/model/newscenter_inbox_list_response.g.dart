@@ -7,7 +7,7 @@ part of 'newscenter_inbox_list_response.dart';
 // **************************************************************************
 
 abstract class _$NewscenterInboxListResponseCWProxy {
-  NewscenterInboxListResponse messages(List<NewscenterInboxListResponseMessagesInner> messages);
+  NewscenterInboxListResponse messages(List<NewscenterInboxListResponseItem> messages);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NewscenterInboxListResponse(...).copyWith.fieldName(value)`.
@@ -16,7 +16,7 @@ abstract class _$NewscenterInboxListResponseCWProxy {
   /// ```dart
   /// NewscenterInboxListResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  NewscenterInboxListResponse call({List<NewscenterInboxListResponseMessagesInner> messages});
+  NewscenterInboxListResponse call({List<NewscenterInboxListResponseItem> messages});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -27,7 +27,7 @@ class _$NewscenterInboxListResponseCWProxyImpl implements _$NewscenterInboxListR
   final NewscenterInboxListResponse _value;
 
   @override
-  NewscenterInboxListResponse messages(List<NewscenterInboxListResponseMessagesInner> messages) =>
+  NewscenterInboxListResponse messages(List<NewscenterInboxListResponseItem> messages) =>
       call(messages: messages);
 
   @override
@@ -43,7 +43,7 @@ class _$NewscenterInboxListResponseCWProxyImpl implements _$NewscenterInboxListR
       messages: messages == const $CopyWithPlaceholder() || messages == null
           ? _value.messages
           // ignore: cast_nullable_to_non_nullable
-          : messages as List<NewscenterInboxListResponseMessagesInner>,
+          : messages as List<NewscenterInboxListResponseItem>,
     );
   }
 }
@@ -67,9 +67,7 @@ NewscenterInboxListResponse _$NewscenterInboxListResponseFromJson(Map<String, dy
         messages: $checkedConvert(
           'messages',
           (v) => (v as List<dynamic>)
-              .map(
-                (e) => NewscenterInboxListResponseMessagesInner.fromJson(e as Map<String, dynamic>),
-              )
+              .map((e) => NewscenterInboxListResponseItem.fromJson(e as Map<String, dynamic>))
               .toList(),
         ),
       );

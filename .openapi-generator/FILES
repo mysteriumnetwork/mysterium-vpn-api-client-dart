@@ -60,7 +60,7 @@ doc/Newscenter.md
 doc/NewscenterCategory.md
 doc/NewscenterInboxListQuery.md
 doc/NewscenterInboxListResponse.md
-doc/NewscenterInboxListResponseMessagesInner.md
+doc/NewscenterInboxListResponseItem.md
 doc/OAuth2AuthorizationRequest.md
 doc/OAuth2AuthorizationResponse.md
 doc/OAuth2TokenIntrospectionRequest.md
@@ -165,7 +165,7 @@ lib/src/model/marketing_permissions_request.dart
 lib/src/model/newscenter_category.dart
 lib/src/model/newscenter_inbox_list_query.dart
 lib/src/model/newscenter_inbox_list_response.dart
-lib/src/model/newscenter_inbox_list_response_messages_inner.dart
+lib/src/model/newscenter_inbox_list_response_item.dart
 lib/src/model/o_auth2_authorization_request.dart
 lib/src/model/o_auth2_authorization_response.dart
 lib/src/model/o_auth2_token_introspection_request.dart

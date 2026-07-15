@@ -49,7 +49,7 @@ import 'package:vpn_api/src/model/magic_link_response.dart';
 import 'package:vpn_api/src/model/marketing_permissions_request.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_query.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_response.dart';
-import 'package:vpn_api/src/model/newscenter_inbox_list_response_messages_inner.dart';
+import 'package:vpn_api/src/model/newscenter_inbox_list_response_item.dart';
 import 'package:vpn_api/src/model/o_auth2_authorization_request.dart';
 import 'package:vpn_api/src/model/o_auth2_authorization_response.dart';
 import 'package:vpn_api/src/model/o_auth2_token_introspection_request.dart';
@@ -214,9 +214,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return NewscenterInboxListQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'NewscenterInboxListResponse':
       return NewscenterInboxListResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'NewscenterInboxListResponseMessagesInner':
-      return NewscenterInboxListResponseMessagesInner.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
+    case 'NewscenterInboxListResponseItem':
+      return NewscenterInboxListResponseItem.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OAuth2AuthorizationRequest':
       return OAuth2AuthorizationRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OAuth2AuthorizationResponse':

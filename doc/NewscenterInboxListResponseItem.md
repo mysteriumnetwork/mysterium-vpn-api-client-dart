@@ -1,4 +1,4 @@
-# vpn_api.model.NewscenterInboxListResponse
+# vpn_api.model.NewscenterInboxListResponseItem
 
 ## Load the model package
 ```dart
@@ -8,7 +8,13 @@ import 'package:vpn_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**messages** | [**List&lt;NewscenterInboxListResponseItem&gt;**](NewscenterInboxListResponseItem.md) |  | 
+**id** | **num** |  | 
+**title** | **String** |  | 
+**summary** | **String** |  | 
+**category** | [**NewscenterCategory**](NewscenterCategory.md) |  | 
+**webViewUrl** | **String** |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
