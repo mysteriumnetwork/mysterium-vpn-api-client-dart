@@ -19,7 +19,6 @@ jobs:
       - name: Verify OpenAPI generator version
         run: openapi-generator-cli version
 
-
       - name: Cache Flutter SDK
         uses: actions/cache@v3
         with:
@@ -30,6 +29,8 @@ jobs:
 
       - name: Setup Flutter Version Management CLI
         uses: flutter-actions/setup-fvm@v1.0 #v1.0 is tag, v1 is branch
+        with:
+          version: 4.0.5
 
       - name: Install Flutter SDK
         run: echo yes | fvm use
@@ -54,9 +55,9 @@ jobs:
       - name: Update pubspec.yaml
         uses: stikkyapp/update-pubspec-version@v2
         with:
-          strategy: 'patch'
+          strategy: "patch"
           bump-build: true
-          path: './pubspec.yaml'
+          path: "./pubspec.yaml"
 
       - name: Commit and push changes
         run: |
