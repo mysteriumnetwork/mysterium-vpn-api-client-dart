@@ -24,6 +24,10 @@ class GetSubscriptionResponse {
 
     this.activeUntil,
 
+    this.pausedFrom,
+
+    this.pausedUntil,
+
     this.gateway,
 
     this.planId,
@@ -31,6 +35,8 @@ class GetSubscriptionResponse {
     this.storePlanId,
 
     this.portalUrl,
+
+    required this.paused,
 
     required this.expired,
 
@@ -54,6 +60,12 @@ class GetSubscriptionResponse {
   @JsonKey(name: r'active_until', required: false, includeIfNull: false)
   final DateTime? activeUntil;
 
+  @JsonKey(name: r'paused_from', required: false, includeIfNull: false)
+  final DateTime? pausedFrom;
+
+  @JsonKey(name: r'paused_until', required: false, includeIfNull: false)
+  final DateTime? pausedUntil;
+
   @JsonKey(name: r'gateway', required: false, includeIfNull: false)
   final String? gateway;
 
@@ -65,6 +77,9 @@ class GetSubscriptionResponse {
 
   @JsonKey(name: r'portal_url', required: false, includeIfNull: false)
   final String? portalUrl;
+
+  @JsonKey(name: r'paused', required: true, includeIfNull: false)
+  final bool paused;
 
   @JsonKey(name: r'expired', required: true, includeIfNull: false)
   final bool expired;
@@ -91,10 +106,13 @@ class GetSubscriptionResponse {
           other.active == active &&
           other.periodStart == periodStart &&
           other.activeUntil == activeUntil &&
+          other.pausedFrom == pausedFrom &&
+          other.pausedUntil == pausedUntil &&
           other.gateway == gateway &&
           other.planId == planId &&
           other.storePlanId == storePlanId &&
           other.portalUrl == portalUrl &&
+          other.paused == paused &&
           other.expired == expired &&
           other.recurring == recurring &&
           other.subscriptionId == subscriptionId &&
@@ -107,10 +125,13 @@ class GetSubscriptionResponse {
       active.hashCode +
       (periodStart == null ? 0 : periodStart.hashCode) +
       (activeUntil == null ? 0 : activeUntil.hashCode) +
+      (pausedFrom == null ? 0 : pausedFrom.hashCode) +
+      (pausedUntil == null ? 0 : pausedUntil.hashCode) +
       (gateway == null ? 0 : gateway.hashCode) +
       (planId == null ? 0 : planId.hashCode) +
       (storePlanId == null ? 0 : storePlanId.hashCode) +
       (portalUrl == null ? 0 : portalUrl.hashCode) +
+      paused.hashCode +
       expired.hashCode +
       recurring.hashCode +
       subscriptionId.hashCode +

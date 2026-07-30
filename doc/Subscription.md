@@ -9,15 +9,58 @@ All URIs are relative to *http://localhost:3030/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cancel**](Subscription.md#cancel) | **POST** /subscription/cancel | Cancel subscription
 [**invoices**](Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
 [**orderSummary**](Subscription.md#ordersummary) | **POST** /subscription/order-summary | Preview order summary breakdown
 [**orderUpdateSummary**](Subscription.md#orderupdatesummary) | **GET** /subscription/{id}/order-summary | Preview order summary breakdown
+[**pause**](Subscription.md#pause) | **POST** /subscription/pause | Pause subscription
 [**plan**](Subscription.md#plan) | **GET** /subscription/plan | Get plan of subscription
+[**resume**](Subscription.md#resume) | **POST** /subscription/resume | Resume subscription
 [**subscribe**](Subscription.md#subscribe) | **POST** /subscription | Create subscription
 [**subscriptionConfig**](Subscription.md#subscriptionconfig) | **GET** /subscription/config | Get subscription options
 [**subscriptionStatus**](Subscription.md#subscriptionstatus) | **GET** /subscription | Get subscription status
 [**subscriptionUserCallback**](Subscription.md#subscriptionusercallback) | **POST** /subscription/user-callback | Post user callback of payment
 
+
+# **cancel**
+> cancel(cancelSubscriptionRequest)
+
+Cancel subscription
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getSubscription();
+final CancelSubscriptionRequest cancelSubscriptionRequest = ; // CancelSubscriptionRequest | 
+
+try {
+    api.cancel(cancelSubscriptionRequest);
+} on DioException catch (e) {
+    print('Exception when calling Subscription->cancel: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cancelSubscriptionRequest** | [**CancelSubscriptionRequest**](CancelSubscriptionRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invoices**
 > InvoicesResponse invoices(invoicesRequest)
@@ -148,6 +191,46 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **pause**
+> pause(pauseSubscriptionRequest)
+
+Pause subscription
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getSubscription();
+final PauseSubscriptionRequest pauseSubscriptionRequest = ; // PauseSubscriptionRequest | 
+
+try {
+    api.pause(pauseSubscriptionRequest);
+} on DioException catch (e) {
+    print('Exception when calling Subscription->pause: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pauseSubscriptionRequest** | [**PauseSubscriptionRequest**](PauseSubscriptionRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **plan**
 > GetPlanResponse plan()
 
@@ -182,6 +265,42 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **resume**
+> resume()
+
+Resume subscription
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getSubscription();
+
+try {
+    api.resume();
+} on DioException catch (e) {
+    print('Exception when calling Subscription->resume: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

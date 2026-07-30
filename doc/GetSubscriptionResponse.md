@@ -11,10 +11,13 @@ Name | Type | Description | Notes
 **active** | **bool** |  | 
 **periodStart** | [**DateTime**](DateTime.md) |  | [optional] 
 **activeUntil** | [**DateTime**](DateTime.md) |  | [optional] 
+**pausedFrom** | [**DateTime**](DateTime.md) |  | [optional] 
+**pausedUntil** | [**DateTime**](DateTime.md) |  | [optional] 
 **gateway** | **String** |  | [optional] 
 **planId** | **String** |  | [optional] 
 **storePlanId** | **String** |  | [optional] 
 **portalUrl** | **String** |  | [optional] 
+**paused** | **bool** |  | 
 **expired** | **bool** |  | 
 **recurring** | **bool** |  | 
 **subscriptionId** | **String** |  | 

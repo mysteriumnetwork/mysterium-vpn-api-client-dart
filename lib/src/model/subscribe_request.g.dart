@@ -27,13 +27,7 @@ abstract class _$SubscribeRequestCWProxy {
 
   SubscribeRequest requestId(String? requestId);
 
-  SubscribeRequest express(bool? express);
-
-  SubscribeRequest amount(num amount);
-
-  SubscribeRequest origin(String origin);
-
-  SubscribeRequest paymentData(Object? paymentData);
+  SubscribeRequest primerClientToken(String primerClientToken);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
@@ -53,10 +47,7 @@ abstract class _$SubscribeRequestCWProxy {
     bool? embedded,
     String? cardHolder,
     String? requestId,
-    bool? express,
-    num amount,
-    String origin,
-    Object? paymentData,
+    String primerClientToken,
   });
 }
 
@@ -98,16 +89,8 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
   SubscribeRequest requestId(String? requestId) => call(requestId: requestId);
 
   @override
-  SubscribeRequest express(bool? express) => call(express: express);
-
-  @override
-  SubscribeRequest amount(num amount) => call(amount: amount);
-
-  @override
-  SubscribeRequest origin(String origin) => call(origin: origin);
-
-  @override
-  SubscribeRequest paymentData(Object? paymentData) => call(paymentData: paymentData);
+  SubscribeRequest primerClientToken(String primerClientToken) =>
+      call(primerClientToken: primerClientToken);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -128,10 +111,7 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
     Object? embedded = const $CopyWithPlaceholder(),
     Object? cardHolder = const $CopyWithPlaceholder(),
     Object? requestId = const $CopyWithPlaceholder(),
-    Object? express = const $CopyWithPlaceholder(),
-    Object? amount = const $CopyWithPlaceholder(),
-    Object? origin = const $CopyWithPlaceholder(),
-    Object? paymentData = const $CopyWithPlaceholder(),
+    Object? primerClientToken = const $CopyWithPlaceholder(),
   }) {
     return SubscribeRequest(
       gatewayId: gatewayId == const $CopyWithPlaceholder() || gatewayId == null
@@ -174,22 +154,11 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
           ? _value.requestId
           // ignore: cast_nullable_to_non_nullable
           : requestId as String?,
-      express: express == const $CopyWithPlaceholder()
-          ? _value.express
+      primerClientToken:
+          primerClientToken == const $CopyWithPlaceholder() || primerClientToken == null
+          ? _value.primerClientToken
           // ignore: cast_nullable_to_non_nullable
-          : express as bool?,
-      amount: amount == const $CopyWithPlaceholder() || amount == null
-          ? _value.amount
-          // ignore: cast_nullable_to_non_nullable
-          : amount as num,
-      origin: origin == const $CopyWithPlaceholder() || origin == null
-          ? _value.origin
-          // ignore: cast_nullable_to_non_nullable
-          : origin as String,
-      paymentData: paymentData == const $CopyWithPlaceholder()
-          ? _value.paymentData
-          // ignore: cast_nullable_to_non_nullable
-          : paymentData as Object?,
+          : primerClientToken as String,
     );
   }
 }
@@ -211,7 +180,7 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
   ($checkedConvert) {
     $checkKeys(
       json,
-      requiredKeys: const ['gateway_id', 'plan_id', 'country', 'currency', 'amount', 'origin'],
+      requiredKeys: const ['gateway_id', 'plan_id', 'country', 'currency', 'primer_client_token'],
     );
     final val = SubscribeRequest(
       gatewayId: $checkedConvert(
@@ -227,10 +196,7 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
       embedded: $checkedConvert('embedded', (v) => v as bool?),
       cardHolder: $checkedConvert('card_holder', (v) => v as String?),
       requestId: $checkedConvert('request_id', (v) => v as String?),
-      express: $checkedConvert('express', (v) => v as bool?),
-      amount: $checkedConvert('amount', (v) => v as num),
-      origin: $checkedConvert('origin', (v) => v as String),
-      paymentData: $checkedConvert('payment_data', (v) => v),
+      primerClientToken: $checkedConvert('primer_client_token', (v) => v as String),
     );
     return val;
   },
@@ -241,7 +207,7 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
     'couponCode': 'coupon_code',
     'cardHolder': 'card_holder',
     'requestId': 'request_id',
-    'paymentData': 'payment_data',
+    'primerClientToken': 'primer_client_token',
   },
 );
 
@@ -256,10 +222,7 @@ Map<String, dynamic> _$SubscribeRequestToJson(SubscribeRequest instance) => <Str
   'embedded': ?instance.embedded,
   'card_holder': ?instance.cardHolder,
   'request_id': ?instance.requestId,
-  'express': ?instance.express,
-  'amount': instance.amount,
-  'origin': instance.origin,
-  'payment_data': ?instance.paymentData,
+  'primer_client_token': instance.primerClientToken,
 };
 
-const _$SubscribeRequestGatewayIdEnumEnumMap = {SubscribeRequestGatewayIdEnum.adyen: 'adyen'};
+const _$SubscribeRequestGatewayIdEnumEnumMap = {SubscribeRequestGatewayIdEnum.apple: 'apple'};

@@ -13,6 +13,10 @@ abstract class _$GetSubscriptionResponseCWProxy {
 
   GetSubscriptionResponse activeUntil(DateTime? activeUntil);
 
+  GetSubscriptionResponse pausedFrom(DateTime? pausedFrom);
+
+  GetSubscriptionResponse pausedUntil(DateTime? pausedUntil);
+
   GetSubscriptionResponse gateway(String? gateway);
 
   GetSubscriptionResponse planId(String? planId);
@@ -20,6 +24,8 @@ abstract class _$GetSubscriptionResponseCWProxy {
   GetSubscriptionResponse storePlanId(String? storePlanId);
 
   GetSubscriptionResponse portalUrl(String? portalUrl);
+
+  GetSubscriptionResponse paused(bool paused);
 
   GetSubscriptionResponse expired(bool expired);
 
@@ -44,10 +50,13 @@ abstract class _$GetSubscriptionResponseCWProxy {
     bool active,
     DateTime? periodStart,
     DateTime? activeUntil,
+    DateTime? pausedFrom,
+    DateTime? pausedUntil,
     String? gateway,
     String? planId,
     String? storePlanId,
     String? portalUrl,
+    bool paused,
     bool expired,
     bool recurring,
     String subscriptionId,
@@ -74,6 +83,12 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
   GetSubscriptionResponse activeUntil(DateTime? activeUntil) => call(activeUntil: activeUntil);
 
   @override
+  GetSubscriptionResponse pausedFrom(DateTime? pausedFrom) => call(pausedFrom: pausedFrom);
+
+  @override
+  GetSubscriptionResponse pausedUntil(DateTime? pausedUntil) => call(pausedUntil: pausedUntil);
+
+  @override
   GetSubscriptionResponse gateway(String? gateway) => call(gateway: gateway);
 
   @override
@@ -84,6 +99,9 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
 
   @override
   GetSubscriptionResponse portalUrl(String? portalUrl) => call(portalUrl: portalUrl);
+
+  @override
+  GetSubscriptionResponse paused(bool paused) => call(paused: paused);
 
   @override
   GetSubscriptionResponse expired(bool expired) => call(expired: expired);
@@ -119,10 +137,13 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
     Object? active = const $CopyWithPlaceholder(),
     Object? periodStart = const $CopyWithPlaceholder(),
     Object? activeUntil = const $CopyWithPlaceholder(),
+    Object? pausedFrom = const $CopyWithPlaceholder(),
+    Object? pausedUntil = const $CopyWithPlaceholder(),
     Object? gateway = const $CopyWithPlaceholder(),
     Object? planId = const $CopyWithPlaceholder(),
     Object? storePlanId = const $CopyWithPlaceholder(),
     Object? portalUrl = const $CopyWithPlaceholder(),
+    Object? paused = const $CopyWithPlaceholder(),
     Object? expired = const $CopyWithPlaceholder(),
     Object? recurring = const $CopyWithPlaceholder(),
     Object? subscriptionId = const $CopyWithPlaceholder(),
@@ -143,6 +164,14 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
           ? _value.activeUntil
           // ignore: cast_nullable_to_non_nullable
           : activeUntil as DateTime?,
+      pausedFrom: pausedFrom == const $CopyWithPlaceholder()
+          ? _value.pausedFrom
+          // ignore: cast_nullable_to_non_nullable
+          : pausedFrom as DateTime?,
+      pausedUntil: pausedUntil == const $CopyWithPlaceholder()
+          ? _value.pausedUntil
+          // ignore: cast_nullable_to_non_nullable
+          : pausedUntil as DateTime?,
       gateway: gateway == const $CopyWithPlaceholder()
           ? _value.gateway
           // ignore: cast_nullable_to_non_nullable
@@ -159,6 +188,10 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
           ? _value.portalUrl
           // ignore: cast_nullable_to_non_nullable
           : portalUrl as String?,
+      paused: paused == const $CopyWithPlaceholder() || paused == null
+          ? _value.paused
+          // ignore: cast_nullable_to_non_nullable
+          : paused as bool,
       expired: expired == const $CopyWithPlaceholder() || expired == null
           ? _value.expired
           // ignore: cast_nullable_to_non_nullable
@@ -203,7 +236,10 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
       'GetSubscriptionResponse',
       json,
       ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['active', 'expired', 'recurring', 'subscription_id']);
+        $checkKeys(
+          json,
+          requiredKeys: const ['active', 'paused', 'expired', 'recurring', 'subscription_id'],
+        );
         final val = GetSubscriptionResponse(
           active: $checkedConvert('active', (v) => v as bool),
           periodStart: $checkedConvert(
@@ -214,10 +250,19 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
             'active_until',
             (v) => v == null ? null : DateTime.parse(v as String),
           ),
+          pausedFrom: $checkedConvert(
+            'paused_from',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
+          pausedUntil: $checkedConvert(
+            'paused_until',
+            (v) => v == null ? null : DateTime.parse(v as String),
+          ),
           gateway: $checkedConvert('gateway', (v) => v as String?),
           planId: $checkedConvert('plan_id', (v) => v as String?),
           storePlanId: $checkedConvert('store_plan_id', (v) => v as String?),
           portalUrl: $checkedConvert('portal_url', (v) => v as String?),
+          paused: $checkedConvert('paused', (v) => v as bool),
           expired: $checkedConvert('expired', (v) => v as bool),
           recurring: $checkedConvert('recurring', (v) => v as bool),
           subscriptionId: $checkedConvert('subscription_id', (v) => v as String),
@@ -230,6 +275,8 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
       fieldKeyMap: const {
         'periodStart': 'period_start',
         'activeUntil': 'active_until',
+        'pausedFrom': 'paused_from',
+        'pausedUntil': 'paused_until',
         'planId': 'plan_id',
         'storePlanId': 'store_plan_id',
         'portalUrl': 'portal_url',
@@ -245,10 +292,13 @@ Map<String, dynamic> _$GetSubscriptionResponseToJson(GetSubscriptionResponse ins
       'active': instance.active,
       'period_start': ?instance.periodStart?.toIso8601String(),
       'active_until': ?instance.activeUntil?.toIso8601String(),
+      'paused_from': ?instance.pausedFrom?.toIso8601String(),
+      'paused_until': ?instance.pausedUntil?.toIso8601String(),
       'gateway': ?instance.gateway,
       'plan_id': ?instance.planId,
       'store_plan_id': ?instance.storePlanId,
       'portal_url': ?instance.portalUrl,
+      'paused': instance.paused,
       'expired': instance.expired,
       'recurring': instance.recurring,
       'subscription_id': instance.subscriptionId,

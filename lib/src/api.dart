@@ -8,12 +8,15 @@ import 'package:vpn_api/src/auth/basic_auth.dart';
 import 'package:vpn_api/src/auth/bearer_auth.dart';
 import 'package:vpn_api/src/auth/oauth.dart';
 import 'package:vpn_api/src/api/authentication.dart';
+import 'package:vpn_api/src/api/cancel.dart';
 import 'package:vpn_api/src/api/connection.dart';
 import 'package:vpn_api/src/api/email_marketing.dart';
 import 'package:vpn_api/src/api/infrastructure.dart';
 import 'package:vpn_api/src/api/intercom.dart';
 import 'package:vpn_api/src/api/location.dart';
 import 'package:vpn_api/src/api/newscenter.dart';
+import 'package:vpn_api/src/api/pause.dart';
+import 'package:vpn_api/src/api/resume.dart';
 import 'package:vpn_api/src/api/subscription.dart';
 
 class VpnApi {
@@ -131,6 +134,12 @@ class VpnApi {
     return Authentication(dio);
   }
 
+  /// Get Cancel instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  Cancel getCancel() {
+    return Cancel(dio);
+  }
+
   /// Get Connection instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   Connection getConnection() {
@@ -165,6 +174,18 @@ class VpnApi {
   /// by doing that all interceptors will not be executed
   Newscenter getNewscenter() {
     return Newscenter(dio);
+  }
+
+  /// Get Pause instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  Pause getPause() {
+    return Pause(dio);
+  }
+
+  /// Get Resume instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  Resume getResume() {
+    return Resume(dio);
   }
 
   /// Get Subscription instance, base route and serializer can be overridden by a given but be careful,

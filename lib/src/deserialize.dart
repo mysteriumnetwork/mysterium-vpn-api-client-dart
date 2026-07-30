@@ -2,6 +2,7 @@ import 'package:vpn_api/src/model/activation_authorization_request.dart';
 import 'package:vpn_api/src/model/auth_check_response.dart';
 import 'package:vpn_api/src/model/auth_config_response.dart';
 import 'package:vpn_api/src/model/authorization_device.dart';
+import 'package:vpn_api/src/model/cancel_subscription_request.dart';
 import 'package:vpn_api/src/model/check_auth401_response.dart';
 import 'package:vpn_api/src/model/check_auth401_response_error.dart';
 import 'package:vpn_api/src/model/check_auth401_response_error_fields_value.dart';
@@ -19,8 +20,6 @@ import 'package:vpn_api/src/model/connection_message_location.dart';
 import 'package:vpn_api/src/model/connection_region.dart';
 import 'package:vpn_api/src/model/contact_status_response.dart';
 import 'package:vpn_api/src/model/country.dart';
-import 'package:vpn_api/src/model/create_adyen_subscription_request.dart';
-import 'package:vpn_api/src/model/create_adyen_subscription_response.dart';
 import 'package:vpn_api/src/model/create_apple_subscription_request.dart';
 import 'package:vpn_api/src/model/create_apple_subscription_response.dart';
 import 'package:vpn_api/src/model/create_contact_request.dart';
@@ -28,6 +27,8 @@ import 'package:vpn_api/src/model/create_generic_subscription_request.dart';
 import 'package:vpn_api/src/model/create_generic_subscription_response.dart';
 import 'package:vpn_api/src/model/create_google_subscription_request.dart';
 import 'package:vpn_api/src/model/create_google_subscription_response.dart';
+import 'package:vpn_api/src/model/create_primer_subscription_request.dart';
+import 'package:vpn_api/src/model/create_primer_subscription_response.dart';
 import 'package:vpn_api/src/model/disconnect_query.dart';
 import 'package:vpn_api/src/model/get_location_response.dart';
 import 'package:vpn_api/src/model/get_plan_response.dart';
@@ -66,6 +67,7 @@ import 'package:vpn_api/src/model/open_vpn_connect_response.dart';
 import 'package:vpn_api/src/model/order_summary_request.dart';
 import 'package:vpn_api/src/model/order_summary_response.dart';
 import 'package:vpn_api/src/model/order_update_summary_query.dart';
+import 'package:vpn_api/src/model/pause_subscription_request.dart';
 import 'package:vpn_api/src/model/plan_metadata.dart';
 import 'package:vpn_api/src/model/proxy_connect_response.dart';
 import 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';
@@ -117,6 +119,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return AuthConfigResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AuthorizationDevice':
       return AuthorizationDevice.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CancelSubscriptionRequest':
+      return CancelSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CheckAuth401Response':
       return CheckAuth401Response.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CheckAuth401ResponseError':
@@ -152,10 +156,6 @@ ReturnType deserialize<ReturnType, BaseType>(
       return ContactStatusResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Country':
       return Country.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'CreateAdyenSubscriptionRequest':
-      return CreateAdyenSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'CreateAdyenSubscriptionResponse':
-      return CreateAdyenSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateAppleSubscriptionRequest':
       return CreateAppleSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateAppleSubscriptionResponse':
@@ -171,6 +171,10 @@ ReturnType deserialize<ReturnType, BaseType>(
       return CreateGoogleSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CreateGoogleSubscriptionResponse':
       return CreateGoogleSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CreatePrimerSubscriptionRequest':
+      return CreatePrimerSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'CreatePrimerSubscriptionResponse':
+      return CreatePrimerSubscriptionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'DisconnectQuery':
       return DisconnectQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GetLocationResponse':
@@ -249,6 +253,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return OrderSummaryResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OrderUpdateSummaryQuery':
       return OrderUpdateSummaryQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'PauseSubscriptionRequest':
+      return PauseSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'PlanMetadata':
       return PlanMetadata.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ProxyConnectResponse':
