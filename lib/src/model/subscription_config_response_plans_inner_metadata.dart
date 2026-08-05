@@ -35,6 +35,10 @@ class SubscriptionConfigResponsePlansInnerMetadata {
     this.discountAmount,
 
     this.fullPrice,
+
+    this.favoriteIpsAllowed,
+
+    this.favoriteIpsLimit,
   });
 
   @JsonKey(name: r'allowed_devices_limit', required: false, includeIfNull: false)
@@ -64,6 +68,12 @@ class SubscriptionConfigResponsePlansInnerMetadata {
   @JsonKey(name: r'full_price', required: false, includeIfNull: false)
   final String? fullPrice;
 
+  @JsonKey(name: r'favorite_ips_allowed', required: false, includeIfNull: false)
+  final bool? favoriteIpsAllowed;
+
+  @JsonKey(name: r'favorite_ips_limit', required: false, includeIfNull: false)
+  final num? favoriteIpsLimit;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -76,7 +86,9 @@ class SubscriptionConfigResponsePlansInnerMetadata {
           other.countryCount == countryCount &&
           other.serverCount == serverCount &&
           other.discountAmount == discountAmount &&
-          other.fullPrice == fullPrice;
+          other.fullPrice == fullPrice &&
+          other.favoriteIpsAllowed == favoriteIpsAllowed &&
+          other.favoriteIpsLimit == favoriteIpsLimit;
 
   @override
   int get hashCode =>
@@ -88,7 +100,9 @@ class SubscriptionConfigResponsePlansInnerMetadata {
       (countryCount == null ? 0 : countryCount.hashCode) +
       (serverCount == null ? 0 : serverCount.hashCode) +
       (discountAmount == null ? 0 : discountAmount.hashCode) +
-      (fullPrice == null ? 0 : fullPrice.hashCode);
+      (fullPrice == null ? 0 : fullPrice.hashCode) +
+      (favoriteIpsAllowed == null ? 0 : favoriteIpsAllowed.hashCode) +
+      (favoriteIpsLimit == null ? 0 : favoriteIpsLimit.hashCode);
 
   factory SubscriptionConfigResponsePlansInnerMetadata.fromJson(Map<String, dynamic> json) =>
       _$SubscriptionConfigResponsePlansInnerMetadataFromJson(json);

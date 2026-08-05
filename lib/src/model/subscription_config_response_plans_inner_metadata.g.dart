@@ -27,6 +27,10 @@ abstract class _$SubscriptionConfigResponsePlansInnerMetadataCWProxy {
 
   SubscriptionConfigResponsePlansInnerMetadata fullPrice(String? fullPrice);
 
+  SubscriptionConfigResponsePlansInnerMetadata favoriteIpsAllowed(bool? favoriteIpsAllowed);
+
+  SubscriptionConfigResponsePlansInnerMetadata favoriteIpsLimit(num? favoriteIpsLimit);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerMetadata(...).copyWith.fieldName(value)`.
   ///
@@ -44,6 +48,8 @@ abstract class _$SubscriptionConfigResponsePlansInnerMetadataCWProxy {
     String? serverCount,
     num? discountAmount,
     String? fullPrice,
+    bool? favoriteIpsAllowed,
+    num? favoriteIpsLimit,
   });
 }
 
@@ -94,6 +100,14 @@ class _$SubscriptionConfigResponsePlansInnerMetadataCWProxyImpl
       call(fullPrice: fullPrice);
 
   @override
+  SubscriptionConfigResponsePlansInnerMetadata favoriteIpsAllowed(bool? favoriteIpsAllowed) =>
+      call(favoriteIpsAllowed: favoriteIpsAllowed);
+
+  @override
+  SubscriptionConfigResponsePlansInnerMetadata favoriteIpsLimit(num? favoriteIpsLimit) =>
+      call(favoriteIpsLimit: favoriteIpsLimit);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerMetadata(...).copyWith.fieldName(value)`.
   ///
@@ -111,6 +125,8 @@ class _$SubscriptionConfigResponsePlansInnerMetadataCWProxyImpl
     Object? serverCount = const $CopyWithPlaceholder(),
     Object? discountAmount = const $CopyWithPlaceholder(),
     Object? fullPrice = const $CopyWithPlaceholder(),
+    Object? favoriteIpsAllowed = const $CopyWithPlaceholder(),
+    Object? favoriteIpsLimit = const $CopyWithPlaceholder(),
   }) {
     return SubscriptionConfigResponsePlansInnerMetadata(
       allowedDevicesLimit: allowedDevicesLimit == const $CopyWithPlaceholder()
@@ -149,6 +165,14 @@ class _$SubscriptionConfigResponsePlansInnerMetadataCWProxyImpl
           ? _value.fullPrice
           // ignore: cast_nullable_to_non_nullable
           : fullPrice as String?,
+      favoriteIpsAllowed: favoriteIpsAllowed == const $CopyWithPlaceholder()
+          ? _value.favoriteIpsAllowed
+          // ignore: cast_nullable_to_non_nullable
+          : favoriteIpsAllowed as bool?,
+      favoriteIpsLimit: favoriteIpsLimit == const $CopyWithPlaceholder()
+          ? _value.favoriteIpsLimit
+          // ignore: cast_nullable_to_non_nullable
+          : favoriteIpsLimit as num?,
     );
   }
 }
@@ -182,6 +206,8 @@ SubscriptionConfigResponsePlansInnerMetadata _$SubscriptionConfigResponsePlansIn
       serverCount: $checkedConvert('server_count', (v) => v as String?),
       discountAmount: $checkedConvert('discount_amount', (v) => v as num?),
       fullPrice: $checkedConvert('full_price', (v) => v as String?),
+      favoriteIpsAllowed: $checkedConvert('favorite_ips_allowed', (v) => v as bool?),
+      favoriteIpsLimit: $checkedConvert('favorite_ips_limit', (v) => v as num?),
     );
     return val;
   },
@@ -195,6 +221,8 @@ SubscriptionConfigResponsePlansInnerMetadata _$SubscriptionConfigResponsePlansIn
     'serverCount': 'server_count',
     'discountAmount': 'discount_amount',
     'fullPrice': 'full_price',
+    'favoriteIpsAllowed': 'favorite_ips_allowed',
+    'favoriteIpsLimit': 'favorite_ips_limit',
   },
 );
 
@@ -210,4 +238,6 @@ Map<String, dynamic> _$SubscriptionConfigResponsePlansInnerMetadataToJson(
   'server_count': ?instance.serverCount,
   'discount_amount': ?instance.discountAmount,
   'full_price': ?instance.fullPrice,
+  'favorite_ips_allowed': ?instance.favoriteIpsAllowed,
+  'favorite_ips_limit': ?instance.favoriteIpsLimit,
 };

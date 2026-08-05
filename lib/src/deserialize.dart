@@ -43,6 +43,8 @@ import 'package:vpn_api/src/model/invoice.dart';
 import 'package:vpn_api/src/model/invoices_request.dart';
 import 'package:vpn_api/src/model/invoices_response.dart';
 import 'package:vpn_api/src/model/invoices_response_paging.dart';
+import 'package:vpn_api/src/model/ips_availability200_response.dart';
+import 'package:vpn_api/src/model/ips_availability_request.dart';
 import 'package:vpn_api/src/model/location_rate.dart';
 import 'package:vpn_api/src/model/magic_link_redirect_request_query.dart';
 import 'package:vpn_api/src/model/magic_link_request.dart';
@@ -203,6 +205,10 @@ ReturnType deserialize<ReturnType, BaseType>(
       return InvoicesResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'InvoicesResponsePaging':
       return InvoicesResponsePaging.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'IpsAvailability200Response':
+      return IpsAvailability200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'IpsAvailabilityRequest':
+      return IpsAvailabilityRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'LocationRate':
       return LocationRate.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'MagicLinkRedirectRequestQuery':

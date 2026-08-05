@@ -13,6 +13,7 @@ import 'package:vpn_api/src/api/connection.dart';
 import 'package:vpn_api/src/api/email_marketing.dart';
 import 'package:vpn_api/src/api/infrastructure.dart';
 import 'package:vpn_api/src/api/intercom.dart';
+import 'package:vpn_api/src/api/ips_availability.dart';
 import 'package:vpn_api/src/api/location.dart';
 import 'package:vpn_api/src/api/newscenter.dart';
 import 'package:vpn_api/src/api/pause.dart';
@@ -162,6 +163,12 @@ class VpnApi {
   /// by doing that all interceptors will not be executed
   Intercom getIntercom() {
     return Intercom(dio);
+  }
+
+  /// Get IpsAvailability instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  IpsAvailability getIpsAvailability() {
+    return IpsAvailability(dio);
   }
 
   /// Get Location instance, base route and serializer can be overridden by a given but be careful,

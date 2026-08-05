@@ -52,6 +52,9 @@ doc/Invoice.md
 doc/InvoicesRequest.md
 doc/InvoicesResponse.md
 doc/InvoicesResponsePaging.md
+doc/IpsAvailability.md
+doc/IpsAvailability200Response.md
+doc/IpsAvailabilityRequest.md
 doc/Location.md
 doc/LocationRate.md
 doc/MagicLinkRedirectRequestQuery.md
@@ -110,6 +113,7 @@ lib/src/api/connection.dart
 lib/src/api/email_marketing.dart
 lib/src/api/infrastructure.dart
 lib/src/api/intercom.dart
+lib/src/api/ips_availability.dart
 lib/src/api/location.dart
 lib/src/api/newscenter.dart
 lib/src/api/pause.dart
@@ -166,6 +170,8 @@ lib/src/model/invoice.dart
 lib/src/model/invoices_request.dart
 lib/src/model/invoices_response.dart
 lib/src/model/invoices_response_paging.dart
+lib/src/model/ips_availability200_response.dart
+lib/src/model/ips_availability_request.dart
 lib/src/model/location_rate.dart
 lib/src/model/magic_link_redirect_request_query.dart
 lib/src/model/magic_link_request.dart

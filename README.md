@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 [*EmailMarketing*](doc/EmailMarketing.md) | [**updateContactRequest**](doc/EmailMarketing.md#updatecontactrequest) | **POST** /email-marketing/update-contact | Update marketing contact
 [*Infrastructure*](doc/Infrastructure.md) | [**healthcheck**](doc/Infrastructure.md#healthcheck) | **GET** /healthcheck | Check whether the API is up
 [*Intercom*](doc/Intercom.md) | [**intercom**](doc/Intercom.md#intercom) | **GET** /intercom | Get jwt token for intercom
+[*IpsAvailability*](doc/IpsAvailability.md) | [**ipsAvailability**](doc/IpsAvailability.md#ipsavailability) | **POST** /connection/ips-availability | Get availability for given ips
 [*Location*](doc/Location.md) | [**location**](doc/Location.md#location) | **GET** /subscription/location | Get location
 [*Newscenter*](doc/Newscenter.md) | [**inboxList**](doc/Newscenter.md#inboxlist) | **GET** /newscenter/inbox | List inbox messages
 [*Pause*](doc/Pause.md) | [**pause**](doc/Pause.md#pause) | **POST** /subscription/pause | Pause subscription
@@ -155,6 +156,8 @@ Class | Method | HTTP request | Description
  - [InvoicesRequest](doc/InvoicesRequest.md)
  - [InvoicesResponse](doc/InvoicesResponse.md)
  - [InvoicesResponsePaging](doc/InvoicesResponsePaging.md)
+ - [IpsAvailability200Response](doc/IpsAvailability200Response.md)
+ - [IpsAvailabilityRequest](doc/IpsAvailabilityRequest.md)
  - [LocationRate](doc/LocationRate.md)
  - [MagicLinkRedirectRequestQuery](doc/MagicLinkRedirectRequestQuery.md)
  - [MagicLinkRequest](doc/MagicLinkRequest.md)
