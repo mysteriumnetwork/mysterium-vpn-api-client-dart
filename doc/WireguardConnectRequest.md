@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **resetConnection** | **bool** | Request a new IP | [optional] 
 **osType** | **String** |  | [optional] 
 **dns** | **String** | Custom DNS server to use | [optional] 
+**targetIp** | **String** | Preferred IP address to connect to | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

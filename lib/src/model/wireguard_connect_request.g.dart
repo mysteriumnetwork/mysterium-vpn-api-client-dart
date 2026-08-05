@@ -27,6 +27,8 @@ abstract class _$WireguardConnectRequestCWProxy {
 
   WireguardConnectRequest dns(String? dns);
 
+  WireguardConnectRequest targetIp(String? targetIp);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WireguardConnectRequest(...).copyWith.fieldName(value)`.
   ///
@@ -45,6 +47,7 @@ abstract class _$WireguardConnectRequestCWProxy {
     bool? resetConnection,
     String? osType,
     String? dns,
+    String? targetIp,
   });
 }
 
@@ -88,6 +91,9 @@ class _$WireguardConnectRequestCWProxyImpl implements _$WireguardConnectRequestC
   WireguardConnectRequest dns(String? dns) => call(dns: dns);
 
   @override
+  WireguardConnectRequest targetIp(String? targetIp) => call(targetIp: targetIp);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WireguardConnectRequest(...).copyWith.fieldName(value)`.
   ///
@@ -106,6 +112,7 @@ class _$WireguardConnectRequestCWProxyImpl implements _$WireguardConnectRequestC
     Object? resetConnection = const $CopyWithPlaceholder(),
     Object? osType = const $CopyWithPlaceholder(),
     Object? dns = const $CopyWithPlaceholder(),
+    Object? targetIp = const $CopyWithPlaceholder(),
   }) {
     return WireguardConnectRequest(
       publicKey: publicKey == const $CopyWithPlaceholder() || publicKey == null
@@ -148,6 +155,10 @@ class _$WireguardConnectRequestCWProxyImpl implements _$WireguardConnectRequestC
           ? _value.dns
           // ignore: cast_nullable_to_non_nullable
           : dns as String?,
+      targetIp: targetIp == const $CopyWithPlaceholder()
+          ? _value.targetIp
+          // ignore: cast_nullable_to_non_nullable
+          : targetIp as String?,
     );
   }
 }
@@ -180,6 +191,7 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
           resetConnection: $checkedConvert('reset_connection', (v) => v as bool?),
           osType: $checkedConvert('os_type', (v) => v as String?),
           dns: $checkedConvert('dns', (v) => v as String?),
+          targetIp: $checkedConvert('target_ip', (v) => v as String?),
         );
         return val;
       },
@@ -190,6 +202,7 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
         'ipType': 'ip_type',
         'resetConnection': 'reset_connection',
         'osType': 'os_type',
+        'targetIp': 'target_ip',
       },
     );
 
@@ -205,4 +218,5 @@ Map<String, dynamic> _$WireguardConnectRequestToJson(WireguardConnectRequest ins
       'reset_connection': ?instance.resetConnection,
       'os_type': ?instance.osType,
       'dns': ?instance.dns,
+      'target_ip': ?instance.targetIp,
     };

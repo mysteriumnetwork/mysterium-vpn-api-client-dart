@@ -25,6 +25,8 @@ abstract class _$OpenVpnConnectRequestCWProxy {
 
   OpenVpnConnectRequest dns(String? dns);
 
+  OpenVpnConnectRequest targetIp(String? targetIp);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OpenVpnConnectRequest(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +44,7 @@ abstract class _$OpenVpnConnectRequestCWProxy {
     bool? resetConnection,
     String? osType,
     String? dns,
+    String? targetIp,
   });
 }
 
@@ -82,6 +85,9 @@ class _$OpenVpnConnectRequestCWProxyImpl implements _$OpenVpnConnectRequestCWPro
   OpenVpnConnectRequest dns(String? dns) => call(dns: dns);
 
   @override
+  OpenVpnConnectRequest targetIp(String? targetIp) => call(targetIp: targetIp);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OpenVpnConnectRequest(...).copyWith.fieldName(value)`.
   ///
@@ -99,6 +105,7 @@ class _$OpenVpnConnectRequestCWProxyImpl implements _$OpenVpnConnectRequestCWPro
     Object? resetConnection = const $CopyWithPlaceholder(),
     Object? osType = const $CopyWithPlaceholder(),
     Object? dns = const $CopyWithPlaceholder(),
+    Object? targetIp = const $CopyWithPlaceholder(),
   }) {
     return OpenVpnConnectRequest(
       countryOriginate: countryOriginate == const $CopyWithPlaceholder()
@@ -137,6 +144,10 @@ class _$OpenVpnConnectRequestCWProxyImpl implements _$OpenVpnConnectRequestCWPro
           ? _value.dns
           // ignore: cast_nullable_to_non_nullable
           : dns as String?,
+      targetIp: targetIp == const $CopyWithPlaceholder()
+          ? _value.targetIp
+          // ignore: cast_nullable_to_non_nullable
+          : targetIp as String?,
     );
   }
 }
@@ -166,6 +177,7 @@ OpenVpnConnectRequest _$OpenVpnConnectRequestFromJson(Map<String, dynamic> json)
       resetConnection: $checkedConvert('reset_connection', (v) => v as bool?),
       osType: $checkedConvert('os_type', (v) => v as String?),
       dns: $checkedConvert('dns', (v) => v as String?),
+      targetIp: $checkedConvert('target_ip', (v) => v as String?),
     );
     return val;
   },
@@ -175,6 +187,7 @@ OpenVpnConnectRequest _$OpenVpnConnectRequestFromJson(Map<String, dynamic> json)
     'ipType': 'ip_type',
     'resetConnection': 'reset_connection',
     'osType': 'os_type',
+    'targetIp': 'target_ip',
   },
 );
 
@@ -189,4 +202,5 @@ Map<String, dynamic> _$OpenVpnConnectRequestToJson(OpenVpnConnectRequest instanc
       'reset_connection': ?instance.resetConnection,
       'os_type': ?instance.osType,
       'dns': ?instance.dns,
+      'target_ip': ?instance.targetIp,
     };
