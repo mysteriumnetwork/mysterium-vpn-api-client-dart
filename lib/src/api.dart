@@ -17,6 +17,7 @@ import 'package:vpn_api/src/api/ips_availability.dart';
 import 'package:vpn_api/src/api/location.dart';
 import 'package:vpn_api/src/api/newscenter.dart';
 import 'package:vpn_api/src/api/pause.dart';
+import 'package:vpn_api/src/api/pause_durations.dart';
 import 'package:vpn_api/src/api/resume.dart';
 import 'package:vpn_api/src/api/subscription.dart';
 
@@ -187,6 +188,12 @@ class VpnApi {
   /// by doing that all interceptors will not be executed
   Pause getPause() {
     return Pause(dio);
+  }
+
+  /// Get PauseDurations instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  PauseDurations getPauseDurations() {
+    return PauseDurations(dio);
   }
 
   /// Get Resume instance, base route and serializer can be overridden by a given but be careful,

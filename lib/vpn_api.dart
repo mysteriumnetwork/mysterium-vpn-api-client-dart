@@ -18,6 +18,7 @@ export 'package:vpn_api/src/api/ips_availability.dart';
 export 'package:vpn_api/src/api/location.dart';
 export 'package:vpn_api/src/api/newscenter.dart';
 export 'package:vpn_api/src/api/pause.dart';
+export 'package:vpn_api/src/api/pause_durations.dart';
 export 'package:vpn_api/src/api/resume.dart';
 export 'package:vpn_api/src/api/subscription.dart';
 

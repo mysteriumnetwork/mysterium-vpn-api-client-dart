@@ -83,6 +83,7 @@ doc/OrderSummaryRequest.md
 doc/OrderSummaryResponse.md
 doc/OrderUpdateSummaryQuery.md
 doc/Pause.md
+doc/PauseDurations.md
 doc/PauseSubscriptionRequest.md
 doc/PlanMetadata.md
 doc/ProxyConnectResponse.md
@@ -117,6 +118,7 @@ lib/src/api/ips_availability.dart
 lib/src/api/location.dart
 lib/src/api/newscenter.dart
 lib/src/api/pause.dart
+lib/src/api/pause_durations.dart
 lib/src/api/resume.dart
 lib/src/api/subscription.dart
 lib/src/auth/api_key_auth.dart

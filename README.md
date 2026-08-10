@@ -95,12 +95,14 @@ Class | Method | HTTP request | Description
 [*Location*](doc/Location.md) | [**location**](doc/Location.md#location) | **GET** /subscription/location | Get location
 [*Newscenter*](doc/Newscenter.md) | [**inboxList**](doc/Newscenter.md#inboxlist) | **GET** /newscenter/inbox | List inbox messages
 [*Pause*](doc/Pause.md) | [**pause**](doc/Pause.md#pause) | **POST** /subscription/pause | Pause subscription
+[*PauseDurations*](doc/PauseDurations.md) | [**pauseDurations**](doc/PauseDurations.md#pausedurations) | **GET** /subscription/pause-durations | List pause durations
 [*Resume*](doc/Resume.md) | [**resume**](doc/Resume.md#resume) | **POST** /subscription/resume | Resume subscription
 [*Subscription*](doc/Subscription.md) | [**cancel**](doc/Subscription.md#cancel) | **POST** /subscription/cancel | Cancel subscription
 [*Subscription*](doc/Subscription.md) | [**invoices**](doc/Subscription.md#invoices) | **POST** /subscription/invoices | Get invoices list with pagination
 [*Subscription*](doc/Subscription.md) | [**orderSummary**](doc/Subscription.md#ordersummary) | **POST** /subscription/order-summary | Preview order summary breakdown
 [*Subscription*](doc/Subscription.md) | [**orderUpdateSummary**](doc/Subscription.md#orderupdatesummary) | **GET** /subscription/{id}/order-summary | Preview order summary breakdown
 [*Subscription*](doc/Subscription.md) | [**pause**](doc/Subscription.md#pause) | **POST** /subscription/pause | Pause subscription
+[*Subscription*](doc/Subscription.md) | [**pauseDurations**](doc/Subscription.md#pausedurations) | **GET** /subscription/pause-durations | List pause durations
 [*Subscription*](doc/Subscription.md) | [**plan**](doc/Subscription.md#plan) | **GET** /subscription/plan | Get plan of subscription
 [*Subscription*](doc/Subscription.md) | [**resume**](doc/Subscription.md#resume) | **POST** /subscription/resume | Resume subscription
 [*Subscription*](doc/Subscription.md) | [**subscribe**](doc/Subscription.md#subscribe) | **POST** /subscription | Create subscription
