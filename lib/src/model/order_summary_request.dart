@@ -17,7 +17,20 @@ part 'order_summary_request.g.dart';
 )
 class OrderSummaryRequest {
   /// Returns a new [OrderSummaryRequest] instance.
-  OrderSummaryRequest({required this.country, this.state, required this.planId, this.couponCode});
+  OrderSummaryRequest({
+    this.intent,
+
+    required this.country,
+
+    this.state,
+
+    required this.planId,
+
+    this.couponCode,
+  });
+
+  @JsonKey(name: r'intent', required: false, includeIfNull: false)
+  final String? intent;
 
   @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
@@ -35,6 +48,7 @@ class OrderSummaryRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is OrderSummaryRequest &&
+          other.intent == intent &&
           other.country == country &&
           other.state == state &&
           other.planId == planId &&
@@ -42,6 +56,7 @@ class OrderSummaryRequest {
 
   @override
   int get hashCode =>
+      (intent == null ? 0 : intent.hashCode) +
       country.hashCode +
       (state == null ? 0 : state.hashCode) +
       planId.hashCode +

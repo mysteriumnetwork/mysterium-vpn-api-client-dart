@@ -7,6 +7,8 @@ part of 'order_summary_request.dart';
 // **************************************************************************
 
 abstract class _$OrderSummaryRequestCWProxy {
+  OrderSummaryRequest intent(String? intent);
+
   OrderSummaryRequest country(String country);
 
   OrderSummaryRequest state(String? state);
@@ -22,7 +24,13 @@ abstract class _$OrderSummaryRequestCWProxy {
   /// ```dart
   /// OrderSummaryRequest(...).copyWith(id: 12, name: "My name")
   /// ```
-  OrderSummaryRequest call({String country, String? state, String planId, String? couponCode});
+  OrderSummaryRequest call({
+    String? intent,
+    String country,
+    String? state,
+    String planId,
+    String? couponCode,
+  });
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -31,6 +39,9 @@ class _$OrderSummaryRequestCWProxyImpl implements _$OrderSummaryRequestCWProxy {
   const _$OrderSummaryRequestCWProxyImpl(this._value);
 
   final OrderSummaryRequest _value;
+
+  @override
+  OrderSummaryRequest intent(String? intent) => call(intent: intent);
 
   @override
   OrderSummaryRequest country(String country) => call(country: country);
@@ -53,12 +64,17 @@ class _$OrderSummaryRequestCWProxyImpl implements _$OrderSummaryRequestCWProxy {
   /// OrderSummaryRequest(...).copyWith(id: 12, name: "My name")
   /// ```
   OrderSummaryRequest call({
+    Object? intent = const $CopyWithPlaceholder(),
     Object? country = const $CopyWithPlaceholder(),
     Object? state = const $CopyWithPlaceholder(),
     Object? planId = const $CopyWithPlaceholder(),
     Object? couponCode = const $CopyWithPlaceholder(),
   }) {
     return OrderSummaryRequest(
+      intent: intent == const $CopyWithPlaceholder()
+          ? _value.intent
+          // ignore: cast_nullable_to_non_nullable
+          : intent as String?,
       country: country == const $CopyWithPlaceholder() || country == null
           ? _value.country
           // ignore: cast_nullable_to_non_nullable
@@ -94,6 +110,7 @@ OrderSummaryRequest _$OrderSummaryRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate('OrderSummaryRequest', json, ($checkedConvert) {
       $checkKeys(json, requiredKeys: const ['country', 'plan_id']);
       final val = OrderSummaryRequest(
+        intent: $checkedConvert('intent', (v) => v as String?),
         country: $checkedConvert('country', (v) => v as String),
         state: $checkedConvert('state', (v) => v as String?),
         planId: $checkedConvert('plan_id', (v) => v as String),
@@ -103,6 +120,7 @@ OrderSummaryRequest _$OrderSummaryRequestFromJson(Map<String, dynamic> json) =>
     }, fieldKeyMap: const {'planId': 'plan_id', 'couponCode': 'coupon_code'});
 
 Map<String, dynamic> _$OrderSummaryRequestToJson(OrderSummaryRequest instance) => <String, dynamic>{
+  'intent': ?instance.intent,
   'country': instance.country,
   'state': ?instance.state,
   'plan_id': instance.planId,

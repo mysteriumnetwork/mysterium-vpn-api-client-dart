@@ -8,6 +8,7 @@ import 'package:vpn_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**intent** | **String** |  | [optional] 
 **country** | **String** |  | 
 **state** | **String** |  | [optional] 
 **planId** | **String** |  | 
