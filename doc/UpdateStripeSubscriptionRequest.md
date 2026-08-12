@@ -9,6 +9,7 @@ import 'package:vpn_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **planId** | **String** |  | 
+**intent** | **String** |  | [optional] 
 **currency** | **String** |  | [optional] 
 **couponCode** | **String** |  | [optional] 
 

@@ -17,10 +17,21 @@ part 'update_stripe_subscription_request.g.dart';
 )
 class UpdateStripeSubscriptionRequest {
   /// Returns a new [UpdateStripeSubscriptionRequest] instance.
-  UpdateStripeSubscriptionRequest({required this.planId, this.currency, this.couponCode});
+  UpdateStripeSubscriptionRequest({
+    required this.planId,
+
+    this.intent,
+
+    this.currency,
+
+    this.couponCode,
+  });
 
   @JsonKey(name: r'plan_id', required: true, includeIfNull: false)
   final String planId;
+
+  @JsonKey(name: r'intent', required: false, includeIfNull: false)
+  final String? intent;
 
   @JsonKey(name: r'currency', required: false, includeIfNull: false)
   final String? currency;
@@ -33,12 +44,14 @@ class UpdateStripeSubscriptionRequest {
       identical(this, other) ||
       other is UpdateStripeSubscriptionRequest &&
           other.planId == planId &&
+          other.intent == intent &&
           other.currency == currency &&
           other.couponCode == couponCode;
 
   @override
   int get hashCode =>
       planId.hashCode +
+      (intent == null ? 0 : intent.hashCode) +
       (currency == null ? 0 : currency.hashCode) +
       (couponCode == null ? 0 : couponCode.hashCode);
 

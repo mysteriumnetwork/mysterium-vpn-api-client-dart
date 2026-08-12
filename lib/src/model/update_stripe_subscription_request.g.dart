@@ -9,6 +9,8 @@ part of 'update_stripe_subscription_request.dart';
 abstract class _$UpdateStripeSubscriptionRequestCWProxy {
   UpdateStripeSubscriptionRequest planId(String planId);
 
+  UpdateStripeSubscriptionRequest intent(String? intent);
+
   UpdateStripeSubscriptionRequest currency(String? currency);
 
   UpdateStripeSubscriptionRequest couponCode(String? couponCode);
@@ -20,7 +22,12 @@ abstract class _$UpdateStripeSubscriptionRequestCWProxy {
   /// ```dart
   /// UpdateStripeSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
-  UpdateStripeSubscriptionRequest call({String planId, String? currency, String? couponCode});
+  UpdateStripeSubscriptionRequest call({
+    String planId,
+    String? intent,
+    String? currency,
+    String? couponCode,
+  });
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,6 +40,9 @@ class _$UpdateStripeSubscriptionRequestCWProxyImpl
 
   @override
   UpdateStripeSubscriptionRequest planId(String planId) => call(planId: planId);
+
+  @override
+  UpdateStripeSubscriptionRequest intent(String? intent) => call(intent: intent);
 
   @override
   UpdateStripeSubscriptionRequest currency(String? currency) => call(currency: currency);
@@ -50,6 +60,7 @@ class _$UpdateStripeSubscriptionRequestCWProxyImpl
   /// ```
   UpdateStripeSubscriptionRequest call({
     Object? planId = const $CopyWithPlaceholder(),
+    Object? intent = const $CopyWithPlaceholder(),
     Object? currency = const $CopyWithPlaceholder(),
     Object? couponCode = const $CopyWithPlaceholder(),
   }) {
@@ -58,6 +69,10 @@ class _$UpdateStripeSubscriptionRequestCWProxyImpl
           ? _value.planId
           // ignore: cast_nullable_to_non_nullable
           : planId as String,
+      intent: intent == const $CopyWithPlaceholder()
+          ? _value.intent
+          // ignore: cast_nullable_to_non_nullable
+          : intent as String?,
       currency: currency == const $CopyWithPlaceholder()
           ? _value.currency
           // ignore: cast_nullable_to_non_nullable
@@ -91,6 +106,7 @@ UpdateStripeSubscriptionRequest _$UpdateStripeSubscriptionRequestFromJson(
     $checkKeys(json, requiredKeys: const ['plan_id']);
     final val = UpdateStripeSubscriptionRequest(
       planId: $checkedConvert('plan_id', (v) => v as String),
+      intent: $checkedConvert('intent', (v) => v as String?),
       currency: $checkedConvert('currency', (v) => v as String?),
       couponCode: $checkedConvert('coupon_code', (v) => v as String?),
     );
@@ -103,6 +119,7 @@ Map<String, dynamic> _$UpdateStripeSubscriptionRequestToJson(
   UpdateStripeSubscriptionRequest instance,
 ) => <String, dynamic>{
   'plan_id': instance.planId,
+  'intent': ?instance.intent,
   'currency': ?instance.currency,
   'coupon_code': ?instance.couponCode,
 };
