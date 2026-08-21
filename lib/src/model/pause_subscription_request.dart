@@ -41,12 +41,12 @@ class PauseSubscriptionRequest {
 }
 
 enum PauseSubscriptionRequestPeriodEnum {
-  @JsonValue(r'1m')
-  n1m(r'1m'),
-  @JsonValue(r'3m')
-  n3m(r'3m'),
-  @JsonValue(r'6m')
-  n6m(r'6m');
+  @JsonValue(r'5m')
+  n5m(r'5m'),
+  @JsonValue(r'10m')
+  n10m(r'10m'),
+  @JsonValue(r'15m')
+  n15m(r'15m');
 
   const PauseSubscriptionRequestPeriodEnum(this.value);
 

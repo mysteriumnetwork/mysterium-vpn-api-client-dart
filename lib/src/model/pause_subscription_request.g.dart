@@ -75,7 +75,7 @@ Map<String, dynamic> _$PauseSubscriptionRequestToJson(PauseSubscriptionRequest i
     <String, dynamic>{'period': _$PauseSubscriptionRequestPeriodEnumEnumMap[instance.period]!};
 
 const _$PauseSubscriptionRequestPeriodEnumEnumMap = {
-  PauseSubscriptionRequestPeriodEnum.n1m: '1m',
-  PauseSubscriptionRequestPeriodEnum.n3m: '3m',
-  PauseSubscriptionRequestPeriodEnum.n6m: '6m',
+  PauseSubscriptionRequestPeriodEnum.n5m: '5m',
+  PauseSubscriptionRequestPeriodEnum.n10m: '10m',
+  PauseSubscriptionRequestPeriodEnum.n15m: '15m',
 };
