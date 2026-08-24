@@ -25,9 +25,9 @@ class PauseDurations {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<num>] as data
+  /// Returns a [Future] containing a [Response] with a [List<String>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<num>>> pauseDurations({
+  Future<Response<List<String>>> pauseDurations({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -51,13 +51,13 @@ class PauseDurations {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<num>? _responseData;
+    List<String>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<num>, num>(rawData, 'List<num>', growable: true);
+          : deserialize<List<String>, String>(rawData, 'List<String>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -68,7 +68,7 @@ class PauseDurations {
       );
     }
 
-    return Response<List<num>>(
+    return Response<List<String>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
