@@ -20,7 +20,7 @@ class PauseSubscriptionRequest {
   PauseSubscriptionRequest({required this.period});
 
   @JsonKey(name: r'period', required: true, includeIfNull: false)
-  final PauseSubscriptionRequestPeriodEnum period;
+  final String period;
 
   @override
   bool operator ==(Object other) =>
@@ -38,20 +38,4 @@ class PauseSubscriptionRequest {
   String toString() {
     return toJson().toString();
   }
-}
-
-enum PauseSubscriptionRequestPeriodEnum {
-  @JsonValue(r'5m')
-  n5m(r'5m'),
-  @JsonValue(r'10m')
-  n10m(r'10m'),
-  @JsonValue(r'15m')
-  n15m(r'15m');
-
-  const PauseSubscriptionRequestPeriodEnum(this.value);
-
-  final String value;
-
-  @override
-  String toString() => value;
 }

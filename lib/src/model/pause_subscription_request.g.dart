@@ -7,7 +7,7 @@ part of 'pause_subscription_request.dart';
 // **************************************************************************
 
 abstract class _$PauseSubscriptionRequestCWProxy {
-  PauseSubscriptionRequest period(PauseSubscriptionRequestPeriodEnum period);
+  PauseSubscriptionRequest period(String period);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PauseSubscriptionRequest(...).copyWith.fieldName(value)`.
@@ -16,7 +16,7 @@ abstract class _$PauseSubscriptionRequestCWProxy {
   /// ```dart
   /// PauseSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
-  PauseSubscriptionRequest call({PauseSubscriptionRequestPeriodEnum period});
+  PauseSubscriptionRequest call({String period});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -27,8 +27,7 @@ class _$PauseSubscriptionRequestCWProxyImpl implements _$PauseSubscriptionReques
   final PauseSubscriptionRequest _value;
 
   @override
-  PauseSubscriptionRequest period(PauseSubscriptionRequestPeriodEnum period) =>
-      call(period: period);
+  PauseSubscriptionRequest period(String period) => call(period: period);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -43,7 +42,7 @@ class _$PauseSubscriptionRequestCWProxyImpl implements _$PauseSubscriptionReques
       period: period == const $CopyWithPlaceholder() || period == null
           ? _value.period
           // ignore: cast_nullable_to_non_nullable
-          : period as PauseSubscriptionRequestPeriodEnum,
+          : period as String,
     );
   }
 }
@@ -62,20 +61,9 @@ extension $PauseSubscriptionRequestCopyWith on PauseSubscriptionRequest {
 PauseSubscriptionRequest _$PauseSubscriptionRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate('PauseSubscriptionRequest', json, ($checkedConvert) {
       $checkKeys(json, requiredKeys: const ['period']);
-      final val = PauseSubscriptionRequest(
-        period: $checkedConvert(
-          'period',
-          (v) => $enumDecode(_$PauseSubscriptionRequestPeriodEnumEnumMap, v),
-        ),
-      );
+      final val = PauseSubscriptionRequest(period: $checkedConvert('period', (v) => v as String));
       return val;
     });
 
 Map<String, dynamic> _$PauseSubscriptionRequestToJson(PauseSubscriptionRequest instance) =>
-    <String, dynamic>{'period': _$PauseSubscriptionRequestPeriodEnumEnumMap[instance.period]!};
-
-const _$PauseSubscriptionRequestPeriodEnumEnumMap = {
-  PauseSubscriptionRequestPeriodEnum.n5m: '5m',
-  PauseSubscriptionRequestPeriodEnum.n10m: '10m',
-  PauseSubscriptionRequestPeriodEnum.n15m: '15m',
-};
+    <String, dynamic>{'period': instance.period};
