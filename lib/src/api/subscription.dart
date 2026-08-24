@@ -416,9 +416,9 @@ class Subscription {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [List<num>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> pauseDurations({
+  Future<Response<List<num>>> pauseDurations({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -442,13 +442,13 @@ class Subscription {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String? _responseData;
+    List<num>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<List<num>, num>(rawData, 'List<num>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -459,7 +459,7 @@ class Subscription {
       );
     }
 
-    return Response<String>(
+    return Response<List<num>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

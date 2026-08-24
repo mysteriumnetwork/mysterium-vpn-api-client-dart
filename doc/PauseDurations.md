@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **pauseDurations**
-> String pauseDurations()
+> List<num> pauseDurations()
 
 List pause durations
 
@@ -36,7 +36,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**String**
+**List&lt;num&gt;**
 
 ### Authorization
 
