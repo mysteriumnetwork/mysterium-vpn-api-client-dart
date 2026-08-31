@@ -302,8 +302,8 @@ class Subscription {
 
     final _queryParameters = <String, dynamic>{
       r'plan_id': planId,
-      r'currency': currency,
-      r'coupon_code': couponCode,
+      if (currency != null) r'currency': currency,
+      if (couponCode != null) r'coupon_code': couponCode,
     };
 
     final _response = await _dio.request<Object>(

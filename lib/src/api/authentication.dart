@@ -407,8 +407,8 @@ class Authentication {
 
     final _queryParameters = <String, dynamic>{
       r'code': code,
-      r'continue_to': continueTo,
-      r'redirect_url': redirectUrl,
+      if (continueTo != null) r'continue_to': continueTo,
+      if (redirectUrl != null) r'redirect_url': redirectUrl,
     };
 
     final _response = await _dio.request<Object>(

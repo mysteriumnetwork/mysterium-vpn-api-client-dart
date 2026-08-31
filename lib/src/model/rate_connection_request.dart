@@ -94,11 +94,8 @@ class RateConnectionRequest {
 
 /// Mode of the feedback
 enum RateConnectionRequestModeEnum {
-  /// Mode of the feedback
   @JsonValue(r'like')
   like(r'like'),
-
-  /// Mode of the feedback
   @JsonValue(r'dislike')
   dislike(r'dislike');
 

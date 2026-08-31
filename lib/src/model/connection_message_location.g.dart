@@ -11,6 +11,8 @@ abstract class _$ConnectionMessageLocationCWProxy {
 
   ConnectionMessageLocation country(String country);
 
+  ConnectionMessageLocation city(String city);
+
   ConnectionMessageLocation nodeType(String nodeType);
 
   /// Creates a new instance with the provided field values.
@@ -20,7 +22,7 @@ abstract class _$ConnectionMessageLocationCWProxy {
   /// ```dart
   /// ConnectionMessageLocation(...).copyWith(id: 12, name: "My name")
   /// ```
-  ConnectionMessageLocation call({String ip, String country, String nodeType});
+  ConnectionMessageLocation call({String ip, String country, String city, String nodeType});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -37,6 +39,9 @@ class _$ConnectionMessageLocationCWProxyImpl implements _$ConnectionMessageLocat
   ConnectionMessageLocation country(String country) => call(country: country);
 
   @override
+  ConnectionMessageLocation city(String city) => call(city: city);
+
+  @override
   ConnectionMessageLocation nodeType(String nodeType) => call(nodeType: nodeType);
 
   @override
@@ -50,6 +55,7 @@ class _$ConnectionMessageLocationCWProxyImpl implements _$ConnectionMessageLocat
   ConnectionMessageLocation call({
     Object? ip = const $CopyWithPlaceholder(),
     Object? country = const $CopyWithPlaceholder(),
+    Object? city = const $CopyWithPlaceholder(),
     Object? nodeType = const $CopyWithPlaceholder(),
   }) {
     return ConnectionMessageLocation(
@@ -61,6 +67,10 @@ class _$ConnectionMessageLocationCWProxyImpl implements _$ConnectionMessageLocat
           ? _value.country
           // ignore: cast_nullable_to_non_nullable
           : country as String,
+      city: city == const $CopyWithPlaceholder() || city == null
+          ? _value.city
+          // ignore: cast_nullable_to_non_nullable
+          : city as String,
       nodeType: nodeType == const $CopyWithPlaceholder() || nodeType == null
           ? _value.nodeType
           // ignore: cast_nullable_to_non_nullable
@@ -82,10 +92,11 @@ extension $ConnectionMessageLocationCopyWith on ConnectionMessageLocation {
 
 ConnectionMessageLocation _$ConnectionMessageLocationFromJson(Map<String, dynamic> json) =>
     $checkedCreate('ConnectionMessageLocation', json, ($checkedConvert) {
-      $checkKeys(json, requiredKeys: const ['ip', 'country', 'node_type']);
+      $checkKeys(json, requiredKeys: const ['ip', 'country', 'city', 'node_type']);
       final val = ConnectionMessageLocation(
         ip: $checkedConvert('ip', (v) => v as String),
         country: $checkedConvert('country', (v) => v as String),
+        city: $checkedConvert('city', (v) => v as String),
         nodeType: $checkedConvert('node_type', (v) => v as String),
       );
       return val;
@@ -95,5 +106,6 @@ Map<String, dynamic> _$ConnectionMessageLocationToJson(ConnectionMessageLocation
     <String, dynamic>{
       'ip': instance.ip,
       'country': instance.country,
+      'city': instance.city,
       'node_type': instance.nodeType,
     };

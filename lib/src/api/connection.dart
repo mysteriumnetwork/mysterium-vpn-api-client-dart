@@ -317,7 +317,7 @@ class Connection {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{r'ip_type': ipType};
+    final _queryParameters = <String, dynamic>{if (ipType != null) r'ip_type': ipType};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -392,7 +392,7 @@ class Connection {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{r'ip_type': ipType};
+    final _queryParameters = <String, dynamic>{if (ipType != null) r'ip_type': ipType};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -467,7 +467,7 @@ class Connection {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{r'ip_type': ipType};
+    final _queryParameters = <String, dynamic>{if (ipType != null) r'ip_type': ipType};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -544,7 +544,10 @@ class Connection {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{r'public_key': publicKey, r'device_id': deviceId};
+    final _queryParameters = <String, dynamic>{
+      if (publicKey != null) r'public_key': publicKey,
+      if (deviceId != null) r'device_id': deviceId,
+    };
 
     final _response = await _dio.request<Object>(
       _path,

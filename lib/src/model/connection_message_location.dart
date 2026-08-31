@@ -17,13 +17,24 @@ part 'connection_message_location.g.dart';
 )
 class ConnectionMessageLocation {
   /// Returns a new [ConnectionMessageLocation] instance.
-  ConnectionMessageLocation({required this.ip, required this.country, required this.nodeType});
+  ConnectionMessageLocation({
+    required this.ip,
+
+    required this.country,
+
+    required this.city,
+
+    required this.nodeType,
+  });
 
   @JsonKey(name: r'ip', required: true, includeIfNull: false)
   final String ip;
 
   @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
+
+  @JsonKey(name: r'city', required: true, includeIfNull: false)
+  final String city;
 
   @JsonKey(name: r'node_type', required: true, includeIfNull: false)
   final String nodeType;
@@ -34,10 +45,11 @@ class ConnectionMessageLocation {
       other is ConnectionMessageLocation &&
           other.ip == ip &&
           other.country == country &&
+          other.city == city &&
           other.nodeType == nodeType;
 
   @override
-  int get hashCode => ip.hashCode + country.hashCode + nodeType.hashCode;
+  int get hashCode => ip.hashCode + country.hashCode + city.hashCode + nodeType.hashCode;
 
   factory ConnectionMessageLocation.fromJson(Map<String, dynamic> json) =>
       _$ConnectionMessageLocationFromJson(json);
