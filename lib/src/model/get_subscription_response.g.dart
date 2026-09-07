@@ -31,6 +31,8 @@ abstract class _$GetSubscriptionResponseCWProxy {
 
   GetSubscriptionResponse recurring(bool recurring);
 
+  GetSubscriptionResponse pauseAllowed(bool pauseAllowed);
+
   GetSubscriptionResponse subscriptionId(String subscriptionId);
 
   GetSubscriptionResponse orderCurrency(String? orderCurrency);
@@ -59,6 +61,7 @@ abstract class _$GetSubscriptionResponseCWProxy {
     bool paused,
     bool expired,
     bool recurring,
+    bool pauseAllowed,
     String subscriptionId,
     String? orderCurrency,
     String? orderNetAmount,
@@ -110,6 +113,9 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
   GetSubscriptionResponse recurring(bool recurring) => call(recurring: recurring);
 
   @override
+  GetSubscriptionResponse pauseAllowed(bool pauseAllowed) => call(pauseAllowed: pauseAllowed);
+
+  @override
   GetSubscriptionResponse subscriptionId(String subscriptionId) =>
       call(subscriptionId: subscriptionId);
 
@@ -146,6 +152,7 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
     Object? paused = const $CopyWithPlaceholder(),
     Object? expired = const $CopyWithPlaceholder(),
     Object? recurring = const $CopyWithPlaceholder(),
+    Object? pauseAllowed = const $CopyWithPlaceholder(),
     Object? subscriptionId = const $CopyWithPlaceholder(),
     Object? orderCurrency = const $CopyWithPlaceholder(),
     Object? orderNetAmount = const $CopyWithPlaceholder(),
@@ -200,6 +207,10 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
           ? _value.recurring
           // ignore: cast_nullable_to_non_nullable
           : recurring as bool,
+      pauseAllowed: pauseAllowed == const $CopyWithPlaceholder() || pauseAllowed == null
+          ? _value.pauseAllowed
+          // ignore: cast_nullable_to_non_nullable
+          : pauseAllowed as bool,
       subscriptionId: subscriptionId == const $CopyWithPlaceholder() || subscriptionId == null
           ? _value.subscriptionId
           // ignore: cast_nullable_to_non_nullable
@@ -238,7 +249,14 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['active', 'paused', 'expired', 'recurring', 'subscription_id'],
+          requiredKeys: const [
+            'active',
+            'paused',
+            'expired',
+            'recurring',
+            'pause_allowed',
+            'subscription_id',
+          ],
         );
         final val = GetSubscriptionResponse(
           active: $checkedConvert('active', (v) => v as bool),
@@ -265,6 +283,7 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
           paused: $checkedConvert('paused', (v) => v as bool),
           expired: $checkedConvert('expired', (v) => v as bool),
           recurring: $checkedConvert('recurring', (v) => v as bool),
+          pauseAllowed: $checkedConvert('pause_allowed', (v) => v as bool),
           subscriptionId: $checkedConvert('subscription_id', (v) => v as String),
           orderCurrency: $checkedConvert('order_currency', (v) => v as String?),
           orderNetAmount: $checkedConvert('order_net_amount', (v) => v as String?),
@@ -280,6 +299,7 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
         'planId': 'plan_id',
         'storePlanId': 'store_plan_id',
         'portalUrl': 'portal_url',
+        'pauseAllowed': 'pause_allowed',
         'subscriptionId': 'subscription_id',
         'orderCurrency': 'order_currency',
         'orderNetAmount': 'order_net_amount',
@@ -301,6 +321,7 @@ Map<String, dynamic> _$GetSubscriptionResponseToJson(GetSubscriptionResponse ins
       'paused': instance.paused,
       'expired': instance.expired,
       'recurring': instance.recurring,
+      'pause_allowed': instance.pauseAllowed,
       'subscription_id': instance.subscriptionId,
       'order_currency': ?instance.orderCurrency,
       'order_net_amount': ?instance.orderNetAmount,

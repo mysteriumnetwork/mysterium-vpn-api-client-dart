@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **paused** | **bool** |  | 
 **expired** | **bool** |  | 
 **recurring** | **bool** |  | 
+**pauseAllowed** | **bool** |  | 
 **subscriptionId** | **String** |  | 
 **orderCurrency** | **String** |  | [optional] 
 **orderNetAmount** | **String** |  | [optional] 

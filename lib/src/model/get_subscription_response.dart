@@ -42,6 +42,8 @@ class GetSubscriptionResponse {
 
     required this.recurring,
 
+    required this.pauseAllowed,
+
     required this.subscriptionId,
 
     this.orderCurrency,
@@ -87,6 +89,9 @@ class GetSubscriptionResponse {
   @JsonKey(name: r'recurring', required: true, includeIfNull: false)
   final bool recurring;
 
+  @JsonKey(name: r'pause_allowed', required: true, includeIfNull: false)
+  final bool pauseAllowed;
+
   @JsonKey(name: r'subscription_id', required: true, includeIfNull: false)
   final String subscriptionId;
 
@@ -115,6 +120,7 @@ class GetSubscriptionResponse {
           other.paused == paused &&
           other.expired == expired &&
           other.recurring == recurring &&
+          other.pauseAllowed == pauseAllowed &&
           other.subscriptionId == subscriptionId &&
           other.orderCurrency == orderCurrency &&
           other.orderNetAmount == orderNetAmount &&
@@ -134,6 +140,7 @@ class GetSubscriptionResponse {
       paused.hashCode +
       expired.hashCode +
       recurring.hashCode +
+      pauseAllowed.hashCode +
       subscriptionId.hashCode +
       (orderCurrency == null ? 0 : orderCurrency.hashCode) +
       (orderNetAmount == null ? 0 : orderNetAmount.hashCode) +
