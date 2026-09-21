@@ -57,6 +57,7 @@ export 'package:vpn_api/src/model/disconnect_query.dart';
 export 'package:vpn_api/src/model/get_location_response.dart';
 export 'package:vpn_api/src/model/get_plan_response.dart';
 export 'package:vpn_api/src/model/get_subscription_response.dart';
+export 'package:vpn_api/src/model/get_subscription_response_order_summary.dart';
 export 'package:vpn_api/src/model/healthcheck200_response.dart';
 export 'package:vpn_api/src/model/healthcheck_message.dart';
 export 'package:vpn_api/src/model/healthcheck_response.dart';

@@ -41,6 +41,8 @@ abstract class _$GetSubscriptionResponseCWProxy {
 
   GetSubscriptionResponse orderCouponUsed(String? orderCouponUsed);
 
+  GetSubscriptionResponse orderSummary(GetSubscriptionResponseOrderSummary? orderSummary);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
@@ -66,6 +68,7 @@ abstract class _$GetSubscriptionResponseCWProxy {
     String? orderCurrency,
     String? orderNetAmount,
     String? orderCouponUsed,
+    GetSubscriptionResponseOrderSummary? orderSummary,
   });
 }
 
@@ -132,6 +135,10 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
       call(orderCouponUsed: orderCouponUsed);
 
   @override
+  GetSubscriptionResponse orderSummary(GetSubscriptionResponseOrderSummary? orderSummary) =>
+      call(orderSummary: orderSummary);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
@@ -157,6 +164,7 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
     Object? orderCurrency = const $CopyWithPlaceholder(),
     Object? orderNetAmount = const $CopyWithPlaceholder(),
     Object? orderCouponUsed = const $CopyWithPlaceholder(),
+    Object? orderSummary = const $CopyWithPlaceholder(),
   }) {
     return GetSubscriptionResponse(
       active: active == const $CopyWithPlaceholder() || active == null
@@ -227,6 +235,10 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
           ? _value.orderCouponUsed
           // ignore: cast_nullable_to_non_nullable
           : orderCouponUsed as String?,
+      orderSummary: orderSummary == const $CopyWithPlaceholder()
+          ? _value.orderSummary
+          // ignore: cast_nullable_to_non_nullable
+          : orderSummary as GetSubscriptionResponseOrderSummary?,
     );
   }
 }
@@ -288,6 +300,12 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
           orderCurrency: $checkedConvert('order_currency', (v) => v as String?),
           orderNetAmount: $checkedConvert('order_net_amount', (v) => v as String?),
           orderCouponUsed: $checkedConvert('order_coupon_used', (v) => v as String?),
+          orderSummary: $checkedConvert(
+            'order_summary',
+            (v) => v == null
+                ? null
+                : GetSubscriptionResponseOrderSummary.fromJson(v as Map<String, dynamic>),
+          ),
         );
         return val;
       },
@@ -304,6 +322,7 @@ GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> j
         'orderCurrency': 'order_currency',
         'orderNetAmount': 'order_net_amount',
         'orderCouponUsed': 'order_coupon_used',
+        'orderSummary': 'order_summary',
       },
     );
 
@@ -326,4 +345,5 @@ Map<String, dynamic> _$GetSubscriptionResponseToJson(GetSubscriptionResponse ins
       'order_currency': ?instance.orderCurrency,
       'order_net_amount': ?instance.orderNetAmount,
       'order_coupon_used': ?instance.orderCouponUsed,
+      'order_summary': ?instance.orderSummary?.toJson(),
     };

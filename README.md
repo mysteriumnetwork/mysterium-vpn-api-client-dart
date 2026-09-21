@@ -148,6 +148,7 @@ Class | Method | HTTP request | Description
  - [GetLocationResponse](doc/GetLocationResponse.md)
  - [GetPlanResponse](doc/GetPlanResponse.md)
  - [GetSubscriptionResponse](doc/GetSubscriptionResponse.md)
+ - [GetSubscriptionResponseOrderSummary](doc/GetSubscriptionResponseOrderSummary.md)
  - [Healthcheck200Response](doc/Healthcheck200Response.md)
  - [HealthcheckMessage](doc/HealthcheckMessage.md)
  - [HealthcheckResponse](doc/HealthcheckResponse.md)

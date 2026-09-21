@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **orderCurrency** | **String** |  | [optional] 
 **orderNetAmount** | **String** |  | [optional] 
 **orderCouponUsed** | **String** |  | [optional] 
+**orderSummary** | [**GetSubscriptionResponseOrderSummary**](GetSubscriptionResponseOrderSummary.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

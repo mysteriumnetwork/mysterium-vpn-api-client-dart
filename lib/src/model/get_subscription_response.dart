@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vpn_api/src/model/get_subscription_response_order_summary.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -51,6 +52,8 @@ class GetSubscriptionResponse {
     this.orderNetAmount,
 
     this.orderCouponUsed,
+
+    this.orderSummary,
   });
 
   @JsonKey(name: r'active', required: true, includeIfNull: false)
@@ -104,6 +107,9 @@ class GetSubscriptionResponse {
   @JsonKey(name: r'order_coupon_used', required: false, includeIfNull: false)
   final String? orderCouponUsed;
 
+  @JsonKey(name: r'order_summary', required: false, includeIfNull: false)
+  final GetSubscriptionResponseOrderSummary? orderSummary;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -124,7 +130,8 @@ class GetSubscriptionResponse {
           other.subscriptionId == subscriptionId &&
           other.orderCurrency == orderCurrency &&
           other.orderNetAmount == orderNetAmount &&
-          other.orderCouponUsed == orderCouponUsed;
+          other.orderCouponUsed == orderCouponUsed &&
+          other.orderSummary == orderSummary;
 
   @override
   int get hashCode =>
@@ -144,7 +151,8 @@ class GetSubscriptionResponse {
       subscriptionId.hashCode +
       (orderCurrency == null ? 0 : orderCurrency.hashCode) +
       (orderNetAmount == null ? 0 : orderNetAmount.hashCode) +
-      (orderCouponUsed == null ? 0 : orderCouponUsed.hashCode);
+      (orderCouponUsed == null ? 0 : orderCouponUsed.hashCode) +
+      (orderSummary == null ? 0 : orderSummary.hashCode);
 
   factory GetSubscriptionResponse.fromJson(Map<String, dynamic> json) =>
       _$GetSubscriptionResponseFromJson(json);
