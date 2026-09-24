@@ -17,7 +17,7 @@ part 'auth_check_response.g.dart';
 )
 class AuthCheckResponse {
   /// Returns a new [AuthCheckResponse] instance.
-  AuthCheckResponse({required this.username, required this.userId});
+  AuthCheckResponse({required this.username, required this.userId, this.termsVersion});
 
   @JsonKey(name: r'username', required: true, includeIfNull: false)
   final String username;
@@ -25,13 +25,20 @@ class AuthCheckResponse {
   @JsonKey(name: r'user_id', required: true, includeIfNull: false)
   final String userId;
 
+  @JsonKey(name: r'terms_version', required: false, includeIfNull: false)
+  final String? termsVersion;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AuthCheckResponse && other.username == username && other.userId == userId;
+      other is AuthCheckResponse &&
+          other.username == username &&
+          other.userId == userId &&
+          other.termsVersion == termsVersion;
 
   @override
-  int get hashCode => username.hashCode + userId.hashCode;
+  int get hashCode =>
+      username.hashCode + userId.hashCode + (termsVersion == null ? 0 : termsVersion.hashCode);
 
   factory AuthCheckResponse.fromJson(Map<String, dynamic> json) =>
       _$AuthCheckResponseFromJson(json);

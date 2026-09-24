@@ -11,6 +11,8 @@ abstract class _$AuthCheckResponseCWProxy {
 
   AuthCheckResponse userId(String userId);
 
+  AuthCheckResponse termsVersion(String? termsVersion);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthCheckResponse(...).copyWith.fieldName(value)`.
   ///
@@ -18,7 +20,7 @@ abstract class _$AuthCheckResponseCWProxy {
   /// ```dart
   /// AuthCheckResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  AuthCheckResponse call({String username, String userId});
+  AuthCheckResponse call({String username, String userId, String? termsVersion});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -35,6 +37,9 @@ class _$AuthCheckResponseCWProxyImpl implements _$AuthCheckResponseCWProxy {
   AuthCheckResponse userId(String userId) => call(userId: userId);
 
   @override
+  AuthCheckResponse termsVersion(String? termsVersion) => call(termsVersion: termsVersion);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthCheckResponse(...).copyWith.fieldName(value)`.
   ///
@@ -45,6 +50,7 @@ class _$AuthCheckResponseCWProxyImpl implements _$AuthCheckResponseCWProxy {
   AuthCheckResponse call({
     Object? username = const $CopyWithPlaceholder(),
     Object? userId = const $CopyWithPlaceholder(),
+    Object? termsVersion = const $CopyWithPlaceholder(),
   }) {
     return AuthCheckResponse(
       username: username == const $CopyWithPlaceholder() || username == null
@@ -55,6 +61,10 @@ class _$AuthCheckResponseCWProxyImpl implements _$AuthCheckResponseCWProxy {
           ? _value.userId
           // ignore: cast_nullable_to_non_nullable
           : userId as String,
+      termsVersion: termsVersion == const $CopyWithPlaceholder()
+          ? _value.termsVersion
+          // ignore: cast_nullable_to_non_nullable
+          : termsVersion as String?,
     );
   }
 }
@@ -76,11 +86,13 @@ AuthCheckResponse _$AuthCheckResponseFromJson(Map<String, dynamic> json) =>
       final val = AuthCheckResponse(
         username: $checkedConvert('username', (v) => v as String),
         userId: $checkedConvert('user_id', (v) => v as String),
+        termsVersion: $checkedConvert('terms_version', (v) => v as String?),
       );
       return val;
-    }, fieldKeyMap: const {'userId': 'user_id'});
+    }, fieldKeyMap: const {'userId': 'user_id', 'termsVersion': 'terms_version'});
 
 Map<String, dynamic> _$AuthCheckResponseToJson(AuthCheckResponse instance) => <String, dynamic>{
   'username': instance.username,
   'user_id': instance.userId,
+  'terms_version': ?instance.termsVersion,
 };

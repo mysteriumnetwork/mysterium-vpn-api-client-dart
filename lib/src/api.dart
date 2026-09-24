@@ -20,6 +20,7 @@ import 'package:vpn_api/src/api/pause.dart';
 import 'package:vpn_api/src/api/pause_durations.dart';
 import 'package:vpn_api/src/api/resume.dart';
 import 'package:vpn_api/src/api/subscription.dart';
+import 'package:vpn_api/src/api/terms.dart';
 
 class VpnApi {
   static const String basePath = r'http://localhost:3030/api/v1';
@@ -206,5 +207,11 @@ class VpnApi {
   /// by doing that all interceptors will not be executed
   Subscription getSubscription() {
     return Subscription(dio);
+  }
+
+  /// Get Terms instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  Terms getTerms() {
+    return Terms(dio);
   }
 }

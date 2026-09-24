@@ -4,6 +4,8 @@ build.yaml
 doc/ActivationAuthorizationRequest.md
 doc/AuthCheckResponse.md
 doc/AuthConfigResponse.md
+doc/AuthTermsRequest.md
+doc/AuthTermsResponse.md
 doc/Authentication.md
 doc/AuthorizationDevice.md
 doc/Cancel.md
@@ -103,6 +105,7 @@ doc/SubscriptionConfigResponsePlansInnerInterval.md
 doc/SubscriptionConfigResponsePlansInnerMetadata.md
 doc/SubscriptionConfigResponsePlansInnerPrice.md
 doc/SubscriptionConfigResponsePlansInnerPricesInner.md
+doc/Terms.md
 doc/UpdateContactRequest.md
 doc/UpdateStripeSubscriptionRequest.md
 doc/UserCallbackRequest.md
@@ -122,6 +125,7 @@ lib/src/api/pause.dart
 lib/src/api/pause_durations.dart
 lib/src/api/resume.dart
 lib/src/api/subscription.dart
+lib/src/api/terms.dart
 lib/src/auth/api_key_auth.dart
 lib/src/auth/auth.dart
 lib/src/auth/basic_auth.dart
@@ -131,6 +135,8 @@ lib/src/deserialize.dart
 lib/src/model/activation_authorization_request.dart
 lib/src/model/auth_check_response.dart
 lib/src/model/auth_config_response.dart
+lib/src/model/auth_terms_request.dart
+lib/src/model/auth_terms_response.dart
 lib/src/model/authorization_device.dart
 lib/src/model/cancel_subscription_request.dart
 lib/src/model/check_auth401_response.dart

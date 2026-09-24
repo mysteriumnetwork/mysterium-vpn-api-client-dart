@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 [*Subscription*](doc/Subscription.md) | [**subscriptionConfig**](doc/Subscription.md#subscriptionconfig) | **GET** /subscription/config | Get subscription options
 [*Subscription*](doc/Subscription.md) | [**subscriptionStatus**](doc/Subscription.md#subscriptionstatus) | **GET** /subscription | Get subscription status
 [*Subscription*](doc/Subscription.md) | [**subscriptionUserCallback**](doc/Subscription.md#subscriptionusercallback) | **POST** /subscription/user-callback | Post user callback of payment
+[*Terms*](doc/Terms.md) | [**acceptTerms**](doc/Terms.md#acceptterms) | **POST** /auth/terms | Accept terms
 
 
 ## Documentation For Models
@@ -116,6 +117,8 @@ Class | Method | HTTP request | Description
  - [ActivationAuthorizationRequest](doc/ActivationAuthorizationRequest.md)
  - [AuthCheckResponse](doc/AuthCheckResponse.md)
  - [AuthConfigResponse](doc/AuthConfigResponse.md)
+ - [AuthTermsRequest](doc/AuthTermsRequest.md)
+ - [AuthTermsResponse](doc/AuthTermsResponse.md)
  - [AuthorizationDevice](doc/AuthorizationDevice.md)
  - [CancelSubscriptionRequest](doc/CancelSubscriptionRequest.md)
  - [CheckAuth401Response](doc/CheckAuth401Response.md)

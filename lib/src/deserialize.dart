@@ -1,6 +1,8 @@
 import 'package:vpn_api/src/model/activation_authorization_request.dart';
 import 'package:vpn_api/src/model/auth_check_response.dart';
 import 'package:vpn_api/src/model/auth_config_response.dart';
+import 'package:vpn_api/src/model/auth_terms_request.dart';
+import 'package:vpn_api/src/model/auth_terms_response.dart';
 import 'package:vpn_api/src/model/authorization_device.dart';
 import 'package:vpn_api/src/model/cancel_subscription_request.dart';
 import 'package:vpn_api/src/model/check_auth401_response.dart';
@@ -120,6 +122,10 @@ ReturnType deserialize<ReturnType, BaseType>(
       return AuthCheckResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AuthConfigResponse':
       return AuthConfigResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AuthTermsRequest':
+      return AuthTermsRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'AuthTermsResponse':
+      return AuthTermsResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'AuthorizationDevice':
       return AuthorizationDevice.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CancelSubscriptionRequest':

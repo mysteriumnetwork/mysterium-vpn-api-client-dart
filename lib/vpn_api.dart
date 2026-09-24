@@ -21,10 +21,13 @@ export 'package:vpn_api/src/api/pause.dart';
 export 'package:vpn_api/src/api/pause_durations.dart';
 export 'package:vpn_api/src/api/resume.dart';
 export 'package:vpn_api/src/api/subscription.dart';
+export 'package:vpn_api/src/api/terms.dart';
 
 export 'package:vpn_api/src/model/activation_authorization_request.dart';
 export 'package:vpn_api/src/model/auth_check_response.dart';
 export 'package:vpn_api/src/model/auth_config_response.dart';
+export 'package:vpn_api/src/model/auth_terms_request.dart';
+export 'package:vpn_api/src/model/auth_terms_response.dart';
 export 'package:vpn_api/src/model/authorization_device.dart';
 export 'package:vpn_api/src/model/cancel_subscription_request.dart';
 export 'package:vpn_api/src/model/check_auth401_response.dart';
