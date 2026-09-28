@@ -96,7 +96,9 @@ enum OAuth2TokenRequestOneOf2ClientIdEnum {
   @JsonValue(r'extension')
   extension_(r'extension'),
   @JsonValue(r'router')
-  router(r'router');
+  router(r'router'),
+  @JsonValue(r'cli')
+  cli(r'cli');
 
   const OAuth2TokenRequestOneOf2ClientIdEnum(this.value);
 

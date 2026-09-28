@@ -135,4 +135,5 @@ const _$ActivationAuthorizationRequestClientIdEnumEnumMap = {
   ActivationAuthorizationRequestClientIdEnum.app: 'app',
   ActivationAuthorizationRequestClientIdEnum.extension_: 'extension',
   ActivationAuthorizationRequestClientIdEnum.router: 'router',
+  ActivationAuthorizationRequestClientIdEnum.cli: 'cli',
 };

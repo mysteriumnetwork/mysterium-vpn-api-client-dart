@@ -154,6 +154,7 @@ const _$MagicLinkRequestClientIdEnumEnumMap = {
   MagicLinkRequestClientIdEnum.app: 'app',
   MagicLinkRequestClientIdEnum.extension_: 'extension',
   MagicLinkRequestClientIdEnum.router: 'router',
+  MagicLinkRequestClientIdEnum.cli: 'cli',
 };
 
 const _$MagicLinkRequestCodeChallengeMethodEnumEnumMap = {

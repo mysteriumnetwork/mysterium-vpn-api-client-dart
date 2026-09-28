@@ -160,6 +160,7 @@ const _$CodeAuthorizationRequestClientIdEnumEnumMap = {
   CodeAuthorizationRequestClientIdEnum.app: 'app',
   CodeAuthorizationRequestClientIdEnum.extension_: 'extension',
   CodeAuthorizationRequestClientIdEnum.router: 'router',
+  CodeAuthorizationRequestClientIdEnum.cli: 'cli',
 };
 
 const _$CodeAuthorizationRequestCodeChallengeMethodEnumEnumMap = {

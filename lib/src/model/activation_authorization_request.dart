@@ -76,7 +76,9 @@ enum ActivationAuthorizationRequestClientIdEnum {
   @JsonValue(r'extension')
   extension_(r'extension'),
   @JsonValue(r'router')
-  router(r'router');
+  router(r'router'),
+  @JsonValue(r'cli')
+  cli(r'cli');
 
   const ActivationAuthorizationRequestClientIdEnum(this.value);
 
