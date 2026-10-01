@@ -69,6 +69,7 @@ doc/NewscenterCategory.md
 doc/NewscenterInboxListQuery.md
 doc/NewscenterInboxListResponse.md
 doc/NewscenterInboxListResponseItem.md
+doc/NewscenterTermsResponse.md
 doc/OAuth2AuthorizationRequest.md
 doc/OAuth2AuthorizationResponse.md
 doc/OAuth2TokenIntrospectionRequest.md
@@ -109,6 +110,7 @@ doc/Terms.md
 doc/UpdateContactRequest.md
 doc/UpdateStripeSubscriptionRequest.md
 doc/UserCallbackRequest.md
+doc/UserTermsResponse.md
 doc/WireguardConnectRequest.md
 doc/WireguardConnectResponse.md
 lib/src/api.dart
@@ -191,6 +193,7 @@ lib/src/model/newscenter_category.dart
 lib/src/model/newscenter_inbox_list_query.dart
 lib/src/model/newscenter_inbox_list_response.dart
 lib/src/model/newscenter_inbox_list_response_item.dart
+lib/src/model/newscenter_terms_response.dart
 lib/src/model/o_auth2_authorization_request.dart
 lib/src/model/o_auth2_authorization_response.dart
 lib/src/model/o_auth2_token_introspection_request.dart
@@ -226,6 +229,7 @@ lib/src/model/subscription_config_response_plans_inner_prices_inner.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/update_stripe_subscription_request.dart
 lib/src/model/user_callback_request.dart
+lib/src/model/user_terms_response.dart
 lib/src/model/wireguard_connect_request.dart
 lib/src/model/wireguard_connect_response.dart
 lib/vpn_api.dart

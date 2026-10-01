@@ -56,6 +56,7 @@ import 'package:vpn_api/src/model/marketing_permissions_request.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_query.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_response.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_response_item.dart';
+import 'package:vpn_api/src/model/newscenter_terms_response.dart';
 import 'package:vpn_api/src/model/o_auth2_authorization_request.dart';
 import 'package:vpn_api/src/model/o_auth2_authorization_response.dart';
 import 'package:vpn_api/src/model/o_auth2_token_introspection_request.dart';
@@ -91,6 +92,7 @@ import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price
 import 'package:vpn_api/src/model/update_contact_request.dart';
 import 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 import 'package:vpn_api/src/model/user_callback_request.dart';
+import 'package:vpn_api/src/model/user_terms_response.dart';
 import 'package:vpn_api/src/model/wireguard_connect_request.dart';
 import 'package:vpn_api/src/model/wireguard_connect_response.dart';
 
@@ -236,6 +238,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return NewscenterInboxListResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'NewscenterInboxListResponseItem':
       return NewscenterInboxListResponseItem.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'NewscenterTermsResponse':
+      return NewscenterTermsResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OAuth2AuthorizationRequest':
       return OAuth2AuthorizationRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OAuth2AuthorizationResponse':
@@ -313,6 +317,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return UpdateStripeSubscriptionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserCallbackRequest':
       return UserCallbackRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UserTermsResponse':
+      return UserTermsResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'WireguardConnectRequest':
       return WireguardConnectRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'WireguardConnectResponse':

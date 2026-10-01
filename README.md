@@ -110,6 +110,8 @@ Class | Method | HTTP request | Description
 [*Subscription*](doc/Subscription.md) | [**subscriptionStatus**](doc/Subscription.md#subscriptionstatus) | **GET** /subscription | Get subscription status
 [*Subscription*](doc/Subscription.md) | [**subscriptionUserCallback**](doc/Subscription.md#subscriptionusercallback) | **POST** /subscription/user-callback | Post user callback of payment
 [*Terms*](doc/Terms.md) | [**acceptTerms**](doc/Terms.md#acceptterms) | **POST** /auth/terms | Accept terms
+[*Terms*](doc/Terms.md) | [**terms**](doc/Terms.md#terms) | **GET** /newscenter/terms | Get latest terms and conditions
+[*Terms*](doc/Terms.md) | [**userTerms**](doc/Terms.md#userterms) | **GET** /auth/terms | Get user terms
 
 
 ## Documentation For Models
@@ -173,6 +175,7 @@ Class | Method | HTTP request | Description
  - [NewscenterInboxListQuery](doc/NewscenterInboxListQuery.md)
  - [NewscenterInboxListResponse](doc/NewscenterInboxListResponse.md)
  - [NewscenterInboxListResponseItem](doc/NewscenterInboxListResponseItem.md)
+ - [NewscenterTermsResponse](doc/NewscenterTermsResponse.md)
  - [OAuth2AuthorizationRequest](doc/OAuth2AuthorizationRequest.md)
  - [OAuth2AuthorizationResponse](doc/OAuth2AuthorizationResponse.md)
  - [OAuth2TokenIntrospectionRequest](doc/OAuth2TokenIntrospectionRequest.md)
@@ -208,6 +211,7 @@ Class | Method | HTTP request | Description
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
  - [UpdateStripeSubscriptionRequest](doc/UpdateStripeSubscriptionRequest.md)
  - [UserCallbackRequest](doc/UserCallbackRequest.md)
+ - [UserTermsResponse](doc/UserTermsResponse.md)
  - [WireguardConnectRequest](doc/WireguardConnectRequest.md)
  - [WireguardConnectResponse](doc/WireguardConnectResponse.md)
 
