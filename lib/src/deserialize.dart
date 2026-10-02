@@ -56,6 +56,7 @@ import 'package:vpn_api/src/model/marketing_permissions_request.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_query.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_response.dart';
 import 'package:vpn_api/src/model/newscenter_inbox_list_response_item.dart';
+import 'package:vpn_api/src/model/newscenter_terms_query.dart';
 import 'package:vpn_api/src/model/newscenter_terms_response.dart';
 import 'package:vpn_api/src/model/o_auth2_authorization_request.dart';
 import 'package:vpn_api/src/model/o_auth2_authorization_response.dart';
@@ -238,6 +239,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return NewscenterInboxListResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'NewscenterInboxListResponseItem':
       return NewscenterInboxListResponseItem.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'NewscenterTermsQuery':
+      return NewscenterTermsQuery.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'NewscenterTermsResponse':
       return NewscenterTermsResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'OAuth2AuthorizationRequest':

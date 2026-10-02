@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terms**
-> NewscenterTermsResponse terms()
+> NewscenterTermsResponse terms(theme)
 
 Get latest terms and conditions
 
@@ -65,9 +65,10 @@ Get latest terms and conditions
 import 'package:vpn_api/api.dart';
 
 final api = VpnApi().getTerms();
+final String theme = theme_example; // String | 
 
 try {
-    final response = api.terms();
+    final response = api.terms(theme);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling Terms->terms: $e\n');
@@ -75,7 +76,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **theme** | **String**|  | [optional] 
 
 ### Return type
 
