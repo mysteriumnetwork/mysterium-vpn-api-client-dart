@@ -13,8 +13,6 @@ abstract class _$OpenVpnConnectResponseCWProxy {
 
   OpenVpnConnectResponse hash(String hash);
 
-  OpenVpnConnectResponse sessionId(String? sessionId);
-
   OpenVpnConnectResponse exitIp(String? exitIp);
 
   OpenVpnConnectResponse limitExceeded(bool? limitExceeded);
@@ -36,7 +34,6 @@ abstract class _$OpenVpnConnectResponseCWProxy {
     String id,
     String ovpnConfig,
     String hash,
-    String? sessionId,
     String? exitIp,
     bool? limitExceeded,
     String? ipType,
@@ -60,9 +57,6 @@ class _$OpenVpnConnectResponseCWProxyImpl implements _$OpenVpnConnectResponseCWP
 
   @override
   OpenVpnConnectResponse hash(String hash) => call(hash: hash);
-
-  @override
-  OpenVpnConnectResponse sessionId(String? sessionId) => call(sessionId: sessionId);
 
   @override
   OpenVpnConnectResponse exitIp(String? exitIp) => call(exitIp: exitIp);
@@ -91,7 +85,6 @@ class _$OpenVpnConnectResponseCWProxyImpl implements _$OpenVpnConnectResponseCWP
     Object? id = const $CopyWithPlaceholder(),
     Object? ovpnConfig = const $CopyWithPlaceholder(),
     Object? hash = const $CopyWithPlaceholder(),
-    Object? sessionId = const $CopyWithPlaceholder(),
     Object? exitIp = const $CopyWithPlaceholder(),
     Object? limitExceeded = const $CopyWithPlaceholder(),
     Object? ipType = const $CopyWithPlaceholder(),
@@ -111,10 +104,6 @@ class _$OpenVpnConnectResponseCWProxyImpl implements _$OpenVpnConnectResponseCWP
           ? _value.hash
           // ignore: cast_nullable_to_non_nullable
           : hash as String,
-      sessionId: sessionId == const $CopyWithPlaceholder()
-          ? _value.sessionId
-          // ignore: cast_nullable_to_non_nullable
-          : sessionId as String?,
       exitIp: exitIp == const $CopyWithPlaceholder()
           ? _value.exitIp
           // ignore: cast_nullable_to_non_nullable
@@ -160,7 +149,6 @@ OpenVpnConnectResponse _$OpenVpnConnectResponseFromJson(Map<String, dynamic> jso
           id: $checkedConvert('id', (v) => v as String),
           ovpnConfig: $checkedConvert('ovpn_config', (v) => v as String),
           hash: $checkedConvert('hash', (v) => v as String),
-          sessionId: $checkedConvert('session_id', (v) => v as String?),
           exitIp: $checkedConvert('exit_ip', (v) => v as String?),
           limitExceeded: $checkedConvert('limit_exceeded', (v) => v as bool?),
           ipType: $checkedConvert('ip_type', (v) => v as String?),
@@ -171,7 +159,6 @@ OpenVpnConnectResponse _$OpenVpnConnectResponseFromJson(Map<String, dynamic> jso
       },
       fieldKeyMap: const {
         'ovpnConfig': 'ovpn_config',
-        'sessionId': 'session_id',
         'exitIp': 'exit_ip',
         'limitExceeded': 'limit_exceeded',
         'ipType': 'ip_type',
@@ -183,7 +170,6 @@ Map<String, dynamic> _$OpenVpnConnectResponseToJson(OpenVpnConnectResponse insta
       'id': instance.id,
       'ovpn_config': instance.ovpnConfig,
       'hash': instance.hash,
-      'session_id': ?instance.sessionId,
       'exit_ip': ?instance.exitIp,
       'limit_exceeded': ?instance.limitExceeded,
       'ip_type': ?instance.ipType,

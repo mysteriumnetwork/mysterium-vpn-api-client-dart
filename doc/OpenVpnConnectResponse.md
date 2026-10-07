@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **id** | **String** | Unique identifier of prepared connection | 
 **ovpnConfig** | **String** | OpenVPN connection configuration | 
 **hash** | **String** | Hash representing provider id | 
-**sessionId** | **String** | Session identifier of the connection | [optional] 
 **exitIp** | **String** | Exit IP of provider | [optional] 
 **limitExceeded** | **bool** |  | [optional] 
 **ipType** | **String** |  | [optional] 

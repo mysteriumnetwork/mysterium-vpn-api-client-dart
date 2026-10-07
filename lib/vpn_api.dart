@@ -82,8 +82,6 @@ export 'package:vpn_api/src/model/newscenter_category.dart';
 export 'package:vpn_api/src/model/newscenter_inbox_list_query.dart';
 export 'package:vpn_api/src/model/newscenter_inbox_list_response.dart';
 export 'package:vpn_api/src/model/newscenter_inbox_list_response_item.dart';
-export 'package:vpn_api/src/model/newscenter_terms_query.dart';
-export 'package:vpn_api/src/model/newscenter_terms_response.dart';
 export 'package:vpn_api/src/model/o_auth2_authorization_request.dart';
 export 'package:vpn_api/src/model/o_auth2_authorization_response.dart';
 export 'package:vpn_api/src/model/o_auth2_token_introspection_request.dart';
@@ -119,6 +117,5 @@ export 'package:vpn_api/src/model/subscription_config_response_plans_inner_price
 export 'package:vpn_api/src/model/update_contact_request.dart';
 export 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 export 'package:vpn_api/src/model/user_callback_request.dart';
-export 'package:vpn_api/src/model/user_terms_response.dart';
 export 'package:vpn_api/src/model/wireguard_connect_request.dart';
 export 'package:vpn_api/src/model/wireguard_connect_response.dart';

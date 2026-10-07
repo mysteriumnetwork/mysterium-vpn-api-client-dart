@@ -24,8 +24,6 @@ class OpenVpnConnectResponse {
 
     required this.hash,
 
-    this.sessionId,
-
     this.exitIp,
 
     this.limitExceeded,
@@ -48,10 +46,6 @@ class OpenVpnConnectResponse {
   /// Hash representing provider id
   @JsonKey(name: r'hash', required: true, includeIfNull: false)
   final String hash;
-
-  /// Session identifier of the connection
-  @JsonKey(name: r'session_id', required: false, includeIfNull: false)
-  final String? sessionId;
 
   /// Exit IP of provider
   @JsonKey(name: r'exit_ip', required: false, includeIfNull: false)
@@ -76,7 +70,6 @@ class OpenVpnConnectResponse {
           other.id == id &&
           other.ovpnConfig == ovpnConfig &&
           other.hash == hash &&
-          other.sessionId == sessionId &&
           other.exitIp == exitIp &&
           other.limitExceeded == limitExceeded &&
           other.ipType == ipType &&
@@ -88,7 +81,6 @@ class OpenVpnConnectResponse {
       id.hashCode +
       ovpnConfig.hashCode +
       hash.hashCode +
-      (sessionId == null ? 0 : sessionId.hashCode) +
       (exitIp == null ? 0 : exitIp.hashCode) +
       (limitExceeded == null ? 0 : limitExceeded.hashCode) +
       (ipType == null ? 0 : ipType.hashCode) +
