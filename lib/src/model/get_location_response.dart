@@ -17,17 +17,30 @@ part 'get_location_response.g.dart';
 )
 class GetLocationResponse {
   /// Returns a new [GetLocationResponse] instance.
-  GetLocationResponse({required this.country});
+  GetLocationResponse({required this.country, this.regionCode, this.zipCode});
 
   @JsonKey(name: r'country', required: true, includeIfNull: false)
   final String country;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is GetLocationResponse && other.country == country;
+  @JsonKey(name: r'region_code', required: false, includeIfNull: false)
+  final String? regionCode;
+
+  @JsonKey(name: r'zip_code', required: false, includeIfNull: false)
+  final String? zipCode;
 
   @override
-  int get hashCode => country.hashCode;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is GetLocationResponse &&
+          other.country == country &&
+          other.regionCode == regionCode &&
+          other.zipCode == zipCode;
+
+  @override
+  int get hashCode =>
+      country.hashCode +
+      (regionCode == null ? 0 : regionCode.hashCode) +
+      (zipCode == null ? 0 : zipCode.hashCode);
 
   factory GetLocationResponse.fromJson(Map<String, dynamic> json) =>
       _$GetLocationResponseFromJson(json);

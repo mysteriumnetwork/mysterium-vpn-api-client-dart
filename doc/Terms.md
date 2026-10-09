@@ -10,6 +10,8 @@ All URIs are relative to *http://localhost:3030/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**acceptTerms**](Terms.md#acceptterms) | **POST** /auth/terms | Accept terms
+[**terms**](Terms.md#terms) | **GET** /newscenter/terms | Get latest terms and conditions
+[**userTerms**](Terms.md#userterms) | **GET** /auth/terms | Get user terms
 
 
 # **acceptTerms**
@@ -49,6 +51,84 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **terms**
+> NewscenterTermsResponse terms(theme)
+
+Get latest terms and conditions
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getTerms();
+final String theme = theme_example; // String | 
+
+try {
+    final response = api.terms(theme);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling Terms->terms: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **theme** | **String**|  | [optional] 
+
+### Return type
+
+[**NewscenterTermsResponse**](NewscenterTermsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userTerms**
+> UserTermsResponse userTerms()
+
+Get user terms
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getTerms();
+
+try {
+    final response = api.userTerms();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling Terms->userTerms: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserTermsResponse**](UserTermsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

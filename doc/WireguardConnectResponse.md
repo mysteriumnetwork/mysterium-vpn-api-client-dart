@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **String** | Unique identifier of prepared connection | 
 **wgConfig** | **String** | Wireguard connection configuration with a placeholder for %private_key% | 
 **hash** | **String** | Hash representing provider id | 
+**sessionId** | **String** | Session identifier of the connection | [optional] 
 **exitIp** | **String** | Exit IP of provider | [optional] 
 **limitExceeded** | **bool** |  | [optional] 
 **ipType** | **String** |  | [optional] 

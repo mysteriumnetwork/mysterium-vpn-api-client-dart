@@ -13,6 +13,8 @@ abstract class _$WireguardConnectResponseCWProxy {
 
   WireguardConnectResponse hash(String hash);
 
+  WireguardConnectResponse sessionId(String? sessionId);
+
   WireguardConnectResponse exitIp(String? exitIp);
 
   WireguardConnectResponse limitExceeded(bool? limitExceeded);
@@ -34,6 +36,7 @@ abstract class _$WireguardConnectResponseCWProxy {
     String id,
     String wgConfig,
     String hash,
+    String? sessionId,
     String? exitIp,
     bool? limitExceeded,
     String? ipType,
@@ -57,6 +60,9 @@ class _$WireguardConnectResponseCWProxyImpl implements _$WireguardConnectRespons
 
   @override
   WireguardConnectResponse hash(String hash) => call(hash: hash);
+
+  @override
+  WireguardConnectResponse sessionId(String? sessionId) => call(sessionId: sessionId);
 
   @override
   WireguardConnectResponse exitIp(String? exitIp) => call(exitIp: exitIp);
@@ -85,6 +91,7 @@ class _$WireguardConnectResponseCWProxyImpl implements _$WireguardConnectRespons
     Object? id = const $CopyWithPlaceholder(),
     Object? wgConfig = const $CopyWithPlaceholder(),
     Object? hash = const $CopyWithPlaceholder(),
+    Object? sessionId = const $CopyWithPlaceholder(),
     Object? exitIp = const $CopyWithPlaceholder(),
     Object? limitExceeded = const $CopyWithPlaceholder(),
     Object? ipType = const $CopyWithPlaceholder(),
@@ -104,6 +111,10 @@ class _$WireguardConnectResponseCWProxyImpl implements _$WireguardConnectRespons
           ? _value.hash
           // ignore: cast_nullable_to_non_nullable
           : hash as String,
+      sessionId: sessionId == const $CopyWithPlaceholder()
+          ? _value.sessionId
+          // ignore: cast_nullable_to_non_nullable
+          : sessionId as String?,
       exitIp: exitIp == const $CopyWithPlaceholder()
           ? _value.exitIp
           // ignore: cast_nullable_to_non_nullable
@@ -149,6 +160,7 @@ WireguardConnectResponse _$WireguardConnectResponseFromJson(Map<String, dynamic>
           id: $checkedConvert('id', (v) => v as String),
           wgConfig: $checkedConvert('wg_config', (v) => v as String),
           hash: $checkedConvert('hash', (v) => v as String),
+          sessionId: $checkedConvert('session_id', (v) => v as String?),
           exitIp: $checkedConvert('exit_ip', (v) => v as String?),
           limitExceeded: $checkedConvert('limit_exceeded', (v) => v as bool?),
           ipType: $checkedConvert('ip_type', (v) => v as String?),
@@ -159,6 +171,7 @@ WireguardConnectResponse _$WireguardConnectResponseFromJson(Map<String, dynamic>
       },
       fieldKeyMap: const {
         'wgConfig': 'wg_config',
+        'sessionId': 'session_id',
         'exitIp': 'exit_ip',
         'limitExceeded': 'limit_exceeded',
         'ipType': 'ip_type',
@@ -170,6 +183,7 @@ Map<String, dynamic> _$WireguardConnectResponseToJson(WireguardConnectResponse i
       'id': instance.id,
       'wg_config': instance.wgConfig,
       'hash': instance.hash,
+      'session_id': ?instance.sessionId,
       'exit_ip': ?instance.exitIp,
       'limit_exceeded': ?instance.limitExceeded,
       'ip_type': ?instance.ipType,

@@ -15,6 +15,8 @@ abstract class _$ConnectionMessageLocationCWProxy {
 
   ConnectionMessageLocation nodeType(String nodeType);
 
+  ConnectionMessageLocation sessionId(String? sessionId);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionMessageLocation(...).copyWith.fieldName(value)`.
   ///
@@ -22,7 +24,13 @@ abstract class _$ConnectionMessageLocationCWProxy {
   /// ```dart
   /// ConnectionMessageLocation(...).copyWith(id: 12, name: "My name")
   /// ```
-  ConnectionMessageLocation call({String ip, String country, String city, String nodeType});
+  ConnectionMessageLocation call({
+    String ip,
+    String country,
+    String city,
+    String nodeType,
+    String? sessionId,
+  });
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -45,6 +53,9 @@ class _$ConnectionMessageLocationCWProxyImpl implements _$ConnectionMessageLocat
   ConnectionMessageLocation nodeType(String nodeType) => call(nodeType: nodeType);
 
   @override
+  ConnectionMessageLocation sessionId(String? sessionId) => call(sessionId: sessionId);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionMessageLocation(...).copyWith.fieldName(value)`.
   ///
@@ -57,6 +68,7 @@ class _$ConnectionMessageLocationCWProxyImpl implements _$ConnectionMessageLocat
     Object? country = const $CopyWithPlaceholder(),
     Object? city = const $CopyWithPlaceholder(),
     Object? nodeType = const $CopyWithPlaceholder(),
+    Object? sessionId = const $CopyWithPlaceholder(),
   }) {
     return ConnectionMessageLocation(
       ip: ip == const $CopyWithPlaceholder() || ip == null
@@ -75,6 +87,10 @@ class _$ConnectionMessageLocationCWProxyImpl implements _$ConnectionMessageLocat
           ? _value.nodeType
           // ignore: cast_nullable_to_non_nullable
           : nodeType as String,
+      sessionId: sessionId == const $CopyWithPlaceholder()
+          ? _value.sessionId
+          // ignore: cast_nullable_to_non_nullable
+          : sessionId as String?,
     );
   }
 }
@@ -98,9 +114,10 @@ ConnectionMessageLocation _$ConnectionMessageLocationFromJson(Map<String, dynami
         country: $checkedConvert('country', (v) => v as String),
         city: $checkedConvert('city', (v) => v as String),
         nodeType: $checkedConvert('node_type', (v) => v as String),
+        sessionId: $checkedConvert('session_id', (v) => v as String?),
       );
       return val;
-    }, fieldKeyMap: const {'nodeType': 'node_type'});
+    }, fieldKeyMap: const {'nodeType': 'node_type', 'sessionId': 'session_id'});
 
 Map<String, dynamic> _$ConnectionMessageLocationToJson(ConnectionMessageLocation instance) =>
     <String, dynamic>{
@@ -108,4 +125,5 @@ Map<String, dynamic> _$ConnectionMessageLocationToJson(ConnectionMessageLocation
       'country': instance.country,
       'city': instance.city,
       'node_type': instance.nodeType,
+      'session_id': ?instance.sessionId,
     };
