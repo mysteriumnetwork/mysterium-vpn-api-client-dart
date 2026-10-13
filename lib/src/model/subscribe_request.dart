@@ -43,6 +43,8 @@ class SubscribeRequest {
     this.requestId,
 
     required this.primerClientToken,
+
+    this.termsAccepted,
   });
 
   @JsonKey(name: r'gateway_id', required: true, includeIfNull: false)
@@ -78,6 +80,9 @@ class SubscribeRequest {
   @JsonKey(name: r'primer_client_token', required: true, includeIfNull: false)
   final String primerClientToken;
 
+  @JsonKey(name: r'terms_accepted', required: false, includeIfNull: false)
+  final bool? termsAccepted;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -92,7 +97,8 @@ class SubscribeRequest {
           other.embedded == embedded &&
           other.cardHolder == cardHolder &&
           other.requestId == requestId &&
-          other.primerClientToken == primerClientToken;
+          other.primerClientToken == primerClientToken &&
+          other.termsAccepted == termsAccepted;
 
   @override
   int get hashCode =>
@@ -106,7 +112,8 @@ class SubscribeRequest {
       (embedded == null ? 0 : embedded.hashCode) +
       (cardHolder == null ? 0 : cardHolder.hashCode) +
       (requestId == null ? 0 : requestId.hashCode) +
-      primerClientToken.hashCode;
+      primerClientToken.hashCode +
+      termsAccepted.hashCode;
 
   factory SubscribeRequest.fromJson(Map<String, dynamic> json) => _$SubscribeRequestFromJson(json);
 

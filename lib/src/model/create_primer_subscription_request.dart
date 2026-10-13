@@ -35,6 +35,8 @@ class CreatePrimerSubscriptionRequest {
     this.requestId,
 
     required this.primerClientToken,
+
+    this.termsAccepted,
   });
 
   @JsonKey(name: r'plan_id', required: true, includeIfNull: false)
@@ -64,6 +66,9 @@ class CreatePrimerSubscriptionRequest {
   @JsonKey(name: r'primer_client_token', required: true, includeIfNull: false)
   final String primerClientToken;
 
+  @JsonKey(name: r'terms_accepted', required: false, includeIfNull: false)
+  final bool? termsAccepted;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -76,7 +81,8 @@ class CreatePrimerSubscriptionRequest {
           other.couponCode == couponCode &&
           other.cardHolder == cardHolder &&
           other.requestId == requestId &&
-          other.primerClientToken == primerClientToken;
+          other.primerClientToken == primerClientToken &&
+          other.termsAccepted == termsAccepted;
 
   @override
   int get hashCode =>
@@ -88,7 +94,8 @@ class CreatePrimerSubscriptionRequest {
       (couponCode == null ? 0 : couponCode.hashCode) +
       (cardHolder == null ? 0 : cardHolder.hashCode) +
       (requestId == null ? 0 : requestId.hashCode) +
-      primerClientToken.hashCode;
+      primerClientToken.hashCode +
+      termsAccepted.hashCode;
 
   factory CreatePrimerSubscriptionRequest.fromJson(Map<String, dynamic> json) =>
       _$CreatePrimerSubscriptionRequestFromJson(json);

@@ -25,6 +25,8 @@ abstract class _$CreatePrimerSubscriptionRequestCWProxy {
 
   CreatePrimerSubscriptionRequest primerClientToken(String primerClientToken);
 
+  CreatePrimerSubscriptionRequest termsAccepted(bool? termsAccepted);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePrimerSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
@@ -42,6 +44,7 @@ abstract class _$CreatePrimerSubscriptionRequestCWProxy {
     String? cardHolder,
     String? requestId,
     String primerClientToken,
+    bool? termsAccepted,
   });
 }
 
@@ -82,6 +85,10 @@ class _$CreatePrimerSubscriptionRequestCWProxyImpl
       call(primerClientToken: primerClientToken);
 
   @override
+  CreatePrimerSubscriptionRequest termsAccepted(bool? termsAccepted) =>
+      call(termsAccepted: termsAccepted);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePrimerSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
@@ -99,6 +106,7 @@ class _$CreatePrimerSubscriptionRequestCWProxyImpl
     Object? cardHolder = const $CopyWithPlaceholder(),
     Object? requestId = const $CopyWithPlaceholder(),
     Object? primerClientToken = const $CopyWithPlaceholder(),
+    Object? termsAccepted = const $CopyWithPlaceholder(),
   }) {
     return CreatePrimerSubscriptionRequest(
       planId: planId == const $CopyWithPlaceholder() || planId == null
@@ -138,6 +146,10 @@ class _$CreatePrimerSubscriptionRequestCWProxyImpl
           ? _value.primerClientToken
           // ignore: cast_nullable_to_non_nullable
           : primerClientToken as String,
+      termsAccepted: termsAccepted == const $CopyWithPlaceholder()
+          ? _value.termsAccepted
+          // ignore: cast_nullable_to_non_nullable
+          : termsAccepted as bool?,
     );
   }
 }
@@ -171,6 +183,7 @@ CreatePrimerSubscriptionRequest _$CreatePrimerSubscriptionRequestFromJson(
       cardHolder: $checkedConvert('card_holder', (v) => v as String?),
       requestId: $checkedConvert('request_id', (v) => v as String?),
       primerClientToken: $checkedConvert('primer_client_token', (v) => v as String),
+      termsAccepted: $checkedConvert('terms_accepted', (v) => v as bool?),
     );
     return val;
   },
@@ -181,6 +194,7 @@ CreatePrimerSubscriptionRequest _$CreatePrimerSubscriptionRequestFromJson(
     'cardHolder': 'card_holder',
     'requestId': 'request_id',
     'primerClientToken': 'primer_client_token',
+    'termsAccepted': 'terms_accepted',
   },
 );
 
@@ -196,4 +210,5 @@ Map<String, dynamic> _$CreatePrimerSubscriptionRequestToJson(
   'card_holder': ?instance.cardHolder,
   'request_id': ?instance.requestId,
   'primer_client_token': instance.primerClientToken,
+  'terms_accepted': ?instance.termsAccepted,
 };

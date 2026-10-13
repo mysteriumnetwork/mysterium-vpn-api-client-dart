@@ -25,6 +25,8 @@ class UpdateStripeSubscriptionRequest {
     this.currency,
 
     this.couponCode,
+
+    this.termsAccepted,
   });
 
   @JsonKey(name: r'plan_id', required: true, includeIfNull: false)
@@ -39,6 +41,9 @@ class UpdateStripeSubscriptionRequest {
   @JsonKey(name: r'coupon_code', required: false, includeIfNull: false)
   final String? couponCode;
 
+  @JsonKey(name: r'terms_accepted', required: false, includeIfNull: false)
+  final bool? termsAccepted;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -46,14 +51,16 @@ class UpdateStripeSubscriptionRequest {
           other.planId == planId &&
           other.intent == intent &&
           other.currency == currency &&
-          other.couponCode == couponCode;
+          other.couponCode == couponCode &&
+          other.termsAccepted == termsAccepted;
 
   @override
   int get hashCode =>
       planId.hashCode +
       (intent == null ? 0 : intent.hashCode) +
       (currency == null ? 0 : currency.hashCode) +
-      (couponCode == null ? 0 : couponCode.hashCode);
+      (couponCode == null ? 0 : couponCode.hashCode) +
+      termsAccepted.hashCode;
 
   factory UpdateStripeSubscriptionRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateStripeSubscriptionRequestFromJson(json);

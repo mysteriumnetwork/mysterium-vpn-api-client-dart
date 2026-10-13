@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **intent** | **String** |  | [optional] 
 **currency** | **String** |  | [optional] 
 **couponCode** | **String** |  | [optional] 
+**termsAccepted** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

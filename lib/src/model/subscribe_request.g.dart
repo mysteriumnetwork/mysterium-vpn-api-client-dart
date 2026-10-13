@@ -29,6 +29,8 @@ abstract class _$SubscribeRequestCWProxy {
 
   SubscribeRequest primerClientToken(String primerClientToken);
 
+  SubscribeRequest termsAccepted(bool? termsAccepted);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
   ///
@@ -48,6 +50,7 @@ abstract class _$SubscribeRequestCWProxy {
     String? cardHolder,
     String? requestId,
     String primerClientToken,
+    bool? termsAccepted,
   });
 }
 
@@ -93,6 +96,9 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
       call(primerClientToken: primerClientToken);
 
   @override
+  SubscribeRequest termsAccepted(bool? termsAccepted) => call(termsAccepted: termsAccepted);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
   ///
@@ -112,6 +118,7 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
     Object? cardHolder = const $CopyWithPlaceholder(),
     Object? requestId = const $CopyWithPlaceholder(),
     Object? primerClientToken = const $CopyWithPlaceholder(),
+    Object? termsAccepted = const $CopyWithPlaceholder(),
   }) {
     return SubscribeRequest(
       gatewayId: gatewayId == const $CopyWithPlaceholder() || gatewayId == null
@@ -159,6 +166,10 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
           ? _value.primerClientToken
           // ignore: cast_nullable_to_non_nullable
           : primerClientToken as String,
+      termsAccepted: termsAccepted == const $CopyWithPlaceholder()
+          ? _value.termsAccepted
+          // ignore: cast_nullable_to_non_nullable
+          : termsAccepted as bool?,
     );
   }
 }
@@ -197,6 +208,7 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
       cardHolder: $checkedConvert('card_holder', (v) => v as String?),
       requestId: $checkedConvert('request_id', (v) => v as String?),
       primerClientToken: $checkedConvert('primer_client_token', (v) => v as String),
+      termsAccepted: $checkedConvert('terms_accepted', (v) => v as bool?),
     );
     return val;
   },
@@ -208,6 +220,7 @@ SubscribeRequest _$SubscribeRequestFromJson(Map<String, dynamic> json) => $check
     'cardHolder': 'card_holder',
     'requestId': 'request_id',
     'primerClientToken': 'primer_client_token',
+    'termsAccepted': 'terms_accepted',
   },
 );
 
@@ -223,6 +236,7 @@ Map<String, dynamic> _$SubscribeRequestToJson(SubscribeRequest instance) => <Str
   'card_holder': ?instance.cardHolder,
   'request_id': ?instance.requestId,
   'primer_client_token': instance.primerClientToken,
+  'terms_accepted': ?instance.termsAccepted,
 };
 
 const _$SubscribeRequestGatewayIdEnumEnumMap = {SubscribeRequestGatewayIdEnum.apple: 'apple'};

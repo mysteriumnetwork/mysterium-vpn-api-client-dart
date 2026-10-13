@@ -15,6 +15,8 @@ abstract class _$UpdateStripeSubscriptionRequestCWProxy {
 
   UpdateStripeSubscriptionRequest couponCode(String? couponCode);
 
+  UpdateStripeSubscriptionRequest termsAccepted(bool? termsAccepted);
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateStripeSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
@@ -27,6 +29,7 @@ abstract class _$UpdateStripeSubscriptionRequestCWProxy {
     String? intent,
     String? currency,
     String? couponCode,
+    bool? termsAccepted,
   });
 }
 
@@ -51,6 +54,10 @@ class _$UpdateStripeSubscriptionRequestCWProxyImpl
   UpdateStripeSubscriptionRequest couponCode(String? couponCode) => call(couponCode: couponCode);
 
   @override
+  UpdateStripeSubscriptionRequest termsAccepted(bool? termsAccepted) =>
+      call(termsAccepted: termsAccepted);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UpdateStripeSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
@@ -63,6 +70,7 @@ class _$UpdateStripeSubscriptionRequestCWProxyImpl
     Object? intent = const $CopyWithPlaceholder(),
     Object? currency = const $CopyWithPlaceholder(),
     Object? couponCode = const $CopyWithPlaceholder(),
+    Object? termsAccepted = const $CopyWithPlaceholder(),
   }) {
     return UpdateStripeSubscriptionRequest(
       planId: planId == const $CopyWithPlaceholder() || planId == null
@@ -81,6 +89,10 @@ class _$UpdateStripeSubscriptionRequestCWProxyImpl
           ? _value.couponCode
           // ignore: cast_nullable_to_non_nullable
           : couponCode as String?,
+      termsAccepted: termsAccepted == const $CopyWithPlaceholder()
+          ? _value.termsAccepted
+          // ignore: cast_nullable_to_non_nullable
+          : termsAccepted as bool?,
     );
   }
 }
@@ -109,10 +121,15 @@ UpdateStripeSubscriptionRequest _$UpdateStripeSubscriptionRequestFromJson(
       intent: $checkedConvert('intent', (v) => v as String?),
       currency: $checkedConvert('currency', (v) => v as String?),
       couponCode: $checkedConvert('coupon_code', (v) => v as String?),
+      termsAccepted: $checkedConvert('terms_accepted', (v) => v as bool?),
     );
     return val;
   },
-  fieldKeyMap: const {'planId': 'plan_id', 'couponCode': 'coupon_code'},
+  fieldKeyMap: const {
+    'planId': 'plan_id',
+    'couponCode': 'coupon_code',
+    'termsAccepted': 'terms_accepted',
+  },
 );
 
 Map<String, dynamic> _$UpdateStripeSubscriptionRequestToJson(
@@ -122,4 +139,5 @@ Map<String, dynamic> _$UpdateStripeSubscriptionRequestToJson(
   'intent': ?instance.intent,
   'currency': ?instance.currency,
   'coupon_code': ?instance.couponCode,
+  'terms_accepted': ?instance.termsAccepted,
 };
