@@ -94,6 +94,7 @@ doc/PlanMetadata.md
 doc/ProxyConnectResponse.md
 doc/ProxyConnectResponseProxyConfig.md
 doc/RateConnectionRequest.md
+doc/ReportBrokenNodeRequest.md
 doc/RequestActivation200Response.md
 doc/RequestActivationRequest.md
 doc/Resume.md
@@ -217,6 +218,7 @@ lib/src/model/plan_metadata.dart
 lib/src/model/proxy_connect_response.dart
 lib/src/model/proxy_connect_response_proxy_config.dart
 lib/src/model/rate_connection_request.dart
+lib/src/model/report_broken_node_request.dart
 lib/src/model/request_activation200_response.dart
 lib/src/model/request_activation_request.dart
 lib/src/model/subscribe200_response.dart

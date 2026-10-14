@@ -9,7 +9,7 @@ part of 'user_terms_response.dart';
 abstract class _$UserTermsResponseCWProxy {
   UserTermsResponse acceptedVersion(String? acceptedVersion);
 
-  UserTermsResponse latestVersion(String? latestVersion);
+  UserTermsResponse currentVersion(String? currentVersion);
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UserTermsResponse(...).copyWith.fieldName(value)`.
@@ -18,7 +18,7 @@ abstract class _$UserTermsResponseCWProxy {
   /// ```dart
   /// UserTermsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  UserTermsResponse call({String? acceptedVersion, String? latestVersion});
+  UserTermsResponse call({String? acceptedVersion, String? currentVersion});
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,7 +33,7 @@ class _$UserTermsResponseCWProxyImpl implements _$UserTermsResponseCWProxy {
       call(acceptedVersion: acceptedVersion);
 
   @override
-  UserTermsResponse latestVersion(String? latestVersion) => call(latestVersion: latestVersion);
+  UserTermsResponse currentVersion(String? currentVersion) => call(currentVersion: currentVersion);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -45,17 +45,17 @@ class _$UserTermsResponseCWProxyImpl implements _$UserTermsResponseCWProxy {
   /// ```
   UserTermsResponse call({
     Object? acceptedVersion = const $CopyWithPlaceholder(),
-    Object? latestVersion = const $CopyWithPlaceholder(),
+    Object? currentVersion = const $CopyWithPlaceholder(),
   }) {
     return UserTermsResponse(
       acceptedVersion: acceptedVersion == const $CopyWithPlaceholder()
           ? _value.acceptedVersion
           // ignore: cast_nullable_to_non_nullable
           : acceptedVersion as String?,
-      latestVersion: latestVersion == const $CopyWithPlaceholder()
-          ? _value.latestVersion
+      currentVersion: currentVersion == const $CopyWithPlaceholder()
+          ? _value.currentVersion
           // ignore: cast_nullable_to_non_nullable
-          : latestVersion as String?,
+          : currentVersion as String?,
     );
   }
 }
@@ -77,14 +77,14 @@ UserTermsResponse _$UserTermsResponseFromJson(Map<String, dynamic> json) => $che
   ($checkedConvert) {
     final val = UserTermsResponse(
       acceptedVersion: $checkedConvert('accepted_version', (v) => v as String?),
-      latestVersion: $checkedConvert('latest_version', (v) => v as String?),
+      currentVersion: $checkedConvert('current_version', (v) => v as String?),
     );
     return val;
   },
-  fieldKeyMap: const {'acceptedVersion': 'accepted_version', 'latestVersion': 'latest_version'},
+  fieldKeyMap: const {'acceptedVersion': 'accepted_version', 'currentVersion': 'current_version'},
 );
 
 Map<String, dynamic> _$UserTermsResponseToJson(UserTermsResponse instance) => <String, dynamic>{
   'accepted_version': ?instance.acceptedVersion,
-  'latest_version': ?instance.latestVersion,
+  'current_version': ?instance.currentVersion,
 };

@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**disconnect**](Connection.md#disconnect) | **GET** /connection/disconnect | Disconnect from the current Wireguard connection
 [**disconnectAll**](Connection.md#disconnectall) | **GET** /connection/disconnect-all | Disconnect all Wireguard connections
 [**rateConnection**](Connection.md#rateconnection) | **POST** /connection/rate-connection | Rate connection
+[**reportBrokenNode**](Connection.md#reportbrokennode) | **POST** /connection/report-broken-node | Report a broken node
 [**userIntents**](Connection.md#userintents) | **GET** /connection/user-intents | List supported user intents
 
 
@@ -369,6 +370,46 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rateConnectionRequest** | [**RateConnectionRequest**](RateConnectionRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reportBrokenNode**
+> reportBrokenNode(reportBrokenNodeRequest)
+
+Report a broken node
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+final ReportBrokenNodeRequest reportBrokenNodeRequest = ; // ReportBrokenNodeRequest | 
+
+try {
+    api.reportBrokenNode(reportBrokenNodeRequest);
+} on DioException catch (e) {
+    print('Exception when calling Connection->reportBrokenNode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reportBrokenNodeRequest** | [**ReportBrokenNodeRequest**](ReportBrokenNodeRequest.md)|  | [optional] 
 
 ### Return type
 

@@ -79,6 +79,7 @@ import 'package:vpn_api/src/model/plan_metadata.dart';
 import 'package:vpn_api/src/model/proxy_connect_response.dart';
 import 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';
 import 'package:vpn_api/src/model/rate_connection_request.dart';
+import 'package:vpn_api/src/model/report_broken_node_request.dart';
 import 'package:vpn_api/src/model/request_activation200_response.dart';
 import 'package:vpn_api/src/model/request_activation_request.dart';
 import 'package:vpn_api/src/model/subscribe200_response.dart';
@@ -286,6 +287,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return ProxyConnectResponseProxyConfig.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'RateConnectionRequest':
       return RateConnectionRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'ReportBrokenNodeRequest':
+      return ReportBrokenNodeRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'RequestActivation200Response':
       return RequestActivation200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'RequestActivationRequest':

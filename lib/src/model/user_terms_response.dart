@@ -17,25 +17,25 @@ part 'user_terms_response.g.dart';
 )
 class UserTermsResponse {
   /// Returns a new [UserTermsResponse] instance.
-  UserTermsResponse({this.acceptedVersion, this.latestVersion});
+  UserTermsResponse({this.acceptedVersion, this.currentVersion});
 
   @JsonKey(name: r'accepted_version', required: false, includeIfNull: false)
   final String? acceptedVersion;
 
-  @JsonKey(name: r'latest_version', required: false, includeIfNull: false)
-  final String? latestVersion;
+  @JsonKey(name: r'current_version', required: false, includeIfNull: false)
+  final String? currentVersion;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UserTermsResponse &&
           other.acceptedVersion == acceptedVersion &&
-          other.latestVersion == latestVersion;
+          other.currentVersion == currentVersion;
 
   @override
   int get hashCode =>
       (acceptedVersion == null ? 0 : acceptedVersion.hashCode) +
-      (latestVersion == null ? 0 : latestVersion.hashCode);
+      (currentVersion == null ? 0 : currentVersion.hashCode);
 
   factory UserTermsResponse.fromJson(Map<String, dynamic> json) =>
       _$UserTermsResponseFromJson(json);

@@ -105,6 +105,7 @@ export 'package:vpn_api/src/model/plan_metadata.dart';
 export 'package:vpn_api/src/model/proxy_connect_response.dart';
 export 'package:vpn_api/src/model/proxy_connect_response_proxy_config.dart';
 export 'package:vpn_api/src/model/rate_connection_request.dart';
+export 'package:vpn_api/src/model/report_broken_node_request.dart';
 export 'package:vpn_api/src/model/request_activation200_response.dart';
 export 'package:vpn_api/src/model/request_activation_request.dart';
 export 'package:vpn_api/src/model/subscribe200_response.dart';
