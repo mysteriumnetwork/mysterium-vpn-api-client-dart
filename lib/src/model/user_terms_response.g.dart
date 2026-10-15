@@ -11,6 +11,10 @@ abstract class _$UserTermsResponseCWProxy {
 
   UserTermsResponse currentVersion(String? currentVersion);
 
+  UserTermsResponse latestVersion(
+    @Deprecated('latestVersion has been deprecated') String? latestVersion,
+  );
+
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UserTermsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -18,7 +22,11 @@ abstract class _$UserTermsResponseCWProxy {
   /// ```dart
   /// UserTermsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
-  UserTermsResponse call({String? acceptedVersion, String? currentVersion});
+  UserTermsResponse call({
+    String? acceptedVersion,
+    String? currentVersion,
+    @Deprecated('latestVersion has been deprecated') String? latestVersion,
+  });
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -36,6 +44,11 @@ class _$UserTermsResponseCWProxyImpl implements _$UserTermsResponseCWProxy {
   UserTermsResponse currentVersion(String? currentVersion) => call(currentVersion: currentVersion);
 
   @override
+  UserTermsResponse latestVersion(
+    @Deprecated('latestVersion has been deprecated') String? latestVersion,
+  ) => call(latestVersion: latestVersion);
+
+  @override
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UserTermsResponse(...).copyWith.fieldName(value)`.
   ///
@@ -46,6 +59,8 @@ class _$UserTermsResponseCWProxyImpl implements _$UserTermsResponseCWProxy {
   UserTermsResponse call({
     Object? acceptedVersion = const $CopyWithPlaceholder(),
     Object? currentVersion = const $CopyWithPlaceholder(),
+    @Deprecated('latestVersion has been deprecated')
+    Object? latestVersion = const $CopyWithPlaceholder(),
   }) {
     return UserTermsResponse(
       acceptedVersion: acceptedVersion == const $CopyWithPlaceholder()
@@ -56,6 +71,10 @@ class _$UserTermsResponseCWProxyImpl implements _$UserTermsResponseCWProxy {
           ? _value.currentVersion
           // ignore: cast_nullable_to_non_nullable
           : currentVersion as String?,
+      latestVersion: latestVersion == const $CopyWithPlaceholder()
+          ? _value.latestVersion
+          // ignore: cast_nullable_to_non_nullable
+          : latestVersion as String?,
     );
   }
 }
@@ -78,13 +97,19 @@ UserTermsResponse _$UserTermsResponseFromJson(Map<String, dynamic> json) => $che
     final val = UserTermsResponse(
       acceptedVersion: $checkedConvert('accepted_version', (v) => v as String?),
       currentVersion: $checkedConvert('current_version', (v) => v as String?),
+      latestVersion: $checkedConvert('latest_version', (v) => v as String?),
     );
     return val;
   },
-  fieldKeyMap: const {'acceptedVersion': 'accepted_version', 'currentVersion': 'current_version'},
+  fieldKeyMap: const {
+    'acceptedVersion': 'accepted_version',
+    'currentVersion': 'current_version',
+    'latestVersion': 'latest_version',
+  },
 );
 
 Map<String, dynamic> _$UserTermsResponseToJson(UserTermsResponse instance) => <String, dynamic>{
   'accepted_version': ?instance.acceptedVersion,
   'current_version': ?instance.currentVersion,
+  'latest_version': ?instance.latestVersion,
 };
