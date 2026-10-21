@@ -19,6 +19,10 @@ Method | HTTP request | Description
 [**disconnectAll**](Connection.md#disconnectall) | **GET** /connection/disconnect-all | Disconnect all Wireguard connections
 [**rateConnection**](Connection.md#rateconnection) | **POST** /connection/rate-connection | Rate connection
 [**reportBrokenNode**](Connection.md#reportbrokennode) | **POST** /connection/report-broken-node | Report a broken node
+[**testTrafficDelay**](Connection.md#testtrafficdelay) | **POST** /connection/test-traffic/delay | Add latency to this device&#39;s tunnel for a bounded period
+[**testTrafficDrop**](Connection.md#testtrafficdrop) | **POST** /connection/test-traffic/drop | Drop this device&#39;s tunnel traffic for a bounded period
+[**testTrafficProviderDisappearance**](Connection.md#testtrafficproviderdisappearance) | **POST** /connection/test-traffic/provider-disappearance | Disconnect this device&#39;s upstream provider once
+[**testTrafficReset**](Connection.md#testtrafficreset) | **POST** /connection/test-traffic/reset | Clear drop and delay together
 [**userIntents**](Connection.md#userintents) | **GET** /connection/user-intents | List supported user intents
 
 
@@ -422,6 +426,160 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **testTrafficDelay**
+> TestTrafficConditionResponse testTrafficDelay(testTrafficDelayRequest)
+
+Add latency to this device's tunnel for a bounded period
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+final TestTrafficDelayRequest testTrafficDelayRequest = ; // TestTrafficDelayRequest | 
+
+try {
+    final response = api.testTrafficDelay(testTrafficDelayRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling Connection->testTrafficDelay: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **testTrafficDelayRequest** | [**TestTrafficDelayRequest**](TestTrafficDelayRequest.md)|  | [optional] 
+
+### Return type
+
+[**TestTrafficConditionResponse**](TestTrafficConditionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **testTrafficDrop**
+> TestTrafficConditionResponse testTrafficDrop(testTrafficDropRequest)
+
+Drop this device's tunnel traffic for a bounded period
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+final TestTrafficDropRequest testTrafficDropRequest = ; // TestTrafficDropRequest | 
+
+try {
+    final response = api.testTrafficDrop(testTrafficDropRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling Connection->testTrafficDrop: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **testTrafficDropRequest** | [**TestTrafficDropRequest**](TestTrafficDropRequest.md)|  | [optional] 
+
+### Return type
+
+[**TestTrafficConditionResponse**](TestTrafficConditionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **testTrafficProviderDisappearance**
+> testTrafficProviderDisappearance()
+
+Disconnect this device's upstream provider once
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+
+try {
+    api.testTrafficProviderDisappearance();
+} on DioException catch (e) {
+    print('Exception when calling Connection->testTrafficProviderDisappearance: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **testTrafficReset**
+> testTrafficReset()
+
+Clear drop and delay together
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+
+try {
+    api.testTrafficReset();
+} on DioException catch (e) {
+    print('Exception when calling Connection->testTrafficReset: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
