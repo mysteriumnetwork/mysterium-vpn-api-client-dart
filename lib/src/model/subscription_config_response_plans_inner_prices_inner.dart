@@ -20,9 +20,9 @@ class SubscriptionConfigResponsePlansInnerPricesInner {
   SubscriptionConfigResponsePlansInnerPricesInner({
     required this.currency,
 
-    required this.discountAmount,
+    this.discountAmount,
 
-    required this.discountUnits,
+    this.discountUnits,
 
     required this.discountedFullPrice,
 
@@ -36,11 +36,11 @@ class SubscriptionConfigResponsePlansInnerPricesInner {
   @JsonKey(name: r'currency', required: true, includeIfNull: false)
   final String currency;
 
-  @JsonKey(name: r'discount_amount', required: true, includeIfNull: false)
-  final String discountAmount;
+  @JsonKey(name: r'discount_amount', required: false, includeIfNull: false)
+  final String? discountAmount;
 
-  @JsonKey(name: r'discount_units', required: true, includeIfNull: false)
-  final String discountUnits;
+  @JsonKey(name: r'discount_units', required: false, includeIfNull: false)
+  final String? discountUnits;
 
   @JsonKey(name: r'discounted_full_price', required: true, includeIfNull: false)
   final String discountedFullPrice;
@@ -69,8 +69,8 @@ class SubscriptionConfigResponsePlansInnerPricesInner {
   @override
   int get hashCode =>
       currency.hashCode +
-      discountAmount.hashCode +
-      discountUnits.hashCode +
+      (discountAmount == null ? 0 : discountAmount.hashCode) +
+      (discountUnits == null ? 0 : discountUnits.hashCode) +
       discountedFullPrice.hashCode +
       discountedMonthlyPrice.hashCode +
       fullPrice.hashCode +

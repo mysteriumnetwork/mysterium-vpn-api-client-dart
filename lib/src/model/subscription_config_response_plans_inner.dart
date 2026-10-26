@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vpn_api/src/model/subscription_config_response_plans_inner_extra_duration.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_interval.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
@@ -36,6 +37,8 @@ class SubscriptionConfigResponsePlansInner {
 
     required this.supportedGateways,
 
+    this.extraDuration,
+
     required this.metadata,
   });
 
@@ -60,6 +63,9 @@ class SubscriptionConfigResponsePlansInner {
   @JsonKey(name: r'supported_gateways', required: true, includeIfNull: false)
   final List<String> supportedGateways;
 
+  @JsonKey(name: r'extra_duration', required: false, includeIfNull: false)
+  final SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration;
+
   @JsonKey(name: r'metadata', required: true, includeIfNull: false)
   final SubscriptionConfigResponsePlansInnerMetadata metadata;
 
@@ -74,6 +80,7 @@ class SubscriptionConfigResponsePlansInner {
           other.price == price &&
           other.prices == prices &&
           other.supportedGateways == supportedGateways &&
+          other.extraDuration == extraDuration &&
           other.metadata == metadata;
 
   @override
@@ -85,6 +92,7 @@ class SubscriptionConfigResponsePlansInner {
       price.hashCode +
       prices.hashCode +
       supportedGateways.hashCode +
+      (extraDuration == null ? 0 : extraDuration.hashCode) +
       metadata.hashCode;
 
   factory SubscriptionConfigResponsePlansInner.fromJson(Map<String, dynamic> json) =>

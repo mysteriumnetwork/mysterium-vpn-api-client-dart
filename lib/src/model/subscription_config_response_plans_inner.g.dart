@@ -25,6 +25,10 @@ abstract class _$SubscriptionConfigResponsePlansInnerCWProxy {
 
   SubscriptionConfigResponsePlansInner supportedGateways(List<String> supportedGateways);
 
+  SubscriptionConfigResponsePlansInner extraDuration(
+    SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration,
+  );
+
   SubscriptionConfigResponsePlansInner metadata(
     SubscriptionConfigResponsePlansInnerMetadata metadata,
   );
@@ -44,6 +48,7 @@ abstract class _$SubscriptionConfigResponsePlansInnerCWProxy {
     SubscriptionConfigResponsePlansInnerPrice price,
     List<SubscriptionConfigResponsePlansInnerPricesInner> prices,
     List<String> supportedGateways,
+    SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration,
     SubscriptionConfigResponsePlansInnerMetadata metadata,
   });
 }
@@ -86,6 +91,11 @@ class _$SubscriptionConfigResponsePlansInnerCWProxyImpl
       call(supportedGateways: supportedGateways);
 
   @override
+  SubscriptionConfigResponsePlansInner extraDuration(
+    SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration,
+  ) => call(extraDuration: extraDuration);
+
+  @override
   SubscriptionConfigResponsePlansInner metadata(
     SubscriptionConfigResponsePlansInnerMetadata metadata,
   ) => call(metadata: metadata);
@@ -106,6 +116,7 @@ class _$SubscriptionConfigResponsePlansInnerCWProxyImpl
     Object? price = const $CopyWithPlaceholder(),
     Object? prices = const $CopyWithPlaceholder(),
     Object? supportedGateways = const $CopyWithPlaceholder(),
+    Object? extraDuration = const $CopyWithPlaceholder(),
     Object? metadata = const $CopyWithPlaceholder(),
   }) {
     return SubscriptionConfigResponsePlansInner(
@@ -138,6 +149,10 @@ class _$SubscriptionConfigResponsePlansInnerCWProxyImpl
           ? _value.supportedGateways
           // ignore: cast_nullable_to_non_nullable
           : supportedGateways as List<String>,
+      extraDuration: extraDuration == const $CopyWithPlaceholder()
+          ? _value.extraDuration
+          // ignore: cast_nullable_to_non_nullable
+          : extraDuration as SubscriptionConfigResponsePlansInnerExtraDuration?,
       metadata: metadata == const $CopyWithPlaceholder() || metadata == null
           ? _value.metadata
           // ignore: cast_nullable_to_non_nullable
@@ -194,6 +209,12 @@ SubscriptionConfigResponsePlansInner _$SubscriptionConfigResponsePlansInnerFromJ
         'supported_gateways',
         (v) => (v as List<dynamic>).map((e) => e as String).toList(),
       ),
+      extraDuration: $checkedConvert(
+        'extra_duration',
+        (v) => v == null
+            ? null
+            : SubscriptionConfigResponsePlansInnerExtraDuration.fromJson(v as Map<String, dynamic>),
+      ),
       metadata: $checkedConvert(
         'metadata',
         (v) => SubscriptionConfigResponsePlansInnerMetadata.fromJson(v as Map<String, dynamic>),
@@ -205,6 +226,7 @@ SubscriptionConfigResponsePlansInner _$SubscriptionConfigResponsePlansInnerFromJ
     'appleProductId': 'apple_product_id',
     'googleProductId': 'google_product_id',
     'supportedGateways': 'supported_gateways',
+    'extraDuration': 'extra_duration',
   },
 );
 
@@ -218,5 +240,6 @@ Map<String, dynamic> _$SubscriptionConfigResponsePlansInnerToJson(
   'price': instance.price.toJson(),
   'prices': instance.prices.map((e) => e.toJson()).toList(),
   'supported_gateways': instance.supportedGateways,
+  'extra_duration': ?instance.extraDuration?.toJson(),
   'metadata': instance.metadata.toJson(),
 };

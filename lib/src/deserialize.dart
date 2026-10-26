@@ -87,13 +87,11 @@ import 'package:vpn_api/src/model/subscribe_request.dart';
 import 'package:vpn_api/src/model/subscription_config_response.dart';
 import 'package:vpn_api/src/model/subscription_config_response_gateways_inner.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner.dart';
+import 'package:vpn_api/src/model/subscription_config_response_plans_inner_extra_duration.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_interval.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_metadata.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
-import 'package:vpn_api/src/model/test_traffic_condition_response.dart';
-import 'package:vpn_api/src/model/test_traffic_delay_request.dart';
-import 'package:vpn_api/src/model/test_traffic_drop_request.dart';
 import 'package:vpn_api/src/model/update_contact_request.dart';
 import 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 import 'package:vpn_api/src/model/user_callback_request.dart';
@@ -308,6 +306,11 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'SubscriptionConfigResponsePlansInner':
       return SubscriptionConfigResponsePlansInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'SubscriptionConfigResponsePlansInnerExtraDuration':
+      return SubscriptionConfigResponsePlansInnerExtraDuration.fromJson(
+            value as Map<String, dynamic>,
+          )
+          as ReturnType;
     case 'SubscriptionConfigResponsePlansInnerInterval':
       return SubscriptionConfigResponsePlansInnerInterval.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -320,12 +323,6 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'SubscriptionConfigResponsePlansInnerPricesInner':
       return SubscriptionConfigResponsePlansInnerPricesInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'TestTrafficConditionResponse':
-      return TestTrafficConditionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'TestTrafficDelayRequest':
-      return TestTrafficDelayRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'TestTrafficDropRequest':
-      return TestTrafficDropRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateContactRequest':
       return UpdateContactRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UpdateStripeSubscriptionRequest':

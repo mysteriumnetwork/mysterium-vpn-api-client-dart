@@ -9,9 +9,9 @@ part of 'subscription_config_response_plans_inner_prices_inner.dart';
 abstract class _$SubscriptionConfigResponsePlansInnerPricesInnerCWProxy {
   SubscriptionConfigResponsePlansInnerPricesInner currency(String currency);
 
-  SubscriptionConfigResponsePlansInnerPricesInner discountAmount(String discountAmount);
+  SubscriptionConfigResponsePlansInnerPricesInner discountAmount(String? discountAmount);
 
-  SubscriptionConfigResponsePlansInnerPricesInner discountUnits(String discountUnits);
+  SubscriptionConfigResponsePlansInnerPricesInner discountUnits(String? discountUnits);
 
   SubscriptionConfigResponsePlansInnerPricesInner discountedFullPrice(String discountedFullPrice);
 
@@ -32,8 +32,8 @@ abstract class _$SubscriptionConfigResponsePlansInnerPricesInnerCWProxy {
   /// ```
   SubscriptionConfigResponsePlansInnerPricesInner call({
     String currency,
-    String discountAmount,
-    String discountUnits,
+    String? discountAmount,
+    String? discountUnits,
     String discountedFullPrice,
     String discountedMonthlyPrice,
     String fullPrice,
@@ -54,11 +54,11 @@ class _$SubscriptionConfigResponsePlansInnerPricesInnerCWProxyImpl
       call(currency: currency);
 
   @override
-  SubscriptionConfigResponsePlansInnerPricesInner discountAmount(String discountAmount) =>
+  SubscriptionConfigResponsePlansInnerPricesInner discountAmount(String? discountAmount) =>
       call(discountAmount: discountAmount);
 
   @override
-  SubscriptionConfigResponsePlansInnerPricesInner discountUnits(String discountUnits) =>
+  SubscriptionConfigResponsePlansInnerPricesInner discountUnits(String? discountUnits) =>
       call(discountUnits: discountUnits);
 
   @override
@@ -100,14 +100,14 @@ class _$SubscriptionConfigResponsePlansInnerPricesInnerCWProxyImpl
           ? _value.currency
           // ignore: cast_nullable_to_non_nullable
           : currency as String,
-      discountAmount: discountAmount == const $CopyWithPlaceholder() || discountAmount == null
+      discountAmount: discountAmount == const $CopyWithPlaceholder()
           ? _value.discountAmount
           // ignore: cast_nullable_to_non_nullable
-          : discountAmount as String,
-      discountUnits: discountUnits == const $CopyWithPlaceholder() || discountUnits == null
+          : discountAmount as String?,
+      discountUnits: discountUnits == const $CopyWithPlaceholder()
           ? _value.discountUnits
           // ignore: cast_nullable_to_non_nullable
-          : discountUnits as String,
+          : discountUnits as String?,
       discountedFullPrice:
           discountedFullPrice == const $CopyWithPlaceholder() || discountedFullPrice == null
           ? _value.discountedFullPrice
@@ -153,8 +153,6 @@ _$SubscriptionConfigResponsePlansInnerPricesInnerFromJson(Map<String, dynamic> j
           json,
           requiredKeys: const [
             'currency',
-            'discount_amount',
-            'discount_units',
             'discounted_full_price',
             'discounted_monthly_price',
             'full_price',
@@ -163,8 +161,8 @@ _$SubscriptionConfigResponsePlansInnerPricesInnerFromJson(Map<String, dynamic> j
         );
         final val = SubscriptionConfigResponsePlansInnerPricesInner(
           currency: $checkedConvert('currency', (v) => v as String),
-          discountAmount: $checkedConvert('discount_amount', (v) => v as String),
-          discountUnits: $checkedConvert('discount_units', (v) => v as String),
+          discountAmount: $checkedConvert('discount_amount', (v) => v as String?),
+          discountUnits: $checkedConvert('discount_units', (v) => v as String?),
           discountedFullPrice: $checkedConvert('discounted_full_price', (v) => v as String),
           discountedMonthlyPrice: $checkedConvert('discounted_monthly_price', (v) => v as String),
           fullPrice: $checkedConvert('full_price', (v) => v as String),
@@ -186,8 +184,8 @@ Map<String, dynamic> _$SubscriptionConfigResponsePlansInnerPricesInnerToJson(
   SubscriptionConfigResponsePlansInnerPricesInner instance,
 ) => <String, dynamic>{
   'currency': instance.currency,
-  'discount_amount': instance.discountAmount,
-  'discount_units': instance.discountUnits,
+  'discount_amount': ?instance.discountAmount,
+  'discount_units': ?instance.discountUnits,
   'discounted_full_price': instance.discountedFullPrice,
   'discounted_monthly_price': instance.discountedMonthlyPrice,
   'full_price': instance.fullPrice,
