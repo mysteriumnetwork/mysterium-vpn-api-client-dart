@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:vpn_api/src/model/subscription_config_response_plans_inner_extra_duration.dart';
 import 'package:vpn_api/src/model/get_subscription_response_order_summary.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -52,6 +53,8 @@ class GetSubscriptionResponse {
     this.orderNetAmount,
 
     this.orderCouponUsed,
+
+    this.extraDuration,
 
     this.orderSummary,
   });
@@ -107,6 +110,9 @@ class GetSubscriptionResponse {
   @JsonKey(name: r'order_coupon_used', required: false, includeIfNull: false)
   final String? orderCouponUsed;
 
+  @JsonKey(name: r'extra_duration', required: false, includeIfNull: false)
+  final SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration;
+
   @JsonKey(name: r'order_summary', required: false, includeIfNull: false)
   final GetSubscriptionResponseOrderSummary? orderSummary;
 
@@ -131,6 +137,7 @@ class GetSubscriptionResponse {
           other.orderCurrency == orderCurrency &&
           other.orderNetAmount == orderNetAmount &&
           other.orderCouponUsed == orderCouponUsed &&
+          other.extraDuration == extraDuration &&
           other.orderSummary == orderSummary;
 
   @override
@@ -152,6 +159,7 @@ class GetSubscriptionResponse {
       (orderCurrency == null ? 0 : orderCurrency.hashCode) +
       (orderNetAmount == null ? 0 : orderNetAmount.hashCode) +
       (orderCouponUsed == null ? 0 : orderCouponUsed.hashCode) +
+      (extraDuration == null ? 0 : extraDuration.hashCode) +
       (orderSummary == null ? 0 : orderSummary.hashCode);
 
   factory GetSubscriptionResponse.fromJson(Map<String, dynamic> json) =>
