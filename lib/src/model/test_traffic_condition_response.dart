@@ -22,7 +22,7 @@ class TestTrafficConditionResponse {
   @JsonKey(name: r'delay_ms', required: false, includeIfNull: false)
   final int? delayMs;
 
-  /// Seconds until the server clears the condition automatically
+  /// Seconds until the condition clears automatically
   @JsonKey(name: r'duration_seconds', required: true, includeIfNull: false)
   final int durationSeconds;
 

@@ -8,7 +8,7 @@ import 'package:vpn_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**durationSeconds** | **int** | How long the condition stays applied before the server clears it automatically. Bounded because a dropped tunnel may leave the device unable to clear it itself. | 
+**durationSeconds** | **int** | How long the condition stays applied before it clears automatically. Bounded because a dropped tunnel may leave the device unable to clear it itself. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

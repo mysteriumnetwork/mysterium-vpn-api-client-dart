@@ -110,6 +110,9 @@ doc/SubscriptionConfigResponsePlansInnerMetadata.md
 doc/SubscriptionConfigResponsePlansInnerPrice.md
 doc/SubscriptionConfigResponsePlansInnerPricesInner.md
 doc/Terms.md
+doc/TestTrafficConditionResponse.md
+doc/TestTrafficDelayRequest.md
+doc/TestTrafficDropRequest.md
 doc/UpdateContactRequest.md
 doc/UpdateStripeSubscriptionRequest.md
 doc/UserCallbackRequest.md
@@ -232,6 +235,9 @@ lib/src/model/subscription_config_response_plans_inner_interval.dart
 lib/src/model/subscription_config_response_plans_inner_metadata.dart
 lib/src/model/subscription_config_response_plans_inner_price.dart
 lib/src/model/subscription_config_response_plans_inner_prices_inner.dart
+lib/src/model/test_traffic_condition_response.dart
+lib/src/model/test_traffic_delay_request.dart
+lib/src/model/test_traffic_drop_request.dart
 lib/src/model/update_contact_request.dart
 lib/src/model/update_stripe_subscription_request.dart
 lib/src/model/user_callback_request.dart

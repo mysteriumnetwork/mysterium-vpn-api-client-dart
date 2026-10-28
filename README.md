@@ -85,6 +85,10 @@ Class | Method | HTTP request | Description
 [*Connection*](doc/Connection.md) | [**disconnectAll**](doc/Connection.md#disconnectall) | **GET** /connection/disconnect-all | Disconnect all Wireguard connections
 [*Connection*](doc/Connection.md) | [**rateConnection**](doc/Connection.md#rateconnection) | **POST** /connection/rate-connection | Rate connection
 [*Connection*](doc/Connection.md) | [**reportBrokenNode**](doc/Connection.md#reportbrokennode) | **POST** /connection/report-broken-node | Report a broken node
+[*Connection*](doc/Connection.md) | [**testTrafficDelay**](doc/Connection.md#testtrafficdelay) | **POST** /connection/test-traffic/delay | Add latency to this device&#39;s tunnel for a bounded period
+[*Connection*](doc/Connection.md) | [**testTrafficDrop**](doc/Connection.md#testtrafficdrop) | **POST** /connection/test-traffic/drop | Drop this device&#39;s tunnel traffic for a bounded period
+[*Connection*](doc/Connection.md) | [**testTrafficProviderDisappearance**](doc/Connection.md#testtrafficproviderdisappearance) | **POST** /connection/test-traffic/provider-disappearance | Disconnect this device&#39;s upstream provider once
+[*Connection*](doc/Connection.md) | [**testTrafficReset**](doc/Connection.md#testtrafficreset) | **POST** /connection/test-traffic/reset | Clear drop and delay together
 [*Connection*](doc/Connection.md) | [**userIntents**](doc/Connection.md#userintents) | **GET** /connection/user-intents | List supported user intents
 [*EmailMarketing*](doc/EmailMarketing.md) | [**contactStatusRequest**](doc/EmailMarketing.md#contactstatusrequest) | **GET** /email-marketing/contact-status | Get marketing contact status
 [*EmailMarketing*](doc/EmailMarketing.md) | [**createContactRequest**](doc/EmailMarketing.md#createcontactrequest) | **POST** /email-marketing/create-contact | Create marketing contact
@@ -212,6 +216,9 @@ Class | Method | HTTP request | Description
  - [SubscriptionConfigResponsePlansInnerMetadata](doc/SubscriptionConfigResponsePlansInnerMetadata.md)
  - [SubscriptionConfigResponsePlansInnerPrice](doc/SubscriptionConfigResponsePlansInnerPrice.md)
  - [SubscriptionConfigResponsePlansInnerPricesInner](doc/SubscriptionConfigResponsePlansInnerPricesInner.md)
+ - [TestTrafficConditionResponse](doc/TestTrafficConditionResponse.md)
+ - [TestTrafficDelayRequest](doc/TestTrafficDelayRequest.md)
+ - [TestTrafficDropRequest](doc/TestTrafficDropRequest.md)
  - [UpdateContactRequest](doc/UpdateContactRequest.md)
  - [UpdateStripeSubscriptionRequest](doc/UpdateStripeSubscriptionRequest.md)
  - [UserCallbackRequest](doc/UserCallbackRequest.md)

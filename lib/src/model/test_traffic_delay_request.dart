@@ -20,13 +20,13 @@ class TestTrafficDelayRequest {
   TestTrafficDelayRequest({required this.delayMs, required this.durationSeconds});
 
   /// Per-packet delay applied in each direction. Capped well below the upstream limit of 10000 so the app cannot set a value that breaks its own API calls.
-  // minimum: 0
+  // minimum: 1
   // maximum: 1000
   @JsonKey(name: r'delay_ms', required: true, includeIfNull: false)
   final int delayMs;
 
-  /// How long the condition stays applied before the server clears it automatically. Bounded because a dropped tunnel may leave the device unable to clear it itself.
-  // minimum: 10
+  /// How long the condition stays applied before it clears automatically. Bounded because a dropped tunnel may leave the device unable to clear it itself.
+  // minimum: 30
   // maximum: 300
   @JsonKey(name: r'duration_seconds', required: true, includeIfNull: false)
   final int durationSeconds;
