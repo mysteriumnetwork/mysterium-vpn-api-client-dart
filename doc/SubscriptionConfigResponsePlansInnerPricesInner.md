@@ -9,8 +9,8 @@ import 'package:vpn_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | **String** |  | 
-**discountAmount** | **String** |  | [optional] 
-**discountUnits** | **String** |  | [optional] 
+**discountAmount** | **String** |  | 
+**discountUnits** | **String** |  | 
 **discountedFullPrice** | **String** |  | 
 **discountedMonthlyPrice** | **String** |  | 
 **fullPrice** | **String** |  | 
