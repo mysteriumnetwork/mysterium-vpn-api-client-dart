@@ -9,7 +9,9 @@ part of 'subscription_config_response_plans_inner_extra_duration.dart';
 abstract class _$SubscriptionConfigResponsePlansInnerExtraDurationCWProxy {
   SubscriptionConfigResponsePlansInnerExtraDuration amount(num amount);
 
-  SubscriptionConfigResponsePlansInnerExtraDuration unit(String unit);
+  SubscriptionConfigResponsePlansInnerExtraDuration unit(
+    SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum unit,
+  );
 
   /// Creates a new instance with the provided field values.
   /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerExtraDuration(...).copyWith.fieldName(value)`.
@@ -18,7 +20,10 @@ abstract class _$SubscriptionConfigResponsePlansInnerExtraDurationCWProxy {
   /// ```dart
   /// SubscriptionConfigResponsePlansInnerExtraDuration(...).copyWith(id: 12, name: "My name")
   /// ```
-  SubscriptionConfigResponsePlansInnerExtraDuration call({num amount, String unit});
+  SubscriptionConfigResponsePlansInnerExtraDuration call({
+    num amount,
+    SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum unit,
+  });
 }
 
 /// Callable proxy for `copyWith` functionality.
@@ -33,7 +38,9 @@ class _$SubscriptionConfigResponsePlansInnerExtraDurationCWProxyImpl
   SubscriptionConfigResponsePlansInnerExtraDuration amount(num amount) => call(amount: amount);
 
   @override
-  SubscriptionConfigResponsePlansInnerExtraDuration unit(String unit) => call(unit: unit);
+  SubscriptionConfigResponsePlansInnerExtraDuration unit(
+    SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum unit,
+  ) => call(unit: unit);
 
   @override
   /// Creates a new instance with the provided field values.
@@ -55,7 +62,7 @@ class _$SubscriptionConfigResponsePlansInnerExtraDurationCWProxyImpl
       unit: unit == const $CopyWithPlaceholder() || unit == null
           ? _value.unit
           // ignore: cast_nullable_to_non_nullable
-          : unit as String,
+          : unit as SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum,
     );
   }
 }
@@ -79,11 +86,24 @@ _$SubscriptionConfigResponsePlansInnerExtraDurationFromJson(Map<String, dynamic>
       $checkKeys(json, requiredKeys: const ['amount', 'unit']);
       final val = SubscriptionConfigResponsePlansInnerExtraDuration(
         amount: $checkedConvert('amount', (v) => v as num),
-        unit: $checkedConvert('unit', (v) => v as String),
+        unit: $checkedConvert(
+          'unit',
+          (v) => $enumDecode(_$SubscriptionConfigResponsePlansInnerExtraDurationUnitEnumEnumMap, v),
+        ),
       );
       return val;
     });
 
 Map<String, dynamic> _$SubscriptionConfigResponsePlansInnerExtraDurationToJson(
   SubscriptionConfigResponsePlansInnerExtraDuration instance,
-) => <String, dynamic>{'amount': instance.amount, 'unit': instance.unit};
+) => <String, dynamic>{
+  'amount': instance.amount,
+  'unit': _$SubscriptionConfigResponsePlansInnerExtraDurationUnitEnumEnumMap[instance.unit]!,
+};
+
+const _$SubscriptionConfigResponsePlansInnerExtraDurationUnitEnumEnumMap = {
+  SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum.day: 'day',
+  SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum.week: 'week',
+  SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum.month: 'month',
+  SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum.year: 'year',
+};

@@ -23,7 +23,7 @@ class SubscriptionConfigResponsePlansInnerExtraDuration {
   final num amount;
 
   @JsonKey(name: r'unit', required: true, includeIfNull: false)
-  final String unit;
+  final SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum unit;
 
   @override
   bool operator ==(Object other) =>
@@ -44,4 +44,22 @@ class SubscriptionConfigResponsePlansInnerExtraDuration {
   String toString() {
     return toJson().toString();
   }
+}
+
+enum SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum {
+  @JsonValue(r'day')
+  day(r'day'),
+  @JsonValue(r'week')
+  week(r'week'),
+  @JsonValue(r'month')
+  month(r'month'),
+  @JsonValue(r'year')
+  year(r'year');
+
+  const SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum(this.value);
+
+  final String value;
+
+  @override
+  String toString() => value;
 }
