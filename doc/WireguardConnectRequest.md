@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **ipType** | **String** |  | [optional] 
 **resetConnection** | **bool** | Request a new IP | [optional] 
 **osType** | **String** |  | [optional] 
+**cliVersion** | **String** | CLI build version | [optional] 
+**osVersion** | **String** | Operating system version reported by the client | [optional] 
 **dns** | **String** | Custom DNS server to use | [optional] 
 **targetIp** | **String** | Preferred IP address to connect to | [optional] 
 

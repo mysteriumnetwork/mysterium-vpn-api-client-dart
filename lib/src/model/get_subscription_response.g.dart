@@ -41,8 +41,14 @@ abstract class _$GetSubscriptionResponseCWProxy {
 
   GetSubscriptionResponse orderCouponUsed(String? orderCouponUsed);
 
+  GetSubscriptionResponse duration(GetSubscriptionResponseDuration duration);
+
   GetSubscriptionResponse extraDuration(
     SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration,
+  );
+
+  GetSubscriptionResponse planDuration(
+    SubscriptionConfigResponsePlansInnerExtraDuration? planDuration,
   );
 
   GetSubscriptionResponse orderSummary(GetSubscriptionResponseOrderSummary? orderSummary);
@@ -72,7 +78,9 @@ abstract class _$GetSubscriptionResponseCWProxy {
     String? orderCurrency,
     String? orderNetAmount,
     String? orderCouponUsed,
+    GetSubscriptionResponseDuration duration,
     SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration,
+    SubscriptionConfigResponsePlansInnerExtraDuration? planDuration,
     GetSubscriptionResponseOrderSummary? orderSummary,
   });
 }
@@ -140,9 +148,18 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
       call(orderCouponUsed: orderCouponUsed);
 
   @override
+  GetSubscriptionResponse duration(GetSubscriptionResponseDuration duration) =>
+      call(duration: duration);
+
+  @override
   GetSubscriptionResponse extraDuration(
     SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration,
   ) => call(extraDuration: extraDuration);
+
+  @override
+  GetSubscriptionResponse planDuration(
+    SubscriptionConfigResponsePlansInnerExtraDuration? planDuration,
+  ) => call(planDuration: planDuration);
 
   @override
   GetSubscriptionResponse orderSummary(GetSubscriptionResponseOrderSummary? orderSummary) =>
@@ -174,7 +191,9 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
     Object? orderCurrency = const $CopyWithPlaceholder(),
     Object? orderNetAmount = const $CopyWithPlaceholder(),
     Object? orderCouponUsed = const $CopyWithPlaceholder(),
+    Object? duration = const $CopyWithPlaceholder(),
     Object? extraDuration = const $CopyWithPlaceholder(),
+    Object? planDuration = const $CopyWithPlaceholder(),
     Object? orderSummary = const $CopyWithPlaceholder(),
   }) {
     return GetSubscriptionResponse(
@@ -246,10 +265,18 @@ class _$GetSubscriptionResponseCWProxyImpl implements _$GetSubscriptionResponseC
           ? _value.orderCouponUsed
           // ignore: cast_nullable_to_non_nullable
           : orderCouponUsed as String?,
+      duration: duration == const $CopyWithPlaceholder() || duration == null
+          ? _value.duration
+          // ignore: cast_nullable_to_non_nullable
+          : duration as GetSubscriptionResponseDuration,
       extraDuration: extraDuration == const $CopyWithPlaceholder()
           ? _value.extraDuration
           // ignore: cast_nullable_to_non_nullable
           : extraDuration as SubscriptionConfigResponsePlansInnerExtraDuration?,
+      planDuration: planDuration == const $CopyWithPlaceholder()
+          ? _value.planDuration
+          // ignore: cast_nullable_to_non_nullable
+          : planDuration as SubscriptionConfigResponsePlansInnerExtraDuration?,
       orderSummary: orderSummary == const $CopyWithPlaceholder()
           ? _value.orderSummary
           // ignore: cast_nullable_to_non_nullable
@@ -269,86 +296,97 @@ extension $GetSubscriptionResponseCopyWith on GetSubscriptionResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-GetSubscriptionResponse _$GetSubscriptionResponseFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'GetSubscriptionResponse',
+GetSubscriptionResponse _$GetSubscriptionResponseFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate(
+  'GetSubscriptionResponse',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
       json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const [
-            'active',
-            'paused',
-            'expired',
-            'recurring',
-            'pause_allowed',
-            'subscription_id',
-          ],
-        );
-        final val = GetSubscriptionResponse(
-          active: $checkedConvert('active', (v) => v as bool),
-          periodStart: $checkedConvert(
-            'period_start',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
-          activeUntil: $checkedConvert(
-            'active_until',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
-          pausedFrom: $checkedConvert(
-            'paused_from',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
-          pausedUntil: $checkedConvert(
-            'paused_until',
-            (v) => v == null ? null : DateTime.parse(v as String),
-          ),
-          gateway: $checkedConvert('gateway', (v) => v as String?),
-          planId: $checkedConvert('plan_id', (v) => v as String?),
-          storePlanId: $checkedConvert('store_plan_id', (v) => v as String?),
-          portalUrl: $checkedConvert('portal_url', (v) => v as String?),
-          paused: $checkedConvert('paused', (v) => v as bool),
-          expired: $checkedConvert('expired', (v) => v as bool),
-          recurring: $checkedConvert('recurring', (v) => v as bool),
-          pauseAllowed: $checkedConvert('pause_allowed', (v) => v as bool),
-          subscriptionId: $checkedConvert('subscription_id', (v) => v as String),
-          orderCurrency: $checkedConvert('order_currency', (v) => v as String?),
-          orderNetAmount: $checkedConvert('order_net_amount', (v) => v as String?),
-          orderCouponUsed: $checkedConvert('order_coupon_used', (v) => v as String?),
-          extraDuration: $checkedConvert(
-            'extra_duration',
-            (v) => v == null
-                ? null
-                : SubscriptionConfigResponsePlansInnerExtraDuration.fromJson(
-                    v as Map<String, dynamic>,
-                  ),
-          ),
-          orderSummary: $checkedConvert(
-            'order_summary',
-            (v) => v == null
-                ? null
-                : GetSubscriptionResponseOrderSummary.fromJson(v as Map<String, dynamic>),
-          ),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'periodStart': 'period_start',
-        'activeUntil': 'active_until',
-        'pausedFrom': 'paused_from',
-        'pausedUntil': 'paused_until',
-        'planId': 'plan_id',
-        'storePlanId': 'store_plan_id',
-        'portalUrl': 'portal_url',
-        'pauseAllowed': 'pause_allowed',
-        'subscriptionId': 'subscription_id',
-        'orderCurrency': 'order_currency',
-        'orderNetAmount': 'order_net_amount',
-        'orderCouponUsed': 'order_coupon_used',
-        'extraDuration': 'extra_duration',
-        'orderSummary': 'order_summary',
-      },
+      requiredKeys: const [
+        'active',
+        'paused',
+        'expired',
+        'recurring',
+        'pause_allowed',
+        'subscription_id',
+        'duration',
+      ],
     );
+    final val = GetSubscriptionResponse(
+      active: $checkedConvert('active', (v) => v as bool),
+      periodStart: $checkedConvert(
+        'period_start',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      activeUntil: $checkedConvert(
+        'active_until',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      pausedFrom: $checkedConvert(
+        'paused_from',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      pausedUntil: $checkedConvert(
+        'paused_until',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      gateway: $checkedConvert('gateway', (v) => v as String?),
+      planId: $checkedConvert('plan_id', (v) => v as String?),
+      storePlanId: $checkedConvert('store_plan_id', (v) => v as String?),
+      portalUrl: $checkedConvert('portal_url', (v) => v as String?),
+      paused: $checkedConvert('paused', (v) => v as bool),
+      expired: $checkedConvert('expired', (v) => v as bool),
+      recurring: $checkedConvert('recurring', (v) => v as bool),
+      pauseAllowed: $checkedConvert('pause_allowed', (v) => v as bool),
+      subscriptionId: $checkedConvert('subscription_id', (v) => v as String),
+      orderCurrency: $checkedConvert('order_currency', (v) => v as String?),
+      orderNetAmount: $checkedConvert('order_net_amount', (v) => v as String?),
+      orderCouponUsed: $checkedConvert('order_coupon_used', (v) => v as String?),
+      duration: $checkedConvert(
+        'duration',
+        (v) => GetSubscriptionResponseDuration.fromJson(v as Map<String, dynamic>),
+      ),
+      extraDuration: $checkedConvert(
+        'extra_duration',
+        (v) => v == null
+            ? null
+            : SubscriptionConfigResponsePlansInnerExtraDuration.fromJson(v as Map<String, dynamic>),
+      ),
+      planDuration: $checkedConvert(
+        'plan_duration',
+        (v) => v == null
+            ? null
+            : SubscriptionConfigResponsePlansInnerExtraDuration.fromJson(v as Map<String, dynamic>),
+      ),
+      orderSummary: $checkedConvert(
+        'order_summary',
+        (v) => v == null
+            ? null
+            : GetSubscriptionResponseOrderSummary.fromJson(v as Map<String, dynamic>),
+      ),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'periodStart': 'period_start',
+    'activeUntil': 'active_until',
+    'pausedFrom': 'paused_from',
+    'pausedUntil': 'paused_until',
+    'planId': 'plan_id',
+    'storePlanId': 'store_plan_id',
+    'portalUrl': 'portal_url',
+    'pauseAllowed': 'pause_allowed',
+    'subscriptionId': 'subscription_id',
+    'orderCurrency': 'order_currency',
+    'orderNetAmount': 'order_net_amount',
+    'orderCouponUsed': 'order_coupon_used',
+    'extraDuration': 'extra_duration',
+    'planDuration': 'plan_duration',
+    'orderSummary': 'order_summary',
+  },
+);
 
 Map<String, dynamic> _$GetSubscriptionResponseToJson(GetSubscriptionResponse instance) =>
     <String, dynamic>{
@@ -369,6 +407,8 @@ Map<String, dynamic> _$GetSubscriptionResponseToJson(GetSubscriptionResponse ins
       'order_currency': ?instance.orderCurrency,
       'order_net_amount': ?instance.orderNetAmount,
       'order_coupon_used': ?instance.orderCouponUsed,
+      'duration': instance.duration.toJson(),
       'extra_duration': ?instance.extraDuration?.toJson(),
+      'plan_duration': ?instance.planDuration?.toJson(),
       'order_summary': ?instance.orderSummary?.toJson(),
     };

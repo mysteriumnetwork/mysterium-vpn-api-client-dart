@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_extra_duration.dart';
 import 'package:vpn_api/src/model/get_subscription_response_order_summary.dart';
+import 'package:vpn_api/src/model/get_subscription_response_duration.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -54,7 +55,11 @@ class GetSubscriptionResponse {
 
     this.orderCouponUsed,
 
+    required this.duration,
+
     this.extraDuration,
+
+    this.planDuration,
 
     this.orderSummary,
   });
@@ -110,8 +115,14 @@ class GetSubscriptionResponse {
   @JsonKey(name: r'order_coupon_used', required: false, includeIfNull: false)
   final String? orderCouponUsed;
 
+  @JsonKey(name: r'duration', required: true, includeIfNull: false)
+  final GetSubscriptionResponseDuration duration;
+
   @JsonKey(name: r'extra_duration', required: false, includeIfNull: false)
   final SubscriptionConfigResponsePlansInnerExtraDuration? extraDuration;
+
+  @JsonKey(name: r'plan_duration', required: false, includeIfNull: false)
+  final SubscriptionConfigResponsePlansInnerExtraDuration? planDuration;
 
   @JsonKey(name: r'order_summary', required: false, includeIfNull: false)
   final GetSubscriptionResponseOrderSummary? orderSummary;
@@ -137,7 +148,9 @@ class GetSubscriptionResponse {
           other.orderCurrency == orderCurrency &&
           other.orderNetAmount == orderNetAmount &&
           other.orderCouponUsed == orderCouponUsed &&
+          other.duration == duration &&
           other.extraDuration == extraDuration &&
+          other.planDuration == planDuration &&
           other.orderSummary == orderSummary;
 
   @override
@@ -159,7 +172,9 @@ class GetSubscriptionResponse {
       (orderCurrency == null ? 0 : orderCurrency.hashCode) +
       (orderNetAmount == null ? 0 : orderNetAmount.hashCode) +
       (orderCouponUsed == null ? 0 : orderCouponUsed.hashCode) +
+      duration.hashCode +
       (extraDuration == null ? 0 : extraDuration.hashCode) +
+      (planDuration == null ? 0 : planDuration.hashCode) +
       (orderSummary == null ? 0 : orderSummary.hashCode);
 
   factory GetSubscriptionResponse.fromJson(Map<String, dynamic> json) =>

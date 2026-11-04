@@ -278,7 +278,7 @@ class Authentication {
     dynamic _bodyData;
 
     try {
-      _bodyData = <String, dynamic>{r'token': token};
+      _bodyData = <String, dynamic>{if (token != null) r'token': token};
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(_dio.options, _path),
@@ -648,13 +648,13 @@ class Authentication {
     try {
       _bodyData = <String, dynamic>{
         if (grantType != null) r'grant_type': grantType,
-        r'client_id': clientId,
-        r'device': device,
+        if (clientId != null) r'client_id': clientId,
+        if (device != null) r'device': jsonEncode(device),
         if (refreshToken != null) r'refresh_token': refreshToken,
         if (codeVerifier != null) r'code_verifier': codeVerifier,
-        r'code': code,
-        r'google_id_token': googleIdToken,
-        if (authorization != null) r'authorization': authorization,
+        if (code != null) r'code': code,
+        if (googleIdToken != null) r'google_id_token': googleIdToken,
+        if (authorization != null) r'authorization': jsonEncode(authorization),
       };
     } catch (error, stackTrace) {
       throw DioException(
