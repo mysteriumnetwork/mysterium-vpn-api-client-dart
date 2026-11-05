@@ -25,6 +25,10 @@ abstract class _$WireguardConnectRequestCWProxy {
 
   WireguardConnectRequest osType(String? osType);
 
+  WireguardConnectRequest cliVersion(String? cliVersion);
+
+  WireguardConnectRequest osVersion(String? osVersion);
+
   WireguardConnectRequest dns(String? dns);
 
   WireguardConnectRequest targetIp(String? targetIp);
@@ -46,6 +50,8 @@ abstract class _$WireguardConnectRequestCWProxy {
     String? ipType,
     bool? resetConnection,
     String? osType,
+    String? cliVersion,
+    String? osVersion,
     String? dns,
     String? targetIp,
   });
@@ -88,6 +94,12 @@ class _$WireguardConnectRequestCWProxyImpl implements _$WireguardConnectRequestC
   WireguardConnectRequest osType(String? osType) => call(osType: osType);
 
   @override
+  WireguardConnectRequest cliVersion(String? cliVersion) => call(cliVersion: cliVersion);
+
+  @override
+  WireguardConnectRequest osVersion(String? osVersion) => call(osVersion: osVersion);
+
+  @override
   WireguardConnectRequest dns(String? dns) => call(dns: dns);
 
   @override
@@ -111,6 +123,8 @@ class _$WireguardConnectRequestCWProxyImpl implements _$WireguardConnectRequestC
     Object? ipType = const $CopyWithPlaceholder(),
     Object? resetConnection = const $CopyWithPlaceholder(),
     Object? osType = const $CopyWithPlaceholder(),
+    Object? cliVersion = const $CopyWithPlaceholder(),
+    Object? osVersion = const $CopyWithPlaceholder(),
     Object? dns = const $CopyWithPlaceholder(),
     Object? targetIp = const $CopyWithPlaceholder(),
   }) {
@@ -151,6 +165,14 @@ class _$WireguardConnectRequestCWProxyImpl implements _$WireguardConnectRequestC
           ? _value.osType
           // ignore: cast_nullable_to_non_nullable
           : osType as String?,
+      cliVersion: cliVersion == const $CopyWithPlaceholder()
+          ? _value.cliVersion
+          // ignore: cast_nullable_to_non_nullable
+          : cliVersion as String?,
+      osVersion: osVersion == const $CopyWithPlaceholder()
+          ? _value.osVersion
+          // ignore: cast_nullable_to_non_nullable
+          : osVersion as String?,
       dns: dns == const $CopyWithPlaceholder()
           ? _value.dns
           // ignore: cast_nullable_to_non_nullable
@@ -190,6 +212,8 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
           ipType: $checkedConvert('ip_type', (v) => v as String?),
           resetConnection: $checkedConvert('reset_connection', (v) => v as bool?),
           osType: $checkedConvert('os_type', (v) => v as String?),
+          cliVersion: $checkedConvert('cli_version', (v) => v as String?),
+          osVersion: $checkedConvert('os_version', (v) => v as String?),
           dns: $checkedConvert('dns', (v) => v as String?),
           targetIp: $checkedConvert('target_ip', (v) => v as String?),
         );
@@ -202,6 +226,8 @@ WireguardConnectRequest _$WireguardConnectRequestFromJson(Map<String, dynamic> j
         'ipType': 'ip_type',
         'resetConnection': 'reset_connection',
         'osType': 'os_type',
+        'cliVersion': 'cli_version',
+        'osVersion': 'os_version',
         'targetIp': 'target_ip',
       },
     );
@@ -217,6 +243,8 @@ Map<String, dynamic> _$WireguardConnectRequestToJson(WireguardConnectRequest ins
       'ip_type': ?instance.ipType,
       'reset_connection': ?instance.resetConnection,
       'os_type': ?instance.osType,
+      'cli_version': ?instance.cliVersion,
+      'os_version': ?instance.osVersion,
       'dns': ?instance.dns,
       'target_ip': ?instance.targetIp,
     };

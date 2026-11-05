@@ -36,6 +36,10 @@ class WireguardConnectRequest {
 
     this.osType,
 
+    this.cliVersion,
+
+    this.osVersion,
+
     this.dns,
 
     this.targetIp,
@@ -69,6 +73,14 @@ class WireguardConnectRequest {
   @JsonKey(name: r'os_type', required: false, includeIfNull: false)
   final String? osType;
 
+  /// CLI build version
+  @JsonKey(name: r'cli_version', required: false, includeIfNull: false)
+  final String? cliVersion;
+
+  /// Operating system version reported by the client
+  @JsonKey(name: r'os_version', required: false, includeIfNull: false)
+  final String? osVersion;
+
   /// Custom DNS server to use
   @JsonKey(name: r'dns', required: false, includeIfNull: false)
   final String? dns;
@@ -90,6 +102,8 @@ class WireguardConnectRequest {
           other.ipType == ipType &&
           other.resetConnection == resetConnection &&
           other.osType == osType &&
+          other.cliVersion == cliVersion &&
+          other.osVersion == osVersion &&
           other.dns == dns &&
           other.targetIp == targetIp;
 
@@ -104,6 +118,8 @@ class WireguardConnectRequest {
       (ipType == null ? 0 : ipType.hashCode) +
       (resetConnection == null ? 0 : resetConnection.hashCode) +
       (osType == null ? 0 : osType.hashCode) +
+      (cliVersion == null ? 0 : cliVersion.hashCode) +
+      (osVersion == null ? 0 : osVersion.hashCode) +
       (dns == null ? 0 : dns.hashCode) +
       (targetIp == null ? 0 : targetIp.hashCode);
 
