@@ -114,6 +114,7 @@ Class | Method | HTTP request | Description
 [*Subscription*](doc/Subscription.md) | [**subscriptionConfig**](doc/Subscription.md#subscriptionconfig) | **GET** /subscription/config | Get subscription options
 [*Subscription*](doc/Subscription.md) | [**subscriptionStatus**](doc/Subscription.md#subscriptionstatus) | **GET** /subscription | Get subscription status
 [*Subscription*](doc/Subscription.md) | [**subscriptionUserCallback**](doc/Subscription.md#subscriptionusercallback) | **POST** /subscription/user-callback | Post user callback of payment
+[*Survey*](doc/Survey.md) | [**submitSurveyResponse**](doc/Survey.md#submitsurveyresponse) | **POST** /surveys/{surveyId}/responses | Submit a survey response for the user&#39;s active subscription
 [*Terms*](doc/Terms.md) | [**acceptTerms**](doc/Terms.md#acceptterms) | **POST** /auth/terms | Accept terms
 [*Terms*](doc/Terms.md) | [**terms**](doc/Terms.md#terms) | **GET** /newscenter/terms | Get latest terms and conditions
 [*Terms*](doc/Terms.md) | [**userTerms**](doc/Terms.md#userterms) | **GET** /auth/terms | Get user terms
@@ -207,6 +208,7 @@ Class | Method | HTTP request | Description
  - [ReportBrokenNodeRequest](doc/ReportBrokenNodeRequest.md)
  - [RequestActivation200Response](doc/RequestActivation200Response.md)
  - [RequestActivationRequest](doc/RequestActivationRequest.md)
+ - [SubmitSurveyResponseRequest](doc/SubmitSurveyResponseRequest.md)
  - [Subscribe200Response](doc/Subscribe200Response.md)
  - [SubscribeRequest](doc/SubscribeRequest.md)
  - [SubscriptionConfigResponse](doc/SubscriptionConfigResponse.md)
@@ -217,6 +219,8 @@ Class | Method | HTTP request | Description
  - [SubscriptionConfigResponsePlansInnerMetadata](doc/SubscriptionConfigResponsePlansInnerMetadata.md)
  - [SubscriptionConfigResponsePlansInnerPrice](doc/SubscriptionConfigResponsePlansInnerPrice.md)
  - [SubscriptionConfigResponsePlansInnerPricesInner](doc/SubscriptionConfigResponsePlansInnerPricesInner.md)
+ - [SurveyResponseAnswer](doc/SurveyResponseAnswer.md)
+ - [SurveyResponseAnswerOption](doc/SurveyResponseAnswerOption.md)
  - [TestTrafficConditionResponse](doc/TestTrafficConditionResponse.md)
  - [TestTrafficDelayRequest](doc/TestTrafficDelayRequest.md)
  - [TestTrafficDropRequest](doc/TestTrafficDropRequest.md)

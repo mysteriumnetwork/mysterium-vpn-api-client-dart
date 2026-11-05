@@ -21,6 +21,7 @@ export 'package:vpn_api/src/api/pause.dart';
 export 'package:vpn_api/src/api/pause_durations.dart';
 export 'package:vpn_api/src/api/resume.dart';
 export 'package:vpn_api/src/api/subscription.dart';
+export 'package:vpn_api/src/api/survey.dart';
 export 'package:vpn_api/src/api/terms.dart';
 
 export 'package:vpn_api/src/model/activation_authorization_request.dart';
@@ -109,6 +110,7 @@ export 'package:vpn_api/src/model/rate_connection_request.dart';
 export 'package:vpn_api/src/model/report_broken_node_request.dart';
 export 'package:vpn_api/src/model/request_activation200_response.dart';
 export 'package:vpn_api/src/model/request_activation_request.dart';
+export 'package:vpn_api/src/model/submit_survey_response_request.dart';
 export 'package:vpn_api/src/model/subscribe200_response.dart';
 export 'package:vpn_api/src/model/subscribe_request.dart';
 export 'package:vpn_api/src/model/subscription_config_response.dart';
@@ -119,6 +121,8 @@ export 'package:vpn_api/src/model/subscription_config_response_plans_inner_inter
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_metadata.dart';
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 export 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
+export 'package:vpn_api/src/model/survey_response_answer.dart';
+export 'package:vpn_api/src/model/survey_response_answer_option.dart';
 export 'package:vpn_api/src/model/test_traffic_condition_response.dart';
 export 'package:vpn_api/src/model/test_traffic_delay_request.dart';
 export 'package:vpn_api/src/model/test_traffic_drop_request.dart';

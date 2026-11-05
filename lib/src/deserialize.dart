@@ -83,6 +83,7 @@ import 'package:vpn_api/src/model/rate_connection_request.dart';
 import 'package:vpn_api/src/model/report_broken_node_request.dart';
 import 'package:vpn_api/src/model/request_activation200_response.dart';
 import 'package:vpn_api/src/model/request_activation_request.dart';
+import 'package:vpn_api/src/model/submit_survey_response_request.dart';
 import 'package:vpn_api/src/model/subscribe200_response.dart';
 import 'package:vpn_api/src/model/subscribe_request.dart';
 import 'package:vpn_api/src/model/subscription_config_response.dart';
@@ -93,6 +94,8 @@ import 'package:vpn_api/src/model/subscription_config_response_plans_inner_inter
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_metadata.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_price.dart';
 import 'package:vpn_api/src/model/subscription_config_response_plans_inner_prices_inner.dart';
+import 'package:vpn_api/src/model/survey_response_answer.dart';
+import 'package:vpn_api/src/model/survey_response_answer_option.dart';
 import 'package:vpn_api/src/model/test_traffic_condition_response.dart';
 import 'package:vpn_api/src/model/test_traffic_delay_request.dart';
 import 'package:vpn_api/src/model/test_traffic_drop_request.dart';
@@ -300,6 +303,8 @@ ReturnType deserialize<ReturnType, BaseType>(
       return RequestActivation200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'RequestActivationRequest':
       return RequestActivationRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'SubmitSurveyResponseRequest':
+      return SubmitSurveyResponseRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Subscribe200Response':
       return Subscribe200Response.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'SubscribeRequest':
@@ -329,6 +334,10 @@ ReturnType deserialize<ReturnType, BaseType>(
     case 'SubscriptionConfigResponsePlansInnerPricesInner':
       return SubscriptionConfigResponsePlansInnerPricesInner.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'SurveyResponseAnswer':
+      return SurveyResponseAnswer.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'SurveyResponseAnswerOption':
+      return SurveyResponseAnswerOption.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'TestTrafficConditionResponse':
       return TestTrafficConditionResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'TestTrafficDelayRequest':

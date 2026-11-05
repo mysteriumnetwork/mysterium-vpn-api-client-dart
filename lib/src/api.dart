@@ -20,6 +20,7 @@ import 'package:vpn_api/src/api/pause.dart';
 import 'package:vpn_api/src/api/pause_durations.dart';
 import 'package:vpn_api/src/api/resume.dart';
 import 'package:vpn_api/src/api/subscription.dart';
+import 'package:vpn_api/src/api/survey.dart';
 import 'package:vpn_api/src/api/terms.dart';
 
 class VpnApi {
@@ -207,6 +208,12 @@ class VpnApi {
   /// by doing that all interceptors will not be executed
   Subscription getSubscription() {
     return Subscription(dio);
+  }
+
+  /// Get Survey instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  Survey getSurvey() {
+    return Survey(dio);
   }
 
   /// Get Terms instance, base route and serializer can be overridden by a given but be careful,
