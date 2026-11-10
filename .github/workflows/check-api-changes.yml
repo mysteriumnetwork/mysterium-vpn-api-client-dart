@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main           # or your default branch
           fetch-depth: 0
@@ -64,7 +64,7 @@ jobs:
 
       - name: Trigger API Generation Workflow
         if: steps.compare_hashes.outputs.changed == 'true'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             github.rest.actions.createWorkflowDispatch({
