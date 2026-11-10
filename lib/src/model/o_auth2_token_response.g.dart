@@ -20,7 +20,8 @@ abstract class _$OAuth2TokenResponseCWProxy {
   OAuth2TokenResponse userId(String userId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -62,14 +63,15 @@ class _$OAuth2TokenResponseCWProxyImpl implements _$OAuth2TokenResponseCWProxy {
   @override
   OAuth2TokenResponse userId(String userId) => call(userId: userId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OAuth2TokenResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OAuth2TokenResponse call({
     Object? firstTime = const $CopyWithPlaceholder(),
     Object? accessToken = const $CopyWithPlaceholder(),

@@ -12,7 +12,8 @@ abstract class _$CreateAppleSubscriptionRequestCWProxy {
   CreateAppleSubscriptionRequest planId(String planId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAppleSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateAppleSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -39,14 +40,15 @@ class _$CreateAppleSubscriptionRequestCWProxyImpl
   @override
   CreateAppleSubscriptionRequest planId(String planId) => call(planId: planId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAppleSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateAppleSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CreateAppleSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateAppleSubscriptionRequest call({
     Object? gatewayId = const $CopyWithPlaceholder(),
     Object? planId = const $CopyWithPlaceholder(),
@@ -78,22 +80,17 @@ extension $CreateAppleSubscriptionRequestCopyWith on CreateAppleSubscriptionRequ
 
 CreateAppleSubscriptionRequest _$CreateAppleSubscriptionRequestFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate(
-  'CreateAppleSubscriptionRequest',
-  json,
-  ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['gateway_id', 'plan_id']);
-    final val = CreateAppleSubscriptionRequest(
-      gatewayId: $checkedConvert(
-        'gateway_id',
-        (v) => $enumDecode(_$CreateAppleSubscriptionRequestGatewayIdEnumEnumMap, v),
-      ),
-      planId: $checkedConvert('plan_id', (v) => v as String),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'gatewayId': 'gateway_id', 'planId': 'plan_id'},
-);
+) => $checkedCreate('CreateAppleSubscriptionRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['gateway_id', 'plan_id']);
+  final val = CreateAppleSubscriptionRequest(
+    gatewayId: $checkedConvert(
+      'gateway_id',
+      (v) => $enumDecode(_$CreateAppleSubscriptionRequestGatewayIdEnumEnumMap, v),
+    ),
+    planId: $checkedConvert('plan_id', (v) => v as String),
+  );
+  return val;
+}, fieldKeyMap: const {'gatewayId': 'gateway_id', 'planId': 'plan_id'});
 
 Map<String, dynamic> _$CreateAppleSubscriptionRequestToJson(
   CreateAppleSubscriptionRequest instance,

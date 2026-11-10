@@ -18,7 +18,8 @@ abstract class _$OAuth2TokenRequestOneOf2CWProxy {
   OAuth2TokenRequestOneOf2 googleIdToken(String? googleIdToken);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenRequestOneOf2(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenRequestOneOf2(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -58,14 +59,15 @@ class _$OAuth2TokenRequestOneOf2CWProxyImpl implements _$OAuth2TokenRequestOneOf
   OAuth2TokenRequestOneOf2 googleIdToken(String? googleIdToken) =>
       call(googleIdToken: googleIdToken);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenRequestOneOf2(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenRequestOneOf2(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OAuth2TokenRequestOneOf2(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OAuth2TokenRequestOneOf2 call({
     Object? grantType = const $CopyWithPlaceholder(),
     Object? clientId = const $CopyWithPlaceholder(),

@@ -12,7 +12,8 @@ abstract class _$CreateGoogleSubscriptionRequestCWProxy {
   CreateGoogleSubscriptionRequest planId(String planId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateGoogleSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateGoogleSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -40,14 +41,15 @@ class _$CreateGoogleSubscriptionRequestCWProxyImpl
   @override
   CreateGoogleSubscriptionRequest planId(String planId) => call(planId: planId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateGoogleSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateGoogleSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CreateGoogleSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateGoogleSubscriptionRequest call({
     Object? gatewayId = const $CopyWithPlaceholder(),
     Object? planId = const $CopyWithPlaceholder(),
@@ -79,22 +81,17 @@ extension $CreateGoogleSubscriptionRequestCopyWith on CreateGoogleSubscriptionRe
 
 CreateGoogleSubscriptionRequest _$CreateGoogleSubscriptionRequestFromJson(
   Map<String, dynamic> json,
-) => $checkedCreate(
-  'CreateGoogleSubscriptionRequest',
-  json,
-  ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['gateway_id', 'plan_id']);
-    final val = CreateGoogleSubscriptionRequest(
-      gatewayId: $checkedConvert(
-        'gateway_id',
-        (v) => $enumDecode(_$CreateGoogleSubscriptionRequestGatewayIdEnumEnumMap, v),
-      ),
-      planId: $checkedConvert('plan_id', (v) => v as String),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'gatewayId': 'gateway_id', 'planId': 'plan_id'},
-);
+) => $checkedCreate('CreateGoogleSubscriptionRequest', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['gateway_id', 'plan_id']);
+  final val = CreateGoogleSubscriptionRequest(
+    gatewayId: $checkedConvert(
+      'gateway_id',
+      (v) => $enumDecode(_$CreateGoogleSubscriptionRequestGatewayIdEnumEnumMap, v),
+    ),
+    planId: $checkedConvert('plan_id', (v) => v as String),
+  );
+  return val;
+}, fieldKeyMap: const {'gatewayId': 'gateway_id', 'planId': 'plan_id'});
 
 Map<String, dynamic> _$CreateGoogleSubscriptionRequestToJson(
   CreateGoogleSubscriptionRequest instance,

@@ -12,7 +12,8 @@ abstract class _$TestTrafficConditionResponseCWProxy {
   TestTrafficConditionResponse durationSeconds(int durationSeconds);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TestTrafficConditionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `TestTrafficConditionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -35,14 +36,15 @@ class _$TestTrafficConditionResponseCWProxyImpl implements _$TestTrafficConditio
   TestTrafficConditionResponse durationSeconds(int durationSeconds) =>
       call(durationSeconds: durationSeconds);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TestTrafficConditionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `TestTrafficConditionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// TestTrafficConditionResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TestTrafficConditionResponse call({
     Object? delayMs = const $CopyWithPlaceholder(),
     Object? durationSeconds = const $CopyWithPlaceholder(),
@@ -73,19 +75,14 @@ extension $TestTrafficConditionResponseCopyWith on TestTrafficConditionResponse 
 // **************************************************************************
 
 TestTrafficConditionResponse _$TestTrafficConditionResponseFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'TestTrafficConditionResponse',
-      json,
-      ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['duration_seconds']);
-        final val = TestTrafficConditionResponse(
-          delayMs: $checkedConvert('delay_ms', (v) => (v as num?)?.toInt()),
-          durationSeconds: $checkedConvert('duration_seconds', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'delayMs': 'delay_ms', 'durationSeconds': 'duration_seconds'},
-    );
+    $checkedCreate('TestTrafficConditionResponse', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['duration_seconds']);
+      final val = TestTrafficConditionResponse(
+        delayMs: $checkedConvert('delay_ms', (v) => (v as num?)?.toInt()),
+        durationSeconds: $checkedConvert('duration_seconds', (v) => (v as num).toInt()),
+      );
+      return val;
+    }, fieldKeyMap: const {'delayMs': 'delay_ms', 'durationSeconds': 'duration_seconds'});
 
 Map<String, dynamic> _$TestTrafficConditionResponseToJson(TestTrafficConditionResponse instance) =>
     <String, dynamic>{'delay_ms': ?instance.delayMs, 'duration_seconds': instance.durationSeconds};

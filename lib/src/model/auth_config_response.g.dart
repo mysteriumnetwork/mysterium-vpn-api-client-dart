@@ -12,7 +12,8 @@ abstract class _$AuthConfigResponseCWProxy {
   AuthConfigResponse appleServiceId(String appleServiceId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthConfigResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthConfigResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -34,14 +35,15 @@ class _$AuthConfigResponseCWProxyImpl implements _$AuthConfigResponseCWProxy {
   @override
   AuthConfigResponse appleServiceId(String appleServiceId) => call(appleServiceId: appleServiceId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthConfigResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthConfigResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// AuthConfigResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AuthConfigResponse call({
     Object? googleClientId = const $CopyWithPlaceholder(),
     Object? appleServiceId = const $CopyWithPlaceholder(),

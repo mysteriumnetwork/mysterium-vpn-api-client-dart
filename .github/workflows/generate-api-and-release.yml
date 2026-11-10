@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Install OpenAPI Generator
         uses: remarkablemark/setup-openapi@v1
@@ -20,7 +20,7 @@ jobs:
         run: openapi-generator-cli version
 
       - name: Cache Flutter SDK
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: ~/.fvm/versions
           key: fvm-flutter-sdk-${{ runner.os }}-${{ hashFiles('.fvmrc') }}
@@ -49,7 +49,7 @@ jobs:
             --remove-operation-id-prefix \
             --global-property apiTests=false,modelTests=false,skipFormModel=false \
             --additional-properties=serializationLibrary=json_serializable,finalProperties=true,apiNameSuffix=,apiNamePrefix=,pubName=vpn_api ;\
-          fvm dart run build_runner build --verbose --delete-conflicting-outputs ;\
+          fvm dart run build_runner build --verbose ;\
           fvm dart format --line-length 100 . ;
 
       - name: Update pubspec.yaml
@@ -72,12 +72,12 @@ jobs:
         id: extract_version
         run: |
           VERSION=$(grep '^version:' pubspec.yaml | awk '{print $2}' | sed 's/+.*//')
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
-          tag_name: ${{ env.VERSION }}
-          name: ${{ env.VERSION }}
+          tag_name: ${{ steps.extract_version.outputs.version }}
+          name: ${{ steps.extract_version.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -18,7 +18,8 @@ abstract class _$SubscriptionConfigResponseCWProxy {
   SubscriptionConfigResponse stripePublishableKey(String stripePublishableKey);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -59,14 +60,15 @@ class _$SubscriptionConfigResponseCWProxyImpl implements _$SubscriptionConfigRes
   SubscriptionConfigResponse stripePublishableKey(String stripePublishableKey) =>
       call(stripePublishableKey: stripePublishableKey);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SubscriptionConfigResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SubscriptionConfigResponse call({
     Object? gateways = const $CopyWithPlaceholder(),
     Object? plans = const $CopyWithPlaceholder(),

@@ -22,7 +22,8 @@ abstract class _$InvoiceCWProxy {
   Invoice createdAt(DateTime createdAt);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Invoice(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `Invoice(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -67,14 +68,15 @@ class _$InvoiceCWProxyImpl implements _$InvoiceCWProxy {
   @override
   Invoice createdAt(DateTime createdAt) => call(createdAt: createdAt);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Invoice(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `Invoice(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// Invoice(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Invoice call({
     Object? id = const $CopyWithPlaceholder(),
     Object? planId = const $CopyWithPlaceholder(),

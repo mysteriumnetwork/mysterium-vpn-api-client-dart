@@ -34,7 +34,8 @@ abstract class _$WireguardConnectRequestCWProxy {
   WireguardConnectRequest targetIp(String? targetIp);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WireguardConnectRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `WireguardConnectRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -105,14 +106,15 @@ class _$WireguardConnectRequestCWProxyImpl implements _$WireguardConnectRequestC
   @override
   WireguardConnectRequest targetIp(String? targetIp) => call(targetIp: targetIp);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `WireguardConnectRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `WireguardConnectRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// WireguardConnectRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   WireguardConnectRequest call({
     Object? publicKey = const $CopyWithPlaceholder(),
     Object? countryOriginate = const $CopyWithPlaceholder(),

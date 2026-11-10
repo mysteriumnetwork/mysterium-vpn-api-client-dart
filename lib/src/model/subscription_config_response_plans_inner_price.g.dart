@@ -10,7 +10,8 @@ abstract class _$SubscriptionConfigResponsePlansInnerPriceCWProxy {
   SubscriptionConfigResponsePlansInnerPrice USD(num USD);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerPrice(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponsePlansInnerPrice(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -30,14 +31,15 @@ class _$SubscriptionConfigResponsePlansInnerPriceCWProxyImpl
   @override
   SubscriptionConfigResponsePlansInnerPrice USD(num USD) => call(USD: USD);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerPrice(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponsePlansInnerPrice(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SubscriptionConfigResponsePlansInnerPrice(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SubscriptionConfigResponsePlansInnerPrice call({Object? USD = const $CopyWithPlaceholder()}) {
     return SubscriptionConfigResponsePlansInnerPrice(
       USD: USD == const $CopyWithPlaceholder() || USD == null

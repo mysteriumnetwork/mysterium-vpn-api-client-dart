@@ -10,7 +10,8 @@ abstract class _$CancelSubscriptionRequestCWProxy {
   CancelSubscriptionRequest reason(String reason);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CancelSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CancelSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$CancelSubscriptionRequestCWProxyImpl implements _$CancelSubscriptionRequ
   @override
   CancelSubscriptionRequest reason(String reason) => call(reason: reason);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CancelSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CancelSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CancelSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CancelSubscriptionRequest call({Object? reason = const $CopyWithPlaceholder()}) {
     return CancelSubscriptionRequest(
       reason: reason == const $CopyWithPlaceholder() || reason == null

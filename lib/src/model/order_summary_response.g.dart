@@ -34,7 +34,8 @@ abstract class _$OrderSummaryResponseCWProxy {
   OrderSummaryResponse totalPriceBeforeDiscount(String totalPriceBeforeDiscount);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OrderSummaryResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OrderSummaryResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -107,14 +108,15 @@ class _$OrderSummaryResponseCWProxyImpl implements _$OrderSummaryResponseCWProxy
   OrderSummaryResponse totalPriceBeforeDiscount(String totalPriceBeforeDiscount) =>
       call(totalPriceBeforeDiscount: totalPriceBeforeDiscount);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OrderSummaryResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OrderSummaryResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OrderSummaryResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OrderSummaryResponse call({
     Object? currency = const $CopyWithPlaceholder(),
     Object? itemName = const $CopyWithPlaceholder(),

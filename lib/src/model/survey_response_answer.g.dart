@@ -12,7 +12,8 @@ abstract class _$SurveyResponseAnswerCWProxy {
   SurveyResponseAnswer options(List<SurveyResponseAnswerOption> options);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SurveyResponseAnswer(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SurveyResponseAnswer(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -34,14 +35,15 @@ class _$SurveyResponseAnswerCWProxyImpl implements _$SurveyResponseAnswerCWProxy
   @override
   SurveyResponseAnswer options(List<SurveyResponseAnswerOption> options) => call(options: options);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SurveyResponseAnswer(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SurveyResponseAnswer(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SurveyResponseAnswer(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SurveyResponseAnswer call({
     Object? questionId = const $CopyWithPlaceholder(),
     Object? options = const $CopyWithPlaceholder(),

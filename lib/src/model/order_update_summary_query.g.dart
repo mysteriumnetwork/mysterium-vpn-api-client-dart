@@ -14,7 +14,8 @@ abstract class _$OrderUpdateSummaryQueryCWProxy {
   OrderUpdateSummaryQuery couponCode(String? couponCode);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OrderUpdateSummaryQuery(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OrderUpdateSummaryQuery(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -39,14 +40,15 @@ class _$OrderUpdateSummaryQueryCWProxyImpl implements _$OrderUpdateSummaryQueryC
   @override
   OrderUpdateSummaryQuery couponCode(String? couponCode) => call(couponCode: couponCode);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OrderUpdateSummaryQuery(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OrderUpdateSummaryQuery(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OrderUpdateSummaryQuery(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OrderUpdateSummaryQuery call({
     Object? planId = const $CopyWithPlaceholder(),
     Object? currency = const $CopyWithPlaceholder(),

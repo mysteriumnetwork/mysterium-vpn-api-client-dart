@@ -10,7 +10,8 @@ abstract class _$CreatePrimerSubscriptionResponseCWProxy {
   CreatePrimerSubscriptionResponse subscriptionId(String subscriptionId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePrimerSubscriptionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreatePrimerSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -31,14 +32,15 @@ class _$CreatePrimerSubscriptionResponseCWProxyImpl
   CreatePrimerSubscriptionResponse subscriptionId(String subscriptionId) =>
       call(subscriptionId: subscriptionId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreatePrimerSubscriptionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreatePrimerSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CreatePrimerSubscriptionResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreatePrimerSubscriptionResponse call({Object? subscriptionId = const $CopyWithPlaceholder()}) {
     return CreatePrimerSubscriptionResponse(
       subscriptionId: subscriptionId == const $CopyWithPlaceholder() || subscriptionId == null

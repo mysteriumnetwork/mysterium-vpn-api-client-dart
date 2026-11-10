@@ -14,7 +14,8 @@ abstract class _$AuthorizationDeviceCWProxy {
   AuthorizationDevice title(String title);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthorizationDevice(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthorizationDevice(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -39,14 +40,15 @@ class _$AuthorizationDeviceCWProxyImpl implements _$AuthorizationDeviceCWProxy {
   @override
   AuthorizationDevice title(String title) => call(title: title);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthorizationDevice(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthorizationDevice(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// AuthorizationDevice(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AuthorizationDevice call({
     Object? osType = const $CopyWithPlaceholder(),
     Object? id = const $CopyWithPlaceholder(),

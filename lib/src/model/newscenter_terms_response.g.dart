@@ -12,7 +12,8 @@ abstract class _$NewscenterTermsResponseCWProxy {
   NewscenterTermsResponse version(String version);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NewscenterTermsResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `NewscenterTermsResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -34,14 +35,15 @@ class _$NewscenterTermsResponseCWProxyImpl implements _$NewscenterTermsResponseC
   @override
   NewscenterTermsResponse version(String version) => call(version: version);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NewscenterTermsResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `NewscenterTermsResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// NewscenterTermsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NewscenterTermsResponse call({
     Object? content = const $CopyWithPlaceholder(),
     Object? version = const $CopyWithPlaceholder(),

@@ -14,7 +14,8 @@ abstract class _$GetPlanResponseCWProxy {
   GetPlanResponse metadata(PlanMetadata metadata);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetPlanResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `GetPlanResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -39,14 +40,15 @@ class _$GetPlanResponseCWProxyImpl implements _$GetPlanResponseCWProxy {
   @override
   GetPlanResponse metadata(PlanMetadata metadata) => call(metadata: metadata);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `GetPlanResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `GetPlanResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// GetPlanResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   GetPlanResponse call({
     Object? id = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),

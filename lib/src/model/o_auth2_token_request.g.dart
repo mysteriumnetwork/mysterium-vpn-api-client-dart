@@ -24,7 +24,8 @@ abstract class _$OAuth2TokenRequestCWProxy {
   OAuth2TokenRequest authorization(OAuth2TokenRequestOneOf3Authorization authorization);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -75,14 +76,15 @@ class _$OAuth2TokenRequestCWProxyImpl implements _$OAuth2TokenRequestCWProxy {
   OAuth2TokenRequest authorization(OAuth2TokenRequestOneOf3Authorization authorization) =>
       call(authorization: authorization);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OAuth2TokenRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OAuth2TokenRequest call({
     Object? grantType = const $CopyWithPlaceholder(),
     Object? clientId = const $CopyWithPlaceholder(),

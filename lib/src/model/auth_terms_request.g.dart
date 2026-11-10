@@ -10,7 +10,8 @@ abstract class _$AuthTermsRequestCWProxy {
   AuthTermsRequest version(String version);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthTermsRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthTermsRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$AuthTermsRequestCWProxyImpl implements _$AuthTermsRequestCWProxy {
   @override
   AuthTermsRequest version(String version) => call(version: version);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthTermsRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthTermsRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// AuthTermsRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AuthTermsRequest call({Object? version = const $CopyWithPlaceholder()}) {
     return AuthTermsRequest(
       version: version == const $CopyWithPlaceholder() || version == null

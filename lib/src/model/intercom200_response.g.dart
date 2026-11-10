@@ -10,7 +10,8 @@ abstract class _$Intercom200ResponseCWProxy {
   Intercom200Response jwt(String jwt);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Intercom200Response(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `Intercom200Response(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$Intercom200ResponseCWProxyImpl implements _$Intercom200ResponseCWProxy {
   @override
   Intercom200Response jwt(String jwt) => call(jwt: jwt);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `Intercom200Response(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `Intercom200Response(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// Intercom200Response(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   Intercom200Response call({Object? jwt = const $CopyWithPlaceholder()}) {
     return Intercom200Response(
       jwt: jwt == const $CopyWithPlaceholder() || jwt == null

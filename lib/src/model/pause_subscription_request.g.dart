@@ -10,7 +10,8 @@ abstract class _$PauseSubscriptionRequestCWProxy {
   PauseSubscriptionRequest period(String period);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PauseSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `PauseSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$PauseSubscriptionRequestCWProxyImpl implements _$PauseSubscriptionReques
   @override
   PauseSubscriptionRequest period(String period) => call(period: period);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PauseSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `PauseSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// PauseSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PauseSubscriptionRequest call({Object? period = const $CopyWithPlaceholder()}) {
     return PauseSubscriptionRequest(
       period: period == const $CopyWithPlaceholder() || period == null

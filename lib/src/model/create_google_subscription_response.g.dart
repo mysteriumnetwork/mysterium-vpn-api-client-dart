@@ -14,7 +14,8 @@ abstract class _$CreateGoogleSubscriptionResponseCWProxy {
   CreateGoogleSubscriptionResponse subscriptionProductId(String subscriptionProductId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateGoogleSubscriptionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateGoogleSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -46,14 +47,15 @@ class _$CreateGoogleSubscriptionResponseCWProxyImpl
   CreateGoogleSubscriptionResponse subscriptionProductId(String subscriptionProductId) =>
       call(subscriptionProductId: subscriptionProductId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateGoogleSubscriptionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateGoogleSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CreateGoogleSubscriptionResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateGoogleSubscriptionResponse call({
     Object? gatewayId = const $CopyWithPlaceholder(),
     Object? subscriptionBasePlanId = const $CopyWithPlaceholder(),

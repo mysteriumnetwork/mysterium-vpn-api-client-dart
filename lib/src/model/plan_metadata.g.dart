@@ -26,7 +26,8 @@ abstract class _$PlanMetadataCWProxy {
   PlanMetadata fullPrice(String? fullPrice);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PlanMetadata(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `PlanMetadata(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -84,14 +85,15 @@ class _$PlanMetadataCWProxyImpl implements _$PlanMetadataCWProxy {
   @override
   PlanMetadata fullPrice(String? fullPrice) => call(fullPrice: fullPrice);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `PlanMetadata(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `PlanMetadata(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// PlanMetadata(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   PlanMetadata call({
     Object? allowedDevicesLimit = const $CopyWithPlaceholder(),
     Object? locationTargetingAllowed = const $CopyWithPlaceholder(),

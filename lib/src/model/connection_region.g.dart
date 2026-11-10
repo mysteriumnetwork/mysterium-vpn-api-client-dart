@@ -18,7 +18,8 @@ abstract class _$ConnectionRegionCWProxy {
   ConnectionRegion topCountries(List<String> topCountries);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionRegion(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionRegion(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -55,14 +56,15 @@ class _$ConnectionRegionCWProxyImpl implements _$ConnectionRegionCWProxy {
   @override
   ConnectionRegion topCountries(List<String> topCountries) => call(topCountries: topCountries);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionRegion(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionRegion(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ConnectionRegion(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectionRegion call({
     Object? id = const $CopyWithPlaceholder(),
     Object? host = const $CopyWithPlaceholder(),
@@ -106,28 +108,24 @@ extension $ConnectionRegionCopyWith on ConnectionRegion {
 // JsonSerializableGenerator
 // **************************************************************************
 
-ConnectionRegion _$ConnectionRegionFromJson(Map<String, dynamic> json) => $checkedCreate(
-  'ConnectionRegion',
-  json,
-  ($checkedConvert) {
-    $checkKeys(
-      json,
-      requiredKeys: const ['id', 'host', 'port', 'port_healthcheck', 'top_countries'],
-    );
-    final val = ConnectionRegion(
-      id: $checkedConvert('id', (v) => v as String),
-      host: $checkedConvert('host', (v) => v as String),
-      port: $checkedConvert('port', (v) => v as num),
-      portHealthcheck: $checkedConvert('port_healthcheck', (v) => v as num),
-      topCountries: $checkedConvert(
-        'top_countries',
-        (v) => (v as List<dynamic>).map((e) => e as String).toList(),
-      ),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'portHealthcheck': 'port_healthcheck', 'topCountries': 'top_countries'},
-);
+ConnectionRegion _$ConnectionRegionFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('ConnectionRegion', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        requiredKeys: const ['id', 'host', 'port', 'port_healthcheck', 'top_countries'],
+      );
+      final val = ConnectionRegion(
+        id: $checkedConvert('id', (v) => v as String),
+        host: $checkedConvert('host', (v) => v as String),
+        port: $checkedConvert('port', (v) => v as num),
+        portHealthcheck: $checkedConvert('port_healthcheck', (v) => v as num),
+        topCountries: $checkedConvert(
+          'top_countries',
+          (v) => (v as List<dynamic>).map((e) => e as String).toList(),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'portHealthcheck': 'port_healthcheck', 'topCountries': 'top_countries'});
 
 Map<String, dynamic> _$ConnectionRegionToJson(ConnectionRegion instance) => <String, dynamic>{
   'id': instance.id,

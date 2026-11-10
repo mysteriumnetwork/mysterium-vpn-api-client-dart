@@ -18,7 +18,8 @@ abstract class _$ConnectionLocationCWProxy {
   ConnectionLocation translations(Map<String, String> translations);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionLocation(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionLocation(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -56,14 +57,15 @@ class _$ConnectionLocationCWProxyImpl implements _$ConnectionLocationCWProxy {
   ConnectionLocation translations(Map<String, String> translations) =>
       call(translations: translations);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionLocation(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionLocation(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ConnectionLocation(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectionLocation call({
     Object? country = const $CopyWithPlaceholder(),
     Object? total = const $CopyWithPlaceholder(),

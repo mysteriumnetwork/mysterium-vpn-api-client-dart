@@ -14,7 +14,8 @@ abstract class _$LocationRateCWProxy {
   LocationRate rate(String rate);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocationRate(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `LocationRate(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -39,14 +40,15 @@ class _$LocationRateCWProxyImpl implements _$LocationRateCWProxy {
   @override
   LocationRate rate(String rate) => call(rate: rate);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `LocationRate(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `LocationRate(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// LocationRate(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   LocationRate call({
     Object? name = const $CopyWithPlaceholder(),
     Object? code = const $CopyWithPlaceholder(),

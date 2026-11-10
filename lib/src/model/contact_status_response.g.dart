@@ -12,7 +12,8 @@ abstract class _$ContactStatusResponseCWProxy {
   ContactStatusResponse consent(bool? consent);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ContactStatusResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ContactStatusResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -34,14 +35,15 @@ class _$ContactStatusResponseCWProxyImpl implements _$ContactStatusResponseCWPro
   @override
   ContactStatusResponse consent(bool? consent) => call(consent: consent);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ContactStatusResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ContactStatusResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ContactStatusResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ContactStatusResponse call({
     Object? status = const $CopyWithPlaceholder(),
     Object? consent = const $CopyWithPlaceholder(),

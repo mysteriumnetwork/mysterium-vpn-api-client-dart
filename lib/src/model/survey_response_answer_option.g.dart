@@ -12,7 +12,8 @@ abstract class _$SurveyResponseAnswerOptionCWProxy {
   SurveyResponseAnswerOption otherText(String? otherText);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SurveyResponseAnswerOption(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SurveyResponseAnswerOption(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -34,14 +35,15 @@ class _$SurveyResponseAnswerOptionCWProxyImpl implements _$SurveyResponseAnswerO
   @override
   SurveyResponseAnswerOption otherText(String? otherText) => call(otherText: otherText);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SurveyResponseAnswerOption(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SurveyResponseAnswerOption(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SurveyResponseAnswerOption(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SurveyResponseAnswerOption call({
     Object? optionId = const $CopyWithPlaceholder(),
     Object? otherText = const $CopyWithPlaceholder(),
@@ -71,19 +73,14 @@ extension $SurveyResponseAnswerOptionCopyWith on SurveyResponseAnswerOption {
 // **************************************************************************
 
 SurveyResponseAnswerOption _$SurveyResponseAnswerOptionFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'SurveyResponseAnswerOption',
-      json,
-      ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['option_id']);
-        final val = SurveyResponseAnswerOption(
-          optionId: $checkedConvert('option_id', (v) => v as String),
-          otherText: $checkedConvert('other_text', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'optionId': 'option_id', 'otherText': 'other_text'},
-    );
+    $checkedCreate('SurveyResponseAnswerOption', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['option_id']);
+      final val = SurveyResponseAnswerOption(
+        optionId: $checkedConvert('option_id', (v) => v as String),
+        otherText: $checkedConvert('other_text', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {'optionId': 'option_id', 'otherText': 'other_text'});
 
 Map<String, dynamic> _$SurveyResponseAnswerOptionToJson(SurveyResponseAnswerOption instance) =>
     <String, dynamic>{'option_id': instance.optionId, 'other_text': ?instance.otherText};

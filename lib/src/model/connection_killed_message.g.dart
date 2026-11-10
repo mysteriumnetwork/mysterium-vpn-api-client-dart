@@ -10,7 +10,8 @@ abstract class _$ConnectionKilledMessageCWProxy {
   ConnectionKilledMessage reason(ConnectionKilledMessageReasonEnum reason);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionKilledMessage(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionKilledMessage(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$ConnectionKilledMessageCWProxyImpl implements _$ConnectionKilledMessageC
   @override
   ConnectionKilledMessage reason(ConnectionKilledMessageReasonEnum reason) => call(reason: reason);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionKilledMessage(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionKilledMessage(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ConnectionKilledMessage(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectionKilledMessage call({Object? reason = const $CopyWithPlaceholder()}) {
     return ConnectionKilledMessage(
       reason: reason == const $CopyWithPlaceholder() || reason == null

@@ -12,7 +12,8 @@ abstract class _$CreateAppleSubscriptionResponseCWProxy {
   CreateAppleSubscriptionResponse subscriptionProductId(String subscriptionProductId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAppleSubscriptionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateAppleSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -36,14 +37,15 @@ class _$CreateAppleSubscriptionResponseCWProxyImpl
   CreateAppleSubscriptionResponse subscriptionProductId(String subscriptionProductId) =>
       call(subscriptionProductId: subscriptionProductId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAppleSubscriptionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateAppleSubscriptionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CreateAppleSubscriptionResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateAppleSubscriptionResponse call({
     Object? gatewayId = const $CopyWithPlaceholder(),
     Object? subscriptionProductId = const $CopyWithPlaceholder(),

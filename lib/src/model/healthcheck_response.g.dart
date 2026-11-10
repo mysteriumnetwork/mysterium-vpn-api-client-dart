@@ -14,7 +14,8 @@ abstract class _$HealthcheckResponseCWProxy {
   HealthcheckResponse sha(String sha);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `HealthcheckResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `HealthcheckResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -39,14 +40,15 @@ class _$HealthcheckResponseCWProxyImpl implements _$HealthcheckResponseCWProxy {
   @override
   HealthcheckResponse sha(String sha) => call(sha: sha);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `HealthcheckResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `HealthcheckResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// HealthcheckResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   HealthcheckResponse call({
     Object? status = const $CopyWithPlaceholder(),
     Object? version = const $CopyWithPlaceholder(),
