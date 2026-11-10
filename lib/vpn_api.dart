@@ -130,5 +130,7 @@ export 'package:vpn_api/src/model/update_contact_request.dart';
 export 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 export 'package:vpn_api/src/model/user_callback_request.dart';
 export 'package:vpn_api/src/model/user_terms_response.dart';
+export 'package:vpn_api/src/model/vless_connect_request.dart';
+export 'package:vpn_api/src/model/vless_connect_response.dart';
 export 'package:vpn_api/src/model/wireguard_connect_request.dart';
 export 'package:vpn_api/src/model/wireguard_connect_response.dart';

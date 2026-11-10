@@ -103,6 +103,8 @@ import 'package:vpn_api/src/model/update_contact_request.dart';
 import 'package:vpn_api/src/model/update_stripe_subscription_request.dart';
 import 'package:vpn_api/src/model/user_callback_request.dart';
 import 'package:vpn_api/src/model/user_terms_response.dart';
+import 'package:vpn_api/src/model/vless_connect_request.dart';
+import 'package:vpn_api/src/model/vless_connect_response.dart';
 import 'package:vpn_api/src/model/wireguard_connect_request.dart';
 import 'package:vpn_api/src/model/wireguard_connect_response.dart';
 
@@ -351,6 +353,10 @@ ReturnType deserialize<ReturnType, BaseType>(
       return UserCallbackRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserTermsResponse':
       return UserTermsResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'VlessConnectRequest':
+      return VlessConnectRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'VlessConnectResponse':
+      return VlessConnectResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'WireguardConnectRequest':
       return WireguardConnectRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'WireguardConnectResponse':

@@ -1,6 +1,6 @@
 name: vpn_api
 description: OpenAPI API client
-version: 1.0.113+93
+version: 1.0.114+94
 
 environment:
   sdk: ">=3.13.0 <4.0.0"

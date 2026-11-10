@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**connect**](Connection.md#connect) | **POST** /connection/connect | Get Wireguard configuration template given connect options
 [**connectOpenvpn**](Connection.md#connectopenvpn) | **POST** /connection/connect-openvpn | Get OpenVPN configuration
 [**connectProxy**](Connection.md#connectproxy) | **POST** /connection/connect-proxy | Get proxy configuration given connect options
+[**connectVless**](Connection.md#connectvless) | **POST** /connection/connect-vless | Get VLESS configuration
 [**connectionConfig**](Connection.md#connectionconfig) | **GET** /connection/config | Get connection options
 [**connectionConfigRegions**](Connection.md#connectionconfigregions) | **GET** /connection/config/regions | Get connection region options
 [**connectionLocations**](Connection.md#connectionlocations) | **GET** /connection/config/locations | Get connection locations
@@ -137,6 +138,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProxyConnectResponse**](ProxyConnectResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **connectVless**
+> VlessConnectResponse connectVless(vlessConnectRequest)
+
+Get VLESS configuration
+
+### Example
+```dart
+import 'package:vpn_api/api.dart';
+
+final api = VpnApi().getConnection();
+final VlessConnectRequest vlessConnectRequest = ; // VlessConnectRequest | 
+
+try {
+    final response = api.connectVless(vlessConnectRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling Connection->connectVless: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vlessConnectRequest** | [**VlessConnectRequest**](VlessConnectRequest.md)|  | [optional] 
+
+### Return type
+
+[**VlessConnectResponse**](VlessConnectResponse.md)
 
 ### Authorization
 

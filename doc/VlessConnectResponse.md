@@ -1,0 +1,23 @@
+# vpn_api.model.VlessConnectResponse
+
+## Load the model package
+```dart
+import 'package:vpn_api/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **String** | Unique identifier of prepared connection | 
+**vlessUri** | **String** | VLESS connection URI | 
+**hash** | **String** | Hash representing provider id | 
+**sessionId** | **String** | Session identifier of the connection | [optional] 
+**exitIp** | **String** | Exit IP of provider | [optional] 
+**limitExceeded** | **bool** |  | [optional] 
+**ipType** | **String** |  | [optional] 
+**country** | **String** |  | [optional] 
+**city** | **String** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

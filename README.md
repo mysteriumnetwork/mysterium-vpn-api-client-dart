@@ -78,6 +78,7 @@ Class | Method | HTTP request | Description
 [*Connection*](doc/Connection.md) | [**connect**](doc/Connection.md#connect) | **POST** /connection/connect | Get Wireguard configuration template given connect options
 [*Connection*](doc/Connection.md) | [**connectOpenvpn**](doc/Connection.md#connectopenvpn) | **POST** /connection/connect-openvpn | Get OpenVPN configuration
 [*Connection*](doc/Connection.md) | [**connectProxy**](doc/Connection.md#connectproxy) | **POST** /connection/connect-proxy | Get proxy configuration given connect options
+[*Connection*](doc/Connection.md) | [**connectVless**](doc/Connection.md#connectvless) | **POST** /connection/connect-vless | Get VLESS configuration
 [*Connection*](doc/Connection.md) | [**connectionConfig**](doc/Connection.md#connectionconfig) | **GET** /connection/config | Get connection options
 [*Connection*](doc/Connection.md) | [**connectionConfigRegions**](doc/Connection.md#connectionconfigregions) | **GET** /connection/config/regions | Get connection region options
 [*Connection*](doc/Connection.md) | [**connectionLocations**](doc/Connection.md#connectionlocations) | **GET** /connection/config/locations | Get connection locations
@@ -228,6 +229,8 @@ Class | Method | HTTP request | Description
  - [UpdateStripeSubscriptionRequest](doc/UpdateStripeSubscriptionRequest.md)
  - [UserCallbackRequest](doc/UserCallbackRequest.md)
  - [UserTermsResponse](doc/UserTermsResponse.md)
+ - [VlessConnectRequest](doc/VlessConnectRequest.md)
+ - [VlessConnectResponse](doc/VlessConnectResponse.md)
  - [WireguardConnectRequest](doc/WireguardConnectRequest.md)
  - [WireguardConnectResponse](doc/WireguardConnectResponse.md)
 

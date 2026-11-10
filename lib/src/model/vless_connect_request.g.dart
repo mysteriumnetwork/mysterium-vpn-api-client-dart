@@ -1,0 +1,207 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'vless_connect_request.dart';
+
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$VlessConnectRequestCWProxy {
+  VlessConnectRequest countryOriginate(String? countryOriginate);
+
+  VlessConnectRequest cluster(String? cluster);
+
+  VlessConnectRequest country(String? country);
+
+  VlessConnectRequest city(String? city);
+
+  VlessConnectRequest userIntent(String? userIntent);
+
+  VlessConnectRequest ipType(String? ipType);
+
+  VlessConnectRequest resetConnection(bool? resetConnection);
+
+  VlessConnectRequest osType(String? osType);
+
+  VlessConnectRequest dns(String? dns);
+
+  VlessConnectRequest targetIp(String? targetIp);
+
+  /// Creates a new instance with the provided field values.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `VlessConnectRequest(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// VlessConnectRequest(...).copyWith(id: 12, name: "My name")
+  /// ```
+  VlessConnectRequest call({
+    String? countryOriginate,
+    String? cluster,
+    String? country,
+    String? city,
+    String? userIntent,
+    String? ipType,
+    bool? resetConnection,
+    String? osType,
+    String? dns,
+    String? targetIp,
+  });
+}
+
+/// Callable proxy for `copyWith` functionality.
+/// Use as `instanceOfVlessConnectRequest.copyWith(...)` or call `instanceOfVlessConnectRequest.copyWith.fieldName(value)` for a single field.
+class _$VlessConnectRequestCWProxyImpl implements _$VlessConnectRequestCWProxy {
+  const _$VlessConnectRequestCWProxyImpl(this._value);
+
+  final VlessConnectRequest _value;
+
+  @override
+  VlessConnectRequest countryOriginate(String? countryOriginate) =>
+      call(countryOriginate: countryOriginate);
+
+  @override
+  VlessConnectRequest cluster(String? cluster) => call(cluster: cluster);
+
+  @override
+  VlessConnectRequest country(String? country) => call(country: country);
+
+  @override
+  VlessConnectRequest city(String? city) => call(city: city);
+
+  @override
+  VlessConnectRequest userIntent(String? userIntent) => call(userIntent: userIntent);
+
+  @override
+  VlessConnectRequest ipType(String? ipType) => call(ipType: ipType);
+
+  @override
+  VlessConnectRequest resetConnection(bool? resetConnection) =>
+      call(resetConnection: resetConnection);
+
+  @override
+  VlessConnectRequest osType(String? osType) => call(osType: osType);
+
+  @override
+  VlessConnectRequest dns(String? dns) => call(dns: dns);
+
+  @override
+  VlessConnectRequest targetIp(String? targetIp) => call(targetIp: targetIp);
+
+  /// Creates a new instance with the provided field values.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `VlessConnectRequest(...).copyWith.fieldName(value)`.
+  ///
+  /// Example:
+  /// ```dart
+  /// VlessConnectRequest(...).copyWith(id: 12, name: "My name")
+  /// ```
+  @override
+  VlessConnectRequest call({
+    Object? countryOriginate = const $CopyWithPlaceholder(),
+    Object? cluster = const $CopyWithPlaceholder(),
+    Object? country = const $CopyWithPlaceholder(),
+    Object? city = const $CopyWithPlaceholder(),
+    Object? userIntent = const $CopyWithPlaceholder(),
+    Object? ipType = const $CopyWithPlaceholder(),
+    Object? resetConnection = const $CopyWithPlaceholder(),
+    Object? osType = const $CopyWithPlaceholder(),
+    Object? dns = const $CopyWithPlaceholder(),
+    Object? targetIp = const $CopyWithPlaceholder(),
+  }) {
+    return VlessConnectRequest(
+      countryOriginate: countryOriginate == const $CopyWithPlaceholder()
+          ? _value.countryOriginate
+          // ignore: cast_nullable_to_non_nullable
+          : countryOriginate as String?,
+      cluster: cluster == const $CopyWithPlaceholder()
+          ? _value.cluster
+          // ignore: cast_nullable_to_non_nullable
+          : cluster as String?,
+      country: country == const $CopyWithPlaceholder()
+          ? _value.country
+          // ignore: cast_nullable_to_non_nullable
+          : country as String?,
+      city: city == const $CopyWithPlaceholder()
+          ? _value.city
+          // ignore: cast_nullable_to_non_nullable
+          : city as String?,
+      userIntent: userIntent == const $CopyWithPlaceholder()
+          ? _value.userIntent
+          // ignore: cast_nullable_to_non_nullable
+          : userIntent as String?,
+      ipType: ipType == const $CopyWithPlaceholder()
+          ? _value.ipType
+          // ignore: cast_nullable_to_non_nullable
+          : ipType as String?,
+      resetConnection: resetConnection == const $CopyWithPlaceholder()
+          ? _value.resetConnection
+          // ignore: cast_nullable_to_non_nullable
+          : resetConnection as bool?,
+      osType: osType == const $CopyWithPlaceholder()
+          ? _value.osType
+          // ignore: cast_nullable_to_non_nullable
+          : osType as String?,
+      dns: dns == const $CopyWithPlaceholder()
+          ? _value.dns
+          // ignore: cast_nullable_to_non_nullable
+          : dns as String?,
+      targetIp: targetIp == const $CopyWithPlaceholder()
+          ? _value.targetIp
+          // ignore: cast_nullable_to_non_nullable
+          : targetIp as String?,
+    );
+  }
+}
+
+extension $VlessConnectRequestCopyWith on VlessConnectRequest {
+  /// Returns a callable class used to build a new instance with modified fields.
+  /// Example: `instanceOfVlessConnectRequest.copyWith(...)` or `instanceOfVlessConnectRequest.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$VlessConnectRequestCWProxy get copyWith => _$VlessConnectRequestCWProxyImpl(this);
+}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+VlessConnectRequest _$VlessConnectRequestFromJson(Map<String, dynamic> json) => $checkedCreate(
+  'VlessConnectRequest',
+  json,
+  ($checkedConvert) {
+    final val = VlessConnectRequest(
+      countryOriginate: $checkedConvert('country_originate', (v) => v as String?),
+      cluster: $checkedConvert('cluster', (v) => v as String?),
+      country: $checkedConvert('country', (v) => v as String?),
+      city: $checkedConvert('city', (v) => v as String?),
+      userIntent: $checkedConvert('user_intent', (v) => v as String?),
+      ipType: $checkedConvert('ip_type', (v) => v as String?),
+      resetConnection: $checkedConvert('reset_connection', (v) => v as bool?),
+      osType: $checkedConvert('os_type', (v) => v as String?),
+      dns: $checkedConvert('dns', (v) => v as String?),
+      targetIp: $checkedConvert('target_ip', (v) => v as String?),
+    );
+    return val;
+  },
+  fieldKeyMap: const {
+    'countryOriginate': 'country_originate',
+    'userIntent': 'user_intent',
+    'ipType': 'ip_type',
+    'resetConnection': 'reset_connection',
+    'osType': 'os_type',
+    'targetIp': 'target_ip',
+  },
+);
+
+Map<String, dynamic> _$VlessConnectRequestToJson(VlessConnectRequest instance) => <String, dynamic>{
+  'country_originate': ?instance.countryOriginate,
+  'cluster': ?instance.cluster,
+  'country': ?instance.country,
+  'city': ?instance.city,
+  'user_intent': ?instance.userIntent,
+  'ip_type': ?instance.ipType,
+  'reset_connection': ?instance.resetConnection,
+  'os_type': ?instance.osType,
+  'dns': ?instance.dns,
+  'target_ip': ?instance.targetIp,
+};
