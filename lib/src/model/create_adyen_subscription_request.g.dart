@@ -36,7 +36,8 @@ abstract class _$CreateAdyenSubscriptionRequestCWProxy {
   CreateAdyenSubscriptionRequest paymentData(Object? paymentData);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAdyenSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateAdyenSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -111,14 +112,15 @@ class _$CreateAdyenSubscriptionRequestCWProxyImpl
   @override
   CreateAdyenSubscriptionRequest paymentData(Object? paymentData) => call(paymentData: paymentData);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateAdyenSubscriptionRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateAdyenSubscriptionRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CreateAdyenSubscriptionRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateAdyenSubscriptionRequest call({
     Object? planId = const $CopyWithPlaceholder(),
     Object? country = const $CopyWithPlaceholder(),

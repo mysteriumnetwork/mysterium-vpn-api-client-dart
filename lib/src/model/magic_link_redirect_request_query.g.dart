@@ -14,7 +14,8 @@ abstract class _$MagicLinkRedirectRequestQueryCWProxy {
   MagicLinkRedirectRequestQuery redirectUrl(String? redirectUrl);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MagicLinkRedirectRequestQuery(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `MagicLinkRedirectRequestQuery(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -39,14 +40,15 @@ class _$MagicLinkRedirectRequestQueryCWProxyImpl implements _$MagicLinkRedirectR
   @override
   MagicLinkRedirectRequestQuery redirectUrl(String? redirectUrl) => call(redirectUrl: redirectUrl);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `MagicLinkRedirectRequestQuery(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `MagicLinkRedirectRequestQuery(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// MagicLinkRedirectRequestQuery(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   MagicLinkRedirectRequestQuery call({
     Object? code = const $CopyWithPlaceholder(),
     Object? continueTo = const $CopyWithPlaceholder(),
@@ -82,20 +84,15 @@ extension $MagicLinkRedirectRequestQueryCopyWith on MagicLinkRedirectRequestQuer
 // **************************************************************************
 
 MagicLinkRedirectRequestQuery _$MagicLinkRedirectRequestQueryFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'MagicLinkRedirectRequestQuery',
-      json,
-      ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['code']);
-        final val = MagicLinkRedirectRequestQuery(
-          code: $checkedConvert('code', (v) => v as String),
-          continueTo: $checkedConvert('continue_to', (v) => v as String?),
-          redirectUrl: $checkedConvert('redirect_url', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'continueTo': 'continue_to', 'redirectUrl': 'redirect_url'},
-    );
+    $checkedCreate('MagicLinkRedirectRequestQuery', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['code']);
+      final val = MagicLinkRedirectRequestQuery(
+        code: $checkedConvert('code', (v) => v as String),
+        continueTo: $checkedConvert('continue_to', (v) => v as String?),
+        redirectUrl: $checkedConvert('redirect_url', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {'continueTo': 'continue_to', 'redirectUrl': 'redirect_url'});
 
 Map<String, dynamic> _$MagicLinkRedirectRequestQueryToJson(
   MagicLinkRedirectRequestQuery instance,

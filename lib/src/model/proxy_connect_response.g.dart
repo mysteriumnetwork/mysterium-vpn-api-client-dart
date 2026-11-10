@@ -12,7 +12,8 @@ abstract class _$ProxyConnectResponseCWProxy {
   ProxyConnectResponse limitExceeded(bool? limitExceeded);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProxyConnectResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ProxyConnectResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -35,14 +36,15 @@ class _$ProxyConnectResponseCWProxyImpl implements _$ProxyConnectResponseCWProxy
   @override
   ProxyConnectResponse limitExceeded(bool? limitExceeded) => call(limitExceeded: limitExceeded);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ProxyConnectResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ProxyConnectResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ProxyConnectResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ProxyConnectResponse call({
     Object? proxyConfig = const $CopyWithPlaceholder(),
     Object? limitExceeded = const $CopyWithPlaceholder(),
@@ -71,22 +73,18 @@ extension $ProxyConnectResponseCopyWith on ProxyConnectResponse {
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProxyConnectResponse _$ProxyConnectResponseFromJson(Map<String, dynamic> json) => $checkedCreate(
-  'ProxyConnectResponse',
-  json,
-  ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['proxy_config']);
-    final val = ProxyConnectResponse(
-      proxyConfig: $checkedConvert(
-        'proxy_config',
-        (v) => ProxyConnectResponseProxyConfig.fromJson(v as Map<String, dynamic>),
-      ),
-      limitExceeded: $checkedConvert('limit_exceeded', (v) => v as bool?),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'proxyConfig': 'proxy_config', 'limitExceeded': 'limit_exceeded'},
-);
+ProxyConnectResponse _$ProxyConnectResponseFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('ProxyConnectResponse', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['proxy_config']);
+      final val = ProxyConnectResponse(
+        proxyConfig: $checkedConvert(
+          'proxy_config',
+          (v) => ProxyConnectResponseProxyConfig.fromJson(v as Map<String, dynamic>),
+        ),
+        limitExceeded: $checkedConvert('limit_exceeded', (v) => v as bool?),
+      );
+      return val;
+    }, fieldKeyMap: const {'proxyConfig': 'proxy_config', 'limitExceeded': 'limit_exceeded'});
 
 Map<String, dynamic> _$ProxyConnectResponseToJson(ProxyConnectResponse instance) =>
     <String, dynamic>{

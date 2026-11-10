@@ -18,7 +18,8 @@ abstract class _$OrderSummaryRequestCWProxy {
   OrderSummaryRequest couponCode(String? couponCode);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OrderSummaryRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OrderSummaryRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -55,14 +56,15 @@ class _$OrderSummaryRequestCWProxyImpl implements _$OrderSummaryRequestCWProxy {
   @override
   OrderSummaryRequest couponCode(String? couponCode) => call(couponCode: couponCode);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OrderSummaryRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OrderSummaryRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OrderSummaryRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OrderSummaryRequest call({
     Object? intent = const $CopyWithPlaceholder(),
     Object? country = const $CopyWithPlaceholder(),

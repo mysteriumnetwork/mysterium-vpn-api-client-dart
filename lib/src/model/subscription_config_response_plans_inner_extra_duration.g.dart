@@ -14,7 +14,8 @@ abstract class _$SubscriptionConfigResponsePlansInnerExtraDurationCWProxy {
   );
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerExtraDuration(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponsePlansInnerExtraDuration(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -42,14 +43,15 @@ class _$SubscriptionConfigResponsePlansInnerExtraDurationCWProxyImpl
     SubscriptionConfigResponsePlansInnerExtraDurationUnitEnum unit,
   ) => call(unit: unit);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerExtraDuration(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponsePlansInnerExtraDuration(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SubscriptionConfigResponsePlansInnerExtraDuration(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SubscriptionConfigResponsePlansInnerExtraDuration call({
     Object? amount = const $CopyWithPlaceholder(),
     Object? unit = const $CopyWithPlaceholder(),

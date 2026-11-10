@@ -32,7 +32,8 @@ abstract class _$SubscribeRequestCWProxy {
   SubscribeRequest termsAccepted(bool? termsAccepted);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -98,14 +99,15 @@ class _$SubscribeRequestCWProxyImpl implements _$SubscribeRequestCWProxy {
   @override
   SubscribeRequest termsAccepted(bool? termsAccepted) => call(termsAccepted: termsAccepted);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscribeRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SubscribeRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SubscribeRequest call({
     Object? gatewayId = const $CopyWithPlaceholder(),
     Object? planId = const $CopyWithPlaceholder(),

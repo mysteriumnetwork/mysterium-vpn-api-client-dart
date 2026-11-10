@@ -10,7 +10,8 @@ abstract class _$OAuth2AuthorizationResponseCWProxy {
   OAuth2AuthorizationResponse code(String code);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2AuthorizationResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2AuthorizationResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$OAuth2AuthorizationResponseCWProxyImpl implements _$OAuth2AuthorizationR
   @override
   OAuth2AuthorizationResponse code(String code) => call(code: code);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2AuthorizationResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2AuthorizationResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OAuth2AuthorizationResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OAuth2AuthorizationResponse call({Object? code = const $CopyWithPlaceholder()}) {
     return OAuth2AuthorizationResponse(
       code: code == const $CopyWithPlaceholder() || code == null

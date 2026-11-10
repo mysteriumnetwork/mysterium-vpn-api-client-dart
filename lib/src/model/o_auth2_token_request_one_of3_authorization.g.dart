@@ -10,7 +10,8 @@ abstract class _$OAuth2TokenRequestOneOf3AuthorizationCWProxy {
   OAuth2TokenRequestOneOf3Authorization idToken(String idToken);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenRequestOneOf3Authorization(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenRequestOneOf3Authorization(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -30,14 +31,15 @@ class _$OAuth2TokenRequestOneOf3AuthorizationCWProxyImpl
   @override
   OAuth2TokenRequestOneOf3Authorization idToken(String idToken) => call(idToken: idToken);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenRequestOneOf3Authorization(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenRequestOneOf3Authorization(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OAuth2TokenRequestOneOf3Authorization(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OAuth2TokenRequestOneOf3Authorization call({Object? idToken = const $CopyWithPlaceholder()}) {
     return OAuth2TokenRequestOneOf3Authorization(
       idToken: idToken == const $CopyWithPlaceholder() || idToken == null

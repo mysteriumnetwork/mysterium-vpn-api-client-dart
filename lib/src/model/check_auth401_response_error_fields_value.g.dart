@@ -12,7 +12,8 @@ abstract class _$CheckAuth401ResponseErrorFieldsValueCWProxy {
   CheckAuth401ResponseErrorFieldsValue message(String message);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CheckAuth401ResponseErrorFieldsValue(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CheckAuth401ResponseErrorFieldsValue(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -35,14 +36,15 @@ class _$CheckAuth401ResponseErrorFieldsValueCWProxyImpl
   @override
   CheckAuth401ResponseErrorFieldsValue message(String message) => call(message: message);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CheckAuth401ResponseErrorFieldsValue(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CheckAuth401ResponseErrorFieldsValue(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CheckAuth401ResponseErrorFieldsValue(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CheckAuth401ResponseErrorFieldsValue call({
     Object? code = const $CopyWithPlaceholder(),
     Object? message = const $CopyWithPlaceholder(),

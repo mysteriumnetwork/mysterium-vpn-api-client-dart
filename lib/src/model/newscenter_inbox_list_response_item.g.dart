@@ -22,7 +22,8 @@ abstract class _$NewscenterInboxListResponseItemCWProxy {
   NewscenterInboxListResponseItem updatedAt(DateTime? updatedAt);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NewscenterInboxListResponseItem(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `NewscenterInboxListResponseItem(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -68,14 +69,15 @@ class _$NewscenterInboxListResponseItemCWProxyImpl
   @override
   NewscenterInboxListResponseItem updatedAt(DateTime? updatedAt) => call(updatedAt: updatedAt);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `NewscenterInboxListResponseItem(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `NewscenterInboxListResponseItem(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// NewscenterInboxListResponseItem(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   NewscenterInboxListResponseItem call({
     Object? id = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),

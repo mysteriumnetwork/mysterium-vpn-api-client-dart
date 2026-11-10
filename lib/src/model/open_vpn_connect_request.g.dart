@@ -28,7 +28,8 @@ abstract class _$OpenVpnConnectRequestCWProxy {
   OpenVpnConnectRequest targetIp(String? targetIp);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OpenVpnConnectRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OpenVpnConnectRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -87,14 +88,15 @@ class _$OpenVpnConnectRequestCWProxyImpl implements _$OpenVpnConnectRequestCWPro
   @override
   OpenVpnConnectRequest targetIp(String? targetIp) => call(targetIp: targetIp);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OpenVpnConnectRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OpenVpnConnectRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OpenVpnConnectRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OpenVpnConnectRequest call({
     Object? countryOriginate = const $CopyWithPlaceholder(),
     Object? cluster = const $CopyWithPlaceholder(),

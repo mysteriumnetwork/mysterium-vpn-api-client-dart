@@ -10,7 +10,8 @@ abstract class _$ConnectionConfigRegionsResponseCWProxy {
   ConnectionConfigRegionsResponse regions(List<ConnectionRegion> regions);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionConfigRegionsResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionConfigRegionsResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -30,14 +31,15 @@ class _$ConnectionConfigRegionsResponseCWProxyImpl
   @override
   ConnectionConfigRegionsResponse regions(List<ConnectionRegion> regions) => call(regions: regions);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionConfigRegionsResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionConfigRegionsResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ConnectionConfigRegionsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectionConfigRegionsResponse call({Object? regions = const $CopyWithPlaceholder()}) {
     return ConnectionConfigRegionsResponse(
       regions: regions == const $CopyWithPlaceholder() || regions == null

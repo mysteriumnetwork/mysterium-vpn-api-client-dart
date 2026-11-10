@@ -16,7 +16,8 @@ abstract class _$OAuth2TokenIntrospectionResponseCWProxy {
   OAuth2TokenIntrospectionResponse exp(num? exp);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenIntrospectionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenIntrospectionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -45,14 +46,15 @@ class _$OAuth2TokenIntrospectionResponseCWProxyImpl
   @override
   OAuth2TokenIntrospectionResponse exp(num? exp) => call(exp: exp);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `OAuth2TokenIntrospectionResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `OAuth2TokenIntrospectionResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// OAuth2TokenIntrospectionResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   OAuth2TokenIntrospectionResponse call({
     Object? active = const $CopyWithPlaceholder(),
     Object? username = const $CopyWithPlaceholder(),

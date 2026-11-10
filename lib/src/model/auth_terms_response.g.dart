@@ -10,7 +10,8 @@ abstract class _$AuthTermsResponseCWProxy {
   AuthTermsResponse version(String version);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthTermsResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthTermsResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$AuthTermsResponseCWProxyImpl implements _$AuthTermsResponseCWProxy {
   @override
   AuthTermsResponse version(String version) => call(version: version);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `AuthTermsResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `AuthTermsResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// AuthTermsResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   AuthTermsResponse call({Object? version = const $CopyWithPlaceholder()}) {
     return AuthTermsResponse(
       version: version == const $CopyWithPlaceholder() || version == null

@@ -10,7 +10,8 @@ abstract class _$SubmitSurveyResponseRequestCWProxy {
   SubmitSurveyResponseRequest answers(List<SurveyResponseAnswer> answers);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubmitSurveyResponseRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubmitSurveyResponseRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$SubmitSurveyResponseRequestCWProxyImpl implements _$SubmitSurveyResponse
   @override
   SubmitSurveyResponseRequest answers(List<SurveyResponseAnswer> answers) => call(answers: answers);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubmitSurveyResponseRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubmitSurveyResponseRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SubmitSurveyResponseRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SubmitSurveyResponseRequest call({Object? answers = const $CopyWithPlaceholder()}) {
     return SubmitSurveyResponseRequest(
       answers: answers == const $CopyWithPlaceholder() || answers == null

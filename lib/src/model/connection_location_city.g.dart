@@ -20,7 +20,8 @@ abstract class _$ConnectionLocationCityCWProxy {
   ConnectionLocationCity longitude(num? longitude);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionLocationCity(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionLocationCity(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -62,14 +63,15 @@ class _$ConnectionLocationCityCWProxyImpl implements _$ConnectionLocationCityCWP
   @override
   ConnectionLocationCity longitude(num? longitude) => call(longitude: longitude);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionLocationCity(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionLocationCity(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ConnectionLocationCity(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectionLocationCity call({
     Object? city = const $CopyWithPlaceholder(),
     Object? total = const $CopyWithPlaceholder(),

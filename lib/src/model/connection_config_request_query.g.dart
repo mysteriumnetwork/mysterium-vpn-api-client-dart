@@ -10,7 +10,8 @@ abstract class _$ConnectionConfigRequestQueryCWProxy {
   ConnectionConfigRequestQuery ipType(ConnectionConfigRequestQueryIpTypeEnum? ipType);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionConfigRequestQuery(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionConfigRequestQuery(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -30,14 +31,15 @@ class _$ConnectionConfigRequestQueryCWProxyImpl implements _$ConnectionConfigReq
   ConnectionConfigRequestQuery ipType(ConnectionConfigRequestQueryIpTypeEnum? ipType) =>
       call(ipType: ipType);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `ConnectionConfigRequestQuery(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `ConnectionConfigRequestQuery(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// ConnectionConfigRequestQuery(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   ConnectionConfigRequestQuery call({Object? ipType = const $CopyWithPlaceholder()}) {
     return ConnectionConfigRequestQuery(
       ipType: ipType == const $CopyWithPlaceholder()

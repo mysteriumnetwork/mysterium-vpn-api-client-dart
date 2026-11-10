@@ -10,7 +10,8 @@ abstract class _$RequestActivationRequestCWProxy {
   RequestActivationRequest id(String id);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `RequestActivationRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `RequestActivationRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$RequestActivationRequestCWProxyImpl implements _$RequestActivationReques
   @override
   RequestActivationRequest id(String id) => call(id: id);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `RequestActivationRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `RequestActivationRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// RequestActivationRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   RequestActivationRequest call({Object? id = const $CopyWithPlaceholder()}) {
     return RequestActivationRequest(
       id: id == const $CopyWithPlaceholder() || id == null

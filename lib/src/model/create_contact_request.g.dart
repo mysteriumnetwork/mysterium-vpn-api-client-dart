@@ -10,7 +10,8 @@ abstract class _$CreateContactRequestCWProxy {
   CreateContactRequest country(String? country);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateContactRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateContactRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -29,14 +30,15 @@ class _$CreateContactRequestCWProxyImpl implements _$CreateContactRequestCWProxy
   @override
   CreateContactRequest country(String? country) => call(country: country);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `CreateContactRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `CreateContactRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// CreateContactRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   CreateContactRequest call({Object? country = const $CopyWithPlaceholder()}) {
     return CreateContactRequest(
       country: country == const $CopyWithPlaceholder()

@@ -32,7 +32,8 @@ abstract class _$SubscriptionConfigResponsePlansInnerMetadataCWProxy {
   SubscriptionConfigResponsePlansInnerMetadata favoriteIpsLimit(num? favoriteIpsLimit);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerMetadata(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponsePlansInnerMetadata(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -107,14 +108,15 @@ class _$SubscriptionConfigResponsePlansInnerMetadataCWProxyImpl
   SubscriptionConfigResponsePlansInnerMetadata favoriteIpsLimit(num? favoriteIpsLimit) =>
       call(favoriteIpsLimit: favoriteIpsLimit);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponsePlansInnerMetadata(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponsePlansInnerMetadata(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SubscriptionConfigResponsePlansInnerMetadata(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SubscriptionConfigResponsePlansInnerMetadata call({
     Object? allowedDevicesLimit = const $CopyWithPlaceholder(),
     Object? locationTargetingAllowed = const $CopyWithPlaceholder(),

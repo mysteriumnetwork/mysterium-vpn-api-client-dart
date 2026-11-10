@@ -12,7 +12,8 @@ abstract class _$TestTrafficDelayRequestCWProxy {
   TestTrafficDelayRequest durationSeconds(int durationSeconds);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TestTrafficDelayRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `TestTrafficDelayRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -35,14 +36,15 @@ class _$TestTrafficDelayRequestCWProxyImpl implements _$TestTrafficDelayRequestC
   TestTrafficDelayRequest durationSeconds(int durationSeconds) =>
       call(durationSeconds: durationSeconds);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `TestTrafficDelayRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `TestTrafficDelayRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// TestTrafficDelayRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   TestTrafficDelayRequest call({
     Object? delayMs = const $CopyWithPlaceholder(),
     Object? durationSeconds = const $CopyWithPlaceholder(),
@@ -72,19 +74,14 @@ extension $TestTrafficDelayRequestCopyWith on TestTrafficDelayRequest {
 // **************************************************************************
 
 TestTrafficDelayRequest _$TestTrafficDelayRequestFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'TestTrafficDelayRequest',
-      json,
-      ($checkedConvert) {
-        $checkKeys(json, requiredKeys: const ['delay_ms', 'duration_seconds']);
-        final val = TestTrafficDelayRequest(
-          delayMs: $checkedConvert('delay_ms', (v) => (v as num).toInt()),
-          durationSeconds: $checkedConvert('duration_seconds', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'delayMs': 'delay_ms', 'durationSeconds': 'duration_seconds'},
-    );
+    $checkedCreate('TestTrafficDelayRequest', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['delay_ms', 'duration_seconds']);
+      final val = TestTrafficDelayRequest(
+        delayMs: $checkedConvert('delay_ms', (v) => (v as num).toInt()),
+        durationSeconds: $checkedConvert('duration_seconds', (v) => (v as num).toInt()),
+      );
+      return val;
+    }, fieldKeyMap: const {'delayMs': 'delay_ms', 'durationSeconds': 'duration_seconds'});
 
 Map<String, dynamic> _$TestTrafficDelayRequestToJson(TestTrafficDelayRequest instance) =>
     <String, dynamic>{'delay_ms': instance.delayMs, 'duration_seconds': instance.durationSeconds};

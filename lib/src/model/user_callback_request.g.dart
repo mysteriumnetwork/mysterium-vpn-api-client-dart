@@ -14,7 +14,8 @@ abstract class _$UserCallbackRequestCWProxy {
   UserCallbackRequest transactionId(String? transactionId);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UserCallbackRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `UserCallbackRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -44,14 +45,15 @@ class _$UserCallbackRequestCWProxyImpl implements _$UserCallbackRequestCWProxy {
   @override
   UserCallbackRequest transactionId(String? transactionId) => call(transactionId: transactionId);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `UserCallbackRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `UserCallbackRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// UserCallbackRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   UserCallbackRequest call({
     Object? gatewayId = const $CopyWithPlaceholder(),
     Object? payload = const $CopyWithPlaceholder(),
@@ -85,23 +87,19 @@ extension $UserCallbackRequestCopyWith on UserCallbackRequest {
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserCallbackRequest _$UserCallbackRequestFromJson(Map<String, dynamic> json) => $checkedCreate(
-  'UserCallbackRequest',
-  json,
-  ($checkedConvert) {
-    $checkKeys(json, requiredKeys: const ['gateway_id']);
-    final val = UserCallbackRequest(
-      gatewayId: $checkedConvert(
-        'gateway_id',
-        (v) => $enumDecode(_$UserCallbackRequestGatewayIdEnumEnumMap, v),
-      ),
-      payload: $checkedConvert('payload', (v) => v as String?),
-      transactionId: $checkedConvert('transaction_id', (v) => v as String?),
-    );
-    return val;
-  },
-  fieldKeyMap: const {'gatewayId': 'gateway_id', 'transactionId': 'transaction_id'},
-);
+UserCallbackRequest _$UserCallbackRequestFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('UserCallbackRequest', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['gateway_id']);
+      final val = UserCallbackRequest(
+        gatewayId: $checkedConvert(
+          'gateway_id',
+          (v) => $enumDecode(_$UserCallbackRequestGatewayIdEnumEnumMap, v),
+        ),
+        payload: $checkedConvert('payload', (v) => v as String?),
+        transactionId: $checkedConvert('transaction_id', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {'gatewayId': 'gateway_id', 'transactionId': 'transaction_id'});
 
 Map<String, dynamic> _$UserCallbackRequestToJson(UserCallbackRequest instance) => <String, dynamic>{
   'gateway_id': _$UserCallbackRequestGatewayIdEnumEnumMap[instance.gatewayId]!,

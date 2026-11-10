@@ -12,7 +12,8 @@ abstract class _$SubscriptionConfigResponseGatewaysInnerCWProxy {
   SubscriptionConfigResponseGatewaysInner enabled(bool enabled);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponseGatewaysInner(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponseGatewaysInner(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -35,14 +36,15 @@ class _$SubscriptionConfigResponseGatewaysInnerCWProxyImpl
   @override
   SubscriptionConfigResponseGatewaysInner enabled(bool enabled) => call(enabled: enabled);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `SubscriptionConfigResponseGatewaysInner(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `SubscriptionConfigResponseGatewaysInner(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// SubscriptionConfigResponseGatewaysInner(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   SubscriptionConfigResponseGatewaysInner call({
     Object? name = const $CopyWithPlaceholder(),
     Object? enabled = const $CopyWithPlaceholder(),

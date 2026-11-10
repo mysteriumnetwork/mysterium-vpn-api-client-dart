@@ -18,7 +18,8 @@ abstract class _$HttpsConnectRequestCWProxy {
   HttpsConnectRequest osType(String? osType);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `HttpsConnectRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `HttpsConnectRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -57,14 +58,15 @@ class _$HttpsConnectRequestCWProxyImpl implements _$HttpsConnectRequestCWProxy {
   @override
   HttpsConnectRequest osType(String? osType) => call(osType: osType);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `HttpsConnectRequest(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `HttpsConnectRequest(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// HttpsConnectRequest(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   HttpsConnectRequest call({
     Object? countryOriginate = const $CopyWithPlaceholder(),
     Object? country = const $CopyWithPlaceholder(),

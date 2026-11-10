@@ -12,7 +12,8 @@ abstract class _$InvoicesResponseCWProxy {
   InvoicesResponse paging(InvoicesResponsePaging paging);
 
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InvoicesResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `InvoicesResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
@@ -34,14 +35,15 @@ class _$InvoicesResponseCWProxyImpl implements _$InvoicesResponseCWProxy {
   @override
   InvoicesResponse paging(InvoicesResponsePaging paging) => call(paging: paging);
 
-  @override
   /// Creates a new instance with the provided field values.
-  /// Passing `null` to a nullable field nullifies it, while `null` for a non-nullable field is ignored. To update a single field use `InvoicesResponse(...).copyWith.fieldName(value)`.
+  /// Omitted fields keep their values; explicit `null` clears nullable fields.
+  /// The public API rejects `null` for non-nullable fields. To update a single field use `InvoicesResponse(...).copyWith.fieldName(value)`.
   ///
   /// Example:
   /// ```dart
   /// InvoicesResponse(...).copyWith(id: 12, name: "My name")
   /// ```
+  @override
   InvoicesResponse call({
     Object? data = const $CopyWithPlaceholder(),
     Object? paging = const $CopyWithPlaceholder(),

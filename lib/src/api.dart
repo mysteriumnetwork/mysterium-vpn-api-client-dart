@@ -51,9 +51,9 @@ class VpnApi {
 
   void setOAuthToken(String name, String token) {
     if (this.dio.interceptors.any((i) => i is OAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((i) => i is OAuthInterceptor) as OAuthInterceptor)
-              .tokens[name] =
-          token;
+      (this.dio.interceptors.firstWhere(
+        (i) => i is OAuthInterceptor,
+      ) as OAuthInterceptor).tokens[name] = token;
     }
   }
 
@@ -70,9 +70,9 @@ class VpnApi {
 
   void setBearerAuth(String name, String token) {
     if (this.dio.interceptors.any((i) => i is BearerAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((i) => i is BearerAuthInterceptor) as BearerAuthInterceptor)
-              .tokens[name] =
-          token;
+      (this.dio.interceptors.firstWhere(
+        (i) => i is BearerAuthInterceptor,
+      ) as BearerAuthInterceptor).tokens[name] = token;
     }
   }
 
@@ -90,8 +90,9 @@ class VpnApi {
 
   void setBasicAuth(String name, String username, String password) {
     if (this.dio.interceptors.any((i) => i is BasicAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((i) => i is BasicAuthInterceptor) as BasicAuthInterceptor)
-          .authInfo[name] = BasicAuthInfo(
+      (this.dio.interceptors.firstWhere(
+        (i) => i is BasicAuthInterceptor,
+      ) as BasicAuthInterceptor).authInfo[name] = BasicAuthInfo(
         username,
         password,
       );
@@ -112,10 +113,9 @@ class VpnApi {
 
   void setApiKey(String name, String apiKey) {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor)
-                  as ApiKeyAuthInterceptor)
-              .apiKeys[name] =
-          apiKey;
+      (this.dio.interceptors.firstWhere(
+        (element) => element is ApiKeyAuthInterceptor,
+      ) as ApiKeyAuthInterceptor).apiKeys[name] = apiKey;
     }
   }
 
@@ -125,10 +125,9 @@ class VpnApi {
   /// given [name], this method has no effect.
   void removeApiKey(String name) {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor)
-              as ApiKeyAuthInterceptor)
-          .apiKeys
-          .remove(name);
+      (this.dio.interceptors.firstWhere(
+        (element) => element is ApiKeyAuthInterceptor,
+      ) as ApiKeyAuthInterceptor).apiKeys.remove(name);
     }
   }
 
