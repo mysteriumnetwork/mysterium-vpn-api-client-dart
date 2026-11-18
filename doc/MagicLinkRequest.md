@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** |  | 
 **clientId** | **String** |  | 
+**preferredOrigin** | **String** | Origin (e.g. https://app.example.com) the magic link should point to. Must be one of the allowed origins; defaults to the primary app URL. Ignored for the `web` client. | [optional] 
 **codeChallenge** | **String** |  | 
 **codeChallengeMethod** | **String** |  | 
 **continueTo** | **String** | User will be continue to this path upon authentication | [optional] 
