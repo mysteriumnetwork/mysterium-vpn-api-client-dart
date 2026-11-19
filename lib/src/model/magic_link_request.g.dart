@@ -11,8 +11,6 @@ abstract class _$MagicLinkRequestCWProxy {
 
   MagicLinkRequest clientId(MagicLinkRequestClientIdEnum clientId);
 
-  MagicLinkRequest preferredOrigin(String? preferredOrigin);
-
   MagicLinkRequest codeChallenge(String codeChallenge);
 
   MagicLinkRequest codeChallengeMethod(MagicLinkRequestCodeChallengeMethodEnum codeChallengeMethod);
@@ -30,7 +28,6 @@ abstract class _$MagicLinkRequestCWProxy {
   MagicLinkRequest call({
     String email,
     MagicLinkRequestClientIdEnum clientId,
-    String? preferredOrigin,
     String codeChallenge,
     MagicLinkRequestCodeChallengeMethodEnum codeChallengeMethod,
     String? continueTo,
@@ -49,10 +46,6 @@ class _$MagicLinkRequestCWProxyImpl implements _$MagicLinkRequestCWProxy {
 
   @override
   MagicLinkRequest clientId(MagicLinkRequestClientIdEnum clientId) => call(clientId: clientId);
-
-  @override
-  MagicLinkRequest preferredOrigin(String? preferredOrigin) =>
-      call(preferredOrigin: preferredOrigin);
 
   @override
   MagicLinkRequest codeChallenge(String codeChallenge) => call(codeChallenge: codeChallenge);
@@ -77,7 +70,6 @@ class _$MagicLinkRequestCWProxyImpl implements _$MagicLinkRequestCWProxy {
   MagicLinkRequest call({
     Object? email = const $CopyWithPlaceholder(),
     Object? clientId = const $CopyWithPlaceholder(),
-    Object? preferredOrigin = const $CopyWithPlaceholder(),
     Object? codeChallenge = const $CopyWithPlaceholder(),
     Object? codeChallengeMethod = const $CopyWithPlaceholder(),
     Object? continueTo = const $CopyWithPlaceholder(),
@@ -91,10 +83,6 @@ class _$MagicLinkRequestCWProxyImpl implements _$MagicLinkRequestCWProxy {
           ? _value.clientId
           // ignore: cast_nullable_to_non_nullable
           : clientId as MagicLinkRequestClientIdEnum,
-      preferredOrigin: preferredOrigin == const $CopyWithPlaceholder()
-          ? _value.preferredOrigin
-          // ignore: cast_nullable_to_non_nullable
-          : preferredOrigin as String?,
       codeChallenge: codeChallenge == const $CopyWithPlaceholder() || codeChallenge == null
           ? _value.codeChallenge
           // ignore: cast_nullable_to_non_nullable
@@ -137,7 +125,6 @@ MagicLinkRequest _$MagicLinkRequestFromJson(Map<String, dynamic> json) => $check
         'client_id',
         (v) => $enumDecode(_$MagicLinkRequestClientIdEnumEnumMap, v),
       ),
-      preferredOrigin: $checkedConvert('preferred_origin', (v) => v as String?),
       codeChallenge: $checkedConvert('code_challenge', (v) => v as String),
       codeChallengeMethod: $checkedConvert(
         'code_challenge_method',
@@ -149,7 +136,6 @@ MagicLinkRequest _$MagicLinkRequestFromJson(Map<String, dynamic> json) => $check
   },
   fieldKeyMap: const {
     'clientId': 'client_id',
-    'preferredOrigin': 'preferred_origin',
     'codeChallenge': 'code_challenge',
     'codeChallengeMethod': 'code_challenge_method',
     'continueTo': 'continue_to',
@@ -159,7 +145,6 @@ MagicLinkRequest _$MagicLinkRequestFromJson(Map<String, dynamic> json) => $check
 Map<String, dynamic> _$MagicLinkRequestToJson(MagicLinkRequest instance) => <String, dynamic>{
   'email': instance.email,
   'client_id': _$MagicLinkRequestClientIdEnumEnumMap[instance.clientId]!,
-  'preferred_origin': ?instance.preferredOrigin,
   'code_challenge': instance.codeChallenge,
   'code_challenge_method':
       _$MagicLinkRequestCodeChallengeMethodEnumEnumMap[instance.codeChallengeMethod]!,
