@@ -22,6 +22,8 @@ class MagicLinkRequest {
 
     required this.clientId,
 
+    this.preferredOrigin,
+
     required this.codeChallenge,
 
     required this.codeChallengeMethod,
@@ -34,6 +36,10 @@ class MagicLinkRequest {
 
   @JsonKey(name: r'client_id', required: true, includeIfNull: false)
   final MagicLinkRequestClientIdEnum clientId;
+
+  /// Origin (e.g. https://app.example.com) the magic link should point to. Must be one of the allowed origins; defaults to the primary app URL.
+  @JsonKey(name: r'preferred_origin', required: false, includeIfNull: false)
+  final String? preferredOrigin;
 
   @JsonKey(name: r'code_challenge', required: true, includeIfNull: false)
   final String codeChallenge;
@@ -51,6 +57,7 @@ class MagicLinkRequest {
       other is MagicLinkRequest &&
           other.email == email &&
           other.clientId == clientId &&
+          other.preferredOrigin == preferredOrigin &&
           other.codeChallenge == codeChallenge &&
           other.codeChallengeMethod == codeChallengeMethod &&
           other.continueTo == continueTo;
@@ -59,6 +66,7 @@ class MagicLinkRequest {
   int get hashCode =>
       email.hashCode +
       clientId.hashCode +
+      preferredOrigin.hashCode +
       codeChallenge.hashCode +
       codeChallengeMethod.hashCode +
       (continueTo == null ? 0 : continueTo.hashCode);
